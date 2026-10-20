@@ -7,6 +7,12 @@ import { buildUpdatePromptWrapper } from "./ActivePrompt.js";
 import { DEFAULT_PROMPT_HEADER_SEP, DEFAULT_PROMPT_FOOTER_SEP } from "./PromptSchema.js";
 import { setDeltaLog } from "../tracker/DeltaLogRenderer.js";
 
+import { createChatLockStore, getChatKey } from './ChatLockStore.js';
+import { createPresetBridge } from './PresetBridge.js';
+import { getAppliedDelta } from './AppliedDelta.js';
+
+const chatLocks = createChatLockStore(getContext);
+
 import { resolveSillyTavernAvatarUrl } from "./AvatarResolver.js";
 import { getAvailableModels, executeQuietPromptWithModelOverride } from "./ModelManager.js";
 
@@ -46,6 +52,27 @@ export function establishBridgeConnection(extensionName) {
 
             window.RPGBridge.latestSettings = extension_settings[extensionName] || null;
             window.RPGBridge.isQuietUpdating = false;
+            window.RPGBridge.getCurrentChatKey = () => getChatKey(getContext());
+            window.RPGBridge.recordChatLocks = tracker => chatLocks.remember(tracker);
+            window.RPGBridge.applyChatLocks = tracker => chatLocks.restore(tracker);
+            window.RPGBridge.createSaveTarget = () => {
+                const context = getContext();
+                const index = (context.chat?.length || 0) - 1;
+                const message = context.chat?.[index];
+                const matched = message?.swipes?.findIndex(text => text === message.mes) ?? -1;
+                const swipeId = matched >= 0 ? matched : (message?.swipe_id || 0);
+                return { chatKey: getChatKey(context), message, index, swipeId };
+            };
+            Object.assign(window.RPGBridge, createPresetBridge({
+                extensionName,
+                getRequestHeaders,
+                syncPresets: presets => {
+                    extension_settings[extensionName] ??= {};
+                    extension_settings[extensionName].presets = presets;
+                    window.RPGBridge.latestSettings = extension_settings[extensionName];
+                    window.RPGBridge.syncSettings({ presets });
+                },
+            }));
             window.RPGBridge.extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
 
             window.RPGBridge.writeExtensionFieldNatively = async (characterId, key, value) => {
@@ -104,10 +131,11 @@ export function establishBridgeConnection(extensionName) {
                 saveSettingsDebounced();
             };
 
-            window.RPGBridge.saveChatData = (updatedTracker, maxBackupCount) => {
+            window.RPGBridge.saveChatData = (updatedTracker, maxBackupCount, target = null) => {
                 const context = getContext();
                 const currentChat = context.chat;
-                const lastIndex = currentChat ? currentChat.length - 1 : -1;
+                const lastIndex = target ? target.index : (currentChat ? currentChat.length - 1 : -1);
+                if (target && (target.chatKey !== getChatKey(context) || currentChat?.[lastIndex] !== target.message)) return;
 
                 const safeSaveChat = () => {
                     if (typeof saveChatConditional === 'function') saveChatConditional();
@@ -126,7 +154,7 @@ export function establishBridgeConnection(extensionName) {
                 }
 
                 if (currentChat && lastIndex >= 0) {
-                    backupToMessage(currentChat, lastIndex, updatedTracker, safeUpdateMessageBlock, safeSaveChat, effectiveMaxKeep);
+                    backupToMessage(currentChat, lastIndex, updatedTracker, safeUpdateMessageBlock, safeSaveChat, effectiveMaxKeep, target?.swipeId);
                 }
             };
 
@@ -195,6 +223,8 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerCharacterGeneration = async (promptText, isPlayer = false) => {
+                const requestChatKey = getChatKey(getContext());
+                const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
                 if (!trackerData) return;
 
@@ -214,17 +244,21 @@ export function establishBridgeConnection(extensionName) {
                     const instructionText = `[USER INSTRUCTION]\n${promptText}\n\nOutput the generated character's status JSON block only.`;
 
                     const rawOutput = await executeQuietPromptWithModelOverride(extensionName, instructionText, targetModel, false, false);
+                    if (getChatKey(getContext()) !== requestChatKey || (window.RPGBridge.historyRevision || 0) !== requestRevision) return;
                     const { patch } = parseResponse(rawOutput);
 
                     if (patch && Object.keys(patch).length > 0) {
                         const normPatch = extractNormalizedPatch(patch);
-                        const updatedData = applyLLMPatch(trackerData, normPatch, isPlayer);
+                        const latestData = chatLocks.restore(window.RPGBridge.currentTrackerData);
+                        const updatedData = chatLocks.restore(applyLLMPatch(latestData, normPatch, isPlayer));
+                        const appliedDelta = getAppliedDelta(latestData, updatedData, normPatch);
                         if (typeof window.RPGBridge.syncChatData === 'function') window.RPGBridge.syncChatData(updatedData);
 
                         try {
-                            const sysText = `[RPG Tracker] System has added a new character. <!--RPG_DELTA:${JSON.stringify(normPatch)}-->`;
+                            const sysText = `[RPG Tracker] System has added a new character. <!--RPG_DELTA:${JSON.stringify(appliedDelta)}-->`;
                             await SlashCommandParser.commands['sys'].callback({}, sysText);
 
+                            if (getChatKey(getContext()) !== requestChatKey) return;
                             const newContext = getContext();
                             if (newContext && newContext.chat) {
                                 let lastSysMsgIdx = -1;
@@ -237,16 +271,16 @@ export function establishBridgeConnection(extensionName) {
 
                                 if (lastSysMsgIdx !== -1) {
                                     const lastSysMsg = newContext.chat[lastSysMsgIdx];
-                                    setDeltaLog(lastSysMsg, normPatch);
+                                    setDeltaLog(lastSysMsg, appliedDelta);
                                     safeUpdateMessageBlock(lastSysMsgIdx, lastSysMsg);
                                 }
                             }
                             if (typeof saveChatConditional === "function") saveChatConditional();
                             else if (typeof saveChat === "function") saveChat();
 
-                            if (typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(updatedData);
+                            if (getChatKey(getContext()) === requestChatKey && typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(window.RPGBridge.currentTrackerData);
                         } catch (err) {
-                            if (typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(updatedData);
+                            if (getChatKey(getContext()) === requestChatKey && typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(window.RPGBridge.currentTrackerData);
                         }
                     } else {
                         try {
@@ -259,6 +293,8 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerManualUpdate = async () => {
+                const requestChatKey = getChatKey(getContext());
+                const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
                 if (!trackerData || !Array.isArray(trackerData.characters)) return;
 
@@ -278,17 +314,21 @@ export function establishBridgeConnection(extensionName) {
                     const instructionText = "Analyze the recent chat log above and current status, then output the updated status JSON block only.";
 
                     const rawOutput = await executeQuietPromptWithModelOverride(extensionName, instructionText, targetModel, false, false);
+                    if (getChatKey(getContext()) !== requestChatKey || (window.RPGBridge.historyRevision || 0) !== requestRevision) return;
                     const { patch } = parseResponse(rawOutput);
 
                     if (patch && Object.keys(patch).length > 0) {
                         const normPatch = extractNormalizedPatch(patch);
-                        const updatedData = applyLLMPatch(trackerData, normPatch);
+                        const latestData = chatLocks.restore(window.RPGBridge.currentTrackerData);
+                        const updatedData = chatLocks.restore(applyLLMPatch(latestData, normPatch));
+                        const appliedDelta = getAppliedDelta(latestData, updatedData, normPatch);
                         if (typeof window.RPGBridge.syncChatData === 'function') window.RPGBridge.syncChatData(updatedData);
 
                         try {
-                            const sysText = `[RPG Tracker] Status has been manually updated. <!--RPG_DELTA:${JSON.stringify(normPatch)}-->`;
+                            const sysText = `[RPG Tracker] Status has been manually updated. <!--RPG_DELTA:${JSON.stringify(appliedDelta)}-->`;
                             await SlashCommandParser.commands['sys'].callback({}, sysText);
 
+                            if (getChatKey(getContext()) !== requestChatKey) return;
                             const freshContext = getContext();
                             const activeChat = freshContext?.chat;
                             if (activeChat) {
@@ -302,16 +342,16 @@ export function establishBridgeConnection(extensionName) {
 
                                 if (lastSysMsgIdx !== -1) {
                                     const lastSysMsg = activeChat[lastSysMsgIdx];
-                                    setDeltaLog(lastSysMsg, normPatch);
+                                    setDeltaLog(lastSysMsg, appliedDelta);
                                     safeUpdateMessageBlock(lastSysMsgIdx, lastSysMsg);
                                 }
                             }
                             if (typeof saveChatConditional === "function") saveChatConditional();
                             else if (typeof saveChat === "function") saveChat();
 
-                            if (typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(updatedData);
+                            if (getChatKey(getContext()) === requestChatKey && typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(window.RPGBridge.currentTrackerData);
                         } catch (err) {
-                            if (typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(updatedData);
+                            if (getChatKey(getContext()) === requestChatKey && typeof window.RPGBridge.saveChatData === 'function') window.RPGBridge.saveChatData(window.RPGBridge.currentTrackerData);
                         }
                     } else {
                         try {
@@ -335,8 +375,17 @@ export function establishBridgeConnection(extensionName) {
 
             window.RPGBridge.syncSettings(extension_settings[extensionName]);
 
+            let historyRequest = 0;
             const syncFromHistoryOrMeta = async () => {
+                const request = ++historyRequest;
                 const context = getContext();
+                const chatKey = getChatKey(context);
+                window.RPGBridge.prepareChatScope?.(chatKey);
+                // Settings/persona refreshes may arrive before the editor's save
+                // debounce. Commit its original snapshot before reading history.
+                window.RPGBridge.flushSave?.();
+                const revision = window.RPGBridge.historyRevision || 0;
+                const trackerRevision = window.RPGBridge.trackerRevision || 0;
                 if (!context || !context.chatId) {
                     if (typeof window.RPGBridge.resetToDefault === 'function') window.RPGBridge.resetToDefault();
                     if (typeof window.RPGBridge.setChatConnectionStatus === 'function') window.RPGBridge.setChatConnectionStatus(false);
@@ -348,11 +397,14 @@ export function establishBridgeConnection(extensionName) {
                     trackerData = await window.RPGBridge.rehydrateFromHistoryAsync();
                 }
 
+                if (request !== historyRequest || getChatKey(getContext()) !== chatKey
+                    || (window.RPGBridge.historyRevision || 0) !== revision
+                    || (window.RPGBridge.trackerRevision || 0) !== trackerRevision) return;
                 if (trackerData && typeof window.RPGBridge.syncChatData === 'function') {
                     if (Array.isArray(trackerData.characters)) {
                         trackerData.characters.forEach((c, index) => {
                             const chatSyncs = window.RPGBridge.latestSettings?.characterSyncs?.[context.chatId] || extension_settings[extensionName]?.characterSyncs?.[context.chatId] || {};
-                            const savedSync = chatSyncs[index];
+                            const savedSync = chatSyncs[c.id] ?? chatSyncs[index];
                             if (savedSync) {
                                 c.syncedCardAvatar = savedSync.syncedCardAvatar;
                                 c.syncedCardType = savedSync.syncedCardType;

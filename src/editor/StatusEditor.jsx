@@ -30,6 +30,8 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
 
   const [presetEditingTarget, setPresetEditingTarget] = useState(null);
 
+  const sourceCharacters = characters?.length ? characters : trackerData.characters;
+
   useEffect(() => {
     const getActiveCharacters = () => {
       if (characters && characters.length > 0) return characters;
@@ -37,7 +39,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
       return getDefaultCharacters();
     };
     setLocalCharacters(JSON.parse(JSON.stringify(getActiveCharacters())));
-  }, [trackerData.characters, characters]);
+  }, [sourceCharacters, charId]);
 
   const targetChar = localCharacters.find(c => c.id === charId);
 
@@ -145,15 +147,14 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
       };
     }));
 
-    if (syncCharacterToCard) {
+    if (syncCharacterToCard && !onUpdateCharacters) {
       syncCharacterToCard(charId, target);
     }
 
-    if (target.type === 'Unsync') {
-      alert("Card synchronization has been removed. Current values have been kept.");
-    } else {
-      alert(`"${target.name}" card synchronization completed successfully.`);
-    }
+    window.toastr?.success(onUpdateCharacters
+      ? 'Card selection updated in this draft. Apply the list to save it to the chat.'
+      : target.type === 'Unsync' ? 'Card synchronization removed. Current values kept.'
+        : `"${target.name}" card synchronization completed.`);
   };
 
   const handleLoadPresetToActive = () => {
@@ -354,8 +355,8 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
     }
     if (window.confirm("Are you sure you want to delete this character?")) {
       const newChars = localCharacters.filter(c => c.id !== charId);
-      if (updateTrackerData) updateTrackerData({ ...trackerData, characters: newChars });
       if (onUpdateCharacters) onUpdateCharacters(newChars);
+      else if (updateTrackerData) updateTrackerData({ ...trackerData, characters: newChars });
       onClose();
     }
   };
@@ -399,7 +400,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
   };
 
   const handleSaveChanges = () => {
-    if (updateTrackerData) {
+    if (onUpdateCharacters || updateTrackerData) {
       const stContext = window.SillyTavern?.getContext?.();
       const updatedList = localCharacters.map(c => {
         if (c.id === charId) {
@@ -436,12 +437,17 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
       const syncedCharacters = sanitizedTracker.characters;
       syncCrossRelations(syncedCharacters);
 
-      updateTrackerData({
-        ...trackerData,
-        characters: syncedCharacters,
-        globalDefinitions: sanitizedTracker.globalDefinitions
-      });
-      alert("Character configuration saved successfully.");
+      if (onUpdateCharacters) {
+        onUpdateCharacters(syncedCharacters);
+      } else {
+        updateTrackerData({
+          ...trackerData,
+          characters: syncedCharacters,
+          globalDefinitions: sanitizedTracker.globalDefinitions
+        });
+      }
+      window.toastr?.success(onUpdateCharacters
+        ? 'Character changes applied to the list draft.' : 'Character configuration applied to this chat.');
       onClose();
     }
   };
@@ -450,7 +456,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
 
   return (
     <div className="rpg-modal-overlay">
-      <div className="rpg-modal-container" onClick={(e) => e.stopPropagation()}>
+      <div className="rpg-modal-container rpg-editor-modal" role="dialog" aria-modal="true" aria-label="Character editor" onClick={(e) => e.stopPropagation()}>
         <header className="rpg-modal-header">
           {isEditingPreset ? (
             <div className={styles.headerNav} style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
@@ -474,7 +480,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
                 value={liveName}
                 disabled={!!targetChar.syncedCardAvatar}
                 onChange={e => setLocalCharacters(localCharacters.map(c => c.id === charId ? { ...c, name: e.target.value } : c))}
-                style={{ width: '130px', flexShrink: 0 }}
+                aria-label="Character name"
                 title={targetChar.syncedCardAvatar ? "Name is managed by SillyTavern Card Sync" : "Edit Name"}
               />
 
@@ -503,7 +509,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
               )}
             </div>
           )}
-          <button className="rpg-modal-close-btn" onClick={isEditingPreset ? () => setPresetEditingTarget(null) : onClose}>×</button>
+          <button className="rpg-modal-close-btn" aria-label="Close character editor" onClick={isEditingPreset ? () => setPresetEditingTarget(null) : onClose}>×</button>
         </header>
 
         <div className="rpg-tab-nav">
@@ -575,6 +581,7 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
                 <button className="rpg-modal-btn" onClick={handleLoadActiveToPreset}>Load</button>
               </div>
               <div className="rpg-modal-footer-right">
+                <button className="rpg-modal-btn" onClick={() => setPresetEditingTarget(null)}>Cancel</button>
                 <button className="rpg-modal-btn save" onClick={handleSavePresetToCard}>Save Preset to Card</button>
               </div>
             </>
@@ -590,7 +597,8 @@ export default function StatusEditor({ charId, initialTab = 'status', onClose, c
                   Import
                   <input type="file" accept=".json" style={{ display: 'none' }} onChange={handleImportCharacter} />
                 </label>
-                <button className="rpg-modal-btn save" onClick={handleSaveChanges}>Save</button>
+                <button className="rpg-modal-btn" onClick={onClose}>Cancel</button>
+                <button className="rpg-modal-btn save" onClick={handleSaveChanges}>{onUpdateCharacters ? 'Apply to List' : 'Apply to Chat'}</button>
               </div>
             </>
           )}

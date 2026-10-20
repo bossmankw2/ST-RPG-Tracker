@@ -626,3 +626,64 @@
   gap: 12px;
   flex-shrink: 0;
 }
+
+.headerNav {
+  min-width: 0;
+  flex: 1;
+}
+
+.charNameInput {
+  flex: 1 1 200px;
+  min-width: 80px;
+  max-width: 100%;
+}
+
+.headerLeftZone {
+  min-width: 0;
+  flex: 1;
+}
+
+.headerRightZone {
+  flex-shrink: 0;
+  margin-left: 8px;
+}
+
+.headerLeftZone .nameInput {
+  flex: 1;
+  min-width: 50px;
+  width: auto;
+}
+
+.sectionHeaderLine {
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .sectionWrapper {
+    padding: 8px;
+  }
+
+  .itemHeader {
+    padding: 6px;
+    flex-wrap: wrap;
+    row-gap: 6px;
+  }
+
+  .headerLeftZone {
+    flex-basis: 100%;
+    gap: 6px;
+  }
+
+  .headerRightZone {
+    margin-left: auto;
+  }
+
+  .flexCenterGroup {
+    flex-wrap: wrap;
+  }
+
+  .headerNav {
+    width: auto;
+  }
+}

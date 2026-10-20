@@ -98,7 +98,7 @@ export function purgeOldBackups(chat, maxKeep = DEFAULT_MAX_KEEP) {
 /**
  * Back up current state variables inside the active ST message timeline
  */
-export function backupToMessage(chat, index, trackerData, updateMessageFn, saveChatFn, maxKeep = DEFAULT_MAX_KEEP) {
+export function backupToMessage(chat, index, trackerData, updateMessageFn, saveChatFn, maxKeep = DEFAULT_MAX_KEEP, savedSwipeId = undefined) {
     if (!Array.isArray(chat) || index < 0 || !chat[index]) return;
 
     const targetMessage = chat[index];
@@ -111,6 +111,8 @@ export function backupToMessage(chat, index, trackerData, updateMessageFn, saveC
         const foundIdx = targetMessage.swipes.findIndex(s => s === targetMessage.mes);
         if (foundIdx !== -1) swipeId = foundIdx;
     }
+
+    if (Number.isInteger(savedSwipeId) && savedSwipeId >= 0) swipeId = savedSwipeId;
 
     if (!Array.isArray(targetMessage.swipe_info)) targetMessage.swipe_info = [];
     if (!targetMessage.swipe_info[swipeId]) targetMessage.swipe_info[swipeId] = { extra: {} };
@@ -208,7 +210,7 @@ export async function rehydrateFromHistoryAsync(chat) {
             if (foundIdx !== -1) swipeId = foundIdx;
         }
 
-        const deltaPatch = message.swipe_info?.[swipeId]?.extra?.rpgTrackerDelta || message.extra?.rpgTrackerDelta;
+        const deltaPatch = message.swipe_info?.[swipeId]?.extra?.rpgTrackerDelta ?? ((message.swipes?.length || 0) <= 1 ? message.extra?.rpgTrackerDelta : null);
 
         if (deltaPatch && typeof deltaPatch === 'object' && Object.keys(deltaPatch).length > 0) {
             accumulatedData = applyLLMPatch(accumulatedData, deltaPatch, false, 'patch', true);
@@ -274,9 +276,9 @@ export async function reconstructTurnState(chat, defaultData) {
         if (foundIdx !== -1) swipeId = foundIdx;
     }
 
-    const currentDelta = (lastMsg.swipe_info && lastMsg.swipe_info[swipeId]?.extra?.rpgTrackerDelta)
-        || lastMsg.extra?.rpgTrackerDelta
-        || null;
+    const currentDelta = lastMsg.swipe_info?.[swipeId]?.extra?.rpgTrackerDelta
+        ?? ((lastMsg.swipes?.length || 0) <= 1 ? lastMsg.extra?.rpgTrackerDelta : null)
+        ?? null;
 
     if (currentDelta && Object.keys(currentDelta).length > 0) {
         return applyLLMPatch(previousState, currentDelta, false, 'patch', false);

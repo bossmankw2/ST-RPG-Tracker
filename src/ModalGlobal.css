@@ -148,3 +148,58 @@
 .rpg-modal-overlay.high-priority {
   z-index: 5000 !important;
 }
+
+/* Editors need room for readable names and a dedicated reorder handle. */
+.rpg-modal-container.rpg-editor-modal {
+  width: 720px;
+  height: 760px;
+  max-height: 92dvh;
+}
+
+.rpg-editor-modal .rpg-modal-header,
+.rpg-editor-modal .rpg-modal-footer {
+  height: auto;
+  min-height: 54px;
+  gap: 10px;
+}
+
+.rpg-editor-modal .rpg-modal-footer,
+.rpg-editor-modal .rpg-modal-footer-left,
+.rpg-editor-modal .rpg-modal-footer-right {
+  flex-wrap: wrap;
+}
+
+.rpg-editor-modal .rpg-modal-body {
+  min-height: 0;
+  overscroll-behavior: contain;
+}
+
+@media (max-width: 600px) {
+  .rpg-modal-overlay:has(.rpg-editor-modal) {
+    padding: 8px;
+  }
+
+  .rpg-modal-container.rpg-editor-modal {
+    width: 100%;
+    max-height: calc(100dvh - 16px);
+    height: calc(100dvh - 16px);
+  }
+
+  .rpg-editor-modal .rpg-modal-header,
+  .rpg-editor-modal .rpg-modal-footer {
+    padding: 10px;
+  }
+
+  .rpg-editor-modal .rpg-modal-body {
+    padding: 10px;
+  }
+
+  .rpg-editor-modal .rpg-modal-footer-right {
+    margin-left: auto;
+  }
+
+  .rpg-editor-modal .rpg-modal-btn {
+    min-height: 36px;
+    padding: 7px 10px;
+  }
+}

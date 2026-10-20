@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './StatusEditor.module.css';
-import { AccordionArrow, SortButtons, ToggleSwitch } from '../utils';
+import { AccordionArrow, ToggleSwitch } from '../utils';
+import SortableList from './SortableList';
+import { replaceGroupOrder } from './SortOrder';
 
 // Status 필드 세부 속성 설정 폼 (PromptEditor와 공용으로 사용)
 export function StatusSpecConfig({
@@ -132,42 +134,20 @@ export default function StatusSpecsTab({
   const handleSchemaNameBlur = (id, newName) => {
     const trimmed = newName.trim();
     if (!trimmed) return;
-
-    const cleanId = trimmed.replace(/[^\p{L}\p{N}_]/gu, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '');
-    const newId = cleanId || `NewField_${Date.now()}_${Math.random().toString(36).substring(2, 7)}`;
-
     setLocalCharacters(prevChars => prevChars.map(c => {
       if (c.id !== charId) return c;
-
-      const otherExists = (c.statusSchema || []).some(s => s.id === newId && s.id !== id);
-      if (otherExists) {
+      const duplicate = (c.statusSchema || []).some(s => s.id !== id
+        && (s.name || s.id).trim().toLowerCase() === trimmed.toLowerCase());
+      if (duplicate) {
         alert(`The status field name "${trimmed}" already exists.`);
-        return {
-          ...c,
-          statusSchema: (c.statusSchema || []).map(s => s.id === id ? { ...s, name: id } : s)
-        };
       }
-
-      const nextSchema = (c.statusSchema || []).map(s => s.id === id ? { ...s, id: newId, name: trimmed } : s);
-      const nextStatus = {};
-      Object.entries(c.status || {}).forEach(([k, v]) => {
-        if (k === id) nextStatus[newId] = v;
-        else nextStatus[k] = v;
-      });
-
-      return { ...c, statusSchema: nextSchema, status: nextStatus };
+      // A display-name edit must not change the identity used by locks and ordering.
+      return {
+        ...c,
+        statusSchema: (c.statusSchema || []).map(s => s.id === id
+          ? { ...s, name: duplicate ? id : trimmed } : s)
+      };
     }));
-
-    if (id !== newId) {
-      setExpandedIds(prev => {
-        const next = { ...prev };
-        if (next[id] !== undefined) {
-          next[newId] = next[id];
-          delete next[id];
-        }
-        return next;
-      });
-    }
   };
 
   const removeField = (id) => {
@@ -183,33 +163,18 @@ export default function StatusSpecsTab({
     }));
   };
 
-  const handleMoveStat = (id, direction) => {
-    const nextSchema = [...(targetChar.statusSchema || [])];
-    const idx = nextSchema.findIndex(s => s.id === id);
-    const nextIdx = direction === 'up' ? idx - 1 : idx + 1;
-    if (nextIdx < 0 || nextIdx >= nextSchema.length) return;
-
-    const temp = nextSchema[idx];
-    nextSchema[idx] = nextSchema[nextIdx];
-    nextSchema[nextIdx] = temp;
-
-    setLocalCharacters(localCharacters.map(c => c.id === charId ? { ...c, statusSchema: nextSchema } : c));
+  const handleReorderStats = (orderedFields) => {
+    setLocalCharacters(prev => prev.map(c => c.id === charId ? {
+      ...c,
+      statusSchema: replaceGroupOrder(c.statusSchema || [], orderedFields)
+    } : c));
   };
 
-  const handleMoveProfile = (key, direction) => {
-    const prof = { ...(targetChar.profile || {}) };
-    const keys = Object.keys(prof);
-    const idx = keys.indexOf(key);
-    const nextIdx = direction === 'up' ? idx - 1 : idx + 1;
-    if (nextIdx < 0 || nextIdx >= keys.length) return;
-
-    const temp = keys[idx];
-    keys[idx] = keys[nextIdx];
-    keys[nextIdx] = temp;
-
-    const newProf = {};
-    keys.forEach(k => { newProf[k] = prof[k]; });
-    handleUpdateNestedField('profile', null, newProf);
+  const handleReorderProfile = (orderedKeys) => {
+    setLocalCharacters(prev => prev.map(c => c.id === charId ? {
+      ...c,
+      profile: Object.fromEntries(orderedKeys.map(key => [key, c.profile[key]]))
+    } : c));
   };
 
   const groupedStatus = getGroupedFields(targetSchema);
@@ -264,10 +229,12 @@ export default function StatusSpecsTab({
         {groupedStatus.gauge.length === 0 ? (
           <p className={styles.emptySectionText}>No gauge fields defined.</p>
         ) : (
-          groupedStatus.gauge.map((item, fIdx) => (
-            <div key={item.id} className={`${styles.schemaItem} ${expandedIds[item.id] ? styles.itemExpanded : ''}`}>
+          <SortableList items={groupedStatus.gauge} onReorder={handleReorderStats} label="Gauge fields">
+          {(item, { itemProps, dragHandle }) => (
+            <div {...itemProps} className={`${styles.schemaItem} ${expandedIds[item.id] ? styles.itemExpanded : ''}`}>
               <div className={styles.itemHeader}>
                 <div className={styles.headerLeftZone}>
+                  {dragHandle}
                   <AccordionArrow
                     isExpanded={!!expandedIds[item.id]}
                     onClick={() => toggleAccordion(item.id)}
@@ -287,12 +254,6 @@ export default function StatusSpecsTab({
                     checked={item.isInject !== false}
                     onChange={checked => updateSchemaField(item.id, 'isInject', checked)}
                     title="Toggle Prompt Injection"
-                  />
-                  <SortButtons
-                    isFirst={fIdx === 0}
-                    isLast={fIdx === groupedStatus.gauge.length - 1}
-                    onMoveUp={() => handleMoveStat(item.id, 'up')}
-                    onMoveDown={() => handleMoveStat(item.id, 'down')}
                   />
                   <button
                     type="button"
@@ -314,7 +275,8 @@ export default function StatusSpecsTab({
                 />
               )}
             </div>
-          ))
+          )}
+          </SortableList>
         )}
       </div>
 
@@ -367,10 +329,12 @@ export default function StatusSpecsTab({
         {groupedStatus.integer.length === 0 ? (
           <p className={styles.emptySectionText}>No integer fields defined.</p>
         ) : (
-          groupedStatus.integer.map((item, fIdx) => (
-            <div key={item.id} className={`${styles.schemaItem} ${expandedIds[item.id] ? styles.itemExpanded : ''}`}>
+          <SortableList items={groupedStatus.integer} onReorder={handleReorderStats} label="Integer fields">
+          {(item, { itemProps, dragHandle }) => (
+            <div {...itemProps} className={`${styles.schemaItem} ${expandedIds[item.id] ? styles.itemExpanded : ''}`}>
               <div className={styles.itemHeader}>
                 <div className={styles.headerLeftZone}>
+                  {dragHandle}
                   <AccordionArrow
                     isExpanded={!!expandedIds[item.id]}
                     onClick={() => toggleAccordion(item.id)}
@@ -392,12 +356,6 @@ export default function StatusSpecsTab({
                     onChange={checked => updateSchemaField(item.id, 'isInject', checked)}
                     title="Toggle Prompt Injection"
                   />
-                  <SortButtons
-                    isFirst={fIdx === 0}
-                    isLast={fIdx === groupedStatus.integer.length - 1}
-                    onMoveUp={() => handleMoveStat(item.id, 'up')}
-                    onMoveDown={() => handleMoveStat(item.id, 'down')}
-                  />
                   <button
                     type="button"
                     className="rpg-btn-del"
@@ -418,7 +376,8 @@ export default function StatusSpecsTab({
                 />
               )}
             </div>
-          ))
+          )}
+          </SortableList>
         )}
       </div>
 
@@ -438,10 +397,12 @@ export default function StatusSpecsTab({
         {groupedStatus.text.length === 0 ? (
           <p className={styles.emptySectionText}>No custom text fields defined.</p>
         ) : (
-          groupedStatus.text.map((item, fIdx) => (
-            <div key={item.id} className={styles.schemaItem}>
+          <SortableList items={groupedStatus.text} onReorder={handleReorderStats} label="Text fields">
+          {(item, { itemProps, dragHandle }) => (
+            <div {...itemProps} className={styles.schemaItem}>
               <div className={styles.itemHeader}>
                 <div className={styles.headerLeftZone}>
+                  {dragHandle}
                   <input
                     type="text"
                     value={item.name}
@@ -459,12 +420,6 @@ export default function StatusSpecsTab({
                     onChange={checked => updateSchemaField(item.id, 'isInject', checked)}
                     title="Toggle Prompt Injection"
                   />
-                  <SortButtons
-                    isFirst={fIdx === 0}
-                    isLast={fIdx === groupedStatus.text.length - 1}
-                    onMoveUp={() => handleMoveStat(item.id, 'up')}
-                    onMoveDown={() => handleMoveStat(item.id, 'down')}
-                  />
                   <button
                     type="button"
                     className="rpg-btn-del"
@@ -475,7 +430,8 @@ export default function StatusSpecsTab({
                 </div>
               </div>
             </div>
-          ))
+          )}
+          </SortableList>
         )}
       </div>
 
@@ -506,10 +462,13 @@ export default function StatusSpecsTab({
           {profileKeys.length === 0 ? (
             <p className={styles.emptySectionText}>No profile fields defined.</p>
           ) : (
-            profileKeys.map((key, fIdx) => (
-              <div key={key} className={styles.schemaItem}>
+            <SortableList items={profileKeys} getId={key => key} getLabel={key => key}
+              onReorder={handleReorderProfile} label="Profile fields">
+            {(key, { itemProps, dragHandle }) => (
+              <div {...itemProps} className={styles.schemaItem}>
                 <div className={styles.itemHeader}>
                   <div className={styles.headerLeftZone}>
+                  {dragHandle}
                     <input
                       type="text"
                       defaultValue={key}
@@ -561,12 +520,6 @@ export default function StatusSpecsTab({
                       }}
                       title="Toggle Prompt Injection"
                     />
-                    <SortButtons
-                      isFirst={fIdx === 0}
-                      isLast={fIdx === profileKeys.length - 1}
-                      onMoveUp={() => handleMoveProfile(key, 'up')}
-                      onMoveDown={() => handleMoveProfile(key, 'down')}
-                    />
                     <button
                       type="button"
                       className="rpg-btn-del"
@@ -585,7 +538,8 @@ export default function StatusSpecsTab({
                   </div>
                 </div>
               </div>
-            ))
+            )}
+            </SortableList>
           )}
         </div>
       </div>

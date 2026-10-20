@@ -131,6 +131,12 @@ function mergeCharacterStatus(char, statusUpdates, updateType) {
                 return cleanId === cleanPatchKey || cleanName === cleanPatchKey;
             });
 
+            if (matchedSchema?.isLocked) {
+                nextStatusSchema.push({ ...matchedSchema });
+                if (currentStatus[matchedSchema.id] !== undefined) nextStatus[matchedSchema.id] = currentStatus[matchedSchema.id];
+                return;
+            }
+
             let targetId = patchKey.trim().replace(/[^\p{L}\p{N}_]/gu, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '');
             if (!targetId) targetId = generateUniqueId('status');
 
@@ -172,6 +178,13 @@ function mergeCharacterStatus(char, statusUpdates, updateType) {
             nextStatus[targetId] = finalVal;
         });
 
+        // Replacement responses may omit locked fields entirely.
+        for (const schema of statusSchema) {
+            if (schema.isLocked && !nextStatusSchema.some(item => item.id === schema.id)) {
+                nextStatusSchema.push({ ...schema });
+                if (currentStatus[schema.id] !== undefined) nextStatus[schema.id] = currentStatus[schema.id];
+            }
+        }
         char.status = nextStatus;
         char.statusSchema = nextStatusSchema;
     } else {
@@ -203,6 +216,7 @@ function mergeCharacterStatus(char, statusUpdates, updateType) {
             });
 
             if (matchedSchema) {
+                if (matchedSchema.isLocked) return;
                 const targetId = matchedSchema.id;
                 if (['integer', 'consumable', 'stacking'].includes(matchedSchema.type)) {
                     const parsedInt = parseInt(patchVal, 10);
@@ -564,6 +578,7 @@ export function syncCrossRelations(characters) {
     for (const char of characters) {
         if (!char.relations) continue;
         for (const [targetName, rData] of Object.entries(char.relations)) {
+            if (rData.isLocked) continue;
             const targetChar = charMap.get(targetName.trim().toLowerCase());
             if (targetChar) {
                 const counterKey = `${targetName.trim().toLowerCase()}->${char.name?.trim().toLowerCase()}`;

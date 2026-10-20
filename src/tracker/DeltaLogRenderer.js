@@ -3,9 +3,20 @@
 export function getDeltaLog(msg) {
     if (!msg) return null;
 
+    let swipeId = msg.swipe_id || 0;
+    if (msg.swipes?.length && typeof msg.mes === 'string') {
+        const foundIdx = msg.swipes.findIndex(s => s === msg.mes);
+        if (foundIdx !== -1) swipeId = foundIdx;
+    }
+    const swipeExtra = msg.swipe_info?.[swipeId]?.extra;
+    if (swipeExtra && Object.prototype.hasOwnProperty.call(swipeExtra, 'rpgTrackerDelta')) {
+        // An empty accepted patch deliberately clears a rejected/stale recap.
+        return swipeExtra.rpgTrackerDelta;
+    }
+
     if (typeof msg.mes === 'string') {
         const match = msg.mes.match(/<!--RPG_DELTA:([\s\S]*?)-->/);
-        if (match && match[1]) {
+        if (match?.[1]) {
             try {
                 return JSON.parse(match[1]);
             } catch (e) {
@@ -14,46 +25,28 @@ export function getDeltaLog(msg) {
         }
     }
 
-    let swipeId = msg.swipe_id || 0;
-    if (msg.swipes && msg.swipes.length > 0 && typeof msg.mes === 'string') {
-        const foundIdx = msg.swipes.findIndex(s => s === msg.mes);
-        if (foundIdx !== -1) swipeId = foundIdx;
+    // Legacy message-level metadata is ambiguous once multiple swipes exist.
+    if (!(msg.swipes?.length > 1) && !(msg.swipe_info?.length > 1)) {
+        return msg.extra?.rpgTrackerDelta || null;
     }
-
-    if (msg.swipe_info && msg.swipe_info[swipeId] && msg.swipe_info[swipeId].extra && msg.swipe_info[swipeId].extra.rpgTrackerDelta) {
-        return msg.swipe_info[swipeId].extra.rpgTrackerDelta;
-    }
-
-    if (msg.extra && msg.extra.rpgTrackerDelta) {
-        return msg.extra.rpgTrackerDelta;
-    }
-
     return null;
 }
 
 export function setDeltaLog(msg, patch) {
-    if (!msg || !patch || Object.keys(patch).length === 0) return;
-
+    if (!msg || !patch || typeof patch !== 'object') return;
+    const acceptedPatch = JSON.parse(JSON.stringify(patch));
     msg.extra = msg.extra || {};
-    msg.extra.rpgTrackerDelta = patch;
+    msg.extra.rpgTrackerDelta = acceptedPatch;
 
     let swipeId = msg.swipe_id || 0;
-    if (msg.swipes && msg.swipes.length > 0 && typeof msg.mes === 'string') {
+    if (msg.swipes?.length && typeof msg.mes === 'string') {
         const foundIdx = msg.swipes.findIndex(s => s === msg.mes);
         if (foundIdx !== -1) swipeId = foundIdx;
     }
-
-    if (!Array.isArray(msg.swipe_info)) {
-        msg.swipe_info = [];
-    }
-    if (!msg.swipe_info[swipeId]) {
-        msg.swipe_info[swipeId] = { extra: {} };
-    }
-    if (!msg.swipe_info[swipeId].extra) {
-        msg.swipe_info[swipeId].extra = {};
-    }
-
-    msg.swipe_info[swipeId].extra.rpgTrackerDelta = patch;
+    if (!Array.isArray(msg.swipe_info)) msg.swipe_info = [];
+    if (!msg.swipe_info[swipeId]) msg.swipe_info[swipeId] = { extra: {} };
+    if (!msg.swipe_info[swipeId].extra) msg.swipe_info[swipeId].extra = {};
+    msg.swipe_info[swipeId].extra.rpgTrackerDelta = acceptedPatch;
 }
 
 export const deltaStyles = `
@@ -361,10 +354,10 @@ export function buildDeltaLogHtml(delta) {
 
         if (charName.toLowerCase() === 'world' && updates && typeof updates === 'object') {
             const items = [];
-            if (updates.date) items.push(`<li><span class="rpg-delta-key">Date:</span> <span class="rpg-delta-val">${updates.date}</span></li>`);
-            if (updates.time) items.push(`<li><span class="rpg-delta-key">Time:</span> <span class="rpg-delta-val">${updates.time}</span></li>`);
-            if (updates.location) items.push(`<li><span class="rpg-delta-key">Location:</span> <span class="rpg-delta-val">${updates.location}</span></li>`);
-            if (updates.weather) items.push(`<li><span class="rpg-delta-key">Weather:</span> <span class="rpg-delta-val">${updates.weather}</span></li>`);
+            if (updates.date !== undefined) items.push(`<li><span class="rpg-delta-key">Date:</span> <span class="rpg-delta-val">${updates.date}</span></li>`);
+            if (updates.time !== undefined) items.push(`<li><span class="rpg-delta-key">Time:</span> <span class="rpg-delta-val">${updates.time}</span></li>`);
+            if (updates.location !== undefined) items.push(`<li><span class="rpg-delta-key">Location:</span> <span class="rpg-delta-val">${updates.location}</span></li>`);
+            if (updates.weather !== undefined) items.push(`<li><span class="rpg-delta-key">Weather:</span> <span class="rpg-delta-val">${updates.weather}</span></li>`);
             if (Array.isArray(updates.events)) {
                 updates.events.forEach((e, idx) => {
                     // 이벤트 요소 정규화가 완료되었으므로 타입 분기 없이 안전하게 객체로 접근합니다.
@@ -457,8 +450,11 @@ export function injectAllDeltaLogs(extension_settings, extensionName, getContext
                 continue;
             }
 
-            if ($msgEl.find('.rpg-delta-log-container').length > 0) {
-                continue;
+            const fingerprint = JSON.stringify(delta);
+            const $existing = $msgEl.find('.rpg-delta-log-container');
+            if ($existing.length > 0) {
+                if ($existing.first().data('rpgDeltaFingerprint') === fingerprint) continue;
+                $existing.remove();
             }
 
             if ($msgEl.next('.rpg-delta-log-container').length > 0) {
@@ -473,6 +469,7 @@ export function injectAllDeltaLogs(extension_settings, extensionName, getContext
                 } else {
                     $target.first().append(deltaHtml);
                 }
+                $msgEl.find('.rpg-delta-log-container').data('rpgDeltaFingerprint', fingerprint);
             }
         }
     }

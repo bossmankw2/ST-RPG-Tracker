@@ -4,6 +4,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback, use
 import { defensiveMerge, reconstructTurnState } from './JSONTracker';
 import { getDefaultCharacters, getInitialTrackerData } from './PromptSchema';
 import { setNestedValue, deleteNestedValue } from './StateHelpers';
+import { getChatKey } from './ChatLockStore.js';
 
 const RPGContext = createContext(null);
 
@@ -45,6 +46,8 @@ export function RPGControlProvider({ children }) {
   });
   const [trackerData, setTrackerData] = useState(getDefaultTrackerData);
   const [isChatConnected, setIsChatConnected] = useState(false);
+  const trackerRef = useRef(trackerData);
+  const trackerChatKeyRef = useRef(null);
 
   const settingsRef = useRef(settings);
   useEffect(() => {
@@ -97,8 +100,9 @@ export function RPGControlProvider({ children }) {
     if (!pendingDataRef.current) return;
 
     if (window.RPGBridge && typeof window.RPGBridge.saveChatData === 'function') {
-      window.RPGBridge.saveChatData(pendingDataRef.current, settings.maxBackupCount);
+      const pending = pendingDataRef.current;
       pendingDataRef.current = null;
+      window.RPGBridge.saveChatData(pending.data, settingsRef.current.maxBackupCount, pending.target);
     }
 
     if (saveTimeoutRef.current) {
@@ -108,7 +112,16 @@ export function RPGControlProvider({ children }) {
   }, [settings.maxBackupCount]);
 
   const saveTrackerDataToST = useCallback((updatedTracker) => {
-    pendingDataRef.current = updatedTracker;
+    trackerRef.current = updatedTracker;
+    if (window.RPGBridge) {
+      window.RPGBridge.trackerRevision = (window.RPGBridge.trackerRevision || 0) + 1;
+      window.RPGBridge.currentTrackerData = updatedTracker;
+      window.RPGBridge.recordChatLocks?.(updatedTracker);
+    }
+    pendingDataRef.current = {
+      data: updatedTracker,
+      target: window.RPGBridge?.createSaveTarget?.() || null,
+    };
 
     if (saveTimeoutRef.current) {
       clearTimeout(saveTimeoutRef.current);
@@ -122,6 +135,7 @@ export function RPGControlProvider({ children }) {
   const updateSettings = useCallback((newSettings) => {
     setSettings((prev) => {
       const updated = { ...prev, ...newSettings };
+      settingsRef.current = updated;
       if (window.RPGBridge) {
         window.RPGBridge.latestSettings = updated;
       }
@@ -154,19 +168,43 @@ export function RPGControlProvider({ children }) {
 
       const context = window.SillyTavern?.getContext?.() || {};
       const chatId = context.chatId;
-      if (chatId && settingsRef.current?.characterSyncs?.[chatId] && Array.isArray(updated.characters)) {
-        const currentSyncs = JSON.parse(JSON.stringify(settingsRef.current.characterSyncs));
+      if (chatId && Array.isArray(updated.characters)) {
+        const currentSyncs = JSON.parse(JSON.stringify(settingsRef.current.characterSyncs || {}));
         const chatSync = currentSyncs[chatId] || {};
         let hasSyncChanges = false;
 
-        Object.keys(chatSync).forEach(idxKey => {
-          const idx = parseInt(idxKey, 10);
-          if (isNaN(idx) || idx >= updated.characters.length) {
-            delete chatSync[idxKey];
+        // Convert legacy index bindings before applying a new character order.
+        Object.keys(chatSync).forEach(key => {
+          if (/^\d+$/.test(key)) {
+            const id = prev.characters?.[Number(key)]?.id;
+            if (id && !chatSync[id]) chatSync[id] = chatSync[key];
+            delete chatSync[key];
+            hasSyncChanges = true;
+          }
+        });
+        const activeIds = new Set(updated.characters.map(c => c.id));
+        Object.keys(chatSync).forEach(id => {
+          if (!activeIds.has(id)) {
+            delete chatSync[id];
             hasSyncChanges = true;
           }
         });
 
+        updated.characters.forEach(char => {
+          const binding = char.syncedCardType && char.syncedCardAvatar ? {
+            syncedCardAvatar: char.syncedCardAvatar,
+            syncedCardType: char.syncedCardType,
+            name: char.name,
+            avatarUrl: char.avatarUrl,
+          } : null;
+          if (binding && JSON.stringify(chatSync[char.id]) !== JSON.stringify(binding)) {
+            chatSync[char.id] = binding;
+            hasSyncChanges = true;
+          } else if (!binding && chatSync[char.id]) {
+            delete chatSync[char.id];
+            hasSyncChanges = true;
+          }
+        });
         if (hasSyncChanges) {
           if (Object.keys(chatSync).length === 0) {
             delete currentSyncs[chatId];
@@ -231,14 +269,21 @@ export function RPGControlProvider({ children }) {
       setSettings(prevSettings => {
         const nextSyncs = JSON.parse(JSON.stringify(prevSettings.characterSyncs || {}));
         nextSyncs[chatId] = nextSyncs[chatId] || {};
+        Object.keys(nextSyncs[chatId]).forEach(key => {
+          if (/^\d+$/.test(key)) {
+            const id = prev.characters[Number(key)]?.id;
+            if (id && !nextSyncs[chatId][id]) nextSyncs[chatId][id] = nextSyncs[chatId][key];
+            delete nextSyncs[chatId][key];
+          }
+        });
 
         if (!target || target.type === 'Unsync') {
-          delete nextSyncs[chatId][charIndex];
+          delete nextSyncs[chatId][charId];
           if (Object.keys(nextSyncs[chatId]).length === 0) {
             delete nextSyncs[chatId];
           }
         } else {
-          nextSyncs[chatId][charIndex] = {
+          nextSyncs[chatId][charId] = {
             syncedCardAvatar: target.avatarFile,
             syncedCardType: target.type,
             name: target.name,
@@ -290,9 +335,14 @@ export function RPGControlProvider({ children }) {
         const chat = stContext?.chat;
         if (!Array.isArray(chat) || chat.length === 0) return;
 
-        const originalState = await reconstructTurnState(chat, getDefaultTrackerData());
+        const requestChatKey = getChatKey(stContext);
+        const recovered = await reconstructTurnState(chat, getDefaultTrackerData());
+        if (getChatKey(window.SillyTavern?.getContext?.()) !== requestChatKey) return;
+        const originalState = recovered && (window.RPGBridge.applyChatLocks?.(recovered) || recovered);
 
         if (originalState) {
+          trackerRef.current = originalState;
+          window.RPGBridge.currentTrackerData = originalState;
           setTrackerData(originalState);
           if (window.RPGBridge && typeof window.RPGBridge.saveChatData === 'function') {
             window.RPGBridge.saveChatData(originalState, settings.maxBackupCount);
@@ -307,10 +357,45 @@ export function RPGControlProvider({ children }) {
   }, [settings.maxBackupCount]);
 
   useEffect(() => {
-    if (window.RPGBridge) {
-      window.RPGBridge.currentTrackerData = trackerData;
-    }
+    trackerRef.current = trackerData;
+    if (window.RPGBridge) window.RPGBridge.currentTrackerData = trackerData;
   }, [trackerData]);
+
+  const restoreSnapshot = (snapshot) => {
+    const context = window.SillyTavern?.getContext?.() || {};
+    const chatKey = getChatKey(context);
+    const defaults = getDefaultTrackerData();
+    const previous = trackerChatKeyRef.current === chatKey ? trackerRef.current : defaults;
+    trackerChatKeyRef.current = chatKey;
+    const base = { ...defaults };
+    for (const key of ['systemPromptHeader_merged', 'systemPromptFooter_merged',
+      'systemPromptHeader_separated', 'systemPromptFooter_separated', 'globalDefinitions',
+      'addons', 'addCharPrompt', 'addPlayerCharPrompt', 'cyoaPrompt', 'weatherPrompt', 'worldEventsPrompt']) {
+      base[key] = previous?.[key] ?? defaults[key];
+    }
+    let merged = defensiveMerge(base, snapshot);
+    merged = window.RPGBridge?.applyChatLocks?.(merged) || merged;
+    const savedSyncs = window.RPGBridge?.getSTSettingsCharacterSyncs?.(context.chatId)
+      || settingsRef.current.characterSyncs?.[context.chatId];
+    if (context.chatId && Array.isArray(merged.characters)) {
+      merged.characters.forEach((char, index) => {
+        const saved = savedSyncs?.[char.id] ?? savedSyncs?.[index];
+        if (saved) Object.assign(char, saved);
+        else {
+          char.syncedCardAvatar = null;
+          char.syncedCardType = null;
+          char.avatarUrl = settingsRef.current.croppedAvatars?.[char.id] || null;
+        }
+      });
+    }
+    trackerRef.current = merged;
+    if (window.RPGBridge) {
+      window.RPGBridge.trackerRevision = (window.RPGBridge.trackerRevision || 0) + 1;
+      window.RPGBridge.currentTrackerData = merged;
+    }
+    setTrackerData(merged);
+    return merged;
+  };
 
   useEffect(() => {
     window.RPGBridge = {
@@ -323,106 +408,33 @@ export function RPGControlProvider({ children }) {
 
       syncSettings: (stSettings) => {
         if (stSettings) {
-          setSettings((prev) => ({ ...prev, ...stSettings }));
+          settingsRef.current = { ...settingsRef.current, ...stSettings };
+          setSettings(settingsRef.current);
         }
       },
+      prepareChatScope: (chatKey) => {
+        if (trackerChatKeyRef.current === chatKey) return;
+        pendingDataRef.current = null;
+        if (saveTimeoutRef.current) clearTimeout(saveTimeoutRef.current);
+        trackerChatKeyRef.current = chatKey;
+        window.RPGBridge.historyRevision = (window.RPGBridge.historyRevision || 0) + 1;
+        const empty = getDefaultTrackerData();
+        trackerRef.current = empty;
+        window.RPGBridge.currentTrackerData = empty;
+        setTrackerData(empty);
+      },
       syncChatData: (stChatData) => {
-        if (stChatData) {
-          setTrackerData((prev) => {
-            const defaultData = getDefaultTrackerData();
-            const safePrev = prev || defaultData;
-
-            const cleanBase = {
-              ...defaultData,
-              systemPromptHeader_merged: safePrev.systemPromptHeader_merged ?? defaultData.systemPromptHeader_merged,
-              systemPromptFooter_merged: safePrev.systemPromptFooter_merged ?? defaultData.systemPromptFooter_merged,
-              systemPromptHeader_separated: safePrev.systemPromptHeader_separated ?? defaultData.systemPromptHeader_separated,
-              systemPromptFooter_separated: safePrev.systemPromptFooter_separated ?? defaultData.systemPromptFooter_separated,
-              globalDefinitions: safePrev.globalDefinitions ?? defaultData.globalDefinitions,
-              addons: safePrev.addons ?? defaultData.addons,
-              addCharPrompt: safePrev.addCharPrompt ?? defaultData.addCharPrompt,
-              addPlayerCharPrompt: safePrev.addPlayerCharPrompt ?? defaultData.addPlayerCharPrompt,
-              cyoaPrompt: safePrev.cyoaPrompt ?? defaultData.cyoaPrompt,
-              weatherPrompt: safePrev.weatherPrompt ?? defaultData.weatherPrompt,
-              worldEventsPrompt: safePrev.worldEventsPrompt ?? defaultData.worldEventsPrompt
-            };
-            const merged = defensiveMerge(cleanBase, stChatData);
-
-            const context = window.SillyTavern?.getContext?.() || {};
-            const chatId = context.chatId;
-            const savedSyncs = window.RPGBridge?.getSTSettingsCharacterSyncs?.(chatId)
-              || settingsRef.current.characterSyncs?.[chatId];
-
-            if (chatId && Array.isArray(merged.characters)) {
-              merged.characters.forEach((c, index) => {
-                const saved = savedSyncs?.[index];
-                if (saved) {
-                  c.syncedCardAvatar = saved.syncedCardAvatar;
-                  c.syncedCardType = saved.syncedCardType;
-                  c.name = saved.name;
-                  c.avatarUrl = saved.avatarUrl;
-                } else {
-                  c.syncedCardAvatar = null;
-                  c.syncedCardType = null;
-                  const globalCrop = settingsRef.current?.croppedAvatars?.[c.id];
-                  c.avatarUrl = globalCrop || null;
-                }
-              });
-            }
-            return merged;
-          });
-        }
+        if (stChatData) restoreSnapshot(stChatData);
       },
       setChatConnectionStatus: (status) => {
         setIsChatConnected(status);
       },
       triggerHistoryRollback: () => {
-        if (window.RPGBridge && typeof window.RPGBridge.rehydrateFromHistory === 'function') {
-          const recovered = window.RPGBridge.rehydrateFromHistory();
-          setTrackerData((prev) => {
-            const defaultData = getDefaultTrackerData();
-            const safePrev = prev || defaultData;
-
-            const cleanBase = {
-              ...defaultData,
-              systemPromptHeader_merged: safePrev.systemPromptHeader_merged ?? defaultData.systemPromptHeader_merged,
-              systemPromptFooter_merged: safePrev.systemPromptFooter_merged ?? defaultData.systemPromptFooter_merged,
-              systemPromptHeader_separated: safePrev.systemPromptHeader_separated ?? defaultData.systemPromptHeader_separated,
-              systemPromptFooter_separated: safePrev.systemPromptFooter_separated ?? defaultData.systemPromptFooter_separated,
-              globalDefinitions: safePrev.globalDefinitions ?? defaultData.globalDefinitions,
-              addons: safePrev.addons ?? defaultData.addons,
-              addCharPrompt: safePrev.addCharPrompt ?? defaultData.addCharPrompt,
-              addPlayerCharPrompt: safePrev.addPlayerCharPrompt ?? defaultData.addPlayerCharPrompt,
-              cyoaPrompt: safePrev.cyoaPrompt ?? defaultData.cyoaPrompt,
-              weatherPrompt: safePrev.weatherPrompt ?? defaultData.weatherPrompt,
-              worldEventsPrompt: safePrev.worldEventsPrompt ?? defaultData.worldEventsPrompt
-            };
-            const merged = recovered ? defensiveMerge(cleanBase, recovered) : cleanBase;
-
-            const context = window.SillyTavern?.getContext?.() || {};
-            const chatId = context.chatId;
-            const savedSyncs = window.RPGBridge?.getSTSettingsCharacterSyncs?.(chatId)
-              || settingsRef.current.characterSyncs?.[chatId];
-
-            if (chatId && Array.isArray(merged.characters)) {
-              merged.characters.forEach((c, index) => {
-                const saved = savedSyncs?.[index];
-                if (saved) {
-                  c.syncedCardAvatar = saved.syncedCardAvatar;
-                  c.syncedCardType = saved.syncedCardType;
-                  c.name = saved.name;
-                  c.avatarUrl = saved.avatarUrl;
-                } else {
-                  c.syncedCardAvatar = null;
-                  c.syncedCardType = null;
-                  const globalCrop = settingsRef.current?.croppedAvatars?.[c.id];
-                  c.avatarUrl = globalCrop || null;
-                }
-              });
-            }
-            return merged;
-          });
-        }
+        // Commit pending edits to their original swipe before reading the selected one.
+        executeSave();
+        window.RPGBridge.historyRevision = (window.RPGBridge.historyRevision || 0) + 1;
+        const recovered = window.RPGBridge.rehydrateFromHistory?.();
+        restoreSnapshot(recovered || getDefaultTrackerData());
       },
       handleManualUpdate: async () => {
         if (window.RPGBridge && typeof window.RPGBridge.triggerManualUpdate === 'function') {
@@ -434,31 +446,7 @@ export function RPGControlProvider({ children }) {
         }
       },
       resetToDefault: () => {
-        setTrackerData(() => {
-          const defaultData = getDefaultTrackerData();
-          const context = window.SillyTavern?.getContext?.() || {};
-          const chatId = context.chatId;
-          const savedSyncs = window.RPGBridge?.getSTSettingsCharacterSyncs?.(chatId)
-            || settingsRef.current.characterSyncs?.[chatId];
-
-          if (chatId && Array.isArray(defaultData.characters)) {
-            defaultData.characters.forEach((c, index) => {
-              const saved = savedSyncs?.[index];
-              if (saved) {
-                c.syncedCardAvatar = saved.syncedCardAvatar;
-                c.syncedCardType = saved.syncedCardType;
-                c.name = saved.name;
-                c.avatarUrl = saved.avatarUrl;
-              } else {
-                c.syncedCardAvatar = null;
-                c.syncedCardType = null;
-                const globalCrop = settingsRef.current?.croppedAvatars?.[c.id];
-                c.avatarUrl = globalCrop || null;
-              }
-            });
-          }
-          return defaultData;
-        });
+        restoreSnapshot(getDefaultTrackerData());
       },
       openSnapshotModal: (mesId, historicalData, existingPayload = null) => {
         setSnapshotModalData({ isOpen: true, mesId, historicalData, existingPayload });

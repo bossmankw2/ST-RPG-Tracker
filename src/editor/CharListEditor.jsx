@@ -1,534 +1,310 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useRPG } from '../core/RPGControl';
 import styles from './CharListEditor.module.css';
 import { getDefaultCharacters } from '../core/PromptSchema';
-import { PresetSaveIcon, PresetLoadIcon, GearIcon } from '../Icons';
-import { SortButtons } from '../utils';
+import { GearIcon } from '../Icons';
+import SortableList from './SortableList';
+import StatusEditor from './StatusEditor';
+import {
+  createPresetId, createPresetStorage, getPresetLocation, isPackagedPreset, validatePresetCharacters,
+} from '../core/PresetStorage';
 
-export default function CharListEditor({ onClose, onOpenStatusEditor }) {
-  const { trackerData, updateTrackerData, settings, updateSettings } = useRPG();
+const copy = value => JSON.parse(JSON.stringify(value));
+
+export default function CharListEditor({ onClose }) {
+  const { trackerData, updateTrackerData, settings } = useRPG();
   const [localCharacters, setLocalCharacters] = useState(() =>
-    (trackerData.characters && trackerData.characters.length > 0)
-      ? JSON.parse(JSON.stringify(trackerData.characters))
-      : getDefaultCharacters()
-  );
-
-  const characters = localCharacters;
+    trackerData.characters?.length ? copy(trackerData.characters) : getDefaultCharacters());
   const [showDropdown, setShowDropdown] = useState(false);
   const [packagedPresets, setPackagedPresets] = useState([]);
-
+  const [library, setLibrary] = useState(() => copy(Array.isArray(settings.presets) ? settings.presets : []));
   const [currentPresetId, setCurrentPresetId] = useState(trackerData.currentPresetId || '');
   const [currentPresetName, setCurrentPresetName] = useState(trackerData.currentPresetName || 'New Preset');
-
-  // Load packaged server preset configurations
-  useEffect(() => {
-    const loadPackagedPresets = async () => {
-      try {
-        const folderPath = window.RPGBridge?.extensionFolderPath || 'scripts/extensions/third-party/rpg-tracker-for-sillytavern';
-        const response = await fetch(`/${folderPath}/presets.json`);
-        if (response.ok) {
-          const data = await response.json();
-          if (Array.isArray(data)) {
-            setPackagedPresets(data.map(p => ({ ...p, type: 'file' })));
-          }
-        }
-      } catch (err) {
-        console.warn("[RPG Tracker] Default packaged presets config not found.");
-      }
-    };
-    loadPackagedPresets();
+  const [editingCharacterId, setEditingCharacterId] = useState(null);
+  const [busy, setBusy] = useState(true);
+  const [notice, setNotice] = useState({ kind: 'info', text: 'Loading presets from your SillyTavern account…' });
+  const [serverReady, setServerReady] = useState(false);
+  const inputRef = useRef(null);
+  const initializeRef = useRef(null);
+  const mountedRef = useRef(true);
+  const sourceRef = useRef('account');
+  const browserStorage = useMemo(() => {
+    try { return window.localStorage; } catch { return null; }
   }, []);
+  const presetStorage = useMemo(() => createPresetStorage({
+    bridge: () => window.RPGBridge, storage: browserStorage,
+  }), [browserStorage]);
+  const characters = localCharacters;
 
-  const safeSaveToLocalStorage = (id, data) => {
-    try {
-      const cleanData = JSON.parse(JSON.stringify(data));
-      if (Array.isArray(cleanData)) {
-        cleanData.forEach(char => {
-          if (typeof char.avatarUrl === 'string' && char.avatarUrl.startsWith('data:')) {
-            delete char.avatarUrl;
-          }
-        });
-      }
-      localStorage.setItem(`rpg_tracker_preset_${id}`, JSON.stringify(cleanData));
-      return true;
-    } catch (e) {
-      alert("Browser local storage is full! Please delete old presets or export them as files.");
-      return false;
+  const showRefreshResult = result => {
+    setLibrary(result.presets);
+    setServerReady(true);
+    if (result.migrationError) {
+      setNotice({ kind: 'error', text: `Could not move browser presets to the server: ${result.migrationError} Your browser copies are unchanged.` });
+    } else if (result.issues.length) {
+      const names = result.issues.map(issue => issue.name).join(', ');
+      setNotice({
+        kind: 'info',
+        text: `${result.migratedCount ? `Moved ${result.migratedCount} preset(s) to the server. ` : ''}Presets needing their original browser or an exported backup: ${names}.`,
+      });
+    } else {
+      setNotice({
+        kind: 'success',
+        text: result.migratedCount
+          ? `Moved ${result.migratedCount} preset(s) to your SillyTavern account. Browser copies were kept as backups.`
+          : 'Presets saved on this server are available on your other devices with the same account.',
+      });
     }
   };
 
-  const getNextAvailableId = (existingIds) => {
-    const usedNumbers = existingIds
-      .map(id => {
-        const match = id?.match(/^RT(\d+)/i);
-        return match ? parseInt(match[1], 10) : null;
+  useEffect(() => {
+    mountedRef.current = true;
+    let active = true;
+    if (!initializeRef.current) initializeRef.current = presetStorage.refresh();
+    initializeRef.current.then(result => {
+      if (active) showRefreshResult(result);
+    }).catch(error => {
+      if (active) setNotice({ kind: 'error', text: error.message });
+    }).finally(() => {
+      if (active) setBusy(false);
+    });
+    const controller = new AbortController();
+    const folderPath = window.RPGBridge?.extensionFolderPath || 'scripts/extensions/third-party/rpg-tracker-for-sillytavern';
+    fetch(`/${folderPath}/presets.json`, { signal: controller.signal })
+      .then(response => response.ok ? response.json() : [])
+      .then(data => {
+        if (active && Array.isArray(data)) setPackagedPresets(data.filter(preset => preset?.id && preset?.name).map(preset => ({ ...preset, type: 'file' })));
       })
-      .filter(num => num !== null && !isNaN(num));
+      .catch(error => {
+        if (error.name !== 'AbortError') console.warn('[RPG Tracker] Packaged presets could not be loaded.');
+      });
+    return () => {
+      active = false;
+      mountedRef.current = false;
+      controller.abort();
+    };
+  }, [presetStorage]);
 
-    const numberSet = new Set(usedNumbers);
-    let candidate = 1;
-    while (numberSet.has(candidate)) {
-      candidate++;
+  const runOperation = async action => {
+    if (busy) return;
+    setBusy(true);
+    try {
+      await action();
+    } catch (error) {
+      if (mountedRef.current) setNotice({ kind: 'error', text: error.message || 'The operation failed. Your changes have not been confirmed saved.' });
+    } finally {
+      if (mountedRef.current) setBusy(false);
     }
-    return `RT${candidate}`;
   };
 
-  const handleUpdateCharacters = (newChars) => {
-    setLocalCharacters(newChars);
-  };
-
-  const handleMove = (index, direction) => {
-    const nextIdx = direction === 'up' ? index - 1 : index + 1;
-    if (nextIdx < 0 || nextIdx >= characters.length) return;
-
-    const newChars = [...characters];
-    const temp = newChars[index];
-    newChars[index] = newChars[nextIdx];
-    newChars[nextIdx] = temp;
-
-    handleUpdateCharacters(newChars);
-  };
+  const refreshPresets = () => runOperation(async () => showRefreshResult(await presetStorage.refresh()));
 
   const handleNameChange = (id, newName) => {
-    const cleanIdString = (name, prefix) => {
-      if (!name) return `${prefix}_${Date.now()}`;
-      const clean = name.replace(/[^\p{L}\p{N}_]/gu, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '');
-      return clean ? `${prefix}_${clean}` : `${prefix}_${Date.now()}`;
-    };
-
-    const cleanId = newName === 'New' && id === 'char_user' ? 'char_user' : cleanIdString(newName, 'char');
-
-    const newChars = characters.map(c => {
-      if (c.id === id) {
-        return { ...c, id: cleanId, name: newName };
-      }
-      return c;
-    });
-    handleUpdateCharacters(newChars);
+    // IDs identify locks, card bindings and draggable rows; renaming must not change them.
+    setLocalCharacters(previous => previous.map(character => character.id === id ? { ...character, name: newName } : character));
   };
 
-  const handleDelete = (id) => {
+  const handleDelete = id => {
     if (characters.length <= 1) {
-      alert("At least one character must remain in the list.");
+      setNotice({ kind: 'error', text: 'At least one character must remain in the list.' });
       return;
     }
-    if (window.confirm("Are you sure you want to delete this character?")) {
-      const newChars = characters.filter(c => c.id !== id);
-      handleUpdateCharacters(newChars);
+    if (window.confirm('Remove this character from the draft? It will take effect when you apply to chat.')) {
+      setLocalCharacters(previous => previous.filter(character => character.id !== id));
     }
   };
 
   const handleAddCharacter = () => {
-    const existingIds = characters.map(c => c.id);
-    const newId = getNextAvailableId(existingIds);
-    const newChar = JSON.parse(JSON.stringify(getDefaultCharacters()[0]));
-    newChar.id = newId;
-    newChar.name = "New Character";
+    const newChar = copy(getDefaultCharacters()[0]);
+    newChar.id = `char_${createPresetId()}`;
+    const names = new Set(characters.map(character => character.name));
+    let name = 'New Character';
+    for (let count = 2; names.has(name); count++) name = `New Character ${count}`;
+    newChar.name = name;
     newChar.activePlayer = false;
     newChar.activeInjection = true;
-
-    let newChars;
-    if (characters.length === 1 && characters[0].id === 'char_user' && characters[0].name === 'New') {
-      newChars = [newChar];
-    } else {
-      newChars = [...characters, newChar];
-    }
-    handleUpdateCharacters(newChars);
+    setLocalCharacters(previous => previous.length === 1 && previous[0].id === 'char_user' && previous[0].name === 'New'
+      ? [newChar] : [...previous, newChar]);
   };
 
-  const handleSavePreset = () => {
-    if (!currentPresetName.trim()) {
-      alert("Please enter a preset name.");
-      return;
-    }
-
-    const currentPresets = settings.presets || [];
-    let duplicate = null;
-
-    if (currentPresetId) {
-      duplicate = currentPresets.find(p => p.id === currentPresetId);
-    }
-    if (!duplicate) {
-      duplicate = currentPresets.find(p => p.name === currentPresetName);
-    }
-
-    if (duplicate) {
-      if (!window.confirm(`Preset "${currentPresetName}" already exists. Overwrite?`)) {
-        return;
-      }
-    }
-
-    let newPresets;
-    let savedId = currentPresetId;
-    const presetData = JSON.parse(JSON.stringify(characters));
-
-    if (duplicate) {
-      savedId = duplicate.id;
-      if (!safeSaveToLocalStorage(savedId, presetData)) return;
-
-      newPresets = currentPresets.map(p =>
-        p.id === duplicate.id ? { id: p.id, name: currentPresetName, type: 'cache' } : p
-      );
-    } else {
-      savedId = getNextAvailableId(currentPresets.map(p => p.id));
-      if (!safeSaveToLocalStorage(savedId, presetData)) return;
-
-      newPresets = [...currentPresets, { id: savedId, name: currentPresetName, type: 'cache' }];
-    }
-
-    updateSettings({ presets: newPresets });
-
-    setCurrentPresetId(savedId);
-    updateTrackerData({
-      ...trackerData,
-      currentPresetId: savedId,
-      currentPresetName: currentPresetName,
-      characters: characters
+  const handleSavePreset = () => runOperation(async () => {
+    const name = currentPresetName.trim();
+    if (!name) throw new Error('Enter a preset name before saving.');
+    const duplicate = (sourceRef.current === 'account' && library.find(preset => preset.id === currentPresetId))
+      || library.find(preset => preset.name?.trim().toLocaleLowerCase() === name.toLocaleLowerCase());
+    if (duplicate && !window.confirm(`Overwrite preset "${duplicate.name}" on this SillyTavern account?`)) return;
+    const result = await presetStorage.save({
+      id: duplicate?.id, name, data: characters, expectedPreset: duplicate || null,
     });
+    setLibrary(result.presets);
+    setCurrentPresetId(result.preset.id);
+    setCurrentPresetName(result.preset.name);
+    sourceRef.current = 'account';
+    setNotice({ kind: 'success', text: `Preset "${result.preset.name}" saved on this server. The active chat has not been changed.` });
+  });
 
-    alert(`Preset "${currentPresetName}" saved!`);
-  };
-
-  const handleLoadPreset = async (target) => {
-    let preset = typeof target === 'object' ? target : null;
-
-    const allPresets = [
-      ...packagedPresets,
-      ...(settings.presets || []).map(p => ({
-        ...p,
-        type: p.type || (p.file ? 'file' : (p.data ? 'legacy' : 'cache'))
-      }))
-    ];
-
-    if (!preset) {
-      preset = allPresets.find(p => p.id === target);
+  const handleLoadPreset = preset => runOperation(async () => {
+    if (!window.confirm(`Load "${preset.name}" into this editor? This replaces the draft. Apply to Chat when you are ready.`)) return;
+    let loaded;
+    if (preset.packaged || isPackagedPreset(preset)) {
+      const folderPath = window.RPGBridge?.extensionFolderPath || 'scripts/extensions/third-party/rpg-tracker-for-sillytavern';
+      const filename = preset.file || `${preset.id}.json`;
+      if (!/^[^/\\]+\.json$/i.test(filename) || filename.includes('..')) throw new Error('This packaged preset has an invalid filename.');
+      const response = await fetch(`/${folderPath}/presets/${encodeURIComponent(filename)}`);
+      if (!response.ok) throw new Error(`Could not load packaged preset "${preset.name}".`);
+      loaded = { preset, data: validatePresetCharacters(await response.json()) };
+      sourceRef.current = 'packaged';
+    } else {
+      loaded = await presetStorage.load(preset.id);
+      setLibrary(loaded.presets);
+      sourceRef.current = 'account';
     }
+    setCurrentPresetId(loaded.preset.id);
+    setCurrentPresetName(loaded.preset.name);
+    setLocalCharacters(loaded.data);
+    setShowDropdown(false);
+    setNotice({ kind: 'info', text: `Loaded "${loaded.preset.name}" into the draft. Apply to Chat to use it.` });
+  });
 
-    if (!preset) {
-      console.warn("[RPG Tracker] Target preset not found.");
-      return;
+  const handleDeletePreset = preset => runOperation(async () => {
+    if (!window.confirm(`Delete preset "${preset.name}" from this SillyTavern account? Your current draft and chat are kept.`)) return;
+    setLibrary(await presetStorage.remove(preset.id, library.find(item => item.id === preset.id)));
+    if (currentPresetId === preset.id) {
+      setCurrentPresetId('');
+      sourceRef.current = 'account';
     }
-
-    if (window.confirm(`Are you sure you want to load preset "${preset.name}"? This will overwrite your current characters.`)) {
-      try {
-        let loadedChars = null;
-
-        if (preset.data) {
-          loadedChars = JSON.parse(JSON.stringify(preset.data));
-          if (!safeSaveToLocalStorage(preset.id, loadedChars)) return;
-
-          const currentPresets = settings.presets || [];
-          const updatedPresets = currentPresets.map(p => {
-            if (p.id === preset.id) {
-              const { data, ...rest } = p;
-              return { ...rest, type: 'cache' };
-            }
-            return p;
-          });
-          updateSettings({ presets: updatedPresets });
-
-        } else if (preset.type === 'cache' || preset.type === 'local' || preset.type === 'legacy') {
-          const localDataStr = localStorage.getItem(`rpg_tracker_preset_${preset.id}`);
-          if (localDataStr) {
-            loadedChars = JSON.parse(localDataStr);
-          } else {
-            alert("Preset data not found in browser cache.");
-            return;
-          }
-        } else if (preset.type === 'file' || preset.type === 'server') {
-          const fileName = preset.file || `${preset.id}.json`;
-          const folderPath = window.RPGBridge?.extensionFolderPath || 'scripts/extensions/third-party/rpg-tracker-for-sillytavern';
-          const response = await fetch(`/${folderPath}/presets/${fileName}`);
-          if (response.ok) {
-            loadedChars = await response.json();
-          } else {
-            alert(`Failed to load preset file from server: ${fileName}`);
-            return;
-          }
-        }
-
-        if (Array.isArray(loadedChars)) {
-          setCurrentPresetId(preset.id);
-          setCurrentPresetName(preset.name);
-          setLocalCharacters(loadedChars);
-          setShowDropdown(false);
-        } else {
-          alert("Invalid preset structure.");
-        }
-      } catch (err) {
-        console.error("[RPG Tracker] Preset load error:", err);
-        alert("An error occurred while loading this preset.");
-      }
-    }
-  };
-
-  const handleDeletePresetById = (presetId, presetName, e) => {
-    if (e) {
-      e.stopPropagation();
-    }
-
-    if (window.confirm(`Are you sure you want to delete preset "${presetName}"?`)) {
-      localStorage.removeItem(`rpg_tracker_preset_${presetId}`);
-
-      const currentPresets = settings.presets || [];
-      const newPresets = currentPresets.filter(p => p.id !== presetId);
-      updateSettings({ presets: newPresets });
-
-      if (currentPresetId === presetId) {
-        if (newPresets.length === 0) {
-          const defaultChars = getDefaultCharacters();
-          setCurrentPresetId('');
-          setCurrentPresetName('New Preset');
-          setLocalCharacters(defaultChars);
-        } else {
-          const fallbackPreset = newPresets[0];
-          handleLoadPreset(fallbackPreset);
-        }
-      }
-    }
-  };
+    setNotice({ kind: 'success', text: `Preset "${preset.name}" deleted from the server.` });
+  });
 
   const handleResetToDefault = () => {
-    if (window.confirm("Reset character list to default?")) {
+    if (window.confirm('Reset the draft character list? Apply to Chat to replace the current characters, including their locks.')) {
       setLocalCharacters(getDefaultCharacters());
       setCurrentPresetId('');
       setCurrentPresetName('New Preset');
+      sourceRef.current = 'account';
+      setNotice({ kind: 'info', text: 'Draft reset. The current chat is unchanged until you apply.' });
     }
   };
 
-  const handleImportLocalFile = (e) => {
-    const file = e.target.files?.[0];
+  const handleImportLocalFile = event => {
+    const file = event.target.files?.[0];
+    event.target.value = '';
     if (!file) return;
-
-    const reader = new FileReader();
-    reader.onload = (event) => {
-      try {
-        const importedData = JSON.parse(event.target.result);
-        if (Array.isArray(importedData)) {
-          const importedName = file.name.replace(/\.[^/.]+$/, "");
-          const currentPresets = settings.presets || [];
-
-          const newPresetId = getNextAvailableId(currentPresets.map(p => p.id));
-          const newPresetItem = {
-            id: newPresetId,
-            name: importedName,
-            type: 'cache'
-          };
-
-          if (!safeSaveToLocalStorage(newPresetId, importedData)) return;
-
-          const updatedPresets = [...currentPresets, newPresetItem];
-          updateSettings({ presets: updatedPresets });
-
-          setLocalCharacters(importedData);
-          setCurrentPresetName(importedName);
-          setCurrentPresetId(newPresetId);
-
-          alert(`Preset "${importedName}" imported and saved to browser cache.`);
-        } else {
-          alert("Invalid character list structure.");
-        }
-      } catch (err) {
-        alert("Failed to parse JSON file.");
-      }
-      e.target.value = '';
-    };
-    reader.readAsText(file);
+    runOperation(async () => {
+      let data;
+      try { data = JSON.parse(await file.text()); } catch { throw new Error('This file is not valid JSON.'); }
+      const characters = validatePresetCharacters(data);
+      const name = file.name.replace(/\.[^/.]+$/, '').trim() || 'Imported Preset';
+      const duplicate = library.find(preset => preset.name?.trim().toLocaleLowerCase() === name.toLocaleLowerCase());
+      if (duplicate && !window.confirm(`Importing this file will overwrite preset "${duplicate.name}" on the server. Continue?`)) return;
+      const result = await presetStorage.save({
+        id: duplicate?.id, name, data: characters, expectedPreset: duplicate || null,
+      });
+      setLibrary(result.presets);
+      setLocalCharacters(characters);
+      setCurrentPresetId(result.preset.id);
+      setCurrentPresetName(result.preset.name);
+      sourceRef.current = 'account';
+      setNotice({ kind: 'success', text: `Imported "${result.preset.name}" and saved it on the server. Apply to Chat to use it here.` });
+    });
   };
 
   const handleExportLocalFile = () => {
-    const dataStr = "data:text/json;charset=utf-8," + encodeURIComponent(JSON.stringify(localCharacters, null, 2));
-    const downloadAnchor = document.createElement('a');
-    downloadAnchor.setAttribute("href", dataStr);
-
-    const fileName = `${currentPresetName.trim().replace(/[/\\?%*:|"<>. ]/g, '_') || 'rpg_preset'}.json`;
-    downloadAnchor.setAttribute("download", fileName);
-    document.body.appendChild(downloadAnchor);
-
-    downloadAnchor.click();
-    downloadAnchor.remove();
+    const blob = new Blob([JSON.stringify(localCharacters, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const anchor = document.createElement('a');
+    anchor.href = url;
+    anchor.download = `${currentPresetName.trim().replace(/[/\\?%*:|"<>. ]/g, '_') || 'rpg_preset'}.json`;
+    document.body.appendChild(anchor);
+    anchor.click();
+    anchor.remove();
+    setTimeout(() => URL.revokeObjectURL(url), 1000);
   };
 
-  const handleGlobalSave = () => {
-    const names = characters.map(c => c.name.trim());
-    if (names.some(name => !name)) {
-      alert("Character name cannot be empty.");
-      return;
+  const handleApply = () => {
+    try {
+      validatePresetCharacters(characters);
+      updateTrackerData({ ...trackerData, currentPresetId, currentPresetName, characters: copy(characters) });
+      onClose();
+    } catch (error) {
+      setNotice({ kind: 'error', text: error.message });
     }
-
-    const hasDuplicates = names.some((name, index) => names.indexOf(name) !== index);
-    if (hasDuplicates) {
-      const duplicateName = names.find((name, index) => names.indexOf(name) !== index);
-      alert(`The character name "${duplicateName}" already exists. Duplicate names are not allowed.`);
-      return;
-    }
-
-    updateTrackerData({
-      ...trackerData,
-      currentPresetId,
-      currentPresetName,
-      characters: characters
-    });
-
-    alert("Character list applied to active session!");
-    onClose();
   };
 
   const totalPresets = [
-    ...packagedPresets,
-    ...(settings.presets || []).map(p => ({
-      ...p,
-      type: p.type || (p.file ? 'file' : (p.data ? 'legacy' : 'cache'))
-    }))
+    ...packagedPresets.map(preset => ({ ...preset, packaged: true })),
+    ...library.filter(preset => preset?.id && preset?.name).map(preset => ({ ...preset, packaged: false })),
   ];
+
+  if (editingCharacterId) {
+    return <StatusEditor charId={editingCharacterId} characters={localCharacters} onUpdateCharacters={setLocalCharacters} onClose={() => setEditingCharacterId(null)} />;
+  }
 
   return (
     <div className="rpg-modal-overlay">
-      <div className="rpg-modal-container" onClick={e => e.stopPropagation()}>
+      <div className="rpg-modal-container rpg-editor-modal" role="dialog" aria-modal="true" aria-label="Character List" onClick={event => event.stopPropagation()} aria-busy={busy}>
         <header className="rpg-modal-header">
           <h4>Character List</h4>
-          <button type="button" className="rpg-modal-close-btn" onClick={onClose}>×</button>
+          <button type="button" className="rpg-modal-close-btn" aria-label="Cancel character list changes" disabled={busy} onClick={onClose}>×</button>
         </header>
 
         <div className={styles.presetBar}>
-          <div className={styles.presetDropdownContainer} style={{ flex: 1, position: 'relative' }}>
-            <div className={styles.presetInputWrapper}>
-              <input
-                type="text"
-                className={styles.presetNameInput}
-                value={currentPresetName}
-                onChange={(e) => setCurrentPresetName(e.target.value)}
-                placeholder="Preset Name"
-              />
-              <span className={styles.charIdBadge} style={{ margin: 0 }}>
-                {currentPresetId || 'NEW'}
-              </span>
-            </div>
-            {showDropdown && (
-              <div className={styles.presetDropdown} style={{ left: 0, right: 0, width: '100%', top: '100%', marginTop: '4px' }}>
-                {totalPresets.length === 0 ? (
-                  <div className={styles.presetDropdownEmpty}>No presets saved.</div>
-                ) : (
-                  totalPresets.map(preset => {
-                    const presetType = preset.type === 'file' || preset.type === 'server' ? 'File' : 'Cache';
-                    const isDeletable = preset.type !== 'file' && preset.type !== 'server';
-                    return (
-                      <div key={preset.id} className={styles.presetDropdownItem}>
-                        <div className={styles.presetDropdownItemLoadArea} onClick={() => handleLoadPreset(preset)}>
-                          <span className={styles.presetItemName}>{preset.name}</span>
-                          <div className={styles.presetItemBadges}>
-                            <span className={styles.charIdBadge} style={{ transform: 'scale(0.85)', margin: 0, flexShrink: 0 }}>
-                              {presetType}
-                            </span>
-                            <span className={styles.charIdBadge} style={{ transform: 'scale(0.85)', margin: 0, flexShrink: 0, opacity: 0.6 }}>
-                              {preset.id}
-                            </span>
-                          </div>
-                        </div>
-                        {isDeletable && (
-                          <button
-                            type="button"
-                            className="rpg-btn-del-text"
-                            title="Delete Preset"
-                            onClick={(e) => handleDeletePresetById(preset.id, preset.name, e)}
-                          >
-                            ×
-                          </button>
-                        )}
-                      </div>
-                    );
-                  })
-                )}
-              </div>
-            )}
-          </div>
-          <button
-            type="button"
-            className="rpg-btn-icon"
-            title="Save Preset"
-            onClick={handleSavePreset}
-          >
-            <PresetSaveIcon />
-          </button>
-          <button
-            type="button"
-            className="rpg-btn-icon"
-            title="Load Preset"
-            onClick={() => setShowDropdown(!showDropdown)}
-          >
-            <PresetLoadIcon />
-          </button>
+          <label className={styles.presetInputContainer}>
+            <span className={styles.fieldLabel}>Preset name</span>
+            <input type="text" className={styles.presetNameInput} value={currentPresetName} disabled={busy} onChange={event => setCurrentPresetName(event.target.value)} placeholder="Name this preset" />
+          </label>
+          <button type="button" className="rpg-modal-btn" disabled={busy || !serverReady} onClick={handleSavePreset}>Save Preset</button>
+          <button type="button" className="rpg-modal-btn" disabled={busy} aria-expanded={showDropdown} onClick={() => setShowDropdown(previous => !previous)}>Load Preset</button>
         </div>
 
-        <div className="rpg-modal-body">
-          {characters.map((char, index) => (
-            <div key={char.id} className={styles.charItem}>
-              <SortButtons
-                onMoveUp={() => handleMove(index, 'up')}
-                onMoveDown={() => handleMove(index, 'down')}
-                isFirst={index === 0}
-                isLast={index === characters.length - 1}
-              />
-              <input
-                type="text"
-                className={styles.nameInput}
-                value={char.name}
-                onChange={(e) => handleNameChange(char.id, e.target.value)}
-              />
-              <div className={styles.actions}>
-                <button
-                  type="button"
-                  className="rpg-btn-icon"
-                  title="Edit Character"
-                  onClick={() => onOpenStatusEditor(char.id)}
-                >
-                  <GearIcon />
+        <div className={`${styles.notice} ${notice.kind === 'error' ? styles.noticeError : ''}`} role={notice.kind === 'error' ? 'alert' : 'status'} aria-live="polite">
+          <span>{busy ? 'Working… ' : ''}{notice.text}</span>
+          <button type="button" disabled={busy} className={styles.refreshButton} onClick={refreshPresets}>Refresh presets</button>
+        </div>
+
+        {showDropdown && (
+          <div className={styles.presetDropdown} aria-label="Saved presets">
+            {totalPresets.length === 0 ? <div className={styles.presetDropdownEmpty}>No presets saved yet.</div> : totalPresets.map(preset => (
+              <div key={`${preset.packaged ? 'packaged' : 'account'}:${preset.id}`} className={styles.presetDropdownItem}>
+                <button type="button" className={styles.presetDropdownItemLoadArea} disabled={busy} onClick={() => handleLoadPreset(preset)}>
+                  <span className={styles.presetItemName}>{preset.name}</span>
+                  <span className={styles.charIdBadge}>{getPresetLocation(preset, browserStorage)}</span>
                 </button>
-                <button
-                  type="button"
-                  className="rpg-btn-del"
-                  title="Delete Character"
-                  onClick={() => handleDelete(char.id)}
-                >
-                  ×
-                </button>
+                {!preset.packaged && !isPackagedPreset(preset) && (
+                  <button type="button" className="rpg-btn-del-text" disabled={busy} title={`Delete preset ${preset.name}`} aria-label={`Delete preset ${preset.name}`} onClick={() => handleDeletePreset(preset)}>×</button>
+                )}
               </div>
-            </div>
-          ))}
-          <button type="button" className="rpg-btn-dashed" onClick={handleAddCharacter}>
-            + Add Character
-          </button>
+            ))}
+          </div>
+        )}
+
+        <div className="rpg-modal-body">
+          <p className={styles.listHint}>Drag a handle to reorder. Changes apply to this chat when you choose Apply to Chat.</p>
+          <SortableList items={characters} getId={character => character.id} getLabel={character => character.name} onReorder={setLocalCharacters} label="Characters" disabled={busy}>
+            {(character, { itemProps, dragHandle }) => (
+              <div {...itemProps} className={styles.charItem}>
+                {dragHandle}
+                <input type="text" className={styles.nameInput} value={character.name} disabled={busy} aria-label={`Character name: ${character.name}`} onChange={event => handleNameChange(character.id, event.target.value)} />
+                <div className={styles.actions}>
+                  <button type="button" className="rpg-btn-icon" disabled={busy} title="Edit Character" aria-label={`Edit ${character.name}`} onClick={() => setEditingCharacterId(character.id)}><GearIcon /></button>
+                  <button type="button" className="rpg-btn-del" disabled={busy} title="Delete Character" aria-label={`Delete ${character.name}`} onClick={() => handleDelete(character.id)}>×</button>
+                </div>
+              </div>
+            )}
+          </SortableList>
+          <button type="button" className="rpg-btn-dashed" disabled={busy} onClick={handleAddCharacter}>+ Add Character</button>
         </div>
 
         <footer className="rpg-modal-footer">
           <div className="rpg-modal-footer-left">
-            <button type="button" className="rpg-modal-btn reset" onClick={handleResetToDefault}>
-              Reset
-            </button>
+            <button type="button" className="rpg-modal-btn reset" disabled={busy} onClick={handleResetToDefault}>Reset</button>
           </div>
-
-          <input
-            type="file"
-            id="hidden-preset-file-picker"
-            accept=".json"
-            style={{ display: 'none' }}
-            onChange={handleImportLocalFile}
-          />
-
+          <input ref={inputRef} type="file" accept=".json,application/json" style={{ display: 'none' }} onChange={handleImportLocalFile} />
           <div className="rpg-modal-footer-right">
-            <button type="button" className="rpg-modal-btn" onClick={handleExportLocalFile}>
-              Export
-            </button>
-            <button
-              type="button"
-              className="rpg-modal-btn"
-              onClick={() => document.getElementById('hidden-preset-file-picker').click()}
-            >
-              Import
-            </button>
-            <button type="button" className="rpg-modal-btn save" onClick={handleGlobalSave}>
-              Save
-            </button>
+            <button type="button" className="rpg-modal-btn" disabled={busy} onClick={handleExportLocalFile}>Export</button>
+            <button type="button" className="rpg-modal-btn" disabled={busy || !serverReady} onClick={() => inputRef.current?.click()}>Import</button>
+            <button type="button" className="rpg-modal-btn" disabled={busy} onClick={onClose}>Cancel</button>
+            <button type="button" className="rpg-modal-btn save" disabled={busy} onClick={handleApply}>Apply to Chat</button>
           </div>
         </footer>
       </div>

@@ -6,10 +6,14 @@ import { DEFAULT_PROMPT_HEADER_MERGED, DEFAULT_PROMPT_FOOTER_MERGED, DEFAULT_REA
 import { parseResponse } from "./ResponseParser.js";
 import { setDeltaLog } from "../tracker/DeltaLogRenderer.js";
 import { safeUpdateMessageBlock } from "./ExtensionBridge.js";
+import { getChatKey } from './ChatLockStore.js';
+import { getAppliedDelta } from './AppliedDelta.js';
 import { triggerObserverNow } from "./ExtensionObserver.js";
 
 export function registerLifecycleEvents(extensionName) {
+    let generationChatKey = null;
     eventSource.on(event_types.GENERATION_STARTED, () => {
+        generationChatKey = getChatKey(getContext());
         if (window.RPGBridge && typeof window.RPGBridge.flushSave === 'function') {
             window.RPGBridge.flushSave();
         }
@@ -70,6 +74,7 @@ export function registerLifecycleEvents(extensionName) {
         if (!extension_settings[extensionName]?.enabled) return;
 
         const context = getContext();
+        if (generationChatKey !== getChatKey(context)) return;
         if (context && context.chat && context.chat.length > 0) {
             const lastMessage = context.chat[context.chat.length - 1];
 
@@ -85,11 +90,13 @@ export function registerLifecycleEvents(extensionName) {
                     lastMessage.mes = cleanedText;
 
                     const normPatch = extractNormalizedPatch(patch);
-                    setDeltaLog(lastMessage, normPatch);
-
-                    const trackerData = window.RPGBridge?.currentTrackerData || (await rehydrateFromHistoryAsync(context.chat));
+                    const recovered = window.RPGBridge?.currentTrackerData || (await rehydrateFromHistoryAsync(context.chat));
+                    if (generationChatKey !== getChatKey(getContext())) return;
+                    const trackerData = window.RPGBridge?.applyChatLocks?.(recovered) || recovered;
                     if (trackerData && Array.isArray(trackerData.characters)) {
-                        const updatedData = applyLLMPatch(trackerData, normPatch);
+                        const patched = applyLLMPatch(trackerData, normPatch);
+                        const updatedData = window.RPGBridge?.applyChatLocks?.(patched) || patched;
+                        setDeltaLog(lastMessage, getAppliedDelta(trackerData, updatedData, normPatch));
                         if (window.RPGBridge && typeof window.RPGBridge.syncChatData === 'function') {
                             window.RPGBridge.syncChatData(updatedData);
                         }

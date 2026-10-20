@@ -1,0 +1,86 @@
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+}
+
+.list > [data-sortable-id] {
+  position: relative;
+}
+
+.list > [data-dragging] {
+  outline: 2px solid var(--rpg-highlight, #d9a54c);
+  outline-offset: -2px;
+  opacity: 0.65;
+}
+
+.list > [data-drop-position="before"] {
+  box-shadow: 0 -3px 0 var(--rpg-highlight, #d9a54c);
+}
+
+.list > [data-drop-position="after"] {
+  box-shadow: 0 3px 0 var(--rpg-highlight, #d9a54c);
+}
+
+.handle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 30px;
+  width: 30px;
+  min-height: 34px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  background: transparent;
+  color: var(--rpg-text);
+  font-size: 24px;
+  cursor: grab;
+  touch-action: none;
+  user-select: none;
+}
+
+.handle:hover,
+.handle:focus-visible {
+  color: var(--rpg-highlight, #d9a54c);
+  border-color: currentColor;
+  outline: none;
+}
+
+.handle:active,
+.handle[aria-pressed="true"] {
+  cursor: grabbing;
+}
+
+.handle:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.preview {
+  position: fixed;
+  z-index: 10000;
+  max-width: 165px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 8px 12px;
+  background: var(--rpg-bg, #222);
+  color: var(--rpg-text, #fff);
+  border: 1px solid var(--rpg-highlight, #d9a54c);
+  border-radius: 5px;
+  pointer-events: none;
+  box-shadow: 0 4px 14px #0008;
+}
+
+.srOnly {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

@@ -116,11 +116,9 @@ export function sanitizeTrackerData(trackerData) {
             char = migrateCharacterSchema(char);
             data.characters[idx] = char;
 
-            if (char.name && char.name.trim() !== '') {
-                const targetCharId = char.id === 'char_user' && char.name === 'New' ? 'char_user' : cleanIdString(char.name, 'char');
-                if (char.id !== targetCharId) {
-                    char.id = targetCharId;
-                }
+            // Names are editable; lock rules and UI references use stable IDs.
+            if (!char.id) {
+                char.id = char.name === 'New' ? 'char_user' : cleanIdString(char.name, 'char');
             }
 
             if (char.statsSchema && !char.statusSchema) {
@@ -140,14 +138,8 @@ export function sanitizeTrackerData(trackerData) {
                     const oldId = schema.id;
                     if (schema.name && schema.name.trim() !== '') {
                         const cleanId = schema.name.replace(/[^\p{L}\p{N}_]/gu, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '');
-                        const newId = cleanId || generateUniqueId('status');
-
-                        if (!oldId || oldId !== newId) {
-                            schema.id = newId;
-                            if (oldId) {
-                                schemaIdMapping[oldId] = newId;
-                            }
-                        }
+                        const newId = oldId || cleanId || generateUniqueId('status');
+                        schema.id = newId;
 
                         const lowerName = schema.name.trim().toLowerCase();
                         schemaIdMapping[`stat_${lowerName}`] = newId;
@@ -159,7 +151,7 @@ export function sanitizeTrackerData(trackerData) {
                         if (nextGlobalDefs && oldId) {
                             const legacyGuideId1 = oldId;
                             const legacyGuideId2 = `stat_${cleanId}`;
-                            const newGuideId = `status_${cleanId}`;
+                            const newGuideId = `status_${newId}`;
 
                             const guideVal = nextGlobalDefs[legacyGuideId1] !== undefined ? nextGlobalDefs[legacyGuideId1] : nextGlobalDefs[legacyGuideId2];
                             if (guideVal !== undefined) {

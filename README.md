@@ -88,3 +88,26 @@ Click the **Message Tracker** button (ID card icon) located in the button group 
 
 * Tested primarily on Gemini models (ranging from 2.5 to 3.5). JSON parsing stability and instruction following may vary across different LLMs.
 * If you encounter bugs or have suggestions, feel free to submit feedback or open an issue!
+
+
+## Editing, ordering, and presets
+
+- Drag the handle beside a character or a Profile/Status field to reorder it. On a keyboard, focus the handle, press Space, move with the arrow keys, and press Space again; Escape cancels the move. Status fields stay within their own group.
+- **Apply to Chat** applies the editor draft. **Cancel** discards the draft. **Save Preset** stores a reusable template without applying it to the current chat.
+- Preset contents are stored in your SillyTavern account settings on the server. Another device using the same server and account can load them; use **Refresh** to fetch changes made elsewhere. This is not real-time collaborative editing.
+- Opening Character List migrates available older browser presets to account storage, retaining the browser copies as backups. Open the extension in the original browser **and origin/address** to recover browser-only presets. Missing copies are kept visible; JSON import/export remains available for recovery and moving between servers.
+- Locks remain scoped to the current chat. Swipe/regenerate and AI updates preserve both a locked field and its value. Unlocked fields continue to follow the selected response. Unlocking a field explicitly allows subsequent updates again. Lock choices are stored in chat metadata, independently of individual response snapshots.
+
+## Development
+
+Use a Vite-compatible Node version (20.19+, 22.12+, or Node 24; Node 24 was tested).
+
+```sh
+npm ci
+npm test
+npm run build
+```
+
+`npm test` runs focused regression tests for locks, timeline restoration, sorting, preset migration/persistence, and accepted-change recaps. The test loader uses Node's experimental VM modules because the extension's native browser modules are ESM while the package metadata remains CommonJS.
+
+`npm run build` compiles `src/main.jsx` into the extension's tracked `dist/bundle.js`, including its styles. Run it after React/CSS changes before installing or updating the extension in SillyTavern. `npm run build:watch` rebuilds while editing; reload SillyTavern to load the updated bundle. Native integration modules under `src/core` are also served directly by SillyTavern, so distribute the full extension, not only the bundle.
