@@ -13,6 +13,10 @@ import { triggerObserverNow } from "./ExtensionObserver.js";
 export function registerLifecycleEvents(extensionName) {
     let generationChatKey = null;
     eventSource.on(event_types.GENERATION_STARTED, () => {
+        if (!window.RPGBridge?.isQuietUpdating && window.RPGBridge) {
+            window.RPGBridge.scanRevision = (window.RPGBridge.scanRevision || 0) + 1;
+        }
+        setTimeout(() => triggerObserverNow(), 0);
         generationChatKey = getChatKey(getContext());
         if (window.RPGBridge && typeof window.RPGBridge.flushSave === 'function') {
             window.RPGBridge.flushSave();
@@ -71,6 +75,8 @@ export function registerLifecycleEvents(extensionName) {
     });
 
     const processGenerationEnd = async () => {
+        setTimeout(() => triggerObserverNow(), 0);
+        if (window.RPGBridge?.isQuietUpdating) return;
         if (!extension_settings[extensionName]?.enabled) return;
 
         const context = getContext();

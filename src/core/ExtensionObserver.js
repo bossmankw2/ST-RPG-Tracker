@@ -4,6 +4,7 @@ import { eventSource, event_types } from "../../../../../../script.js";
 import { injectAllDeltaLogs } from "../tracker/DeltaLogRenderer.js";
 import { renderMessageTrackers } from "../messagetracker/SnapshotRenderer.js";
 import { injectSnapshotButtons } from "../messagetracker/SnapshotButtonManager.js";
+import { injectMessageScanButtons } from "../messagetracker/MessageScanButtonManager.js";
 
 let chatObserver = null;
 let deltaLogDebounceTimer = null;
@@ -13,6 +14,7 @@ export function triggerObserverNow() {
     injectAllDeltaLogs(extension_settings, currentExtensionName, getContext);
     renderMessageTrackers(getContext);
     injectSnapshotButtons(getContext);
+    injectMessageScanButtons(getContext, Boolean(extension_settings[currentExtensionName]?.enabled));
 }
 
 export function startChatObserver(extensionName) {
@@ -32,6 +34,7 @@ export function startChatObserver(extensionName) {
         }, 100);
     });
 
+    chatContainer.addEventListener('rpg-scan-finished', triggerObserverNow);
     chatObserver.observe(chatContainer, { childList: true, subtree: true, characterData: false });
 }
 

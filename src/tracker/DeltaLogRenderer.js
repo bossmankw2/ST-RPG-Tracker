@@ -1,13 +1,17 @@
 // src/tracker/DeltaLogRenderer.js
 
+import { getMessageScanRecord, mergeScanDelta, getMessageSwipeId, MESSAGE_SCAN_KEY } from '../core/MessageScanState.js';
+
 export function getDeltaLog(msg) {
+    const original = getAutomaticDeltaLog(msg);
+    const scan = getMessageScanRecord(msg);
+    return scan ? mergeScanDelta(original, scan.delta) : original;
+}
+
+function getAutomaticDeltaLog(msg) {
     if (!msg) return null;
 
-    let swipeId = msg.swipe_id || 0;
-    if (msg.swipes?.length && typeof msg.mes === 'string') {
-        const foundIdx = msg.swipes.findIndex(s => s === msg.mes);
-        if (foundIdx !== -1) swipeId = foundIdx;
-    }
+    const swipeId = getMessageSwipeId(msg);
     const swipeExtra = msg.swipe_info?.[swipeId]?.extra;
     if (swipeExtra && Object.prototype.hasOwnProperty.call(swipeExtra, 'rpgTrackerDelta')) {
         // An empty accepted patch deliberately clears a rejected/stale recap.
@@ -38,15 +42,12 @@ export function setDeltaLog(msg, patch) {
     msg.extra = msg.extra || {};
     msg.extra.rpgTrackerDelta = acceptedPatch;
 
-    let swipeId = msg.swipe_id || 0;
-    if (msg.swipes?.length && typeof msg.mes === 'string') {
-        const foundIdx = msg.swipes.findIndex(s => s === msg.mes);
-        if (foundIdx !== -1) swipeId = foundIdx;
-    }
+    const swipeId = getMessageSwipeId(msg);
     if (!Array.isArray(msg.swipe_info)) msg.swipe_info = [];
     if (!msg.swipe_info[swipeId]) msg.swipe_info[swipeId] = { extra: {} };
     if (!msg.swipe_info[swipeId].extra) msg.swipe_info[swipeId].extra = {};
     msg.swipe_info[swipeId].extra.rpgTrackerDelta = acceptedPatch;
+    delete msg.swipe_info[swipeId].extra[MESSAGE_SCAN_KEY];
 }
 
 export const deltaStyles = `
@@ -430,9 +431,11 @@ export function injectAllDeltaLogs(extension_settings, extensionName, getContext
 
     const startIndex = Math.max(0, context.chat.length - 10);
 
-    for (let index = startIndex; index < context.chat.length; index++) {
+    for (let index = 0; index < context.chat.length; index++) {
         const msg = context.chat[index];
         if (!msg) continue;
+        // A manually scanned older reply also needs a recap in its own row.
+        if (index < startIndex && !msg.swipe_info?.[getMessageSwipeId(msg)]?.extra?.[MESSAGE_SCAN_KEY]) continue;
 
         let $msgEl = $(`#chat .mes[data-id="${index}"], #chat .mes_block[data-id="${index}"], #chat [data-id="${index}"], #chat [mesId="${index}"]`).first();
 

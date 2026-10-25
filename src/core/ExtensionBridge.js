@@ -1,5 +1,5 @@
 import { getContext, extension_settings, writeExtensionField } from "../../../../../extensions.js";
-import { saveSettingsDebounced, saveChat, saveChatConditional, updateMessageBlock, getRequestHeaders, getThumbnailUrl, user_avatar, setExtensionPrompt, extension_prompt_types, extension_prompt_roles } from "../../../../../../script.js";
+import { saveSettingsDebounced, saveChat, saveChatConditional, updateMessageBlock, getRequestHeaders, getThumbnailUrl, user_avatar, isGenerating, setExtensionPrompt, extension_prompt_types, extension_prompt_roles } from "../../../../../../script.js";
 import { SlashCommandParser } from "../../../../../slash-commands/SlashCommandParser.js";
 import { backupToMessage, rehydrateFromHistory, rehydrateFromHistoryAsync, applyLLMPatch, extractNormalizedPatch } from "./JSONTracker.js";
 import { parseResponse } from "./ResponseParser.js";
@@ -10,11 +10,14 @@ import { setDeltaLog } from "../tracker/DeltaLogRenderer.js";
 import { createChatLockStore, getChatKey } from './ChatLockStore.js';
 import { createPresetBridge } from './PresetBridge.js';
 import { getAppliedDelta } from './AppliedDelta.js';
+import { createMessageScanner } from './MessageScanner.js';
+import { createMessageScanCommit } from './MessageScanCommit.js';
+import { createMessageScanVerifier } from './MessageScanVerifier.js';
 
 const chatLocks = createChatLockStore(getContext);
 
 import { resolveSillyTavernAvatarUrl } from "./AvatarResolver.js";
-import { getAvailableModels, executeQuietPromptWithModelOverride } from "./ModelManager.js";
+import { getAvailableModels, executeQuietPromptWithModelOverride, executeMessageScanPrompt } from "./ModelManager.js";
 
 window.SillyTavern = {
     getContext: () => {
@@ -223,6 +226,7 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerCharacterGeneration = async (promptText, isPlayer = false) => {
+                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
                 const requestChatKey = getChatKey(getContext());
                 const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
@@ -293,6 +297,7 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerManualUpdate = async () => {
+                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
                 const requestChatKey = getChatKey(getContext());
                 const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
@@ -373,6 +378,19 @@ export function establishBridgeConnection(extensionName) {
                 return {};
             };
 
+            Object.assign(window.RPGBridge, createMessageScanner({
+                getContext,
+                getBridge: () => window.RPGBridge,
+                isGenerating,
+                generate: prompt => executeMessageScanPrompt(extensionName, prompt),
+                commit: createMessageScanCommit({
+                    getContext,
+                    getBridge: () => window.RPGBridge,
+                    saveChat: () => saveChatConditional(),
+                    verifySaved: createMessageScanVerifier({ getRequestHeaders }),
+                    refresh: () => document.getElementById('chat')?.dispatchEvent(new Event('rpg-scan-finished')),
+                }),
+            }));
             window.RPGBridge.syncSettings(extension_settings[extensionName]);
 
             let historyRequest = 0;

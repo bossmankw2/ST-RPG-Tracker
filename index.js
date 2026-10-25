@@ -49,6 +49,7 @@ jQuery(async () => {
                 window.RPGBridge.syncSettings(extension_settings[extensionName]);
             }
             syncRpgTrackerRegex(isChecked);
+            triggerObserverNow();
         });
     } catch (err) {
         console.error("[RPG Tracker] Failed to load settings template", err);

@@ -38,7 +38,7 @@ Target release: **1.3.0** (manifest, package, and lockfile root version).
 
 - [x] Baseline clean; origin/main verified at the starting commit.
 - [x] Inspect existing message toolbar, model calls, patcher, locks and timeline.
-- [ ] Implement and integrate scanner + separate toolbar action.
+- [x] Implement and integrate scanner + separate toolbar action.
 - [ ] Regression tests and browser checks, including existing snapshot editing.
 - [ ] Version, changelog, final build and clean diff review.
 - [ ] Commit and push, then verify remote main matches release commit.
@@ -62,5 +62,15 @@ step below before pausing or ending work.
 
 ## Last verified state / next step
 
-Design checkpoint created. Implementation in progress; no new scan checks run yet.
-Next: finish coordinator and integration, then test against the agents' APIs.
+Implementation checkpoint (2026-10-26): coordinator, strict input/model extraction,
+separate message button, observer/lifecycle integration and recap display are present.
+Full regression suite: **100 passed**, no failures/skips. Standalone DOM button
+smoke passed. Production build passed (65 modules), staged on port 8000.
+Native browser integration and additional verifier tests are running.
+
+Review found native saveChatConditional swallows errors. Added captured-chat read-back
+verification and scanner-owned-field rollback so unrelated concurrent metadata edits
+survive failure. Scoped rollback tests passed. Agent `scan_input` owns extra verifier tests;
+`browser_validation` is running isolated host tests, including chat-save failure.
+No feature commit pushed. Next: inspect browser results, finish verifier tests,
+update versions/changelog and review the final release before pushing.

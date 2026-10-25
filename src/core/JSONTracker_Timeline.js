@@ -3,6 +3,7 @@
 import { getDefaultCharacters, getInitialTrackerData } from './PromptSchema.js';
 import { sanitizeTrackerData } from './JSONTracker_Migrator.js';
 import { applyLLMPatch } from './JSONTracker_Patcher.js';
+import { getMessageSwipeId } from './MessageScanState.js';
 
 const DEFAULT_MAX_KEEP = 20;
 
@@ -77,11 +78,7 @@ export function purgeOldBackups(chat, maxKeep = DEFAULT_MAX_KEEP) {
         const message = chat[i];
         if (!message) continue;
 
-        let swipeId = message.swipe_id || 0;
-        if (message.swipes && message.swipes.length > 0 && typeof message.mes === 'string') {
-            const foundIdx = message.swipes.findIndex(s => s === message.mes);
-            if (foundIdx !== -1) swipeId = foundIdx;
-        }
+        let swipeId = getMessageSwipeId(message);
 
         const hasHiddenBackup = message.swipe_info && message.swipe_info[swipeId] &&
             message.swipe_info[swipeId].extra && message.swipe_info[swipeId].extra.rpgTrackerData;
@@ -106,11 +103,7 @@ export function backupToMessage(chat, index, trackerData, updateMessageFn, saveC
     let strippedData = JSON.parse(JSON.stringify(trackerData));
     strippedData = stripBase64Avatars(strippedData);
 
-    let swipeId = targetMessage.swipe_id || 0;
-    if (targetMessage.swipes && targetMessage.swipes.length > 0 && typeof targetMessage.mes === 'string') {
-        const foundIdx = targetMessage.swipes.findIndex(s => s === targetMessage.mes);
-        if (foundIdx !== -1) swipeId = foundIdx;
-    }
+    let swipeId = getMessageSwipeId(targetMessage);
 
     if (Number.isInteger(savedSwipeId) && savedSwipeId >= 0) swipeId = savedSwipeId;
 
@@ -135,11 +128,7 @@ export function rehydrateFromHistory(chat) {
         const message = chat[i];
         if (!message) continue;
 
-        let swipeId = message.swipe_id || 0;
-        if (message.swipes && message.swipes.length > 0 && typeof message.mes === 'string') {
-            const foundIdx = message.swipes.findIndex(s => s === message.mes);
-            if (foundIdx !== -1) swipeId = foundIdx;
-        }
+        let swipeId = getMessageSwipeId(message);
 
         if (message.swipe_info && message.swipe_info[swipeId] && message.swipe_info[swipeId].extra && message.swipe_info[swipeId].extra.rpgTrackerData) {
             const extraData = message.swipe_info[swipeId].extra.rpgTrackerData;
@@ -159,11 +148,7 @@ export async function rehydrateFromHistoryAsync(chat) {
 
     const lastMsg = chat[chat.length - 1];
     if (lastMsg) {
-        let lastSwipeId = lastMsg.swipe_id || 0;
-        if (lastMsg.swipes && lastMsg.swipes.length > 0 && typeof lastMsg.mes === 'string') {
-            const foundIdx = lastMsg.swipes.findIndex(s => s === lastMsg.mes);
-            if (foundIdx !== -1) lastSwipeId = foundIdx;
-        }
+        const lastSwipeId = getMessageSwipeId(lastMsg);
         if (lastMsg.swipe_info?.[lastSwipeId]?.extra?.rpgTrackerData) {
             return sanitizeTrackerData(lastMsg.swipe_info[lastSwipeId].extra.rpgTrackerData);
         }
@@ -176,11 +161,7 @@ export async function rehydrateFromHistoryAsync(chat) {
         const message = chat[i];
         if (!message) continue;
 
-        let swipeId = message.swipe_id || 0;
-        if (message.swipes && message.swipes.length > 0 && typeof message.mes === 'string') {
-            const foundIdx = message.swipes.findIndex(s => s === message.mes);
-            if (foundIdx !== -1) swipeId = foundIdx;
-        }
+        let swipeId = getMessageSwipeId(message);
 
         if (message.swipe_info?.[swipeId]?.extra?.rpgTrackerData) {
             accumulatedData = JSON.parse(JSON.stringify(message.swipe_info[swipeId].extra.rpgTrackerData));
@@ -204,11 +185,7 @@ export async function rehydrateFromHistoryAsync(chat) {
         const message = chat[i];
         if (!message) continue;
 
-        let swipeId = message.swipe_id || 0;
-        if (message.swipes && message.swipes.length > 0 && typeof message.mes === 'string') {
-            const foundIdx = message.swipes.findIndex(s => s === message.mes);
-            if (foundIdx !== -1) swipeId = foundIdx;
-        }
+        let swipeId = getMessageSwipeId(message);
 
         const deltaPatch = message.swipe_info?.[swipeId]?.extra?.rpgTrackerDelta ?? ((message.swipes?.length || 0) <= 1 ? message.extra?.rpgTrackerDelta : null);
 
@@ -270,11 +247,7 @@ export async function reconstructTurnState(chat, defaultData) {
     const previousChatHistory = chat.slice(0, lastIndex);
     const previousState = await rehydrateFromHistoryAsync(previousChatHistory) || defaultData;
 
-    let swipeId = lastMsg.swipe_id || 0;
-    if (lastMsg.swipes && lastMsg.swipes.length > 0 && typeof lastMsg.mes === 'string') {
-        const foundIdx = lastMsg.swipes.findIndex(s => s === lastMsg.mes);
-        if (foundIdx !== -1) swipeId = foundIdx;
-    }
+    let swipeId = getMessageSwipeId(lastMsg);
 
     const currentDelta = lastMsg.swipe_info?.[swipeId]?.extra?.rpgTrackerDelta
         ?? ((lastMsg.swipes?.length || 0) <= 1 ? lastMsg.extra?.rpgTrackerDelta : null)

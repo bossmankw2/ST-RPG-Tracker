@@ -52,6 +52,26 @@ export function restoreExtensionPromptForCurrentMode(extensionName) {
  * Executes background quiet prompt with optional API model override.
  */
 export async function executeQuietPromptWithModelOverride(extensionName, prompt, customModel, sendChat = false, clearExtensionPrompt = true) {
+    return executeWithModelOverride(extensionName, customModel,
+        () => generateQuietPrompt(prompt, sendChat, false, 'quiet'), clearExtensionPrompt, true);
+}
+
+/** Scan exactly the supplied reply without SillyTavern adding chat history. */
+export async function executeMessageScanPrompt(extensionName, prompt) {
+    const context = getContext();
+    if (typeof context?.generateRaw !== 'function') {
+        throw new Error('This SillyTavern version does not provide the message scan API.');
+    }
+    if (globalThis.rpgTracker_isQuietUpdating || window.RPGBridge?.isQuietUpdating) {
+        throw new Error('Another tracker update is already running. Please wait for it to finish.');
+    }
+    return executeWithModelOverride(extensionName, null,
+        () => context.generateRaw({ prompt, trimNames: false }), false, false);
+}
+
+async function executeWithModelOverride(extensionName, customModel, generate, clearExtensionPrompt, restorePrompt) {
+    const wasQuietUpdating = globalThis.rpgTracker_isQuietUpdating;
+    const wasBridgeUpdating = window.RPGBridge?.isQuietUpdating;
     globalThis.rpgTracker_isQuietUpdating = true;
     if (window.RPGBridge) {
         window.RPGBridge.isQuietUpdating = true;
@@ -124,18 +144,18 @@ export async function executeQuietPromptWithModelOverride(extensionName, prompt,
     }
 
     try {
-        return await generateQuietPrompt(prompt, sendChat, false, 'quiet');
+        return await generate();
     } finally {
         window.fetch = originalFetch;
         if (originalAjax) {
             $.ajax = originalAjax;
         }
 
-        globalThis.rpgTracker_isQuietUpdating = false;
+        globalThis.rpgTracker_isQuietUpdating = wasQuietUpdating ?? false;
         if (window.RPGBridge) {
-            window.RPGBridge.isQuietUpdating = false;
+            window.RPGBridge.isQuietUpdating = wasBridgeUpdating ?? false;
         }
-        restoreExtensionPromptForCurrentMode(extensionName);
+        if (restorePrompt) restoreExtensionPromptForCurrentMode(extensionName);
     }
 }
 
