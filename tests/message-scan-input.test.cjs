@@ -3,10 +3,11 @@ const assert = require('node:assert/strict');
 const { loadEsm } = require('./helpers/load-esm.cjs');
 
 let buildMessageScanPrompt, parseMessageScanPatch, extractEmbeddedScanPatch, stripMessageScanMarkup;
-let applyLLMPatch;
+let applyLLMPatch, generateSnapshotTag;
 test.before(async () => {
     ({ buildMessageScanPrompt, parseMessageScanPatch, extractEmbeddedScanPatch, stripMessageScanMarkup } = await loadEsm('src/core/MessageScanInput.js'));
     ({ applyLLMPatch } = await loadEsm('src/core/JSONTracker_Patcher.js'));
+    ({ generateSnapshotTag } = await loadEsm('src/messagetracker/SnapshotCore.js'));
 });
 const tracker = () => ({
     characters: [{ id: 'persisted-id', name: 'Ada Vale', activePlayer: true,
@@ -41,6 +42,19 @@ test('encoded, repeated and unfinished manual snapshots cannot become extraction
     assert.throws(() => buildMessageScanPrompt('<rpgmt>{"HP":99}</rpgmt>', tracker()), /no text to scan/);
 });
 
+test('native manual snapshot edits and legacy wrappers cannot change the scan fingerprint', () => {
+    const reply = 'Mira is an elf.';
+    const before = `${reply} <rpgmt>{"note":"first"}</rpgmt>`;
+    const edited = reply + generateSnapshotTag({ note: 'edited', chars: { Mira: { profile: { Race: 'Human' } } } });
+    assert.equal(stripMessageScanMarkup(before), reply);
+    assert.equal(stripMessageScanMarkup(edited), reply);
+    assert.equal(stripMessageScanMarkup(generateSnapshotTag({ note: 'manual-only' })), '');
+    assert.equal(stripMessageScanMarkup(`${reply} <!-- <div class="rpgmt-data">{"note":"legacy"}</div> -->`), reply);
+    assert.equal(stripMessageScanMarkup(`${reply} <div class='rpgmt-data'>{"note":"legacy"}</div>`), reply);
+    assert.equal(stripMessageScanMarkup(`${reply} &lt;!-- &lt;rpgmt&gt;{"note":"encoded"}&lt;/rpgmt&gt; --&gt;`), reply);
+    assert.equal(extractEmbeddedScanPatch('<div class="rpgmt-data"><!--RPG_TRACKER {"Mira":{"profile":{"Race":"Elf"}}}--></div>', tracker()), null);
+});
+
 test('embedded extraction accepts only an explicit tracker block, preserving ordinary JSON and manual editor payloads', () => {
     assert.equal(extractEmbeddedScanPatch('```json\n{"Ada Vale":{"profile":{"Race":"Elf"}}}\n```', tracker()), null);
     assert.equal(extractEmbeddedScanPatch('<rpgmt><!--RPG_TRACKER {"Ada Vale":{"profile":{"Race":"Elf"}}}--></rpgmt>', tracker()), null);
@@ -71,6 +85,38 @@ test('prototype and control metadata are discarded while supported nested values
     const result = parseMessageScanPatch(text, tracker());
     assert.deepEqual(result, { 'Ada Vale': { profile: { Race: 'Elf' }, relations: { Mira: { description: 'Friend', metrics: { Trust: 3 } } } } });
     assert.equal({}.polluted, undefined);
+});
+
+test('new scan names cannot update a different character through a generated ID collision', () => {
+    const current = tracker();
+    current.characters[0].id = 'char_A_B';
+    current.characters[0].name = 'A B';
+    assert.throws(() => parse({ 'A-B': { profile: { Race: 'Elf' } } }, current), /conflicts with another character's saved ID/);
+    assert.equal(current.characters[0].profile.Race, 'Human');
+    assert.equal(current.characters.length, 1);
+});
+
+test('an exact name or ID cannot bypass a conflicting legacy patcher identity', () => {
+    const current = { characters: [
+        { id: 'char_Ada_Vale', name: 'Mira' },
+        { id: 'ada-persisted-id', name: 'Ada Vale' },
+    ] };
+    for (const name of ['Ada Vale', 'ada-persisted-id']) {
+        assert.throws(() => parse({ [name]: { profile: { Race: 'Elf' } } }, current), /conflicts with another character's saved ID/);
+    }
+    assert.throws(() => parse({ 'first-id': { profile: { Race: 'Elf' } } }, { characters: [
+        { id: 'first-id', name: 'Ada Vale' }, { id: 'second-id', name: 'ADA VALE' },
+    ] }), /ambiguous/);
+});
+
+test('multiple additions cannot collide with each other or normalize to the same new name', () => {
+    assert.throws(() => parse({ 'A-B': { profile: { Race: 'Elf' } }, 'A B': { profile: { Race: 'Human' } } }), /conflicts with another character's saved ID/);
+    assert.throws(() => parse({ Mira: { profile: { Race: 'Elf' } }, MIRA: { profile: { Race: 'Human' } } }), /duplicate/);
+    const current = tracker();
+    const patch = parse({ 'New Mira': { profile: { Race: 'Elf' } }, Bela: { profile: { Race: 'Human' } } }, current);
+    const updated = applyLLMPatch(current, patch);
+    assert.deepEqual(updated.characters.map(char => char.name), ['Ada Vale', 'New Mira', 'Bela']);
+    assert.equal(updated.characters[0].id, 'persisted-id');
 });
 
 test('validated additions use existing patcher with typed stats and locks still enforced', () => {

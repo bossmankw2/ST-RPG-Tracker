@@ -24,7 +24,8 @@ function decodeEntities(text) {
 export function stripMessageScanMarkup(text) {
     let source = String(text ?? '');
     for (let pass = 0; pass < 3; pass += 1) source = decodeEntities(source);
-    return source.replace(/<rpgmt\b[^>]*>[\s\S]*?(?:<\/rpgmt\s*>|$)/gi, '')
+    return source.replace(/(?:<!--\s*)?<rpgmt\b[^>]*>[\s\S]*?(?:<\/rpgmt\s*>|$)(?:\s*-->)?/gi, '')
+        .replace(/(?:<!--\s*)?<div\b(?=[^>]*\bclass\s*=\s*["']rpgmt-data["'])[^>]*>[\s\S]*?(?:<\/div\s*>|$)(?:\s*-->)?/gi, '')
         .replace(/<!--\s*RPG_DELTA\b[\s\S]*?(?:-->|$)/gi, '').trim();
 }
 
@@ -157,6 +158,34 @@ function canonicalName(key, value, tracker) {
     return name;
 }
 
+function assertSafeCharacterIdentities(patch, tracker) {
+    // The legacy patcher also matches generated IDs. Validate its actual lookup
+    // before applying a scan so punctuation collisions cannot select another person.
+    const generatedId = name => {
+        const cleaned = name.replace(/[^\p{L}\p{N}_]/gu, '_').replace(/_+/g, '_').replace(/^_+|_+$/g, '');
+        return cleaned ? `char_${cleaned}` : null;
+    };
+    const characters = (tracker?.characters || []).map(char => ({
+        name: char.name, id: char.id || (char.name === 'New' ? 'char_user' : generatedId(char.name || '')),
+    }));
+    const scannedNames = new Set();
+    for (const name of Object.keys(patch)) {
+        if (name === 'World') continue;
+        const normalized = normalize(name);
+        if (scannedNames.has(normalized)) throw invalid(`The response contains duplicate entries for "${name}".`);
+        scannedNames.add(normalized);
+        const matches = characters.filter(char => normalize(char.name) === normalized);
+        if (matches.length > 1) throw invalid(`The character name "${name}" is ambiguous. Rename it in the tracker first.`);
+        const id = generatedId(name);
+        const selected = characters.find(char => (id && char.id === id)
+            || char.name?.trim().toLowerCase() === name.trim().toLowerCase());
+        if (selected !== matches[0]) {
+            throw invalid(`The character name "${name}" conflicts with another character's saved ID. Give the characters distinct names before scanning.`);
+        }
+        if (!selected) characters.push({ name, id });
+    }
+}
+
 function normalizedPatch(raw, tracker, allowEmpty) {
     if (!object(raw)) throw invalid('The response must contain a JSON object.');
     const result = {};
@@ -204,6 +233,7 @@ function normalizedPatch(raw, tracker, allowEmpty) {
     if (!Object.keys(result).length && (!allowEmpty || (!explicitlyEmpty && !meaningfulInput))) {
         throw invalid('No supported character or world fields were found.');
     }
+    assertSafeCharacterIdentities(result, tracker);
     return result;
 }
 

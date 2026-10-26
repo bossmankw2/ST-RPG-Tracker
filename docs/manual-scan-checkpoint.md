@@ -39,9 +39,10 @@ Target release: **1.3.0** (manifest, package, and lockfile root version).
 - [x] Baseline clean; origin/main verified at the starting commit.
 - [x] Inspect existing message toolbar, model calls, patcher, locks and timeline.
 - [x] Implement and integrate scanner + separate toolbar action.
-- [ ] Regression tests and browser checks, including existing snapshot editing.
-- [ ] Version, changelog, final build and clean diff review.
-- [ ] Commit and push, then verify remote main matches release commit.
+- [x] Regression tests and browser checks, including existing snapshot editing.
+- [x] Version, changelog, final build and clean diff review.
+- Publication: push release HEAD to `origin/main`, then compare remote/local SHAs.
+  Repeat this check on resume before assuming the release needs another push.
 
 ## Resume instructions
 
@@ -62,15 +63,30 @@ step below before pausing or ending work.
 
 ## Last verified state / next step
 
-Implementation checkpoint (2026-10-26): coordinator, strict input/model extraction,
-separate message button, observer/lifecycle integration and recap display are present.
-Full regression suite: **100 passed**, no failures/skips. Standalone DOM button
-smoke passed. Production build passed (65 modules), staged on port 8000.
-Native browser integration and additional verifier tests are running.
+Release validation completed on 2026-10-26 for **1.3.0**.
 
-Review found native saveChatConditional swallows errors. Added captured-chat read-back
-verification and scanner-owned-field rollback so unrelated concurrent metadata edits
-survive failure. Scoped rollback tests passed. Agent `scan_input` owns extra verifier tests;
-`browser_validation` is running isolated host tests, including chat-save failure.
-No feature commit pushed. Next: inspect browser results, finish verifier tests,
-update versions/changelog and review the final release before pushing.
+- Full regression suite: **113 passed**, zero failures/skips.
+- Production build: passed, 65 modules; tracked bundle matches the staged host.
+- Native SillyTavern 1.19.0 browser checks: **11 scenarios passed**, zero page errors.
+  Covered selected older reply extraction, locks/new characters, accepted recaps,
+  current timeline persistence, existing manual snapshot edit/reopen, deduplication
+  after reload, invalid/network responses, busy controls, stale swipe/chat results,
+  direct JSON extraction, failed-save rollback/retry and a 430px mobile layout.
+- Model HTTP responses were controlled test fixtures. No live provider was tested.
+- Earlier standalone button DOM smoke also passed.
+- Final review fixed generated-ID/name collisions and manual snapshot comment
+  wrappers that could otherwise bypass scan deduplication. Regression tests cover both.
+- Native saveChatConditional swallows failures; captured-chat read-back verification
+  detects them, and rollback preserves unrelated concurrent metadata edits.
+
+Implementation was checkpointed in `cc9be41`; final release includes the review fixes,
+verifier tests, README usage, CHANGELOG and aligned 1.3.0 version metadata.
+The isolated browser harness is `/workspace/.rpg-tracker-onboarding/manual-scan-browser.cjs`;
+its final results are in `manual-scan-results.json` beside it. A stale test-host process
+was restarted during validation. The browser fixture now initializes explicit false
+lock flags just as the native loader does; this avoids mistaking normalization for a
+rollback data change. The final harness cleaned up its QA chats and restored settings.
+
+Publication uses `git push origin HEAD:refs/heads/main` without force. Compare
+`git rev-parse HEAD` with `git ls-remote origin refs/heads/main` to verify publication.
+If interrupted, inspect those SHAs and `git status` before repeating work.

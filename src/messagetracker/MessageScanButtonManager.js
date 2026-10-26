@@ -1,5 +1,5 @@
 const BUTTON_LABEL = 'Scan / Update Tracker';
-const BUTTON_TITLE = 'Scan this reply into RPG Tracker. Reading narrative text may use an additional AI request.';
+const BUTTON_TITLE = 'Scan this reply into the current chat tracker. Reading narrative text may use an additional AI request.';
 const STYLE_ID = 'rpg-message-scan-styles';
 const STATUS_ID = 'rpg-message-scan-status';
 

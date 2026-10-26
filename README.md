@@ -90,6 +90,18 @@ Click the **Message Tracker** button (ID card icon) located in the button group 
 * If you encounter bugs or have suggestions, feel free to submit feedback or open an issue!
 
 
+## Scan a reply into RPG Tracker
+
+Use **Scan / Update Tracker** in an AI message's action bar, beside **Add/Edit Message Tracker**. The existing Add/Edit action still edits message snapshots manually.
+
+The scan reads only that reply's displayed swipe and applies supported facts to the **current chat tracker**. Existing named characters are updated; new named characters can be added with the information stated in the reply. Locked fields stay protected. Missing values are not invented. Manual message snapshots and prior recap blocks are excluded from extraction.
+
+An explicit RPG_TRACKER JSON block can be applied without another model request. Narrative text uses one additional request through your configured SillyTavern connection (and the tracker model override, if enabled), so it consumes tokens and takes time. The button shows **Updating…** while running. No OOC phrase or automatic scan is required.
+
+**Tracker Changes** on the selected reply shows accepted changes. The updated state is saved at the current timeline position, including when scanning an older reply. Scanning the same unchanged reply/swipe again is skipped, including after reload. A changed reply or different swipe can be scanned separately. Failed requests remain retryable; changing chat/swipe or the source text while extraction is running discards the stale result.
+
+Release history is in [CHANGELOG.md](CHANGELOG.md).
+
 ## Editing, ordering, and presets
 
 - Drag the handle beside a character or a Profile/Status field to reorder it. On a keyboard, focus the handle, press Space, move with the arrow keys, and press Space again; Escape cancels the move. Status fields stay within their own group.
