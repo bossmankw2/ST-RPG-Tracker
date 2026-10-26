@@ -1,5 +1,16 @@
 # Changelog
 
+## 1.3.1 — 2026-10-26
+
+- Add **Suggest** beside Status, Profile and Relationship guidelines in Prompt Editor
+  → Field Definitions. Generate a short guide through the configured AI connection/model.
+- Place suggestions in the existing editable textbox as a draft. Save Changes applies
+  the text; Cancel discards it. Keep guideline drafts separate when fields are renamed.
+- Use only the selected field's metadata and current draft, without sending chat history
+  or current character values. Keep output concise and preserve the draft on failures.
+- Discard late suggestions after edits, import/clear, field or chat changes, and closing.
+  Prevent overlapping AI requests and keep the controls usable on desktop and mobile.
+
 ## 1.3.0 — 2026-10-26
 
 - Add **Scan / Update Tracker** beside the existing message actions on AI replies.

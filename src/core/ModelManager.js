@@ -58,9 +58,18 @@ export async function executeQuietPromptWithModelOverride(extensionName, prompt,
 
 /** Scan exactly the supplied reply without SillyTavern adding chat history. */
 export async function executeMessageScanPrompt(extensionName, prompt) {
+    return executeRawTrackerPrompt(extensionName, prompt);
+}
+
+/** Suggest editable field guidance without adding chat history or saving tracker data. */
+export async function executeFieldDefinitionPrompt(extensionName, prompt) {
+    return executeRawTrackerPrompt(extensionName, prompt);
+}
+
+async function executeRawTrackerPrompt(extensionName, prompt) {
     const context = getContext();
     if (typeof context?.generateRaw !== 'function') {
-        throw new Error('This SillyTavern version does not provide the message scan API.');
+        throw new Error('This SillyTavern version does not provide the raw generation API.');
     }
     if (globalThis.rpgTracker_isQuietUpdating || window.RPGBridge?.isQuietUpdating) {
         throw new Error('Another tracker update is already running. Please wait for it to finish.');

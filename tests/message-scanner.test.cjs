@@ -307,7 +307,10 @@ test('unavailable, user, system, empty and snapshot-only replies cannot start a 
     assert.equal(scanner.canScanMessage(1), false);
     state.generating = false; bridge.isQuietUpdating = true;
     assert.equal(scanner.canScanMessage(1), false);
-    bridge.isQuietUpdating = false; bridge.latestSettings.enabled = false;
+    bridge.isQuietUpdating = false; bridge.isFieldDefinitionSuggesting = () => true;
+    assert.equal(scanner.canScanMessage(1), false);
+    await assert.rejects(scanner.scanMessage(1), /wait for generation/);
+    bridge.isFieldDefinitionSuggesting = () => false; bridge.latestSettings.enabled = false;
     assert.equal(scanner.canScanMessage(1), false);
     await assert.rejects(scanner.scanMessage(1), /wait for generation/);
     assert.equal(state.prompts.length, 0);

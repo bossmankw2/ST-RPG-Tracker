@@ -14,7 +14,7 @@ export function createMessageScanner({ getContext, getBridge, generate, commit, 
         const context = getContext();
         const bridge = getBridge();
         const message = context?.chat?.[index];
-        return !busy && !isGenerating() && !bridge?.isQuietUpdating
+        return !busy && !isGenerating() && !bridge?.isQuietUpdating && !bridge?.isFieldDefinitionSuggesting?.()
             && bridge?.latestSettings?.enabled !== false && Boolean(getChatKey(context))
             && Number.isInteger(index) && isAssistant(message)
             && Boolean(stripMessageScanMarkup(message.mes));

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useRPG } from '../core/RPGControl';
 import styles from './PromptEditor.module.css';
 import statusStyles from './StatusEditor.module.css';
@@ -61,6 +61,136 @@ export default function PromptEditor({ onClose }) {
   const [localGuidePrompts, setLocalGuidePrompts] = useState([]);
   const [localDefObj, setLocalDefObj] = useState({});
   const [localWorldSchema, setLocalWorldSchema] = useState({});
+
+  const [suggestingKey, setSuggestingKey] = useState(null);
+  const [suggestionFeedback, setSuggestionFeedback] = useState('');
+  const definitionsRef = useRef(localDefObj);
+  const definitionEditsRef = useRef({});
+  const definitionEpochRef = useRef(0);
+  const suggestionRef = useRef(null);
+  const mountedRef = useRef(true);
+  const trackerRef = useRef(trackerData);
+  const ownDefinitionUpdateRef = useRef(null);
+  trackerRef.current = trackerData;
+
+  useEffect(() => {
+    mountedRef.current = true;
+    return () => {
+      mountedRef.current = false;
+      definitionEpochRef.current += 1;
+    };
+  }, []);
+
+  const replaceDefinitions = (definitions) => {
+    definitionEpochRef.current += 1;
+    definitionsRef.current = definitions;
+    setLocalDefObj(definitions);
+    setSuggestionFeedback('');
+  };
+
+  const handleDefinitionChange = (fullKey, value) => {
+    definitionEditsRef.current[fullKey] = (definitionEditsRef.current[fullKey] || 0) + 1;
+    const next = { ...definitionsRef.current, [fullKey]: value };
+    definitionsRef.current = next;
+    setLocalDefObj(next);
+  };
+
+  // Field names/styles keep their existing immediate save behavior. Guide text
+  // stays in the editor draft until Save Changes, even through those own updates.
+  const persistFieldStructure = (updatedCharacters, savedDefinitions = trackerData.globalDefinitions) => {
+    definitionEpochRef.current += 1;
+    ownDefinitionUpdateRef.current = {
+      characters: updatedCharacters,
+      definitions: savedDefinitions,
+      chatKey: window.RPGBridge?.getCurrentChatKey?.() ?? null,
+    };
+    updateTrackerData({
+      ...trackerData,
+      characters: updatedCharacters,
+      globalDefinitions: savedDefinitions,
+    });
+  };
+
+  const closeEditor = () => {
+    definitionEpochRef.current += 1;
+    onClose();
+  };
+
+  const handleSuggestDefinition = async (category, item) => {
+    if (suggestionRef.current) return;
+    const suggest = window.RPGBridge?.suggestFieldDefinition;
+    if (typeof suggest !== 'function') {
+      setSuggestionFeedback('The AI suggestion service is not ready. Refresh the page and try again.');
+      return;
+    }
+    const fullKey = `${category}_${item.id}`;
+    const request = {
+      key: fullKey,
+      epoch: definitionEpochRef.current,
+      edit: definitionEditsRef.current[fullKey] || 0,
+      tracker: trackerRef.current,
+    };
+    const isCurrent = () => mountedRef.current && suggestionRef.current === request
+      && definitionEpochRef.current === request.epoch && trackerRef.current === request.tracker
+      && (definitionEditsRef.current[fullKey] || 0) === request.edit;
+    suggestionRef.current = request;
+    setSuggestingKey(fullKey);
+    setSuggestionFeedback(`Suggesting a short guide for ${item.name || item.id}…`);
+    try {
+      const suggestion = await suggest({
+        category, id: item.id, name: item.name || item.id,
+        type: category === 'profile' ? 'text' : category === 'relation' ? (localWorldSchema.relationsFieldType || 'integer') : item.type,
+        min: item.min, max: item.max,
+        definition: definitionsRef.current[fullKey] || '',
+      });
+      if (!isCurrent()) {
+        if (mountedRef.current) setSuggestionFeedback('Suggestion discarded because the field or draft changed. Your edits were kept.');
+        return;
+      }
+      if (typeof suggestion !== 'string' || !suggestion.trim()) {
+        throw new Error('The AI returned an empty suggestion. Please try again.');
+      }
+      handleDefinitionChange(fullKey, suggestion);
+      setSuggestionFeedback(`Suggested guide for ${item.name || item.id}. Edit it as needed, then Save Changes.`);
+    } catch (error) {
+      if (isCurrent()) {
+        setSuggestionFeedback(error?.message || 'Could not suggest a guide. Your draft was kept; please try again.');
+      } else if (mountedRef.current) {
+        setSuggestionFeedback('Suggestion discarded because the field or draft changed. Your edits were kept.');
+      }
+    } finally {
+      if (suggestionRef.current === request) {
+        suggestionRef.current = null;
+        if (mountedRef.current) setSuggestingKey(null);
+      }
+    }
+  };
+
+  const renderDefinitionGuide = (category, item) => {
+    const fullKey = `${category}_${item.id}`;
+    const working = suggestingKey === fullKey;
+    return (
+      <div className={styles.definitionGuideRow} data-field-key={fullKey}>
+        <AutoGrowingTextArea
+          className={styles.defInput}
+          value={localDefObj[fullKey] || ''}
+          onChange={(value) => handleDefinitionChange(fullKey, value)}
+          placeholder={`AI Guide for ${item.name || item.id}...`}
+        />
+        <button
+          type="button"
+          className={`rpg-btn-sm ${styles.suggestButton}`}
+          aria-label={`Suggest guide for ${item.name || item.id}`}
+          aria-busy={working}
+          disabled={Boolean(suggestingKey)}
+          title="Suggest a clear guide in 1–2 sentences using one AI request. You can edit the result before saving."
+          onClick={() => handleSuggestDefinition(category, item)}
+        >
+          {working ? 'Suggesting…' : 'Suggest'}
+        </button>
+      </div>
+    );
+  };
 
   const [expandedDefIds, setExpandedDefIds] = useState({});
   const [globalSyncToggles, setGlobalSyncToggles] = useState({});
@@ -167,7 +297,13 @@ export default function PromptEditor({ onClose }) {
     });
 
     setLocalGuidePrompts(savedGuides);
-    setLocalDefObj(trackerData.globalDefinitions || {});
+    const ownUpdate = ownDefinitionUpdateRef.current;
+    const preserveDefinitionDraft = ownUpdate
+      && ownUpdate.characters === trackerData.characters
+      && ownUpdate.definitions === trackerData.globalDefinitions
+      && ownUpdate.chatKey === (window.RPGBridge?.getCurrentChatKey?.() ?? null);
+    ownDefinitionUpdateRef.current = null;
+    if (!preserveDefinitionDraft) replaceDefinitions(trackerData.globalDefinitions || {});
     setLocalWorldSchema(trackerData.worldSchema || {
       dateSelect: '1', dateCustom: 'yyyy-mm-dd',
       timeSelect: '1', timeCustom: '14:30',
@@ -263,18 +399,19 @@ export default function PromptEditor({ onClose }) {
 
     const oldGuideKey = `${category}_${oldId}`;
     const newGuideKey = `${category}_${cleanNewId}`;
-    const nextDefObj = { ...localDefObj };
-    if (nextDefObj[oldGuideKey] !== undefined) {
-      nextDefObj[newGuideKey] = nextDefObj[oldGuideKey];
-      delete nextDefObj[oldGuideKey];
-    }
+    const renameDefinitionKey = (definitions) => {
+      const next = { ...definitions };
+      if (oldGuideKey !== newGuideKey && next[oldGuideKey] !== undefined) {
+        next[newGuideKey] = next[oldGuideKey];
+        delete next[oldGuideKey];
+      }
+      return next;
+    };
+    const nextDraft = renameDefinitionKey(definitionsRef.current);
+    const nextSaved = renameDefinitionKey(trackerData.globalDefinitions);
 
-    setLocalDefObj(nextDefObj);
-    updateTrackerData({
-      ...trackerData,
-      characters: updatedCharacters,
-      globalDefinitions: nextDefObj
-    });
+    replaceDefinitions(nextDraft);
+    persistFieldStructure(updatedCharacters, nextSaved);
 
     setExpandedDefIds(prev => {
       const next = { ...prev };
@@ -312,10 +449,7 @@ export default function PromptEditor({ onClose }) {
       return cloned;
     });
 
-    updateTrackerData({
-      ...trackerData,
-      characters: updatedCharacters
-    });
+    persistFieldStructure(updatedCharacters);
   };
 
   const handleUpdateRelationProperty = (metricId, propKey, value) => {
@@ -341,10 +475,7 @@ export default function PromptEditor({ onClose }) {
       return cloned;
     });
 
-    updateTrackerData({
-      ...trackerData,
-      characters: updatedCharacters
-    });
+    persistFieldStructure(updatedCharacters);
   };
 
   const handleSave = () => {
@@ -365,7 +496,7 @@ export default function PromptEditor({ onClose }) {
       worldEventsPrompt: localWorldEventsPrompt
     });
     alert("Prompt configurations and field definitions saved successfully.");
-    onClose();
+    closeEditor();
   };
 
   const handleExport = () => {
@@ -409,13 +540,14 @@ export default function PromptEditor({ onClose }) {
       try {
         const importedData = JSON.parse(event.target.result);
         if (importedData && typeof importedData === 'object') {
+          definitionEpochRef.current += 1;
           if (importedData.systemPromptHeader_merged !== undefined) setLocalMergedHeader(importedData.systemPromptHeader_merged);
           if (importedData.systemPromptFooter_merged !== undefined) setLocalMergedFooter(importedData.systemPromptFooter_merged);
           if (importedData.systemPrompt_readonly !== undefined) setLocalReadOnlyPrompt(importedData.systemPrompt_readonly);
           if (importedData.systemPromptHeader_separated !== undefined) setLocalSepHeader(importedData.systemPromptHeader_separated);
           if (importedData.systemPromptFooter_separated !== undefined) setLocalSepFooter(importedData.systemPromptFooter_separated);
           if (Array.isArray(importedData.guidePrompts)) setLocalGuidePrompts(importedData.guidePrompts);
-          if (importedData.globalDefinitions && typeof importedData.globalDefinitions === 'object') setLocalDefObj(importedData.globalDefinitions);
+          if (importedData.globalDefinitions && typeof importedData.globalDefinitions === 'object') replaceDefinitions(importedData.globalDefinitions);
           if (importedData.worldSchema && typeof importedData.worldSchema === 'object') setLocalWorldSchema(importedData.worldSchema);
           if (importedData.addCharPrompt !== undefined) setLocalAddCharPrompt(importedData.addCharPrompt);
           if (importedData.addPlayerCharPrompt !== undefined) setLocalAddPlayerCharPrompt(importedData.addPlayerCharPrompt);
@@ -442,7 +574,7 @@ export default function PromptEditor({ onClose }) {
 
   const clearDefinitions = () => {
     if (window.confirm("Clear all field guidelines? (Field styles and values are preserved)")) {
-      setLocalDefObj({});
+      replaceDefinitions({});
     }
   };
 
@@ -457,7 +589,7 @@ export default function PromptEditor({ onClose }) {
       <div className="rpg-modal-container" onClick={e => e.stopPropagation()}>
         <header className="rpg-modal-header">
           <h4>Prompt Editor</h4>
-          <button type="button" className="rpg-modal-close-btn" onClick={onClose}>×</button>
+          <button type="button" className="rpg-modal-close-btn" onClick={closeEditor}>×</button>
         </header>
 
         <div className="rpg-tab-nav">
@@ -897,9 +1029,11 @@ export default function PromptEditor({ onClose }) {
               </div>
 
               <div style={{ fontSize: '11px', opacity: 0.7, margin: 0, color: 'var(--rpg-text)', lineHeight: '1.4' }}>
-                <div>Set guidelines for the AI.</div>
+                <div>Suggest a short guide, edit it, then Save Changes. Each suggestion uses one AI request.</div>
                 <div>※ Turn on 'Global' switch only when you want to overwrite styles and types to all characters.</div>
               </div>
+
+              <div className={styles.suggestionFeedback} role="status" aria-live="polite" aria-atomic="true">{suggestionFeedback}</div>
 
               {/* 1. STATUS GROUP */}
               {uniqueFields.status.length > 0 && (
@@ -938,13 +1072,7 @@ export default function PromptEditor({ onClose }) {
                           </div>
 
                           <div style={{ display: 'flex', alignItems: 'center', width: '100%', paddingLeft: '22px', boxSizing: 'border-box' }}>
-                            <AutoGrowingTextArea
-                              className={styles.defInput}
-                              value={localDefObj[fullKey] || ''}
-                              onChange={(val) => setLocalDefObj({ ...localDefObj, [fullKey]: val })}
-                              placeholder={`AI Guide for ${item.name || item.id}...`}
-                              style={{ width: '100%' }}
-                            />
+                            {renderDefinitionGuide('status', item)}
                           </div>
                         </div>
 
@@ -987,13 +1115,7 @@ export default function PromptEditor({ onClose }) {
                             />
                           </div>
                           <div style={{ display: 'flex', alignItems: 'center', width: '100%', paddingLeft: '18px', boxSizing: 'border-box' }}>
-                            <AutoGrowingTextArea
-                              className={styles.defInput}
-                              value={localDefObj[fullKey] || ''}
-                              onChange={(val) => setLocalDefObj({ ...localDefObj, [fullKey]: val })}
-                              placeholder={`AI Guide for ${item.name || item.id}...`}
-                              style={{ width: '100%' }}
-                            />
+                            {renderDefinitionGuide('profile', item)}
                           </div>
                         </div>
                       </div>
@@ -1039,13 +1161,7 @@ export default function PromptEditor({ onClose }) {
                           </div>
 
                           <div style={{ display: 'flex', alignItems: 'center', width: '100%', paddingLeft: '22px', boxSizing: 'border-box' }}>
-                            <AutoGrowingTextArea
-                              className={styles.defInput}
-                              value={localDefObj[fullKey] || ''}
-                              onChange={(val) => setLocalDefObj({ ...localDefObj, [fullKey]: val })}
-                              placeholder={`AI Guide for ${item.name || item.id}...`}
-                              style={{ width: '100%' }}
-                            />
+                            {renderDefinitionGuide('relation', item)}
                           </div>
                         </div>
 
@@ -1083,7 +1199,7 @@ export default function PromptEditor({ onClose }) {
             />
           </div>
           <div className="rpg-modal-footer-right">
-            <button type="button" className="rpg-modal-btn" onClick={onClose}>Cancel</button>
+            <button type="button" className="rpg-modal-btn" onClick={closeEditor}>Cancel</button>
             <button type="button" className="rpg-modal-btn save" onClick={handleSave}>Save Changes</button>
           </div>
         </footer>

@@ -7,11 +7,11 @@ import { extension_settings } from "../../../../../extensions.js";
  */
 export function registerContextInterceptor(extensionName) {
     const interceptor = function RPGTracker_interceptGeneration(chat, _contextSize, _abort, type) {
-        // Raw reply scans do not invoke this interceptor. Keep ordinary/quiet
+        // Raw scans/suggestions do not invoke this interceptor. Keep ordinary/quiet
         // generations from overlapping their temporary model override.
-        if (window.RPGBridge?.isMessageScanBusy?.()) {
+        if (window.RPGBridge?.isMessageScanBusy?.() || window.RPGBridge?.isFieldDefinitionSuggesting?.()) {
             if (typeof _abort === 'function') _abort(true);
-            window.toastr?.info('Wait for the tracker scan to finish before generating another reply.');
+            window.toastr?.info('Wait for the tracker AI request to finish before generating another reply.');
             return;
         }
         const isQuiet = type === 'quiet' || globalThis.rpgTracker_isQuietUpdating || window.RPGBridge?.isQuietUpdating;

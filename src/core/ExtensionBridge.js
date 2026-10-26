@@ -13,11 +13,12 @@ import { getAppliedDelta } from './AppliedDelta.js';
 import { createMessageScanner } from './MessageScanner.js';
 import { createMessageScanCommit } from './MessageScanCommit.js';
 import { createMessageScanVerifier } from './MessageScanVerifier.js';
+import { createFieldDefinitionSuggester } from './FieldDefinitionSuggestion.js';
 
 const chatLocks = createChatLockStore(getContext);
 
 import { resolveSillyTavernAvatarUrl } from "./AvatarResolver.js";
-import { getAvailableModels, executeQuietPromptWithModelOverride, executeMessageScanPrompt } from "./ModelManager.js";
+import { getAvailableModels, executeQuietPromptWithModelOverride, executeMessageScanPrompt, executeFieldDefinitionPrompt } from "./ModelManager.js";
 
 window.SillyTavern = {
     getContext: () => {
@@ -226,7 +227,7 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerCharacterGeneration = async (promptText, isPlayer = false) => {
-                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
+                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isFieldDefinitionSuggesting?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
                 const requestChatKey = getChatKey(getContext());
                 const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
@@ -297,7 +298,7 @@ export function establishBridgeConnection(extensionName) {
             };
 
             window.RPGBridge.triggerManualUpdate = async () => {
-                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
+                if (window.RPGBridge.isMessageScanBusy?.() || window.RPGBridge.isFieldDefinitionSuggesting?.() || window.RPGBridge.isQuietUpdating || isGenerating()) throw new Error('Wait for the current generation or tracker update to finish.');
                 const requestChatKey = getChatKey(getContext());
                 const requestRevision = window.RPGBridge.historyRevision || 0;
                 const trackerData = window.RPGBridge?.currentTrackerData;
@@ -378,6 +379,12 @@ export function establishBridgeConnection(extensionName) {
                 return {};
             };
 
+            Object.assign(window.RPGBridge, createFieldDefinitionSuggester({
+                getContext,
+                getBridge: () => window.RPGBridge,
+                isGenerating,
+                generate: prompt => executeFieldDefinitionPrompt(extensionName, prompt),
+            }));
             Object.assign(window.RPGBridge, createMessageScanner({
                 getContext,
                 getBridge: () => window.RPGBridge,

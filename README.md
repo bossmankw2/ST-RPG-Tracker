@@ -102,6 +102,19 @@ An explicit RPG_TRACKER JSON block can be applied without another model request.
 
 Release history is in [CHANGELOG.md](CHANGELOG.md).
 
+## Suggest a field guideline
+
+In **Prompt Editor → Field Definitions**, click **Suggest** beside a Status, Profile,
+or Relationship guide. The AI writes a short instruction for that field and places it
+in the editable textbox. Adjust the wording, then click **Save Changes**; **Cancel**
+discards the draft.
+
+Each suggestion uses one additional request through your configured SillyTavern
+connection and tracker model override, if enabled. It sends the field's name, type,
+limits and existing guide, without chat history or character values. Existing draft
+language is preserved; empty guides default to English. If you edit the field while
+waiting, your edit wins over the late AI result. Errors keep the existing text intact.
+
 ## Editing, ordering, and presets
 
 - Drag the handle beside a character or a Profile/Status field to reorder it. On a keyboard, focus the handle, press Space, move with the arrow keys, and press Space again; Escape cancels the move. Status fields stay within their own group.

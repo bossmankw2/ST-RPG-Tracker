@@ -181,3 +181,41 @@
   flex-direction: column;
   gap: 6px;
 }
+
+.definitionGuideRow {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+  min-width: 0;
+}
+
+.definitionGuideRow .defInput {
+  flex: 1 1 180px;
+  width: 100%;
+  min-width: 0;
+}
+
+.suggestButton {
+  flex: 0 0 auto;
+  min-height: 27px;
+  white-space: nowrap;
+}
+
+.suggestButton:disabled {
+  opacity: 0.5;
+  cursor: wait;
+}
+
+.suggestionFeedback {
+  font-size: 11.5px;
+  line-height: 1.4;
+  color: var(--rpg-text);
+  overflow-wrap: anywhere;
+}
+
+.suggestionFeedback:empty {
+  display: none;
+}

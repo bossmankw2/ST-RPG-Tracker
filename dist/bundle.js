@@ -1,4 +1,4 @@
-(function(){try{if(typeof document<`u`){var e=document.createElement(`style`);e.appendChild(document.createTextNode(`._toggleWrapper_1u82c_1{-webkit-user-select:none;user-select:none;position:fixed;top:8px;left:8px;z-index:1001!important;margin:0!important;padding:0!important}@media (width>=1001px){._toggleWrapper_1u82c_1:not(._userPositioned_1u82c_27){top:6px;left:40px}}@media (width<=1000px){._toggleWrapper_1u82c_1:not(._userPositioned_1u82c_27){top:45px!important;left:10px!important}}._toggleButton_1u82c_55{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:38px;height:38px;color:var(--rpg-text);cursor:pointer;touch-action:none;border-radius:6px;justify-content:center;align-items:center;margin:0;padding:0;transition:background .2s,border-color .2s,color .2s;display:flex;box-shadow:2px 2px 10px #00000080}._toggleButton_1u82c_55:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff0d}._dragModeActive_1u82c_103 ._toggleButton_1u82c_55{border-style:dashed;border-color:var(--rpg-highlight);opacity:.85;cursor:move;border-radius:6px}._icon_1u82c_119{width:20px;height:20px;display:block}._contextMenu_1u82c_131{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:6px;flex-direction:column;gap:2px;min-width:150px;padding:4px;display:flex;position:absolute;top:calc(100% + 6px);left:0;box-shadow:0 4px 15px #00000080}._contextMenu_1u82c_131 button{color:var(--rpg-text);opacity:.8;text-align:left;cursor:pointer;background:0 0;border:none;border-radius:4px;align-items:center;gap:8px;padding:8px 12px;font-size:11px;transition:background .2s,opacity .2s;display:flex}._contextMenu_1u82c_131 button:hover{opacity:1;background:#ffffff14}._contextMenu_1u82c_131 button._activeMenuBtn_1u82c_203{color:var(--rpg-highlight);background:#ffffff0d;font-weight:700}._menuIcon_1u82c_215{flex-shrink:0;width:13px;height:13px}._panelContainer_13ra3_1{color:var(--rpg-text);flex-direction:column;transition:width .3s,left .3s,right .3s;box-shadow:0 0 20px #00000073;background:var(--rpg-bg)!important;opacity:1!important;z-index:1000!important;height:100vh!important;margin:0!important;display:flex!important;position:fixed!important;top:0!important;bottom:0!important}._panelContainer_13ra3_1._left_13ra3_33{border-right:1px solid var(--rpg-border);animation:.2s ease-out _slideIn_13ra3_1;width:calc(50vw - var(--sheldWidth,800px) / 2)!important;min-width:280px!important;left:0!important}._panelContainer_13ra3_1._right_13ra3_49{border-left:1px solid var(--rpg-border);animation:.2s ease-out _slideInRight_13ra3_1;width:calc(50vw - var(--sheldWidth,800px) / 2)!important;min-width:280px!important;right:0!important}@keyframes _slideIn_13ra3_1{0%{transform:translate(-100%)}to{transform:translate(0)}}@keyframes _slideInRight_13ra3_1{0%{transform:translate(100%)}to{transform:translate(0)}}._panelInner_13ra3_85{flex-direction:column;flex:1;min-height:0;display:flex}._collapseButton_13ra3_99{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:20px;height:60px;color:var(--rpg-text);cursor:pointer;z-index:1001;outline:none;justify-content:center;align-items:center;padding:0;display:flex;position:absolute;top:50%;transform:translateY(-50%);box-shadow:2px 0 8px #0000004d}._collapseButton_13ra3_99._left_13ra3_33{border-left:none;border-radius:0 6px 6px 0;right:-21px}._collapseButton_13ra3_99._right_13ra3_49{border-right:none;border-radius:6px 0 0 6px;left:-21px}._collapseButton_13ra3_99:hover{background:#ffffff0d}._collapseButton_13ra3_99:hover ._collapseIcon_13ra3_169{color:var(--rpg-highlight)}._collapseIcon_13ra3_169{width:18px;height:18px;color:var(--rpg-text);transition:color .2s}._panelHeader_13ra3_191{border-bottom:1px solid var(--rpg-border);background:#0000001a;flex-shrink:0;justify-content:space-between;align-items:center;padding:8px 12px;display:flex}._headerLeftArea_13ra3_211{align-items:center;display:flex}._headerRightArea_13ra3_221{flex-direction:column;align-items:flex-end;gap:5px;display:flex}._headerButtonRow_13ra3_235{align-items:center;gap:5px;display:flex}._brand_13ra3_247{align-items:center;gap:6px;display:flex}._headerIcon_13ra3_259{width:16px;height:16px;color:var(--rpg-text)}._headerTitle_13ra3_271{font-size:12.5px;font-weight:700}._headerBtn_13ra3_281{font-size:10px;white-space:nowrap!important;box-sizing:border-box!important;justify-content:center!important;align-items:center!important;gap:2px!important;width:82px!important;height:22px!important;padding:0 4px!important;display:inline-flex!important}._headerBtnIcon_13ra3_307{flex-shrink:0;width:12px;height:12px}._scrollContainer_13ra3_319{flex-direction:column;flex:1;width:100%;display:flex;overflow:auto hidden}._scrollContainer_13ra3_319::-webkit-scrollbar{height:6px}._scrollContainer_13ra3_319::-webkit-scrollbar-track{background:#00000026;border:none!important}._scrollContainer_13ra3_319::-webkit-scrollbar-thumb{background:#fff3;border-radius:4px;background-clip:border-box!important;border:none!important}._scrollContainer_13ra3_319::-webkit-scrollbar-thumb:hover{background:#ffffff59}._contentWrapper_13ra3_377{box-sizing:border-box;flex-direction:column;flex:1;min-height:0;margin:0 auto;display:flex;flex-shrink:0!important;width:380px!important;min-width:380px!important;max-width:380px!important;padding:0!important}._panelBody_13ra3_405{flex:1;width:100%;padding:16px 0;overflow-y:auto}._panelBody_13ra3_405::-webkit-scrollbar{width:6px}._panelBody_13ra3_405::-webkit-scrollbar-track{background:0 0;border:none!important}._panelBody_13ra3_405::-webkit-scrollbar-thumb{background:#fff3;border-radius:4px;background-clip:border-box!important;border:none!important}._panelBody_13ra3_405::-webkit-scrollbar-thumb:hover{background:#ffffff59}._statusDot_13ra3_459{border-radius:50%;width:8px;height:8px;margin-left:6px;display:inline-block;box-shadow:0 0 4px #0003}._statusDotConnected_13ra3_477{background-color:#2ed573;box-shadow:0 0 8px #2ed573}._statusDotDisconnected_13ra3_487{background-color:#ff4757;box-shadow:0 0 8px #ff4757}@media (width<=1000px){._panelContainer_13ra3_1{width:85vw!important;max-width:100vw!important}._panelContainer_13ra3_1._left_13ra3_33,._panelContainer_13ra3_1._right_13ra3_49{width:85vw!important}}._container_1uttj_1{flex-direction:column;gap:8px;height:100%;padding-right:6px;display:flex;overflow-y:auto}._topActionBar_1uttj_19{gap:8px;margin-bottom:2px;display:flex}._charBlock_1uttj_31{border:1px solid var(--rpg-border);background:#ffffff05;border-radius:8px;flex-direction:column;gap:6px;padding:8px 12px;transition:border-color .2s;display:flex}._blockHeader_1uttj_53{justify-content:space-between;align-items:center;padding-bottom:2px;display:flex}._headerLeft_1uttj_67{cursor:pointer;align-items:center;gap:6px;max-width:60%;display:flex}._charName_1uttj_83{color:var(--rpg-text);white-space:normal;word-break:break-all;overflow-wrap:break-word;-webkit-user-select:none;user-select:none;font-size:14px;font-weight:700}._headerSwitches_1uttj_103{align-items:center;gap:10px;display:flex}._settingsGearBtn_1uttj_115{color:var(--rpg-text);cursor:pointer;opacity:.7;background:0 0;border:none;justify-content:center;align-items:center;padding:4px;transition:opacity .15s,color .15s;display:flex}._settingsGearBtn_1uttj_115:hover{opacity:1;color:var(--rpg-highlight)}._dashboardContainer_1uttj_151{border-top:1px solid #ffffff14;flex-direction:column;gap:6px;margin-top:2px;padding-top:6px;display:flex}._uniformControlGrid_1uttj_169{align-items:center;gap:4px;width:100%;display:flex}._avatarContainer_1uttj_183{border:1px solid var(--rpg-border);cursor:pointer;background:#00000040;border-radius:4px;flex-shrink:0;width:28px;height:28px;margin-left:auto;transition:all .2s;position:relative;overflow:hidden}._avatarContainer_1uttj_183:hover{border-color:var(--rpg-highlight);box-shadow:0 0 6px #4a9eff59}._avatarContainer_1uttj_183:hover:after{content:"✂";color:var(--rpg-highlight);background:#000000a6;justify-content:center;align-items:center;font-size:13px;font-weight:700;display:flex;position:absolute;inset:0}._readOnlyAvatar_1uttj_247{cursor:default!important}._readOnlyAvatar_1uttj_247:hover{border-color:var(--rpg-border)!important;box-shadow:none!important}._readOnlyAvatar_1uttj_247:hover:after{display:none!important}._avatarImg_1uttj_273{object-fit:cover;width:100%;height:100%}._avatarFallback_1uttj_285{width:100%;height:100%;color:var(--rpg-text);opacity:.8;justify-content:center;align-items:center;display:flex}._statusComponentContainer_1uttj_305{display:none}._statusComponentContainer_1uttj_305._tabActive_1uttj_313{margin-top:1px;margin-bottom:2px;display:block}._gaugeGrid_1uttj_325{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;display:grid}._gaugeCard_1uttj_337{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:4px;padding:6px 8px;display:flex}._gaugeLabelRow_1uttj_357{justify-content:space-between;align-items:center;display:flex}._gaugeName_1uttj_369{white-space:normal;word-break:break-word;flex:1;font-size:11px;font-weight:700}._gaugeLabelContainer_1uttj_385{flex:1;align-items:center;min-width:0;margin-right:4px;display:flex}._lockIcon_1uttj_401{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_1uttj_417{opacity:1}._smallNumberInput_1uttj_425{text-align:center;border:1px solid var(--rpg-border);width:32px;height:18px;min-height:18px;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;margin:0;padding:0;font-size:11px;line-height:16px}._smallNumberInput_1uttj_425:focus{border-color:var(--rpg-highlight)!important}._gaugeMaxText_1uttj_465{margin-top:0;font-size:11px}._gaugeValues_1uttj_475{align-items:center;gap:2px;display:flex}._gaugeMax_1uttj_465{opacity:.5;font-size:10px}._gaugeTrack_1uttj_497{border:1px solid var(--rpg-border);background:#0006;border-radius:3px;height:5px;overflow:hidden}._gaugeFill_1uttj_513{border-radius:2px;height:100%;transition:width .3s ease-out}._integerRowGrid_1uttj_525{grid-template-columns:repeat(4,1fr);gap:4px;display:grid}._integerBlockCard_1uttj_537{background:#0000001f;border:1px solid #ffffff08;border-radius:5px;flex-direction:column;justify-content:space-between;align-items:center;gap:4px;height:100%;padding:4px;display:flex}._integerFieldLeft_1uttj_563{flex:1;justify-content:center;align-items:center;width:100%;min-width:0;padding-left:18px;padding-right:18px;display:flex;position:relative}._integerFieldLeft_1uttj_563 ._lockIcon_1uttj_401{margin:0;position:absolute;top:50%;left:2px;transform:translateY(-50%)}._integerFieldName_1uttj_603{white-space:normal;word-break:break-all;overflow-wrap:break-word;text-align:center;width:100%;font-size:11px;font-weight:700;line-height:1.1}._integerFieldControlGroup_1uttj_625{justify-content:space-between;align-items:center;width:100%;padding:0 2px;display:flex}._integerRowBtn_1uttj_641{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff0a;border-radius:3px;justify-content:center;align-items:center;width:16px;height:16px;font-size:10px;display:flex}._textStack_1uttj_669{flex-direction:column;gap:6px;display:flex}._textBlockCard_1uttj_681{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;justify-content:space-between;align-items:center;gap:8px;padding:4px 8px;display:flex}._textBlockLabel_1uttj_703{color:var(--rpg-text);white-space:normal;word-break:break-word;text-align:left;flex:none;width:70px;margin:0;padding-right:4px;font-size:11px;font-weight:700}._textBlockInputWrapper_1uttj_731{flex:1;max-width:calc(100% - 22px);padding-left:4px}._textBlockInput_1uttj_731{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:11px;line-height:1.4;transition:border-color .15s;display:block;overflow-y:hidden}._textBlockInput_1uttj_731:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._dangerText_1uttj_789{color:#e74c3c!important}._dangerTrack_1uttj_791{border-color:#e74c3c}._dangerFlash_1uttj_793{animation:1s infinite alternate _flashDanger_1uttj_1}@keyframes _flashDanger_1uttj_1{0%{opacity:.5}to{opacity:1}}._cropperCanvasWrapper_1uttj_807{justify-content:center;align-items:center;width:100%;max-height:420px;display:flex;overflow:hidden}._tabContentStack_3eitu_1{flex-direction:column;gap:10px;margin:6px 0;display:flex}._inlineTabContent_3eitu_15{background:#00000040;border:1px solid #ffffff0d;border-radius:7px;padding:10px 12px;animation:.15s ease-out forwards _slideDownIn_3eitu_1;box-shadow:inset 0 2px 8px #0000004d}@keyframes _slideDownIn_3eitu_1{0%{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}._inlineHeaderLabelRow_3eitu_43{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._inlineSheetTitle_3eitu_57{color:var(--rpg-text);font-size:12.5px;font-weight:700}._appearanceGrid_3eitu_69{flex-direction:column;gap:7px;display:flex}._appearanceRow_3eitu_81{align-items:flex-start;gap:12px;display:flex}._appearanceRow_3eitu_81 ._lockIcon_3eitu_93{margin-top:6px}._fieldLabel_3eitu_101{opacity:.6;white-space:normal;word-break:break-word;flex-shrink:0;width:60px;margin-top:6px;font-size:10.5px;font-weight:700}._appearanceInputWrapper_3eitu_123{flex:1;width:calc(100% - 22px);min-width:0}._relationTargetCard_3eitu_135{background:#ffffff03;border:1px solid #ffffff0a;border-radius:6px;flex-direction:column;gap:6px;margin-bottom:8px;padding:8px;display:flex}._relationTargetHeader_3eitu_157{border-bottom:1px solid #ffffff08;justify-content:space-between;align-items:center;padding-bottom:4px;display:flex}._targetHeaderLeft_3eitu_173{flex:1;align-items:center;gap:6px;min-width:0;display:flex}._syncBadge_3eitu_189{color:#3498db;background:#3498db1a;border:1px solid #3498db4d;border-radius:3px;flex-shrink:0;padding:2px 6px;font-size:10px;line-height:1.2;display:inline-block}._targetNameText_3eitu_213{color:var(--rpg-text);white-space:normal;word-break:break-word;font-size:12.5px}._lockIcon_3eitu_93{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_3eitu_243{opacity:1!important}._flexCenterGap_3eitu_251{align-items:center;gap:8px;display:flex}._relationSectionMyPerspective_3eitu_263{background:0 0;border:none;flex-direction:column;gap:6px;padding:0;display:flex}._relationSectionTargetPerspective_3eitu_281{background:0 0;border:none;flex-direction:column;gap:6px;margin-top:10px;padding:0;display:flex}._relationSectionSubTitle_3eitu_301{color:var(--rpg-text);margin-bottom:2px;font-size:11px;font-weight:700}._relationMetricsGrid_3eitu_315{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:4px 0;display:grid}._gaugeCard_3eitu_329{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:4px;padding:6px 8px;display:flex}._gaugeLabelRow_3eitu_349{justify-content:space-between;align-items:center;display:flex}._gaugeName_3eitu_361{white-space:normal;word-break:break-word;opacity:.8;max-width:50%;font-size:11px;font-weight:700}._gaugeValues_3eitu_379{align-items:center;gap:2px;display:flex}._gaugeTrackWrapper_3eitu_391{border:1px solid var(--rpg-border);background:#0006;border-radius:3px;height:5px;position:relative;overflow:hidden}._gaugeZeroMarker_3eitu_409{z-index:2;background-color:#fff6;width:1px;position:absolute;top:0;bottom:0}._gaugeFill_3eitu_427{border-radius:2px;height:100%;transition:width .3s ease-out,left .3s ease-out;position:absolute;top:0;bottom:0}._emptyPlaceholder_3eitu_445{opacity:.3;text-align:center;padding:16px;font-size:11.5px}._textBlockInput_3eitu_459{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:none;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:12px;line-height:1.4;display:block;overflow-y:hidden}._textBlockInput_3eitu_459:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._readOnlyBlock_3eitu_503{cursor:default;white-space:pre-wrap;word-break:break-all;overflow-wrap:break-word;resize:none!important;background:#0000001a!important;border-color:#ffffff0d!important}._readOnlyNumberValue_3eitu_523{min-width:25px;color:var(--rpg-text);text-align:center;background:#0003;border:1px solid #ffffff1a;border-radius:4px;padding:1px 5px;font-size:11px;font-weight:700;display:inline-block}._emptyPlaceholderInline_3eitu_549{opacity:.4;font-size:11px;font-style:italic}._tabContentStack_ofn4r_1{flex-direction:column;gap:10px;margin:6px 0;display:flex}._inlineTabContent_ofn4r_15{background:#00000040;border:1px solid #ffffff0d;border-radius:7px;padding:10px 12px;animation:.15s ease-out forwards _slideDownIn_ofn4r_1;box-shadow:inset 0 2px 8px #0000004d}@keyframes _slideDownIn_ofn4r_1{0%{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}._inlineHeaderLabelRow_ofn4r_43{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._inlineSheetTitle_ofn4r_57{color:var(--rpg-text);font-size:12.5px;font-weight:700}._flexCenterGap_ofn4r_69{align-items:center;gap:8px;display:flex}._lockIcon_ofn4r_81{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_ofn4r_97{opacity:1!important}._sidebarInventoryGrid_ofn4r_107{flex-direction:column;gap:8px;display:flex}._sidebarSection_ofn4r_119{background:#00000026;border-radius:5px;padding:6px 8px}._sidebarSectionHeader_ofn4r_131{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._sidebarSectionTitleRow_ofn4r_145{align-items:center;gap:4px;display:flex}._sidebarSectionTitle_ofn4r_145{opacity:.5;margin:0;font-size:11px;font-weight:700;display:block}._sideBySideRow_ofn4r_173{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;display:grid}._sidebarEquipSlot_ofn4r_185,._sidebarStorageSlot_ofn4r_185{white-space:normal;word-break:break-all;overflow-wrap:break-word;background:#0003;border:1px solid #ffffff14;border-radius:4px;flex-direction:column;padding:6px;display:flex}._slotSmallLabel_ofn4r_209{opacity:.4;margin-bottom:3px;font-size:11px}._itemInfoStack_ofn4r_221{flex-direction:column;display:flex}._itemSidebarText_ofn4r_231{color:var(--rpg-text);white-space:normal;word-break:break-all;overflow-wrap:break-word;font-size:11px}._containerBadge_ofn4r_247{border:1px solid var(--rpg-border);color:var(--rpg-highlight);vertical-align:middle;background:#00000059;border-radius:3px;margin-left:4px;padding:1px 4px;font-size:9px;font-weight:700;line-height:1;display:inline-block}._itemSidebarDescText_ofn4r_275{opacity:.5;margin-top:2px;font-size:9px}._itemSidebarDescTextIndented_ofn4r_287{opacity:.5;padding-left:8px;font-size:9px}._sidebarStorageHeaderRow_ofn4r_299{justify-content:space-between;align-items:center;margin-bottom:4px;display:flex}._sidebarStorageList_ofn4r_313{flex-direction:column;gap:2px;display:flex}._storageItemBlock_ofn4r_325{flex-direction:column;margin-bottom:4px;display:flex}._itemMainLine_ofn4r_337{align-items:center;gap:4px;width:100%;display:flex}._itemBullet_ofn4r_351{opacity:.5;flex-shrink:0;font-size:11px}._qtyBadge_ofn4r_363{color:var(--rpg-text);opacity:.6;flex-shrink:0;margin-left:auto;font-size:10px;font-weight:700}._currencyBadge_ofn4r_381{color:var(--rpg-highlight);border:1px solid var(--rpg-border);background:#00000040;border-radius:4px;flex-shrink:0;margin-left:auto;padding:1px 5px;font-size:10px;font-weight:700}._assetBadge_ofn4r_405{color:var(--rpg-text);border:1px dashed var(--rpg-border);background:#ffffff0d;border-radius:4px;flex-shrink:0;margin-left:auto;padding:1px 5px;font-size:10px}._emptyTextIndicator_ofn4r_427{opacity:.3;font-size:10px}._questContainer_ofn4r_439{flex-direction:column;gap:8px;margin-bottom:14px;display:flex}._questContentBlock_ofn4r_453{background:#00000026;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:6px;padding:8px 10px;display:flex;position:relative}._questCompleted_ofn4r_475{opacity:.6}._textStrike_ofn4r_483{text-decoration:line-through}._questHeaderRow_ofn4r_491{align-items:center;gap:8px;width:100%;display:flex}._questTitleInputText_ofn4r_505{flex:1;width:100%;margin:0;padding:5px 8px;font-size:12px;font-weight:700}._sideQuestHeader_ofn4r_523{border-top:1px solid #ffffff0d;margin-bottom:8px;padding-top:10px}._questsListContainer_ofn4r_535{flex-direction:column;gap:8px;display:flex}._questSideHeaderRow_ofn4r_547{justify-content:space-between;align-items:center;gap:8px;display:flex}._questSideIndex_ofn4r_561{opacity:.5;font-size:10px;font-weight:700}._emptyPlaceholder_ofn4r_573{opacity:.3;text-align:center;padding:16px;font-size:11.5px}._textBlockInput_ofn4r_587{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:12px;line-height:1.4;display:block;overflow-y:hidden}._textBlockInput_ofn4r_587:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._presetBar_1gqp4_1{border-bottom:1px solid var(--rpg-border);background:#0003;flex-wrap:wrap;flex-shrink:0;align-items:flex-end;gap:8px;padding:12px 18px;display:flex}._presetInputContainer_1gqp4_12{flex-direction:column;flex:200px;gap:5px;min-width:0;display:flex}._fieldLabel_1gqp4_20{color:var(--rpg-text);opacity:.85;font-size:12px}._presetNameInput_1gqp4_26,._nameInput_1gqp4_27{border:1px solid var(--rpg-border);min-width:0;color:var(--rpg-text);background:#0000004d;border-radius:4px;outline:none;padding:8px 10px;font-size:13px}._presetNameInput_1gqp4_26:focus,._nameInput_1gqp4_27:focus{border-color:var(--rpg-highlight)}._notice_1gqp4_43{color:var(--rpg-text);border-bottom:1px solid var(--rpg-border);flex-shrink:0;justify-content:space-between;align-items:flex-start;gap:12px;max-height:105px;padding:10px 18px;font-size:12px;line-height:1.5;display:flex;overflow:auto}._noticeError_1gqp4_58{color:#ffad9f}._refreshButton_1gqp4_62{color:var(--rpg-highlight);font:inherit;cursor:pointer;background:0 0;border:none;flex-shrink:0;padding:0;text-decoration:underline}._refreshButton_1gqp4_62:disabled{opacity:.5;cursor:wait}._presetDropdown_1gqp4_78{border-bottom:1px solid var(--rpg-border);background:#00000026;flex-direction:column;flex-shrink:0;max-height:180px;display:flex;overflow-y:auto}._presetDropdownItem_1gqp4_88{border-bottom:1px solid #ffffff0d;flex-shrink:0;align-items:center;min-height:42px;padding-right:12px;display:flex}._presetDropdownItem_1gqp4_88:last-child{border-bottom:none}._presetDropdownItemLoadArea_1gqp4_101{cursor:pointer;min-width:0;color:var(--rpg-text);text-align:left;font:inherit;background:0 0;border:none;flex:1;justify-content:space-between;align-items:center;padding:10px 18px;display:flex}._presetDropdownItemLoadArea_1gqp4_101:hover,._presetDropdownItemLoadArea_1gqp4_101:focus-visible{background:#ffffff14}._presetItemName_1gqp4_121{overflow-wrap:anywhere;flex:1;margin-right:8px;font-size:13px}._presetDropdownEmpty_1gqp4_128{text-align:center;opacity:.8;padding:12px;font-size:12px}._listHint_1gqp4_135{opacity:.8;margin:0;font-size:12px;line-height:1.5}._charItem_1gqp4_142{background:#00000026;border:1px solid #ffffff1f;border-radius:6px;align-items:center;gap:10px;padding:8px 10px;display:flex}._nameInput_1gqp4_27{flex:1;font-weight:700}._actions_1gqp4_157{flex-shrink:0;align-items:center;gap:6px;display:flex}._charIdBadge_1gqp4_164{color:var(--rpg-text);text-align:center;background:#ffffff14;border:1px solid #ffffff26;border-radius:4px;flex-shrink:0;padding:3px 6px;font-size:11px}@media (width<=540px){._presetBar_1gqp4_1{padding:10px 12px}._presetInputContainer_1gqp4_12{flex-basis:100%}._notice_1gqp4_43{flex-direction:column;gap:4px;padding:8px 12px}._charItem_1gqp4_142{gap:5px;padding:6px}._nameInput_1gqp4_27{padding:8px 6px;font-size:13px}._actions_1gqp4_157{gap:4px}._presetDropdownItemLoadArea_1gqp4_101{padding:10px 12px}}._list_tbwy5_1{flex-direction:column;gap:6px;min-width:0;display:flex}._list_tbwy5_1>[data-sortable-id]{position:relative}._list_tbwy5_1>[data-dragging]{outline:2px solid var(--rpg-highlight,#d9a54c);outline-offset:-2px;opacity:.65}._list_tbwy5_1>[data-drop-position=before]{box-shadow:0 -3px 0 var(--rpg-highlight,#d9a54c)}._list_tbwy5_1>[data-drop-position=after]{box-shadow:0 3px 0 var(--rpg-highlight,#d9a54c)}._handle_tbwy5_26{width:30px;min-height:34px;color:var(--rpg-text);cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;background:0 0;border:1px solid #0000;border-radius:4px;flex:0 0 30px;justify-content:center;align-items:center;font-size:24px;display:inline-flex}._handle_tbwy5_26:hover,._handle_tbwy5_26:focus-visible{color:var(--rpg-highlight,#d9a54c);border-color:currentColor;outline:none}._handle_tbwy5_26:active,._handle_tbwy5_26[aria-pressed=true]{cursor:grabbing}._handle_tbwy5_26:disabled{opacity:.3;cursor:default}._preview_tbwy5_60{z-index:10000;text-overflow:ellipsis;white-space:nowrap;background:var(--rpg-bg,#222);max-width:165px;color:var(--rpg-text,#fff);border:1px solid var(--rpg-highlight,#d9a54c);pointer-events:none;border-radius:5px;padding:8px 12px;position:fixed;overflow:hidden;box-shadow:0 4px 14px #0008}._srOnly_tbwy5_76{clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}._headerNav_943y0_1{align-items:center;gap:12px;width:90%;display:flex}._charNameInput_943y0_15{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;padding:4px 8px;font-size:16px;font-weight:700}._statEditorDetail_943y0_37{flex-direction:column;gap:12px;display:flex}._sectionWrapper_943y0_49{border:1px solid var(--rpg-border);background:#00000026;border-radius:7px;padding:12px}._sectionHeaderLine_943y0_63{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}._sectionHeaderLine_943y0_63 h5{opacity:.8;margin:0;font-size:12px}._emptySectionText_943y0_89{opacity:.35;text-align:center;margin:8px 0;font-size:11px}._schemaItem_943y0_103{border:1px solid var(--rpg-border);background:#ffffff03;border-radius:5px;margin-bottom:6px;overflow:hidden}._itemExpanded_943y0_119{background:#ffffff05;border-color:#ffffff26}._itemHeader_943y0_129{background:#0000001a;justify-content:space-between;align-items:center;padding:6px 10px;display:flex}._headerLeftZone_943y0_145{align-items:center;gap:8px;display:flex}._headerRightZone_943y0_157{align-items:center;gap:5px;display:flex}._itemFields_943y0_169{background:#0000001a;border-top:1px solid #ffffff0a;flex-direction:column;gap:8px;padding:10px;display:flex}._inlineRow_943y0_187{justify-content:space-between;align-items:center;gap:10px;width:100%;display:flex}._inlineRow_943y0_187 label{opacity:.6;min-width:70px;font-size:11.5px;font-weight:700}._inlineRow_943y0_187 input{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11.5px;transition:border-color .15s}._inlineRow_943y0_187 input:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._inlineRow_943y0_187 input[type=color]{cursor:pointer;width:30px;height:20px;padding:0}._fixedBadge_943y0_265{opacity:.7;background:#ffffff0d;border:1px solid #ffffff1a;border-radius:3px;padding:2px 5px;font-size:9px;font-weight:700}._appearanceSection_943y0_285{margin-top:10px}._relationsTabBody_943y0_293,._inventoryTabBody_943y0_295{flex-direction:column;gap:12px;padding:4px 2px;display:flex}._tabHeaderRow_943y0_309{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._tabHeaderRow_943y0_309 span{font-size:13px;font-weight:700;color:var(--rpg-text)!important}._relationCard_943y0_335{border:1px solid var(--rpg-border);background:#ffffff05;border-radius:6px;flex-direction:column;gap:8px;padding:10px;display:flex}._relationCardHeader_943y0_355{border-bottom:1px solid #ffffff0d;justify-content:space-between;align-items:center;padding-bottom:6px;display:flex}._relationCardHeader_943y0_355 strong{color:var(--rpg-text)!important}._metricBlock_943y0_379{background:#00000026;border:1px solid #ffffff0a;border-radius:5px;flex-direction:column;gap:6px;padding:6px 8px;display:flex}._metricHeaderRow_943y0_399{justify-content:space-between;align-items:center;gap:8px;width:100%;display:flex}._metricValueGroup_943y0_415{flex-shrink:0;align-items:center;gap:6px;display:flex}._metricValueInput_943y0_429{border:1px solid var(--rpg-border);width:48px;color:var(--rpg-text);text-align:center;background:#0003;border-radius:4px;outline:none;padding:4px;font-size:11px;font-weight:700}._metricValueInput_943y0_429:focus{border-color:var(--rpg-highlight)!important}._metricConfigRow_943y0_463{border-top:1px dashed #ffffff0d;flex-wrap:wrap;align-items:center;gap:12px;width:100%;padding-top:4px;display:flex}._invSection_943y0_483{margin-bottom:10px}._invSectionTitle_943y0_491{opacity:.6;margin-bottom:6px;font-size:11.5px;font-weight:700}._invEquipGrid_943y0_505,._invStorageGrid_943y0_507{grid-template-columns:1fr;gap:8px;display:grid}._invSlotCard_943y0_519{background:#00000026;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;justify-content:space-between;min-height:80px;padding:8px;display:flex}._slotHeader_943y0_541{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._emptyText_943y0_555{opacity:.3;text-align:center;padding:10px 0;font-size:11px}._invStorageBox_943y0_569{background:#00000026;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:6px;padding:8px;display:flex}._invStorageItemsList_943y0_589{flex-direction:column;gap:6px;min-height:80px;display:flex}._invItemRow_943y0_603{background:#ffffff05;border:1px solid #ffffff05;border-radius:4px;justify-content:space-between;align-items:center;padding:6px 8px;display:flex}._itemTitleLine_943y0_623{flex-wrap:nowrap;align-items:center;gap:8px;width:100%;display:flex}._itemDescLine_943y0_639{flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;width:100%;display:flex}._itemQtyBox_943y0_657{flex-shrink:0;justify-content:flex-end;align-items:center;width:58px;display:flex}._itemQtyInputRefactored_943y0_673{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;box-sizing:border-box;vertical-align:middle;background:#ffffff14;border-radius:4px;outline:none;width:58px;height:22px;margin:0;padding:2px 4px;font-size:11px;font-weight:700;display:inline-block}._invItemRow_943y0_603 textarea,._invItemRow_943y0_603 input{touch-action:auto!important;-webkit-user-select:text!important;user-select:text!important}._itemTypeSelectWrapper_943y0_723{flex-shrink:0;align-items:center;margin:0;display:inline-flex}._assetValueGroup_943y0_737{flex-shrink:0;align-items:center;gap:4px;width:140px;display:flex}._assetAmountInput_943y0_753{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;background:#ffffff14;border-radius:4px;outline:none;width:60px;padding:2px 4px;font-size:11px;font-weight:700}._assetCurrencyInput_943y0_779{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;background:#ffffff14;border-radius:4px;outline:none;width:72px;padding:2px 4px;font-size:11px;font-weight:700}._limitInput_943y0_805{border:1px solid var(--rpg-border);width:45px;color:var(--rpg-text);text-align:center;background:#0000004d;border-radius:4px;outline:none;padding:2px 4px;font-size:11px}._nameInput_943y0_829{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;width:100px;padding:4px 8px;font-size:11px}._descTextarea_943y0_851{border:1px solid var(--rpg-border);width:100%;min-height:50px;color:var(--rpg-text);resize:vertical;background:#0000004d;border-radius:4px;outline:none;padding:6px;font-size:11px}._metricNameInput_943y0_877{border:1px solid var(--rpg-border);min-width:80px;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11px;font-weight:700}._metricLimitInput_943y0_903{width:40px;color:var(--rpg-text);border:1px solid var(--rpg-border);text-align:center;background:#0000004d;border-radius:3px;padding:4px;font-size:11px}._colorPickerInput_943y0_925{cursor:pointer;background:0 0;border:none;width:22px;height:22px;padding:0}._syncBadge_943y0_943{color:#3498db;background:#3498db1a;border:1px solid #3498db4d;border-radius:3px;padding:2px 6px;font-size:10px}._metricLimitWrapper_943y0_961{align-items:center;gap:4px;display:flex}._metricLimitLabel_943y0_973{opacity:.6;font-size:10px}._flexCenterGroup_943y0_983{align-items:center;gap:6px;display:flex}._flexCenterGroupSmall_943y0_995{align-items:center;gap:3px;display:flex}._flexColumnFull_943y0_1007{flex-direction:column;gap:3px;width:100%;display:flex}._flexItemLine_943y0_1021{align-items:center;gap:8px;display:flex}._slotInputOuter_943y0_1033{flex:1;align-items:center;gap:6px;margin-right:10px;display:flex}._slotRenameInputRefactored_943y0_1049{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;padding:4px 8px;font-size:11px}._itemTitleInputRefactored_943y0_1071{width:100%;color:var(--rpg-text);resize:none;vertical-align:middle;box-sizing:border-box;background:0 0;border:none;border-bottom:1px solid #0000;outline:none;flex:1;min-width:0;height:18px;margin:0;padding:4px 0;font-family:inherit;font-size:11px;line-height:1.4;display:inline-block;overflow-y:hidden}._itemDescInputRefactored_943y0_1115{width:100%;color:var(--rpg-text);opacity:.6;resize:none;background:0 0;border:none;outline:none;flex:200px;min-width:0;height:auto;margin-top:2px;padding:2px 0;font-family:inherit;font-size:10px;display:block;overflow-y:hidden}._flatHeaderRow_943y0_1153{-webkit-user-select:none;user-select:none;background:0 0;justify-content:space-between;align-items:center;margin-bottom:6px;padding:8px 2px;display:flex}._flatHeaderTitle_943y0_1173{color:var(--rpg-text);font-size:13.5px;font-weight:700}._accordionSeparator_943y0_1185{background:#ffffff26;width:100%;height:1px;margin:12px 0}._dragHandleIconWrapper_943y0_1199{cursor:grab;opacity:.45;color:var(--rpg-text);flex-shrink:0;justify-content:center;align-items:center;width:16px;height:16px;margin:0;padding:0;display:inline-flex}._dragHandleIconWrapper_943y0_1199:hover{opacity:1;color:var(--rpg-highlight)}._dragHandleIconWrapper_943y0_1199:active{cursor:grabbing}._spacedHeaderButtonGroup_943y0_1245{flex-shrink:0;align-items:center;gap:12px;display:flex}._headerNav_943y0_1{flex:1;min-width:0}._charNameInput_943y0_15{flex:200px;min-width:80px;max-width:100%}._headerLeftZone_943y0_145{flex:1;min-width:0}._headerRightZone_943y0_157{flex-shrink:0;margin-left:8px}._headerLeftZone_943y0_145 ._nameInput_943y0_829{flex:1;width:auto;min-width:50px}._sectionHeaderLine_943y0_63{flex-wrap:wrap;gap:8px}@media (width<=600px){._sectionWrapper_943y0_49{padding:8px}._itemHeader_943y0_129{flex-wrap:wrap;row-gap:6px;padding:6px}._headerLeftZone_943y0_145{flex-basis:100%;gap:6px}._headerRightZone_943y0_157{margin-left:auto}._flexCenterGroup_943y0_983{flex-wrap:wrap}._headerNav_943y0_1{width:auto}}._section_90892_3{flex-direction:column;gap:8px;height:100%;display:flex}._sectionStack_90892_17{flex-direction:column;gap:16px;display:flex}._label_90892_29{color:var(--rpg-highlight);font-size:12.5px;font-weight:700}._textarea_90892_41{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:none;box-sizing:border-box;background:#0003;border-radius:6px;outline:none;flex:1;padding:10px;font-size:12px}._textarea_90892_41:focus{border-color:var(--rpg-highlight)}._promptCard_90892_77{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;padding:12px}._promptCardHeader_90892_91{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._accordionHeader_90892_105{cursor:pointer;color:var(--rpg-highlight);align-items:center;gap:8px;display:flex}._buttonGroup_90892_121{gap:6px;display:flex}._textareaStack_90892_131{flex-direction:column;gap:8px;margin-top:8px;display:flex}._slotNotice_90892_145{text-align:center;opacity:.5;color:var(--rpg-text);font-size:11px}._defGroup_90892_161{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:8px;padding:12px;display:flex}._defGroupTitle_90892_181{color:var(--rpg-highlight);border-bottom:1px dashed #ffffff1a;margin:0;padding-bottom:4px;font-size:12px}._defInput_90892_197{border:1px solid var(--rpg-border);color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11.5px;transition:border-color .15s}._defInput_90892_197:focus{border-color:var(--rpg-highlight)}._switchesContainer_90892_233{flex-direction:column;gap:8px;margin-top:16px;display:flex}._switchCardRow_90892_247{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;justify-content:space-between;align-items:center;padding:8px 12px;display:flex}._switchTitle_90892_267{color:var(--rpg-text);font-size:13px}._relationsConfigCard_90892_277{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;flex-direction:column;gap:8px;padding:12px;display:flex}._inlineFormRow_90892_297{align-items:center;gap:8px;display:flex}._formSubLabel_90892_309{color:var(--rpg-text);opacity:.8;white-space:nowrap;font-size:11px}._worldStateGroupCard_90892_323{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;flex-direction:column;gap:12px;padding:12px;display:flex}._groupCardHeader_90892_343{color:var(--rpg-highlight);margin-bottom:4px;font-size:13px;font-weight:700}._worldStateSubRow_90892_357{flex-direction:column;gap:6px;display:flex}._section_12evk_1{flex-direction:column;gap:8px;height:auto;display:flex}._label_12evk_15{color:var(--rpg-highlight);font-size:12.5px;font-weight:700}._sectionHeaderRow_12evk_27{justify-content:space-between;align-items:center;display:flex}._settingsDesc_12evk_39{opacity:.6;margin-top:-4px;margin-bottom:8px;font-size:11px;line-height:1.4}._settingsSelect_12evk_55{width:100%;color:inherit;border:1px solid var(--rpg-border);background:#0003;border-radius:4px;outline:none;margin-bottom:8px;padding:6px 10px;font-family:inherit}._settingsSelect_12evk_55:focus{border-color:var(--rpg-highlight)}._colorPaletteGrid_12evk_87{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:8px;margin-top:4px;padding:12px;display:flex}._colorRow_12evk_109{align-items:center;gap:10px;width:100%;display:flex}._colorLabel_12evk_123{opacity:.85;flex-shrink:0;width:90px;font-size:11.5px;font-weight:700}._colorPicker_12evk_139{border:1px solid var(--rpg-border);cursor:pointer;background:0 0;border-radius:4px;flex-shrink:0;width:28px;height:28px;padding:0}._colorTextInput_12evk_161{border:1px solid var(--rpg-border);color:var(--rpg-text);text-transform:uppercase;background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-family:monospace;font-size:11.5px}._colorTextInput_12evk_161:focus{border-color:var(--rpg-highlight)}._snapshotControlsRow_12evk_197{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._snapshotLabel_12evk_211{color:var(--rpg-text);font-size:12px;font-weight:700}._snapshotButtonGroup_12evk_223{align-items:center;gap:6px;display:flex}._snapshotNumberInput_12evk_235{border:1px solid var(--rpg-border);width:55px;color:var(--rpg-text);text-align:center;background:#00000040;border-radius:4px;outline:none;padding:4px 6px;font-size:11.5px;font-weight:700;transition:all .15s}._snapshotNumberInput_12evk_235:disabled{opacity:.5;cursor:not-allowed;background:#0000001a}._container_10few_1{color:var(--rpg-text);flex-direction:column;gap:16px;padding:12px 10px;display:flex}._sectionHeader_10few_17{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._sectionTitle_10few_31{color:var(--rpg-highlight);font-size:13px;font-weight:700}._eventsSection_10few_43{margin-top:8px}._eventsSectionTitle_10few_51{color:var(--rpg-text);font-size:13px;font-weight:700}._stateGrid_10few_63{flex-direction:column;gap:10px;margin-top:10px;display:flex}._rowField_10few_77{align-items:center;gap:8px;display:flex}._twoCol_10few_89{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;display:grid}._fieldLabel_10few_101{opacity:.6;width:60px;color:var(--rpg-text);flex-shrink:0;font-size:12px;font-weight:700}._lockBtn_10few_119{color:var(--rpg-text);opacity:.5;cursor:pointer;background:0 0;border:none;justify-content:center;align-items:center;width:20px;height:20px;padding:4px;font-size:11px;transition:opacity .15s,color .15s;display:flex}._lockBtn_10few_119:hover{opacity:1;color:var(--rpg-highlight)}._stateTextarea_10few_161{border:1px solid var(--rpg-border);color:var(--rpg-text);resize:none;box-sizing:border-box;background:#0003;border-radius:4px;outline:none;flex:1;width:100%;height:auto;min-height:28px;padding:6px 10px;font-family:inherit;font-size:11px;line-height:1.4;display:block;overflow-y:hidden!important}._stateTextarea_10few_161:focus:not(:disabled){border-color:var(--rpg-highlight)}._stateTextarea_10few_161:disabled{opacity:.5;cursor:not-allowed;background:#0000001a}._eventsList_10few_221{flex-direction:column;gap:10px;display:flex}._eventBlock_10few_233{background:#00000026;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:8px;padding:10px 12px;display:flex;position:relative}._eventHeaderRow_10few_255{justify-content:space-between;align-items:center;gap:8px;display:flex}._eventNumber_10few_269{opacity:.5;font-size:11.5px;font-weight:700}._eventTitleInput_10few_281{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;padding:6px 10px;font-family:inherit;font-size:11px;font-weight:700}._eventTitleInput_10few_281:focus{border-color:var(--rpg-highlight)}._eventDescTextarea_10few_317{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;height:auto;min-height:32px;padding:6px 10px;font-family:inherit;font-size:11px;line-height:1.4;display:block;overflow-y:hidden!important}._eventDescTextarea_10few_317:focus{border-color:var(--rpg-highlight)}._emptyPlaceholder_10few_361{opacity:.5;text-align:center;margin:4px 0 0;font-size:12.5px}._container_c5ldp_1{color:var(--rpg-text);flex-direction:column;gap:14px;padding:12px 10px;display:flex}._sectionBlock_c5ldp_17{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:10px;padding:12px;display:flex}._sectionHeader_c5ldp_37{border-bottom:1px dashed #ffffff1a;justify-content:space-between;align-items:center;padding-bottom:6px;display:flex}._sectionTitle_c5ldp_53{color:var(--rpg-highlight);font-size:13px;font-weight:700}._refreshBtn_c5ldp_65{color:var(--rpg-text);cursor:pointer;opacity:.6;background:0 0;border:none;padding:0 4px;font-size:14px;line-height:1;transition:opacity .15s,color .15s}._refreshBtn_c5ldp_65:hover{opacity:1;color:var(--rpg-highlight)}._rowItem_c5ldp_99{justify-content:space-between;align-items:center;gap:12px;display:flex}._labelGroup_c5ldp_113{flex-direction:column;flex:1;gap:2px;display:flex}._itemLabel_c5ldp_127{color:var(--rpg-text);font-size:12px;font-weight:700}._itemSubText_c5ldp_139{opacity:.6;font-size:10.5px;line-height:1.3}._numberInput_c5ldp_151{border:1px solid var(--rpg-border);width:60px;color:var(--rpg-text);text-align:center;background:#00000040;border-radius:4px;outline:none;padding:5px 8px;font-size:12px;font-weight:700}._numberInput_c5ldp_151:focus{border-color:var(--rpg-highlight)}._inputGroup_c5ldp_185{flex-direction:column;gap:4px;display:flex}._fieldLabel_c5ldp_197{opacity:.8;color:var(--rpg-text);font-size:11.5px;font-weight:700}._textInput_c5ldp_211{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;padding:6px 10px;font-size:11.5px}._textInput_c5ldp_211:focus{border-color:var(--rpg-highlight)}._selectInput_c5ldp_243{width:100%;height:28px;color:var(--rpg-text);box-sizing:border-box;padding:4px 8px;font-size:11.5px}._buttonGroup_c5ldp_261{gap:8px;margin-top:4px;display:flex}._toggleRow_c5ldp_273{justify-content:space-between;align-items:center;padding:4px 0;display:flex}._tabContentFadeIn_u5h5k_3{animation:.18s ease-out forwards _tabFadeIn_u5h5k_1}@keyframes _tabFadeIn_u5h5k_1{0%{opacity:0;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}._section_u5h5k_21{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;padding:12px}._sectionTitleRow_u5h5k_35{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}._sectionTitle_u5h5k_35{color:var(--rpg-highlight);font-size:13px;font-weight:700}._charRow_u5h5k_61{border-bottom:1px dashed #ffffff0d;align-items:center;padding:8px 0;display:flex}._charRow_u5h5k_61:last-child{border-bottom:none}._worldRow_u5h5k_83{border-bottom:1px solid #ffffff1a;align-items:flex-start;margin-bottom:6px;padding-bottom:10px}._charNameLabel_u5h5k_97{white-space:nowrap;text-overflow:ellipsis;width:110px;color:var(--rpg-text);font-weight:700;display:inline-block;overflow:hidden}._charOptionsRow_u5h5k_117{flex-wrap:wrap;align-items:center;gap:14px;display:flex}._worldOptionsContainer_u5h5k_131{flex-direction:column;flex:1;gap:8px;transition:opacity .2s;display:flex}._worldOptionsRow_u5h5k_147{align-items:center;gap:14px;display:flex}._activeOps_u5h5k_159{opacity:1}._disabledOps_u5h5k_167{opacity:.25;pointer-events:none}._checkboxItem_u5h5k_177{cursor:pointer;align-items:center;gap:6px;font-size:12px;display:flex}._textarea_u5h5k_193{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;box-sizing:border-box;background:#0003;border-radius:4px;outline:none;min-height:60px;padding:8px;font-size:12px}._textarea_u5h5k_193:focus:not(:disabled){border-color:var(--rpg-highlight)}._jsonEditor_u5h5k_229{color:#8892b0;resize:vertical;box-sizing:border-box;background:#00000059;border:1px solid #ffffff1a;border-radius:4px;outline:none;width:100%;height:280px;padding:10px;font-family:monospace;font-size:11.5px;transition:all .2s}._jsonEditorWritable_u5h5k_261{box-shadow:inset 0 0 6px #00000080;color:#e6ebf5!important;border-color:var(--rpg-highlight)!important;background:#111216!important}._editorGroupBlock_u5h5k_275{box-sizing:border-box;background:#00000038;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:8px;width:100%;margin-bottom:12px;padding:10px 12px;display:flex}._editorGroupBlock_u5h5k_275:last-child{margin-bottom:0}._editorGroupTitle_u5h5k_309{color:var(--rpg-highlight);border-bottom:1px dashed #ffffff1a;margin-bottom:2px;padding-bottom:4px;font-size:11.5px;font-weight:700}._visualEditorRow_u5h5k_327{align-items:center;gap:12px;width:100%;display:flex}._visualEditorLabel_u5h5k_341{opacity:.6;text-align:left;white-space:nowrap;text-overflow:ellipsis;width:75px;color:var(--rpg-text,#fff);flex-shrink:0;font-size:11px;font-weight:700;overflow:hidden}._visualEditorSubLabel_u5h5k_367{opacity:.55;color:var(--rpg-text,#fff);margin-top:4px;font-size:10.5px;font-weight:700}._visualEditorInput_u5h5k_383{border:1px solid var(--rpg-border);color:var(--rpg-text);box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11px;transition:border-color .15s}._visualEditorInput_u5h5k_383:focus{border-color:var(--rpg-highlight)}._visualEditorTextarea_u5h5k_417{border:1px solid var(--rpg-border);color:var(--rpg-text);resize:vertical;box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;flex:1;min-height:24px;padding:5px 8px;font-family:inherit;font-size:11px;line-height:1.4;transition:border-color .15s}._visualEditorTextarea_u5h5k_417:focus{border-color:var(--rpg-highlight)}.rpg-modal-overlay{box-sizing:border-box;background:#000000bf;justify-content:center;align-items:center;width:100vw;height:100vh;padding:24px;display:flex;position:fixed;top:0;left:0;z-index:3000!important}.rpg-modal-container{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:540px;max-width:100%;height:680px;max-height:90vh;color:var(--rpg-text);border-radius:10px;flex-direction:column;display:flex;overflow:hidden;box-shadow:0 12px 35px #000000a6}.rpg-modal-header{border-bottom:1px solid var(--rpg-border);box-sizing:border-box;flex-shrink:0;justify-content:space-between;align-items:center;height:54px;padding:14px 20px;display:flex}.rpg-modal-header h4{color:var(--rpg-highlight);letter-spacing:.7px;margin:0;font-weight:700;font-size:15px!important}.rpg-modal-close-btn{color:var(--rpg-text);cursor:pointer;opacity:.6;background:0 0;border:none;justify-content:center;align-items:center;width:24px;height:24px;padding:0;font-size:24px;line-height:1;transition:opacity .15s;display:inline-flex}.rpg-modal-close-btn:hover{opacity:1}.rpg-modal-body{box-sizing:border-box;flex-direction:column;flex:1;gap:14px;padding:18px;display:flex;overflow-y:auto}.rpg-modal-footer{border-top:1px solid var(--rpg-border);box-sizing:border-box;background:#0003;border-radius:0 0 10px 10px;flex-shrink:0;justify-content:space-between;align-items:center;height:54px;padding:12px 18px;display:flex}.rpg-modal-footer-left,.rpg-modal-footer-right{align-items:center;gap:6px;display:flex}.rpg-modal-btn{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff0a;border-radius:5px;justify-content:center;align-items:center;padding:7px 14px;font-size:11.5px;font-weight:700;transition:background .15s,border-color .15s,opacity .15s;display:inline-flex}.rpg-modal-btn:hover{background:#ffffff14}.rpg-modal-btn.save{background:var(--rpg-highlight-bg);border:1px solid var(--rpg-highlight);color:var(--rpg-highlight)}.rpg-modal-btn.save:hover{opacity:.9}.rpg-modal-btn.reset{color:#e74c3c;border-color:#e74c3c40}.rpg-modal-btn.reset:hover{background:#e74c3c1a;border-color:#e74c3c}.rpg-modal-overlay.high-priority{z-index:5000!important}.rpg-modal-container.rpg-editor-modal{width:720px;height:760px;max-height:92dvh}.rpg-editor-modal .rpg-modal-header,.rpg-editor-modal .rpg-modal-footer{gap:10px;height:auto;min-height:54px}.rpg-editor-modal .rpg-modal-footer,.rpg-editor-modal .rpg-modal-footer-left,.rpg-editor-modal .rpg-modal-footer-right{flex-wrap:wrap}.rpg-editor-modal .rpg-modal-body{overscroll-behavior:contain;min-height:0}@media (width<=600px){.rpg-modal-overlay:has(.rpg-editor-modal){padding:8px}.rpg-modal-container.rpg-editor-modal{width:100%;height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}.rpg-editor-modal .rpg-modal-header,.rpg-editor-modal .rpg-modal-footer,.rpg-editor-modal .rpg-modal-body{padding:10px}.rpg-editor-modal .rpg-modal-footer-right{margin-left:auto}.rpg-editor-modal .rpg-modal-btn{min-height:36px;padding:7px 10px}}.rpg-btn{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;-webkit-user-select:none;user-select:none;background:#ffffff0a;border-radius:4px;justify-content:center;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;line-height:1.2;transition:background .15s,border-color .15s,color .15s;display:inline-flex}.rpg-btn:hover:not(:disabled){border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff17}.rpg-btn:disabled{opacity:.4;cursor:not-allowed}.rpg-btn-primary{border:1px solid var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff14}.rpg-btn-primary:hover:not(:disabled){background:#ffffff24}.rpg-btn-sm{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff0a;border-radius:3px;justify-content:center;align-items:center;gap:3px;padding:2px 7px;font-size:10px;font-weight:700;line-height:1.2;transition:all .15s;display:inline-flex}.rpg-btn-sm:hover:not(:disabled){border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff14}.rpg-btn-dashed{border:1px dashed var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff08;border-radius:6px;justify-content:center;align-items:center;width:100%;padding:8px 12px;font-size:11.5px;font-weight:700;transition:all .15s;display:flex}.rpg-btn-dashed:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff0f}.rpg-btn-icon{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff0a;border-radius:4px;flex-shrink:0;justify-content:center;align-items:center;width:28px;height:28px;padding:0;transition:all .15s;display:inline-flex}.rpg-btn-icon:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff1a}.rpg-btn-icon.active{border-color:var(--rpg-highlight)!important;color:var(--rpg-highlight)!important;background:#ffffff1f!important}.rpg-btn-del{color:#e74c3c;cursor:pointer;background:#e74c3c1f;border:1px solid #e74c3c4d;border-radius:3px;justify-content:center;align-items:center;padding:2px 6px;font-size:10.5px;font-weight:700;line-height:1;transition:all .15s;display:inline-flex}.rpg-btn-del:hover{color:#ff6b6b;background:#e74c3c40;border-color:#e74c3c}.rpg-btn-del-text{color:#fff6;cursor:pointer;background:0 0;border:none;justify-content:center;align-items:center;padding:0 4px;font-size:14px;line-height:1;transition:color .15s;display:inline-flex}.rpg-btn-del-text:hover{color:#e74c3c}.rpg-btn-sort{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff08;border-radius:3px;justify-content:center;align-items:center;width:20px;height:20px;padding:0;font-size:9px;transition:all .15s;display:inline-flex}.rpg-btn-sort:hover:not(:disabled){border-color:var(--rpg-highlight);background:#ffffff1a}.rpg-btn-sort:disabled{opacity:.15;cursor:not-allowed}.rpg-accordion-arrow{color:var(--rpg-text);cursor:pointer;background:0 0;border:none;padding:2px 4px;font-size:10px;line-height:1;transition:transform .18s ease-out;display:inline-block;transform:rotate(0)}.rpg-accordion-arrow.expanded{transform:rotate(90deg)}.rpg-tab-nav{border-bottom:1px solid var(--rpg-border);background:#00000026;flex-shrink:0;width:100%;display:flex}.rpg-tab-btn{color:var(--rpg-text);opacity:.6;cursor:pointer;text-align:center;background:0 0;border:none;border-bottom:2px solid #0000;outline:none;flex:1;padding:10px 0;font-size:11.5px;font-weight:700;transition:all .15s}.rpg-tab-btn:hover{opacity:.9;background:#ffffff05}.rpg-tab-btn.active{background:#ffffff0a;opacity:1!important;color:var(--rpg-highlight)!important;border-bottom-color:var(--rpg-highlight)!important}.rpg-switch-row{opacity:.8;cursor:pointer;-webkit-user-select:none;user-select:none;align-items:center;gap:5px;font-size:11px;display:inline-flex}.rpg-switch{flex-shrink:0;width:28px;height:14px;display:inline-block;position:relative}.rpg-switch input{opacity:0;width:0;height:0;position:absolute}.rpg-slider{cursor:pointer;border:1px solid var(--rpg-border);background-color:#ffffff14;border-radius:14px;transition:all .2s;position:absolute;inset:0}.rpg-slider:before{content:"";background-color:var(--rpg-text);border-radius:50%;width:8px;height:8px;transition:all .2s;position:absolute;bottom:2px;left:2px}.rpg-switch input:checked+.rpg-slider{border-color:var(--rpg-highlight);background-color:#ffffff26}.rpg-switch input:checked+.rpg-slider:before{background-color:var(--rpg-highlight);transform:translate(14px)}.rpg-switch input:disabled+.rpg-slider{opacity:.35;cursor:not-allowed}input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.rpg-select-custom{appearance:none;color:var(--rpg-text);border:1px solid var(--rpg-border);cursor:pointer;box-sizing:border-box;background-image:url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");background-position:right 4px center;background-repeat:no-repeat;background-size:14px;border-radius:4px;outline:none;font-size:11px;background:#00000059!important;padding:3px 20px 3px 8px!important}.rpg-select-custom:focus{border-color:var(--rpg-highlight)}.dnd-poly-drag-image{opacity:.5!important}.dnd-poly-drag-image.dnd-poly-snapback{transition-property:transform!important;transition-duration:.25s!important;transition-timing-function:ease-out!important}/*$vite$:1*/`)),document.head.appendChild(e)}}catch(e){console.error(`vite-plugin-css-injected-by-js`,e)}})();
+(function(){try{if(typeof document<`u`){var e=document.createElement(`style`);e.appendChild(document.createTextNode(`._toggleWrapper_1u82c_1{-webkit-user-select:none;user-select:none;position:fixed;top:8px;left:8px;z-index:1001!important;margin:0!important;padding:0!important}@media (width>=1001px){._toggleWrapper_1u82c_1:not(._userPositioned_1u82c_27){top:6px;left:40px}}@media (width<=1000px){._toggleWrapper_1u82c_1:not(._userPositioned_1u82c_27){top:45px!important;left:10px!important}}._toggleButton_1u82c_55{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:38px;height:38px;color:var(--rpg-text);cursor:pointer;touch-action:none;border-radius:6px;justify-content:center;align-items:center;margin:0;padding:0;transition:background .2s,border-color .2s,color .2s;display:flex;box-shadow:2px 2px 10px #00000080}._toggleButton_1u82c_55:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff0d}._dragModeActive_1u82c_103 ._toggleButton_1u82c_55{border-style:dashed;border-color:var(--rpg-highlight);opacity:.85;cursor:move;border-radius:6px}._icon_1u82c_119{width:20px;height:20px;display:block}._contextMenu_1u82c_131{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:6px;flex-direction:column;gap:2px;min-width:150px;padding:4px;display:flex;position:absolute;top:calc(100% + 6px);left:0;box-shadow:0 4px 15px #00000080}._contextMenu_1u82c_131 button{color:var(--rpg-text);opacity:.8;text-align:left;cursor:pointer;background:0 0;border:none;border-radius:4px;align-items:center;gap:8px;padding:8px 12px;font-size:11px;transition:background .2s,opacity .2s;display:flex}._contextMenu_1u82c_131 button:hover{opacity:1;background:#ffffff14}._contextMenu_1u82c_131 button._activeMenuBtn_1u82c_203{color:var(--rpg-highlight);background:#ffffff0d;font-weight:700}._menuIcon_1u82c_215{flex-shrink:0;width:13px;height:13px}._panelContainer_13ra3_1{color:var(--rpg-text);flex-direction:column;transition:width .3s,left .3s,right .3s;box-shadow:0 0 20px #00000073;background:var(--rpg-bg)!important;opacity:1!important;z-index:1000!important;height:100vh!important;margin:0!important;display:flex!important;position:fixed!important;top:0!important;bottom:0!important}._panelContainer_13ra3_1._left_13ra3_33{border-right:1px solid var(--rpg-border);animation:.2s ease-out _slideIn_13ra3_1;width:calc(50vw - var(--sheldWidth,800px) / 2)!important;min-width:280px!important;left:0!important}._panelContainer_13ra3_1._right_13ra3_49{border-left:1px solid var(--rpg-border);animation:.2s ease-out _slideInRight_13ra3_1;width:calc(50vw - var(--sheldWidth,800px) / 2)!important;min-width:280px!important;right:0!important}@keyframes _slideIn_13ra3_1{0%{transform:translate(-100%)}to{transform:translate(0)}}@keyframes _slideInRight_13ra3_1{0%{transform:translate(100%)}to{transform:translate(0)}}._panelInner_13ra3_85{flex-direction:column;flex:1;min-height:0;display:flex}._collapseButton_13ra3_99{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:20px;height:60px;color:var(--rpg-text);cursor:pointer;z-index:1001;outline:none;justify-content:center;align-items:center;padding:0;display:flex;position:absolute;top:50%;transform:translateY(-50%);box-shadow:2px 0 8px #0000004d}._collapseButton_13ra3_99._left_13ra3_33{border-left:none;border-radius:0 6px 6px 0;right:-21px}._collapseButton_13ra3_99._right_13ra3_49{border-right:none;border-radius:6px 0 0 6px;left:-21px}._collapseButton_13ra3_99:hover{background:#ffffff0d}._collapseButton_13ra3_99:hover ._collapseIcon_13ra3_169{color:var(--rpg-highlight)}._collapseIcon_13ra3_169{width:18px;height:18px;color:var(--rpg-text);transition:color .2s}._panelHeader_13ra3_191{border-bottom:1px solid var(--rpg-border);background:#0000001a;flex-shrink:0;justify-content:space-between;align-items:center;padding:8px 12px;display:flex}._headerLeftArea_13ra3_211{align-items:center;display:flex}._headerRightArea_13ra3_221{flex-direction:column;align-items:flex-end;gap:5px;display:flex}._headerButtonRow_13ra3_235{align-items:center;gap:5px;display:flex}._brand_13ra3_247{align-items:center;gap:6px;display:flex}._headerIcon_13ra3_259{width:16px;height:16px;color:var(--rpg-text)}._headerTitle_13ra3_271{font-size:12.5px;font-weight:700}._headerBtn_13ra3_281{font-size:10px;white-space:nowrap!important;box-sizing:border-box!important;justify-content:center!important;align-items:center!important;gap:2px!important;width:82px!important;height:22px!important;padding:0 4px!important;display:inline-flex!important}._headerBtnIcon_13ra3_307{flex-shrink:0;width:12px;height:12px}._scrollContainer_13ra3_319{flex-direction:column;flex:1;width:100%;display:flex;overflow:auto hidden}._scrollContainer_13ra3_319::-webkit-scrollbar{height:6px}._scrollContainer_13ra3_319::-webkit-scrollbar-track{background:#00000026;border:none!important}._scrollContainer_13ra3_319::-webkit-scrollbar-thumb{background:#fff3;border-radius:4px;background-clip:border-box!important;border:none!important}._scrollContainer_13ra3_319::-webkit-scrollbar-thumb:hover{background:#ffffff59}._contentWrapper_13ra3_377{box-sizing:border-box;flex-direction:column;flex:1;min-height:0;margin:0 auto;display:flex;flex-shrink:0!important;width:380px!important;min-width:380px!important;max-width:380px!important;padding:0!important}._panelBody_13ra3_405{flex:1;width:100%;padding:16px 0;overflow-y:auto}._panelBody_13ra3_405::-webkit-scrollbar{width:6px}._panelBody_13ra3_405::-webkit-scrollbar-track{background:0 0;border:none!important}._panelBody_13ra3_405::-webkit-scrollbar-thumb{background:#fff3;border-radius:4px;background-clip:border-box!important;border:none!important}._panelBody_13ra3_405::-webkit-scrollbar-thumb:hover{background:#ffffff59}._statusDot_13ra3_459{border-radius:50%;width:8px;height:8px;margin-left:6px;display:inline-block;box-shadow:0 0 4px #0003}._statusDotConnected_13ra3_477{background-color:#2ed573;box-shadow:0 0 8px #2ed573}._statusDotDisconnected_13ra3_487{background-color:#ff4757;box-shadow:0 0 8px #ff4757}@media (width<=1000px){._panelContainer_13ra3_1{width:85vw!important;max-width:100vw!important}._panelContainer_13ra3_1._left_13ra3_33,._panelContainer_13ra3_1._right_13ra3_49{width:85vw!important}}._container_1uttj_1{flex-direction:column;gap:8px;height:100%;padding-right:6px;display:flex;overflow-y:auto}._topActionBar_1uttj_19{gap:8px;margin-bottom:2px;display:flex}._charBlock_1uttj_31{border:1px solid var(--rpg-border);background:#ffffff05;border-radius:8px;flex-direction:column;gap:6px;padding:8px 12px;transition:border-color .2s;display:flex}._blockHeader_1uttj_53{justify-content:space-between;align-items:center;padding-bottom:2px;display:flex}._headerLeft_1uttj_67{cursor:pointer;align-items:center;gap:6px;max-width:60%;display:flex}._charName_1uttj_83{color:var(--rpg-text);white-space:normal;word-break:break-all;overflow-wrap:break-word;-webkit-user-select:none;user-select:none;font-size:14px;font-weight:700}._headerSwitches_1uttj_103{align-items:center;gap:10px;display:flex}._settingsGearBtn_1uttj_115{color:var(--rpg-text);cursor:pointer;opacity:.7;background:0 0;border:none;justify-content:center;align-items:center;padding:4px;transition:opacity .15s,color .15s;display:flex}._settingsGearBtn_1uttj_115:hover{opacity:1;color:var(--rpg-highlight)}._dashboardContainer_1uttj_151{border-top:1px solid #ffffff14;flex-direction:column;gap:6px;margin-top:2px;padding-top:6px;display:flex}._uniformControlGrid_1uttj_169{align-items:center;gap:4px;width:100%;display:flex}._avatarContainer_1uttj_183{border:1px solid var(--rpg-border);cursor:pointer;background:#00000040;border-radius:4px;flex-shrink:0;width:28px;height:28px;margin-left:auto;transition:all .2s;position:relative;overflow:hidden}._avatarContainer_1uttj_183:hover{border-color:var(--rpg-highlight);box-shadow:0 0 6px #4a9eff59}._avatarContainer_1uttj_183:hover:after{content:"✂";color:var(--rpg-highlight);background:#000000a6;justify-content:center;align-items:center;font-size:13px;font-weight:700;display:flex;position:absolute;inset:0}._readOnlyAvatar_1uttj_247{cursor:default!important}._readOnlyAvatar_1uttj_247:hover{border-color:var(--rpg-border)!important;box-shadow:none!important}._readOnlyAvatar_1uttj_247:hover:after{display:none!important}._avatarImg_1uttj_273{object-fit:cover;width:100%;height:100%}._avatarFallback_1uttj_285{width:100%;height:100%;color:var(--rpg-text);opacity:.8;justify-content:center;align-items:center;display:flex}._statusComponentContainer_1uttj_305{display:none}._statusComponentContainer_1uttj_305._tabActive_1uttj_313{margin-top:1px;margin-bottom:2px;display:block}._gaugeGrid_1uttj_325{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;display:grid}._gaugeCard_1uttj_337{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:4px;padding:6px 8px;display:flex}._gaugeLabelRow_1uttj_357{justify-content:space-between;align-items:center;display:flex}._gaugeName_1uttj_369{white-space:normal;word-break:break-word;flex:1;font-size:11px;font-weight:700}._gaugeLabelContainer_1uttj_385{flex:1;align-items:center;min-width:0;margin-right:4px;display:flex}._lockIcon_1uttj_401{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_1uttj_417{opacity:1}._smallNumberInput_1uttj_425{text-align:center;border:1px solid var(--rpg-border);width:32px;height:18px;min-height:18px;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;margin:0;padding:0;font-size:11px;line-height:16px}._smallNumberInput_1uttj_425:focus{border-color:var(--rpg-highlight)!important}._gaugeMaxText_1uttj_465{margin-top:0;font-size:11px}._gaugeValues_1uttj_475{align-items:center;gap:2px;display:flex}._gaugeMax_1uttj_465{opacity:.5;font-size:10px}._gaugeTrack_1uttj_497{border:1px solid var(--rpg-border);background:#0006;border-radius:3px;height:5px;overflow:hidden}._gaugeFill_1uttj_513{border-radius:2px;height:100%;transition:width .3s ease-out}._integerRowGrid_1uttj_525{grid-template-columns:repeat(4,1fr);gap:4px;display:grid}._integerBlockCard_1uttj_537{background:#0000001f;border:1px solid #ffffff08;border-radius:5px;flex-direction:column;justify-content:space-between;align-items:center;gap:4px;height:100%;padding:4px;display:flex}._integerFieldLeft_1uttj_563{flex:1;justify-content:center;align-items:center;width:100%;min-width:0;padding-left:18px;padding-right:18px;display:flex;position:relative}._integerFieldLeft_1uttj_563 ._lockIcon_1uttj_401{margin:0;position:absolute;top:50%;left:2px;transform:translateY(-50%)}._integerFieldName_1uttj_603{white-space:normal;word-break:break-all;overflow-wrap:break-word;text-align:center;width:100%;font-size:11px;font-weight:700;line-height:1.1}._integerFieldControlGroup_1uttj_625{justify-content:space-between;align-items:center;width:100%;padding:0 2px;display:flex}._integerRowBtn_1uttj_641{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff0a;border-radius:3px;justify-content:center;align-items:center;width:16px;height:16px;font-size:10px;display:flex}._textStack_1uttj_669{flex-direction:column;gap:6px;display:flex}._textBlockCard_1uttj_681{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;justify-content:space-between;align-items:center;gap:8px;padding:4px 8px;display:flex}._textBlockLabel_1uttj_703{color:var(--rpg-text);white-space:normal;word-break:break-word;text-align:left;flex:none;width:70px;margin:0;padding-right:4px;font-size:11px;font-weight:700}._textBlockInputWrapper_1uttj_731{flex:1;max-width:calc(100% - 22px);padding-left:4px}._textBlockInput_1uttj_731{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:11px;line-height:1.4;transition:border-color .15s;display:block;overflow-y:hidden}._textBlockInput_1uttj_731:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._dangerText_1uttj_789{color:#e74c3c!important}._dangerTrack_1uttj_791{border-color:#e74c3c}._dangerFlash_1uttj_793{animation:1s infinite alternate _flashDanger_1uttj_1}@keyframes _flashDanger_1uttj_1{0%{opacity:.5}to{opacity:1}}._cropperCanvasWrapper_1uttj_807{justify-content:center;align-items:center;width:100%;max-height:420px;display:flex;overflow:hidden}._tabContentStack_3eitu_1{flex-direction:column;gap:10px;margin:6px 0;display:flex}._inlineTabContent_3eitu_15{background:#00000040;border:1px solid #ffffff0d;border-radius:7px;padding:10px 12px;animation:.15s ease-out forwards _slideDownIn_3eitu_1;box-shadow:inset 0 2px 8px #0000004d}@keyframes _slideDownIn_3eitu_1{0%{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}._inlineHeaderLabelRow_3eitu_43{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._inlineSheetTitle_3eitu_57{color:var(--rpg-text);font-size:12.5px;font-weight:700}._appearanceGrid_3eitu_69{flex-direction:column;gap:7px;display:flex}._appearanceRow_3eitu_81{align-items:flex-start;gap:12px;display:flex}._appearanceRow_3eitu_81 ._lockIcon_3eitu_93{margin-top:6px}._fieldLabel_3eitu_101{opacity:.6;white-space:normal;word-break:break-word;flex-shrink:0;width:60px;margin-top:6px;font-size:10.5px;font-weight:700}._appearanceInputWrapper_3eitu_123{flex:1;width:calc(100% - 22px);min-width:0}._relationTargetCard_3eitu_135{background:#ffffff03;border:1px solid #ffffff0a;border-radius:6px;flex-direction:column;gap:6px;margin-bottom:8px;padding:8px;display:flex}._relationTargetHeader_3eitu_157{border-bottom:1px solid #ffffff08;justify-content:space-between;align-items:center;padding-bottom:4px;display:flex}._targetHeaderLeft_3eitu_173{flex:1;align-items:center;gap:6px;min-width:0;display:flex}._syncBadge_3eitu_189{color:#3498db;background:#3498db1a;border:1px solid #3498db4d;border-radius:3px;flex-shrink:0;padding:2px 6px;font-size:10px;line-height:1.2;display:inline-block}._targetNameText_3eitu_213{color:var(--rpg-text);white-space:normal;word-break:break-word;font-size:12.5px}._lockIcon_3eitu_93{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_3eitu_243{opacity:1!important}._flexCenterGap_3eitu_251{align-items:center;gap:8px;display:flex}._relationSectionMyPerspective_3eitu_263{background:0 0;border:none;flex-direction:column;gap:6px;padding:0;display:flex}._relationSectionTargetPerspective_3eitu_281{background:0 0;border:none;flex-direction:column;gap:6px;margin-top:10px;padding:0;display:flex}._relationSectionSubTitle_3eitu_301{color:var(--rpg-text);margin-bottom:2px;font-size:11px;font-weight:700}._relationMetricsGrid_3eitu_315{grid-template-columns:repeat(2,minmax(0,1fr));gap:6px;margin:4px 0;display:grid}._gaugeCard_3eitu_329{background:#0000001f;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:4px;padding:6px 8px;display:flex}._gaugeLabelRow_3eitu_349{justify-content:space-between;align-items:center;display:flex}._gaugeName_3eitu_361{white-space:normal;word-break:break-word;opacity:.8;max-width:50%;font-size:11px;font-weight:700}._gaugeValues_3eitu_379{align-items:center;gap:2px;display:flex}._gaugeTrackWrapper_3eitu_391{border:1px solid var(--rpg-border);background:#0006;border-radius:3px;height:5px;position:relative;overflow:hidden}._gaugeZeroMarker_3eitu_409{z-index:2;background-color:#fff6;width:1px;position:absolute;top:0;bottom:0}._gaugeFill_3eitu_427{border-radius:2px;height:100%;transition:width .3s ease-out,left .3s ease-out;position:absolute;top:0;bottom:0}._emptyPlaceholder_3eitu_445{opacity:.3;text-align:center;padding:16px;font-size:11.5px}._textBlockInput_3eitu_459{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:none;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:12px;line-height:1.4;display:block;overflow-y:hidden}._textBlockInput_3eitu_459:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._readOnlyBlock_3eitu_503{cursor:default;white-space:pre-wrap;word-break:break-all;overflow-wrap:break-word;resize:none!important;background:#0000001a!important;border-color:#ffffff0d!important}._readOnlyNumberValue_3eitu_523{min-width:25px;color:var(--rpg-text);text-align:center;background:#0003;border:1px solid #ffffff1a;border-radius:4px;padding:1px 5px;font-size:11px;font-weight:700;display:inline-block}._emptyPlaceholderInline_3eitu_549{opacity:.4;font-size:11px;font-style:italic}._tabContentStack_ofn4r_1{flex-direction:column;gap:10px;margin:6px 0;display:flex}._inlineTabContent_ofn4r_15{background:#00000040;border:1px solid #ffffff0d;border-radius:7px;padding:10px 12px;animation:.15s ease-out forwards _slideDownIn_ofn4r_1;box-shadow:inset 0 2px 8px #0000004d}@keyframes _slideDownIn_ofn4r_1{0%{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:translateY(0)}}._inlineHeaderLabelRow_ofn4r_43{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._inlineSheetTitle_ofn4r_57{color:var(--rpg-text);font-size:12.5px;font-weight:700}._flexCenterGap_ofn4r_69{align-items:center;gap:8px;display:flex}._lockIcon_ofn4r_81{cursor:pointer;opacity:.4;flex-shrink:0;margin-right:4px;transition:opacity .15s}._lockIconActive_ofn4r_97{opacity:1!important}._sidebarInventoryGrid_ofn4r_107{flex-direction:column;gap:8px;display:flex}._sidebarSection_ofn4r_119{background:#00000026;border-radius:5px;padding:6px 8px}._sidebarSectionHeader_ofn4r_131{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._sidebarSectionTitleRow_ofn4r_145{align-items:center;gap:4px;display:flex}._sidebarSectionTitle_ofn4r_145{opacity:.5;margin:0;font-size:11px;font-weight:700;display:block}._sideBySideRow_ofn4r_173{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;display:grid}._sidebarEquipSlot_ofn4r_185,._sidebarStorageSlot_ofn4r_185{white-space:normal;word-break:break-all;overflow-wrap:break-word;background:#0003;border:1px solid #ffffff14;border-radius:4px;flex-direction:column;padding:6px;display:flex}._slotSmallLabel_ofn4r_209{opacity:.4;margin-bottom:3px;font-size:11px}._itemInfoStack_ofn4r_221{flex-direction:column;display:flex}._itemSidebarText_ofn4r_231{color:var(--rpg-text);white-space:normal;word-break:break-all;overflow-wrap:break-word;font-size:11px}._containerBadge_ofn4r_247{border:1px solid var(--rpg-border);color:var(--rpg-highlight);vertical-align:middle;background:#00000059;border-radius:3px;margin-left:4px;padding:1px 4px;font-size:9px;font-weight:700;line-height:1;display:inline-block}._itemSidebarDescText_ofn4r_275{opacity:.5;margin-top:2px;font-size:9px}._itemSidebarDescTextIndented_ofn4r_287{opacity:.5;padding-left:8px;font-size:9px}._sidebarStorageHeaderRow_ofn4r_299{justify-content:space-between;align-items:center;margin-bottom:4px;display:flex}._sidebarStorageList_ofn4r_313{flex-direction:column;gap:2px;display:flex}._storageItemBlock_ofn4r_325{flex-direction:column;margin-bottom:4px;display:flex}._itemMainLine_ofn4r_337{align-items:center;gap:4px;width:100%;display:flex}._itemBullet_ofn4r_351{opacity:.5;flex-shrink:0;font-size:11px}._qtyBadge_ofn4r_363{color:var(--rpg-text);opacity:.6;flex-shrink:0;margin-left:auto;font-size:10px;font-weight:700}._currencyBadge_ofn4r_381{color:var(--rpg-highlight);border:1px solid var(--rpg-border);background:#00000040;border-radius:4px;flex-shrink:0;margin-left:auto;padding:1px 5px;font-size:10px;font-weight:700}._assetBadge_ofn4r_405{color:var(--rpg-text);border:1px dashed var(--rpg-border);background:#ffffff0d;border-radius:4px;flex-shrink:0;margin-left:auto;padding:1px 5px;font-size:10px}._emptyTextIndicator_ofn4r_427{opacity:.3;font-size:10px}._questContainer_ofn4r_439{flex-direction:column;gap:8px;margin-bottom:14px;display:flex}._questContentBlock_ofn4r_453{background:#00000026;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:6px;padding:8px 10px;display:flex;position:relative}._questCompleted_ofn4r_475{opacity:.6}._textStrike_ofn4r_483{text-decoration:line-through}._questHeaderRow_ofn4r_491{align-items:center;gap:8px;width:100%;display:flex}._questTitleInputText_ofn4r_505{flex:1;width:100%;margin:0;padding:5px 8px;font-size:12px;font-weight:700}._sideQuestHeader_ofn4r_523{border-top:1px solid #ffffff0d;margin-bottom:8px;padding-top:10px}._questsListContainer_ofn4r_535{flex-direction:column;gap:8px;display:flex}._questSideHeaderRow_ofn4r_547{justify-content:space-between;align-items:center;gap:8px;display:flex}._questSideIndex_ofn4r_561{opacity:.5;font-size:10px;font-weight:700}._emptyPlaceholder_ofn4r_573{opacity:.3;text-align:center;padding:16px;font-size:11.5px}._textBlockInput_ofn4r_587{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;background:#0003;border-radius:4px;outline:none;height:auto;min-height:28px;padding:5px 8px;font-size:12px;line-height:1.4;display:block;overflow-y:hidden}._textBlockInput_ofn4r_587:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._presetBar_1gqp4_1{border-bottom:1px solid var(--rpg-border);background:#0003;flex-wrap:wrap;flex-shrink:0;align-items:flex-end;gap:8px;padding:12px 18px;display:flex}._presetInputContainer_1gqp4_12{flex-direction:column;flex:200px;gap:5px;min-width:0;display:flex}._fieldLabel_1gqp4_20{color:var(--rpg-text);opacity:.85;font-size:12px}._presetNameInput_1gqp4_26,._nameInput_1gqp4_27{border:1px solid var(--rpg-border);min-width:0;color:var(--rpg-text);background:#0000004d;border-radius:4px;outline:none;padding:8px 10px;font-size:13px}._presetNameInput_1gqp4_26:focus,._nameInput_1gqp4_27:focus{border-color:var(--rpg-highlight)}._notice_1gqp4_43{color:var(--rpg-text);border-bottom:1px solid var(--rpg-border);flex-shrink:0;justify-content:space-between;align-items:flex-start;gap:12px;max-height:105px;padding:10px 18px;font-size:12px;line-height:1.5;display:flex;overflow:auto}._noticeError_1gqp4_58{color:#ffad9f}._refreshButton_1gqp4_62{color:var(--rpg-highlight);font:inherit;cursor:pointer;background:0 0;border:none;flex-shrink:0;padding:0;text-decoration:underline}._refreshButton_1gqp4_62:disabled{opacity:.5;cursor:wait}._presetDropdown_1gqp4_78{border-bottom:1px solid var(--rpg-border);background:#00000026;flex-direction:column;flex-shrink:0;max-height:180px;display:flex;overflow-y:auto}._presetDropdownItem_1gqp4_88{border-bottom:1px solid #ffffff0d;flex-shrink:0;align-items:center;min-height:42px;padding-right:12px;display:flex}._presetDropdownItem_1gqp4_88:last-child{border-bottom:none}._presetDropdownItemLoadArea_1gqp4_101{cursor:pointer;min-width:0;color:var(--rpg-text);text-align:left;font:inherit;background:0 0;border:none;flex:1;justify-content:space-between;align-items:center;padding:10px 18px;display:flex}._presetDropdownItemLoadArea_1gqp4_101:hover,._presetDropdownItemLoadArea_1gqp4_101:focus-visible{background:#ffffff14}._presetItemName_1gqp4_121{overflow-wrap:anywhere;flex:1;margin-right:8px;font-size:13px}._presetDropdownEmpty_1gqp4_128{text-align:center;opacity:.8;padding:12px;font-size:12px}._listHint_1gqp4_135{opacity:.8;margin:0;font-size:12px;line-height:1.5}._charItem_1gqp4_142{background:#00000026;border:1px solid #ffffff1f;border-radius:6px;align-items:center;gap:10px;padding:8px 10px;display:flex}._nameInput_1gqp4_27{flex:1;font-weight:700}._actions_1gqp4_157{flex-shrink:0;align-items:center;gap:6px;display:flex}._charIdBadge_1gqp4_164{color:var(--rpg-text);text-align:center;background:#ffffff14;border:1px solid #ffffff26;border-radius:4px;flex-shrink:0;padding:3px 6px;font-size:11px}@media (width<=540px){._presetBar_1gqp4_1{padding:10px 12px}._presetInputContainer_1gqp4_12{flex-basis:100%}._notice_1gqp4_43{flex-direction:column;gap:4px;padding:8px 12px}._charItem_1gqp4_142{gap:5px;padding:6px}._nameInput_1gqp4_27{padding:8px 6px;font-size:13px}._actions_1gqp4_157{gap:4px}._presetDropdownItemLoadArea_1gqp4_101{padding:10px 12px}}._list_tbwy5_1{flex-direction:column;gap:6px;min-width:0;display:flex}._list_tbwy5_1>[data-sortable-id]{position:relative}._list_tbwy5_1>[data-dragging]{outline:2px solid var(--rpg-highlight,#d9a54c);outline-offset:-2px;opacity:.65}._list_tbwy5_1>[data-drop-position=before]{box-shadow:0 -3px 0 var(--rpg-highlight,#d9a54c)}._list_tbwy5_1>[data-drop-position=after]{box-shadow:0 3px 0 var(--rpg-highlight,#d9a54c)}._handle_tbwy5_26{width:30px;min-height:34px;color:var(--rpg-text);cursor:grab;touch-action:none;-webkit-user-select:none;user-select:none;background:0 0;border:1px solid #0000;border-radius:4px;flex:0 0 30px;justify-content:center;align-items:center;font-size:24px;display:inline-flex}._handle_tbwy5_26:hover,._handle_tbwy5_26:focus-visible{color:var(--rpg-highlight,#d9a54c);border-color:currentColor;outline:none}._handle_tbwy5_26:active,._handle_tbwy5_26[aria-pressed=true]{cursor:grabbing}._handle_tbwy5_26:disabled{opacity:.3;cursor:default}._preview_tbwy5_60{z-index:10000;text-overflow:ellipsis;white-space:nowrap;background:var(--rpg-bg,#222);max-width:165px;color:var(--rpg-text,#fff);border:1px solid var(--rpg-highlight,#d9a54c);pointer-events:none;border-radius:5px;padding:8px 12px;position:fixed;overflow:hidden;box-shadow:0 4px 14px #0008}._srOnly_tbwy5_76{clip:rect(0, 0, 0, 0);white-space:nowrap;border:0;width:1px;height:1px;margin:-1px;padding:0;position:absolute;overflow:hidden}._headerNav_943y0_1{align-items:center;gap:12px;width:90%;display:flex}._charNameInput_943y0_15{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;padding:4px 8px;font-size:16px;font-weight:700}._statEditorDetail_943y0_37{flex-direction:column;gap:12px;display:flex}._sectionWrapper_943y0_49{border:1px solid var(--rpg-border);background:#00000026;border-radius:7px;padding:12px}._sectionHeaderLine_943y0_63{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}._sectionHeaderLine_943y0_63 h5{opacity:.8;margin:0;font-size:12px}._emptySectionText_943y0_89{opacity:.35;text-align:center;margin:8px 0;font-size:11px}._schemaItem_943y0_103{border:1px solid var(--rpg-border);background:#ffffff03;border-radius:5px;margin-bottom:6px;overflow:hidden}._itemExpanded_943y0_119{background:#ffffff05;border-color:#ffffff26}._itemHeader_943y0_129{background:#0000001a;justify-content:space-between;align-items:center;padding:6px 10px;display:flex}._headerLeftZone_943y0_145{align-items:center;gap:8px;display:flex}._headerRightZone_943y0_157{align-items:center;gap:5px;display:flex}._itemFields_943y0_169{background:#0000001a;border-top:1px solid #ffffff0a;flex-direction:column;gap:8px;padding:10px;display:flex}._inlineRow_943y0_187{justify-content:space-between;align-items:center;gap:10px;width:100%;display:flex}._inlineRow_943y0_187 label{opacity:.6;min-width:70px;font-size:11.5px;font-weight:700}._inlineRow_943y0_187 input{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11.5px;transition:border-color .15s}._inlineRow_943y0_187 input:focus{outline:none;border:1px solid var(--rpg-highlight)!important}._inlineRow_943y0_187 input[type=color]{cursor:pointer;width:30px;height:20px;padding:0}._fixedBadge_943y0_265{opacity:.7;background:#ffffff0d;border:1px solid #ffffff1a;border-radius:3px;padding:2px 5px;font-size:9px;font-weight:700}._appearanceSection_943y0_285{margin-top:10px}._relationsTabBody_943y0_293,._inventoryTabBody_943y0_295{flex-direction:column;gap:12px;padding:4px 2px;display:flex}._tabHeaderRow_943y0_309{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._tabHeaderRow_943y0_309 span{font-size:13px;font-weight:700;color:var(--rpg-text)!important}._relationCard_943y0_335{border:1px solid var(--rpg-border);background:#ffffff05;border-radius:6px;flex-direction:column;gap:8px;padding:10px;display:flex}._relationCardHeader_943y0_355{border-bottom:1px solid #ffffff0d;justify-content:space-between;align-items:center;padding-bottom:6px;display:flex}._relationCardHeader_943y0_355 strong{color:var(--rpg-text)!important}._metricBlock_943y0_379{background:#00000026;border:1px solid #ffffff0a;border-radius:5px;flex-direction:column;gap:6px;padding:6px 8px;display:flex}._metricHeaderRow_943y0_399{justify-content:space-between;align-items:center;gap:8px;width:100%;display:flex}._metricValueGroup_943y0_415{flex-shrink:0;align-items:center;gap:6px;display:flex}._metricValueInput_943y0_429{border:1px solid var(--rpg-border);width:48px;color:var(--rpg-text);text-align:center;background:#0003;border-radius:4px;outline:none;padding:4px;font-size:11px;font-weight:700}._metricValueInput_943y0_429:focus{border-color:var(--rpg-highlight)!important}._metricConfigRow_943y0_463{border-top:1px dashed #ffffff0d;flex-wrap:wrap;align-items:center;gap:12px;width:100%;padding-top:4px;display:flex}._invSection_943y0_483{margin-bottom:10px}._invSectionTitle_943y0_491{opacity:.6;margin-bottom:6px;font-size:11.5px;font-weight:700}._invEquipGrid_943y0_505,._invStorageGrid_943y0_507{grid-template-columns:1fr;gap:8px;display:grid}._invSlotCard_943y0_519{background:#00000026;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;justify-content:space-between;min-height:80px;padding:8px;display:flex}._slotHeader_943y0_541{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._emptyText_943y0_555{opacity:.3;text-align:center;padding:10px 0;font-size:11px}._invStorageBox_943y0_569{background:#00000026;border:1px solid #ffffff08;border-radius:6px;flex-direction:column;gap:6px;padding:8px;display:flex}._invStorageItemsList_943y0_589{flex-direction:column;gap:6px;min-height:80px;display:flex}._invItemRow_943y0_603{background:#ffffff05;border:1px solid #ffffff05;border-radius:4px;justify-content:space-between;align-items:center;padding:6px 8px;display:flex}._itemTitleLine_943y0_623{flex-wrap:nowrap;align-items:center;gap:8px;width:100%;display:flex}._itemDescLine_943y0_639{flex-wrap:wrap;justify-content:space-between;align-items:center;gap:12px;width:100%;display:flex}._itemQtyBox_943y0_657{flex-shrink:0;justify-content:flex-end;align-items:center;width:58px;display:flex}._itemQtyInputRefactored_943y0_673{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;box-sizing:border-box;vertical-align:middle;background:#ffffff14;border-radius:4px;outline:none;width:58px;height:22px;margin:0;padding:2px 4px;font-size:11px;font-weight:700;display:inline-block}._invItemRow_943y0_603 textarea,._invItemRow_943y0_603 input{touch-action:auto!important;-webkit-user-select:text!important;user-select:text!important}._itemTypeSelectWrapper_943y0_723{flex-shrink:0;align-items:center;margin:0;display:inline-flex}._assetValueGroup_943y0_737{flex-shrink:0;align-items:center;gap:4px;width:140px;display:flex}._assetAmountInput_943y0_753{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;background:#ffffff14;border-radius:4px;outline:none;width:60px;padding:2px 4px;font-size:11px;font-weight:700}._assetCurrencyInput_943y0_779{border:1px solid var(--rpg-border);color:var(--rpg-text);text-align:center;background:#ffffff14;border-radius:4px;outline:none;width:72px;padding:2px 4px;font-size:11px;font-weight:700}._limitInput_943y0_805{border:1px solid var(--rpg-border);width:45px;color:var(--rpg-text);text-align:center;background:#0000004d;border-radius:4px;outline:none;padding:2px 4px;font-size:11px}._nameInput_943y0_829{border:1px solid var(--rpg-border);color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;width:100px;padding:4px 8px;font-size:11px}._descTextarea_943y0_851{border:1px solid var(--rpg-border);width:100%;min-height:50px;color:var(--rpg-text);resize:vertical;background:#0000004d;border-radius:4px;outline:none;padding:6px;font-size:11px}._metricNameInput_943y0_877{border:1px solid var(--rpg-border);min-width:80px;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11px;font-weight:700}._metricLimitInput_943y0_903{width:40px;color:var(--rpg-text);border:1px solid var(--rpg-border);text-align:center;background:#0000004d;border-radius:3px;padding:4px;font-size:11px}._colorPickerInput_943y0_925{cursor:pointer;background:0 0;border:none;width:22px;height:22px;padding:0}._syncBadge_943y0_943{color:#3498db;background:#3498db1a;border:1px solid #3498db4d;border-radius:3px;padding:2px 6px;font-size:10px}._metricLimitWrapper_943y0_961{align-items:center;gap:4px;display:flex}._metricLimitLabel_943y0_973{opacity:.6;font-size:10px}._flexCenterGroup_943y0_983{align-items:center;gap:6px;display:flex}._flexCenterGroupSmall_943y0_995{align-items:center;gap:3px;display:flex}._flexColumnFull_943y0_1007{flex-direction:column;gap:3px;width:100%;display:flex}._flexItemLine_943y0_1021{align-items:center;gap:8px;display:flex}._slotInputOuter_943y0_1033{flex:1;align-items:center;gap:6px;margin-right:10px;display:flex}._slotRenameInputRefactored_943y0_1049{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);background:#0003;border-radius:4px;outline:none;padding:4px 8px;font-size:11px}._itemTitleInputRefactored_943y0_1071{width:100%;color:var(--rpg-text);resize:none;vertical-align:middle;box-sizing:border-box;background:0 0;border:none;border-bottom:1px solid #0000;outline:none;flex:1;min-width:0;height:18px;margin:0;padding:4px 0;font-family:inherit;font-size:11px;line-height:1.4;display:inline-block;overflow-y:hidden}._itemDescInputRefactored_943y0_1115{width:100%;color:var(--rpg-text);opacity:.6;resize:none;background:0 0;border:none;outline:none;flex:200px;min-width:0;height:auto;margin-top:2px;padding:2px 0;font-family:inherit;font-size:10px;display:block;overflow-y:hidden}._flatHeaderRow_943y0_1153{-webkit-user-select:none;user-select:none;background:0 0;justify-content:space-between;align-items:center;margin-bottom:6px;padding:8px 2px;display:flex}._flatHeaderTitle_943y0_1173{color:var(--rpg-text);font-size:13.5px;font-weight:700}._accordionSeparator_943y0_1185{background:#ffffff26;width:100%;height:1px;margin:12px 0}._dragHandleIconWrapper_943y0_1199{cursor:grab;opacity:.45;color:var(--rpg-text);flex-shrink:0;justify-content:center;align-items:center;width:16px;height:16px;margin:0;padding:0;display:inline-flex}._dragHandleIconWrapper_943y0_1199:hover{opacity:1;color:var(--rpg-highlight)}._dragHandleIconWrapper_943y0_1199:active{cursor:grabbing}._spacedHeaderButtonGroup_943y0_1245{flex-shrink:0;align-items:center;gap:12px;display:flex}._headerNav_943y0_1{flex:1;min-width:0}._charNameInput_943y0_15{flex:200px;min-width:80px;max-width:100%}._headerLeftZone_943y0_145{flex:1;min-width:0}._headerRightZone_943y0_157{flex-shrink:0;margin-left:8px}._headerLeftZone_943y0_145 ._nameInput_943y0_829{flex:1;width:auto;min-width:50px}._sectionHeaderLine_943y0_63{flex-wrap:wrap;gap:8px}@media (width<=600px){._sectionWrapper_943y0_49{padding:8px}._itemHeader_943y0_129{flex-wrap:wrap;row-gap:6px;padding:6px}._headerLeftZone_943y0_145{flex-basis:100%;gap:6px}._headerRightZone_943y0_157{margin-left:auto}._flexCenterGroup_943y0_983{flex-wrap:wrap}._headerNav_943y0_1{width:auto}}._section_11qmb_3{flex-direction:column;gap:8px;height:100%;display:flex}._sectionStack_11qmb_17{flex-direction:column;gap:16px;display:flex}._label_11qmb_29{color:var(--rpg-highlight);font-size:12.5px;font-weight:700}._textarea_11qmb_41{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:none;box-sizing:border-box;background:#0003;border-radius:6px;outline:none;flex:1;padding:10px;font-size:12px}._textarea_11qmb_41:focus{border-color:var(--rpg-highlight)}._promptCard_11qmb_77{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;padding:12px}._promptCardHeader_11qmb_91{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._accordionHeader_11qmb_105{cursor:pointer;color:var(--rpg-highlight);align-items:center;gap:8px;display:flex}._buttonGroup_11qmb_121{gap:6px;display:flex}._textareaStack_11qmb_131{flex-direction:column;gap:8px;margin-top:8px;display:flex}._slotNotice_11qmb_145{text-align:center;opacity:.5;color:var(--rpg-text);font-size:11px}._defGroup_11qmb_161{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:8px;padding:12px;display:flex}._defGroupTitle_11qmb_181{color:var(--rpg-highlight);border-bottom:1px dashed #ffffff1a;margin:0;padding-bottom:4px;font-size:12px}._defInput_11qmb_197{border:1px solid var(--rpg-border);color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11.5px;transition:border-color .15s}._defInput_11qmb_197:focus{border-color:var(--rpg-highlight)}._switchesContainer_11qmb_233{flex-direction:column;gap:8px;margin-top:16px;display:flex}._switchCardRow_11qmb_247{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;justify-content:space-between;align-items:center;padding:8px 12px;display:flex}._switchTitle_11qmb_267{color:var(--rpg-text);font-size:13px}._relationsConfigCard_11qmb_277{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;flex-direction:column;gap:8px;padding:12px;display:flex}._inlineFormRow_11qmb_297{align-items:center;gap:8px;display:flex}._formSubLabel_11qmb_309{color:var(--rpg-text);opacity:.8;white-space:nowrap;font-size:11px}._worldStateGroupCard_11qmb_323{background:var(--rpg-bg);border:1px solid var(--rpg-border);border-radius:4px;flex-direction:column;gap:12px;padding:12px;display:flex}._groupCardHeader_11qmb_343{color:var(--rpg-highlight);margin-bottom:4px;font-size:13px;font-weight:700}._worldStateSubRow_11qmb_357{flex-direction:column;gap:6px;display:flex}._definitionGuideRow_11qmb_369{flex-wrap:wrap;justify-content:flex-end;align-items:flex-start;gap:6px;width:100%;min-width:0;display:flex}._definitionGuideRow_11qmb_369 ._defInput_11qmb_197{flex:180px;width:100%;min-width:0}._suggestButton_11qmb_401{white-space:nowrap;flex:none;min-height:27px}._suggestButton_11qmb_401:disabled{opacity:.5;cursor:wait}._suggestionFeedback_11qmb_423{color:var(--rpg-text);overflow-wrap:anywhere;font-size:11.5px;line-height:1.4}._suggestionFeedback_11qmb_423:empty{display:none}._section_12evk_1{flex-direction:column;gap:8px;height:auto;display:flex}._label_12evk_15{color:var(--rpg-highlight);font-size:12.5px;font-weight:700}._sectionHeaderRow_12evk_27{justify-content:space-between;align-items:center;display:flex}._settingsDesc_12evk_39{opacity:.6;margin-top:-4px;margin-bottom:8px;font-size:11px;line-height:1.4}._settingsSelect_12evk_55{width:100%;color:inherit;border:1px solid var(--rpg-border);background:#0003;border-radius:4px;outline:none;margin-bottom:8px;padding:6px 10px;font-family:inherit}._settingsSelect_12evk_55:focus{border-color:var(--rpg-highlight)}._colorPaletteGrid_12evk_87{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:8px;margin-top:4px;padding:12px;display:flex}._colorRow_12evk_109{align-items:center;gap:10px;width:100%;display:flex}._colorLabel_12evk_123{opacity:.85;flex-shrink:0;width:90px;font-size:11.5px;font-weight:700}._colorPicker_12evk_139{border:1px solid var(--rpg-border);cursor:pointer;background:0 0;border-radius:4px;flex-shrink:0;width:28px;height:28px;padding:0}._colorTextInput_12evk_161{border:1px solid var(--rpg-border);color:var(--rpg-text);text-transform:uppercase;background:#0003;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-family:monospace;font-size:11.5px}._colorTextInput_12evk_161:focus{border-color:var(--rpg-highlight)}._snapshotControlsRow_12evk_197{justify-content:space-between;align-items:center;margin-bottom:6px;display:flex}._snapshotLabel_12evk_211{color:var(--rpg-text);font-size:12px;font-weight:700}._snapshotButtonGroup_12evk_223{align-items:center;gap:6px;display:flex}._snapshotNumberInput_12evk_235{border:1px solid var(--rpg-border);width:55px;color:var(--rpg-text);text-align:center;background:#00000040;border-radius:4px;outline:none;padding:4px 6px;font-size:11.5px;font-weight:700;transition:all .15s}._snapshotNumberInput_12evk_235:disabled{opacity:.5;cursor:not-allowed;background:#0000001a}._container_10few_1{color:var(--rpg-text);flex-direction:column;gap:16px;padding:12px 10px;display:flex}._sectionHeader_10few_17{justify-content:space-between;align-items:center;margin-bottom:8px;display:flex}._sectionTitle_10few_31{color:var(--rpg-highlight);font-size:13px;font-weight:700}._eventsSection_10few_43{margin-top:8px}._eventsSectionTitle_10few_51{color:var(--rpg-text);font-size:13px;font-weight:700}._stateGrid_10few_63{flex-direction:column;gap:10px;margin-top:10px;display:flex}._rowField_10few_77{align-items:center;gap:8px;display:flex}._twoCol_10few_89{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;display:grid}._fieldLabel_10few_101{opacity:.6;width:60px;color:var(--rpg-text);flex-shrink:0;font-size:12px;font-weight:700}._lockBtn_10few_119{color:var(--rpg-text);opacity:.5;cursor:pointer;background:0 0;border:none;justify-content:center;align-items:center;width:20px;height:20px;padding:4px;font-size:11px;transition:opacity .15s,color .15s;display:flex}._lockBtn_10few_119:hover{opacity:1;color:var(--rpg-highlight)}._stateTextarea_10few_161{border:1px solid var(--rpg-border);color:var(--rpg-text);resize:none;box-sizing:border-box;background:#0003;border-radius:4px;outline:none;flex:1;width:100%;height:auto;min-height:28px;padding:6px 10px;font-family:inherit;font-size:11px;line-height:1.4;display:block;overflow-y:hidden!important}._stateTextarea_10few_161:focus:not(:disabled){border-color:var(--rpg-highlight)}._stateTextarea_10few_161:disabled{opacity:.5;cursor:not-allowed;background:#0000001a}._eventsList_10few_221{flex-direction:column;gap:10px;display:flex}._eventBlock_10few_233{background:#00000026;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:8px;padding:10px 12px;display:flex;position:relative}._eventHeaderRow_10few_255{justify-content:space-between;align-items:center;gap:8px;display:flex}._eventNumber_10few_269{opacity:.5;font-size:11.5px;font-weight:700}._eventTitleInput_10few_281{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;padding:6px 10px;font-family:inherit;font-size:11px;font-weight:700}._eventTitleInput_10few_281:focus{border-color:var(--rpg-highlight)}._eventDescTextarea_10few_317{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;height:auto;min-height:32px;padding:6px 10px;font-family:inherit;font-size:11px;line-height:1.4;display:block;overflow-y:hidden!important}._eventDescTextarea_10few_317:focus{border-color:var(--rpg-highlight)}._emptyPlaceholder_10few_361{opacity:.5;text-align:center;margin:4px 0 0;font-size:12.5px}._container_c5ldp_1{color:var(--rpg-text);flex-direction:column;gap:14px;padding:12px 10px;display:flex}._sectionBlock_c5ldp_17{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;flex-direction:column;gap:10px;padding:12px;display:flex}._sectionHeader_c5ldp_37{border-bottom:1px dashed #ffffff1a;justify-content:space-between;align-items:center;padding-bottom:6px;display:flex}._sectionTitle_c5ldp_53{color:var(--rpg-highlight);font-size:13px;font-weight:700}._refreshBtn_c5ldp_65{color:var(--rpg-text);cursor:pointer;opacity:.6;background:0 0;border:none;padding:0 4px;font-size:14px;line-height:1;transition:opacity .15s,color .15s}._refreshBtn_c5ldp_65:hover{opacity:1;color:var(--rpg-highlight)}._rowItem_c5ldp_99{justify-content:space-between;align-items:center;gap:12px;display:flex}._labelGroup_c5ldp_113{flex-direction:column;flex:1;gap:2px;display:flex}._itemLabel_c5ldp_127{color:var(--rpg-text);font-size:12px;font-weight:700}._itemSubText_c5ldp_139{opacity:.6;font-size:10.5px;line-height:1.3}._numberInput_c5ldp_151{border:1px solid var(--rpg-border);width:60px;color:var(--rpg-text);text-align:center;background:#00000040;border-radius:4px;outline:none;padding:5px 8px;font-size:12px;font-weight:700}._numberInput_c5ldp_151:focus{border-color:var(--rpg-highlight)}._inputGroup_c5ldp_185{flex-direction:column;gap:4px;display:flex}._fieldLabel_c5ldp_197{opacity:.8;color:var(--rpg-text);font-size:11.5px;font-weight:700}._textInput_c5ldp_211{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);box-sizing:border-box;background:#0003;border-radius:4px;outline:none;padding:6px 10px;font-size:11.5px}._textInput_c5ldp_211:focus{border-color:var(--rpg-highlight)}._selectInput_c5ldp_243{width:100%;height:28px;color:var(--rpg-text);box-sizing:border-box;padding:4px 8px;font-size:11.5px}._buttonGroup_c5ldp_261{gap:8px;margin-top:4px;display:flex}._toggleRow_c5ldp_273{justify-content:space-between;align-items:center;padding:4px 0;display:flex}._tabContentFadeIn_u5h5k_3{animation:.18s ease-out forwards _tabFadeIn_u5h5k_1}@keyframes _tabFadeIn_u5h5k_1{0%{opacity:0;transform:translateY(2px)}to{opacity:1;transform:translateY(0)}}._section_u5h5k_21{border:1px solid var(--rpg-border);background:#00000026;border-radius:6px;padding:12px}._sectionTitleRow_u5h5k_35{justify-content:space-between;align-items:center;margin-bottom:10px;display:flex}._sectionTitle_u5h5k_35{color:var(--rpg-highlight);font-size:13px;font-weight:700}._charRow_u5h5k_61{border-bottom:1px dashed #ffffff0d;align-items:center;padding:8px 0;display:flex}._charRow_u5h5k_61:last-child{border-bottom:none}._worldRow_u5h5k_83{border-bottom:1px solid #ffffff1a;align-items:flex-start;margin-bottom:6px;padding-bottom:10px}._charNameLabel_u5h5k_97{white-space:nowrap;text-overflow:ellipsis;width:110px;color:var(--rpg-text);font-weight:700;display:inline-block;overflow:hidden}._charOptionsRow_u5h5k_117{flex-wrap:wrap;align-items:center;gap:14px;display:flex}._worldOptionsContainer_u5h5k_131{flex-direction:column;flex:1;gap:8px;transition:opacity .2s;display:flex}._worldOptionsRow_u5h5k_147{align-items:center;gap:14px;display:flex}._activeOps_u5h5k_159{opacity:1}._disabledOps_u5h5k_167{opacity:.25;pointer-events:none}._checkboxItem_u5h5k_177{cursor:pointer;align-items:center;gap:6px;font-size:12px;display:flex}._textarea_u5h5k_193{border:1px solid var(--rpg-border);width:100%;color:var(--rpg-text);resize:vertical;box-sizing:border-box;background:#0003;border-radius:4px;outline:none;min-height:60px;padding:8px;font-size:12px}._textarea_u5h5k_193:focus:not(:disabled){border-color:var(--rpg-highlight)}._jsonEditor_u5h5k_229{color:#8892b0;resize:vertical;box-sizing:border-box;background:#00000059;border:1px solid #ffffff1a;border-radius:4px;outline:none;width:100%;height:280px;padding:10px;font-family:monospace;font-size:11.5px;transition:all .2s}._jsonEditorWritable_u5h5k_261{box-shadow:inset 0 0 6px #00000080;color:#e6ebf5!important;border-color:var(--rpg-highlight)!important;background:#111216!important}._editorGroupBlock_u5h5k_275{box-sizing:border-box;background:#00000038;border:1px solid #ffffff0d;border-radius:6px;flex-direction:column;gap:8px;width:100%;margin-bottom:12px;padding:10px 12px;display:flex}._editorGroupBlock_u5h5k_275:last-child{margin-bottom:0}._editorGroupTitle_u5h5k_309{color:var(--rpg-highlight);border-bottom:1px dashed #ffffff1a;margin-bottom:2px;padding-bottom:4px;font-size:11.5px;font-weight:700}._visualEditorRow_u5h5k_327{align-items:center;gap:12px;width:100%;display:flex}._visualEditorLabel_u5h5k_341{opacity:.6;text-align:left;white-space:nowrap;text-overflow:ellipsis;width:75px;color:var(--rpg-text,#fff);flex-shrink:0;font-size:11px;font-weight:700;overflow:hidden}._visualEditorSubLabel_u5h5k_367{opacity:.55;color:var(--rpg-text,#fff);margin-top:4px;font-size:10.5px;font-weight:700}._visualEditorInput_u5h5k_383{border:1px solid var(--rpg-border);color:var(--rpg-text);box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;flex:1;padding:5px 8px;font-size:11px;transition:border-color .15s}._visualEditorInput_u5h5k_383:focus{border-color:var(--rpg-highlight)}._visualEditorTextarea_u5h5k_417{border:1px solid var(--rpg-border);color:var(--rpg-text);resize:vertical;box-sizing:border-box;background:#00000040;border-radius:4px;outline:none;flex:1;min-height:24px;padding:5px 8px;font-family:inherit;font-size:11px;line-height:1.4;transition:border-color .15s}._visualEditorTextarea_u5h5k_417:focus{border-color:var(--rpg-highlight)}.rpg-modal-overlay{box-sizing:border-box;background:#000000bf;justify-content:center;align-items:center;width:100vw;height:100vh;padding:24px;display:flex;position:fixed;top:0;left:0;z-index:3000!important}.rpg-modal-container{background:var(--rpg-bg);border:1px solid var(--rpg-border);width:540px;max-width:100%;height:680px;max-height:90vh;color:var(--rpg-text);border-radius:10px;flex-direction:column;display:flex;overflow:hidden;box-shadow:0 12px 35px #000000a6}.rpg-modal-header{border-bottom:1px solid var(--rpg-border);box-sizing:border-box;flex-shrink:0;justify-content:space-between;align-items:center;height:54px;padding:14px 20px;display:flex}.rpg-modal-header h4{color:var(--rpg-highlight);letter-spacing:.7px;margin:0;font-weight:700;font-size:15px!important}.rpg-modal-close-btn{color:var(--rpg-text);cursor:pointer;opacity:.6;background:0 0;border:none;justify-content:center;align-items:center;width:24px;height:24px;padding:0;font-size:24px;line-height:1;transition:opacity .15s;display:inline-flex}.rpg-modal-close-btn:hover{opacity:1}.rpg-modal-body{box-sizing:border-box;flex-direction:column;flex:1;gap:14px;padding:18px;display:flex;overflow-y:auto}.rpg-modal-footer{border-top:1px solid var(--rpg-border);box-sizing:border-box;background:#0003;border-radius:0 0 10px 10px;flex-shrink:0;justify-content:space-between;align-items:center;height:54px;padding:12px 18px;display:flex}.rpg-modal-footer-left,.rpg-modal-footer-right{align-items:center;gap:6px;display:flex}.rpg-modal-btn{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff0a;border-radius:5px;justify-content:center;align-items:center;padding:7px 14px;font-size:11.5px;font-weight:700;transition:background .15s,border-color .15s,opacity .15s;display:inline-flex}.rpg-modal-btn:hover{background:#ffffff14}.rpg-modal-btn.save{background:var(--rpg-highlight-bg);border:1px solid var(--rpg-highlight);color:var(--rpg-highlight)}.rpg-modal-btn.save:hover{opacity:.9}.rpg-modal-btn.reset{color:#e74c3c;border-color:#e74c3c40}.rpg-modal-btn.reset:hover{background:#e74c3c1a;border-color:#e74c3c}.rpg-modal-overlay.high-priority{z-index:5000!important}.rpg-modal-container.rpg-editor-modal{width:720px;height:760px;max-height:92dvh}.rpg-editor-modal .rpg-modal-header,.rpg-editor-modal .rpg-modal-footer{gap:10px;height:auto;min-height:54px}.rpg-editor-modal .rpg-modal-footer,.rpg-editor-modal .rpg-modal-footer-left,.rpg-editor-modal .rpg-modal-footer-right{flex-wrap:wrap}.rpg-editor-modal .rpg-modal-body{overscroll-behavior:contain;min-height:0}@media (width<=600px){.rpg-modal-overlay:has(.rpg-editor-modal){padding:8px}.rpg-modal-container.rpg-editor-modal{width:100%;height:calc(100dvh - 16px);max-height:calc(100dvh - 16px)}.rpg-editor-modal .rpg-modal-header,.rpg-editor-modal .rpg-modal-footer,.rpg-editor-modal .rpg-modal-body{padding:10px}.rpg-editor-modal .rpg-modal-footer-right{margin-left:auto}.rpg-editor-modal .rpg-modal-btn{min-height:36px;padding:7px 10px}}.rpg-btn{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;-webkit-user-select:none;user-select:none;background:#ffffff0a;border-radius:4px;justify-content:center;align-items:center;gap:4px;padding:4px 10px;font-size:11px;font-weight:700;line-height:1.2;transition:background .15s,border-color .15s,color .15s;display:inline-flex}.rpg-btn:hover:not(:disabled){border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff17}.rpg-btn:disabled{opacity:.4;cursor:not-allowed}.rpg-btn-primary{border:1px solid var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff14}.rpg-btn-primary:hover:not(:disabled){background:#ffffff24}.rpg-btn-sm{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff0a;border-radius:3px;justify-content:center;align-items:center;gap:3px;padding:2px 7px;font-size:10px;font-weight:700;line-height:1.2;transition:all .15s;display:inline-flex}.rpg-btn-sm:hover:not(:disabled){border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff14}.rpg-btn-dashed{border:1px dashed var(--rpg-border);color:var(--rpg-text);cursor:pointer;box-sizing:border-box;background:#ffffff08;border-radius:6px;justify-content:center;align-items:center;width:100%;padding:8px 12px;font-size:11.5px;font-weight:700;transition:all .15s;display:flex}.rpg-btn-dashed:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff0f}.rpg-btn-icon{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff0a;border-radius:4px;flex-shrink:0;justify-content:center;align-items:center;width:28px;height:28px;padding:0;transition:all .15s;display:inline-flex}.rpg-btn-icon:hover{border-color:var(--rpg-highlight);color:var(--rpg-highlight);background:#ffffff1a}.rpg-btn-icon.active{border-color:var(--rpg-highlight)!important;color:var(--rpg-highlight)!important;background:#ffffff1f!important}.rpg-btn-del{color:#e74c3c;cursor:pointer;background:#e74c3c1f;border:1px solid #e74c3c4d;border-radius:3px;justify-content:center;align-items:center;padding:2px 6px;font-size:10.5px;font-weight:700;line-height:1;transition:all .15s;display:inline-flex}.rpg-btn-del:hover{color:#ff6b6b;background:#e74c3c40;border-color:#e74c3c}.rpg-btn-del-text{color:#fff6;cursor:pointer;background:0 0;border:none;justify-content:center;align-items:center;padding:0 4px;font-size:14px;line-height:1;transition:color .15s;display:inline-flex}.rpg-btn-del-text:hover{color:#e74c3c}.rpg-btn-sort{border:1px solid var(--rpg-border);color:var(--rpg-text);cursor:pointer;background:#ffffff08;border-radius:3px;justify-content:center;align-items:center;width:20px;height:20px;padding:0;font-size:9px;transition:all .15s;display:inline-flex}.rpg-btn-sort:hover:not(:disabled){border-color:var(--rpg-highlight);background:#ffffff1a}.rpg-btn-sort:disabled{opacity:.15;cursor:not-allowed}.rpg-accordion-arrow{color:var(--rpg-text);cursor:pointer;background:0 0;border:none;padding:2px 4px;font-size:10px;line-height:1;transition:transform .18s ease-out;display:inline-block;transform:rotate(0)}.rpg-accordion-arrow.expanded{transform:rotate(90deg)}.rpg-tab-nav{border-bottom:1px solid var(--rpg-border);background:#00000026;flex-shrink:0;width:100%;display:flex}.rpg-tab-btn{color:var(--rpg-text);opacity:.6;cursor:pointer;text-align:center;background:0 0;border:none;border-bottom:2px solid #0000;outline:none;flex:1;padding:10px 0;font-size:11.5px;font-weight:700;transition:all .15s}.rpg-tab-btn:hover{opacity:.9;background:#ffffff05}.rpg-tab-btn.active{background:#ffffff0a;opacity:1!important;color:var(--rpg-highlight)!important;border-bottom-color:var(--rpg-highlight)!important}.rpg-switch-row{opacity:.8;cursor:pointer;-webkit-user-select:none;user-select:none;align-items:center;gap:5px;font-size:11px;display:inline-flex}.rpg-switch{flex-shrink:0;width:28px;height:14px;display:inline-block;position:relative}.rpg-switch input{opacity:0;width:0;height:0;position:absolute}.rpg-slider{cursor:pointer;border:1px solid var(--rpg-border);background-color:#ffffff14;border-radius:14px;transition:all .2s;position:absolute;inset:0}.rpg-slider:before{content:"";background-color:var(--rpg-text);border-radius:50%;width:8px;height:8px;transition:all .2s;position:absolute;bottom:2px;left:2px}.rpg-switch input:checked+.rpg-slider{border-color:var(--rpg-highlight);background-color:#ffffff26}.rpg-switch input:checked+.rpg-slider:before{background-color:var(--rpg-highlight);transform:translate(14px)}.rpg-switch input:disabled+.rpg-slider{opacity:.35;cursor:not-allowed}input[type=number]::-webkit-outer-spin-button{-webkit-appearance:none;margin:0}input[type=number]::-webkit-inner-spin-button{-webkit-appearance:none;margin:0}input[type=number]{-moz-appearance:textfield}.rpg-select-custom{appearance:none;color:var(--rpg-text);border:1px solid var(--rpg-border);cursor:pointer;box-sizing:border-box;background-image:url("data:image/svg+xml;utf8,<svg fill='white' height='20' viewBox='0 0 24 24' width='20' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>");background-position:right 4px center;background-repeat:no-repeat;background-size:14px;border-radius:4px;outline:none;font-size:11px;background:#00000059!important;padding:3px 20px 3px 8px!important}.rpg-select-custom:focus{border-color:var(--rpg-highlight)}.dnd-poly-drag-image{opacity:.5!important}.dnd-poly-drag-image.dnd-poly-snapback{transition-property:transform!important;transition-duration:.25s!important;transition-timing-function:ease-out!important}/*$vite$:1*/`)),document.head.appendChild(e)}}catch(e){console.error(`vite-plugin-css-injected-by-js`,e)}})();
 //#region \0rolldown/runtime.js
 var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescriptor, r = Object.getOwnPropertyNames, i = Object.getPrototypeOf, a = Object.prototype.hasOwnProperty, o = (e, t) => () => (e && (t = e(e = 0)), t), s = (e, t) => () => (t || (e((t = { exports: {} }).exports, t), e = null), t.exports), c = (e, i, o, s) => {
 	if (i && typeof i == "object" || typeof i == "function") for (var c = r(i), l = 0, u = c.length, d; l < u; l++) d = c[l], !a.call(e, d) && d !== o && t(e, d, {
@@ -1104,11 +1104,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			ue.p = n;
 		}
 	}
-	var mt = Math.random().toString(36).slice(2), ht = "__reactFiber$" + mt, gt = "__reactProps$" + mt, _t = "__reactContainer$" + mt, vt = "__reactEvents$" + mt, yt = "__reactListeners$" + mt, bt = "__reactHandles$" + mt, xt = "__reactResources$" + mt, St = "__reactMarker$" + mt;
-	function Ct(e) {
-		delete e[ht], delete e[gt], delete e[vt], delete e[yt], delete e[bt];
+	var mt = Math.random().toString(36).slice(2), ht = "__reactFiber$" + mt, gt = "__reactProps$" + mt, _t = "__reactContainer$" + mt, A = "__reactEvents$" + mt, vt = "__reactListeners$" + mt, yt = "__reactHandles$" + mt, bt = "__reactResources$" + mt, xt = "__reactMarker$" + mt;
+	function St(e) {
+		delete e[ht], delete e[gt], delete e[A], delete e[vt], delete e[yt];
 	}
-	function wt(e) {
+	function Ct(e) {
 		var t = e[ht];
 		if (t) return t;
 		for (var n = e.parentNode; n;) {
@@ -1123,41 +1123,41 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 		return null;
 	}
-	function Tt(e) {
+	function wt(e) {
 		if (e = e[ht] || e[_t]) {
 			var t = e.tag;
 			if (t === 5 || t === 6 || t === 13 || t === 31 || t === 26 || t === 27 || t === 3) return e;
 		}
 		return null;
 	}
-	function Et(e) {
+	function Tt(e) {
 		var t = e.tag;
 		if (t === 5 || t === 26 || t === 27 || t === 6) return e.stateNode;
 		throw Error(i(33));
 	}
-	function Dt(e) {
-		var t = e[xt];
-		return t ||= e[xt] = {
+	function Et(e) {
+		var t = e[bt];
+		return t ||= e[bt] = {
 			hoistableStyles: /* @__PURE__ */ new Map(),
 			hoistableScripts: /* @__PURE__ */ new Map()
 		}, t;
 	}
-	function Ot(e) {
-		e[St] = !0;
+	function Dt(e) {
+		e[xt] = !0;
 	}
-	var kt = /* @__PURE__ */ new Set(), At = {};
+	var Ot = /* @__PURE__ */ new Set(), kt = {};
+	function At(e, t) {
+		jt(e, t), jt(e + "Capture", t);
+	}
 	function jt(e, t) {
-		Mt(e, t), Mt(e + "Capture", t);
+		for (kt[e] = t, e = 0; e < t.length; e++) Ot.add(t[e]);
 	}
-	function Mt(e, t) {
-		for (At[e] = t, e = 0; e < t.length; e++) kt.add(t[e]);
+	var Mt = RegExp("^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$"), Nt = {}, Pt = {};
+	function Ft(e) {
+		return Ae.call(Pt, e) ? !0 : Ae.call(Nt, e) ? !1 : Mt.test(e) ? Pt[e] = !0 : (Nt[e] = !0, !1);
 	}
-	var Nt = RegExp("^[:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD][:A-Z_a-z\\u00C0-\\u00D6\\u00D8-\\u00F6\\u00F8-\\u02FF\\u0370-\\u037D\\u037F-\\u1FFF\\u200C-\\u200D\\u2070-\\u218F\\u2C00-\\u2FEF\\u3001-\\uD7FF\\uF900-\\uFDCF\\uFDF0-\\uFFFD\\-.0-9\\u00B7\\u0300-\\u036F\\u203F-\\u2040]*$"), Pt = {}, Ft = {};
-	function It(e) {
-		return Ae.call(Ft, e) ? !0 : Ae.call(Pt, e) ? !1 : Nt.test(e) ? Ft[e] = !0 : (Pt[e] = !0, !1);
-	}
-	function Lt(e, t, n) {
-		if (It(t)) if (n === null) e.removeAttribute(t);
+	function It(e, t, n) {
+		if (Ft(t)) if (n === null) e.removeAttribute(t);
 		else {
 			switch (typeof n) {
 				case "undefined":
@@ -1175,7 +1175,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			e.setAttribute(t, "" + n);
 		}
 	}
-	function Rt(e, t, n) {
+	function Lt(e, t, n) {
 		if (n === null) e.removeAttribute(t);
 		else {
 			switch (typeof n) {
@@ -1189,7 +1189,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			e.setAttribute(t, "" + n);
 		}
 	}
-	function zt(e, t, n, r) {
+	function Rt(e, t, n, r) {
 		if (r === null) e.removeAttribute(n);
 		else {
 			switch (typeof r) {
@@ -1203,7 +1203,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			e.setAttributeNS(t, n, "" + r);
 		}
 	}
-	function Bt(e) {
+	function zt(e) {
 		switch (typeof e) {
 			case "bigint":
 			case "boolean":
@@ -1214,11 +1214,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			default: return "";
 		}
 	}
-	function Vt(e) {
+	function Bt(e) {
 		var t = e.type;
 		return (e = e.nodeName) && e.toLowerCase() === "input" && (t === "checkbox" || t === "radio");
 	}
-	function Ht(e, t, n) {
+	function Vt(e, t, n) {
 		var r = Object.getOwnPropertyDescriptor(e.constructor.prototype, t);
 		if (!e.hasOwnProperty(t) && r !== void 0 && typeof r.get == "function" && typeof r.set == "function") {
 			var i = r.get, a = r.set;
@@ -1243,20 +1243,20 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			};
 		}
 	}
-	function Ut(e) {
+	function Ht(e) {
 		if (!e._valueTracker) {
-			var t = Vt(e) ? "checked" : "value";
-			e._valueTracker = Ht(e, t, "" + e[t]);
+			var t = Bt(e) ? "checked" : "value";
+			e._valueTracker = Vt(e, t, "" + e[t]);
 		}
 	}
-	function Wt(e) {
+	function Ut(e) {
 		if (!e) return !1;
 		var t = e._valueTracker;
 		if (!t) return !0;
 		var n = t.getValue(), r = "";
-		return e && (r = Vt(e) ? e.checked ? "true" : "false" : e.value), e = r, e === n ? !1 : (t.setValue(e), !0);
+		return e && (r = Bt(e) ? e.checked ? "true" : "false" : e.value), e = r, e === n ? !1 : (t.setValue(e), !0);
 	}
-	function Gt(e) {
+	function Wt(e) {
 		if (e ||= typeof document < "u" ? document : void 0, e === void 0) return null;
 		try {
 			return e.activeElement || e.body;
@@ -1264,27 +1264,27 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			return e.body;
 		}
 	}
-	var Kt = /[\n"\\]/g;
-	function A(e) {
-		return e.replace(Kt, function(e) {
+	var Gt = /[\n"\\]/g;
+	function Kt(e) {
+		return e.replace(Gt, function(e) {
 			return "\\" + e.charCodeAt(0).toString(16) + " ";
 		});
 	}
 	function qt(e, t, n, r, i, a, o, s) {
-		e.name = "", o != null && typeof o != "function" && typeof o != "symbol" && typeof o != "boolean" ? e.type = o : e.removeAttribute("type"), t == null ? o !== "submit" && o !== "reset" || e.removeAttribute("value") : o === "number" ? (t === 0 && e.value === "" || e.value != t) && (e.value = "" + Bt(t)) : e.value !== "" + Bt(t) && (e.value = "" + Bt(t)), t == null ? n == null ? r != null && e.removeAttribute("value") : Yt(e, o, Bt(n)) : Yt(e, o, Bt(t)), i == null && a != null && (e.defaultChecked = !!a), i != null && (e.checked = i && typeof i != "function" && typeof i != "symbol"), s != null && typeof s != "function" && typeof s != "symbol" && typeof s != "boolean" ? e.name = "" + Bt(s) : e.removeAttribute("name");
+		e.name = "", o != null && typeof o != "function" && typeof o != "symbol" && typeof o != "boolean" ? e.type = o : e.removeAttribute("type"), t == null ? o !== "submit" && o !== "reset" || e.removeAttribute("value") : o === "number" ? (t === 0 && e.value === "" || e.value != t) && (e.value = "" + zt(t)) : e.value !== "" + zt(t) && (e.value = "" + zt(t)), t == null ? n == null ? r != null && e.removeAttribute("value") : Yt(e, o, zt(n)) : Yt(e, o, zt(t)), i == null && a != null && (e.defaultChecked = !!a), i != null && (e.checked = i && typeof i != "function" && typeof i != "symbol"), s != null && typeof s != "function" && typeof s != "symbol" && typeof s != "boolean" ? e.name = "" + zt(s) : e.removeAttribute("name");
 	}
 	function Jt(e, t, n, r, i, a, o, s) {
 		if (a != null && typeof a != "function" && typeof a != "symbol" && typeof a != "boolean" && (e.type = a), t != null || n != null) {
 			if (!(a !== "submit" && a !== "reset" || t != null)) {
-				Ut(e);
+				Ht(e);
 				return;
 			}
-			n = n == null ? "" : "" + Bt(n), t = t == null ? n : "" + Bt(t), s || t === e.value || (e.value = t), e.defaultValue = t;
+			n = n == null ? "" : "" + zt(n), t = t == null ? n : "" + zt(t), s || t === e.value || (e.value = t), e.defaultValue = t;
 		}
-		r ??= i, r = typeof r != "function" && typeof r != "symbol" && !!r, e.checked = s ? e.checked : !!r, e.defaultChecked = !!r, o != null && typeof o != "function" && typeof o != "symbol" && typeof o != "boolean" && (e.name = o), Ut(e);
+		r ??= i, r = typeof r != "function" && typeof r != "symbol" && !!r, e.checked = s ? e.checked : !!r, e.defaultChecked = !!r, o != null && typeof o != "function" && typeof o != "symbol" && typeof o != "boolean" && (e.name = o), Ht(e);
 	}
 	function Yt(e, t, n) {
-		t === "number" && Gt(e.ownerDocument) === e || e.defaultValue === "" + n || (e.defaultValue = "" + n);
+		t === "number" && Wt(e.ownerDocument) === e || e.defaultValue === "" + n || (e.defaultValue = "" + n);
 	}
 	function Xt(e, t, n, r) {
 		if (e = e.options, t) {
@@ -1292,7 +1292,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			for (var i = 0; i < n.length; i++) t["$" + n[i]] = !0;
 			for (n = 0; n < e.length; n++) i = t.hasOwnProperty("$" + e[n].value), e[n].selected !== i && (e[n].selected = i), i && r && (e[n].defaultSelected = !0);
 		} else {
-			for (n = "" + Bt(n), t = null, i = 0; i < e.length; i++) {
+			for (n = "" + zt(n), t = null, i = 0; i < e.length; i++) {
 				if (e[i].value === n) {
 					e[i].selected = !0, r && (e[i].defaultSelected = !0);
 					return;
@@ -1303,11 +1303,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function Zt(e, t, n) {
-		if (t != null && (t = "" + Bt(t), t !== e.value && (e.value = t), n == null)) {
+		if (t != null && (t = "" + zt(t), t !== e.value && (e.value = t), n == null)) {
 			e.defaultValue !== t && (e.defaultValue = t);
 			return;
 		}
-		e.defaultValue = n == null ? "" : "" + Bt(n);
+		e.defaultValue = n == null ? "" : "" + zt(n);
 	}
 	function Qt(e, t, n, r) {
 		if (t == null) {
@@ -1321,7 +1321,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			}
 			n ??= "", t = n;
 		}
-		n = Bt(t), e.defaultValue = n, r = e.textContent, r === n && r !== "" && r !== null && (e.value = r), Ut(e);
+		n = zt(t), e.defaultValue = n, r = e.textContent, r === n && r !== "" && r !== null && (e.value = r), Ht(e);
 	}
 	function $t(e, t) {
 		if (t) {
@@ -1449,14 +1449,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	var dn = null, fn = null;
 	function pn(e) {
-		var t = Tt(e);
+		var t = wt(e);
 		if (t && (e = t.stateNode)) {
 			var n = e[gt] || null;
 			a: switch (e = t.stateNode, t.type) {
 				case "input":
 					if (qt(e, n.value, n.defaultValue, n.defaultValue, n.checked, n.defaultChecked, n.type, n.name), t = n.name, n.type === "radio" && t != null) {
 						for (n = e; n.parentNode;) n = n.parentNode;
-						for (n = n.querySelectorAll("input[name=\"" + A("" + t) + "\"][type=\"radio\"]"), t = 0; t < n.length; t++) {
+						for (n = n.querySelectorAll("input[name=\"" + Kt("" + t) + "\"][type=\"radio\"]"), t = 0; t < n.length; t++) {
 							var r = n[t];
 							if (r !== e && r.form === e.form) {
 								var a = r[gt] || null;
@@ -1464,7 +1464,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 								qt(r, a.value, a.defaultValue, a.defaultValue, a.checked, a.defaultChecked, a.type, a.name);
 							}
 						}
-						for (t = 0; t < n.length; t++) r = n[t], r.form === e.form && Wt(r);
+						for (t = 0; t < n.length; t++) r = n[t], r.form === e.form && Ut(r);
 					}
 					break a;
 				case "textarea":
@@ -1799,7 +1799,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		_d(e, 0);
 	}
 	function gr(e) {
-		if (Wt(Et(e))) return e;
+		if (Ut(Tt(e))) return e;
 	}
 	function _r(e, t) {
 		if (e === "change") return t;
@@ -1886,7 +1886,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function Mr(e) {
 		e = e != null && e.ownerDocument != null && e.ownerDocument.defaultView != null ? e.ownerDocument.defaultView : window;
-		for (var t = Gt(e.document); t instanceof e.HTMLIFrameElement;) {
+		for (var t = Wt(e.document); t instanceof e.HTMLIFrameElement;) {
 			try {
 				var n = typeof t.contentWindow.location.href == "string";
 			} catch {
@@ -1894,7 +1894,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			}
 			if (n) e = t.contentWindow;
 			else break;
-			t = Gt(e.document);
+			t = Wt(e.document);
 		}
 		return t;
 	}
@@ -1905,7 +1905,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	var Pr = _n && "documentMode" in document && 11 >= document.documentMode, Fr = null, Ir = null, Lr = null, Rr = !1;
 	function zr(e, t, n) {
 		var r = n.window === n ? n.document : n.nodeType === 9 ? n : n.ownerDocument;
-		Rr || Fr == null || Fr !== Gt(r) || (r = Fr, "selectionStart" in r && Nr(r) ? r = {
+		Rr || Fr == null || Fr !== Wt(r) || (r = Fr, "selectionStart" in r && Nr(r) ? r = {
 			start: r.selectionStart,
 			end: r.selectionEnd
 		} : (r = (r.ownerDocument && r.ownerDocument.defaultView || window).getSelection(), r = {
@@ -1942,7 +1942,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	var Gr = Wr("animationend"), Kr = Wr("animationiteration"), qr = Wr("animationstart"), Jr = Wr("transitionrun"), Yr = Wr("transitionstart"), Xr = Wr("transitioncancel"), Zr = Wr("transitionend"), Qr = /* @__PURE__ */ new Map(), $r = "abort auxClick beforeToggle cancel canPlay canPlayThrough click close contextMenu copy cut drag dragEnd dragEnter dragExit dragLeave dragOver dragStart drop durationChange emptied encrypted ended error gotPointerCapture input invalid keyDown keyPress keyUp load loadedData loadedMetadata loadStart lostPointerCapture mouseDown mouseMove mouseOut mouseOver mouseUp paste pause play playing pointerCancel pointerDown pointerMove pointerOut pointerOver pointerUp progress rateChange reset resize seeked seeking stalled submit suspend timeUpdate touchCancel touchEnd touchStart volumeChange scroll toggle touchMove waiting wheel".split(" ");
 	$r.push("scrollEnd");
 	function ei(e, t) {
-		Qr.set(e, t), jt(t, [e]);
+		Qr.set(e, t), At(t, [e]);
 	}
 	var ti = typeof reportError == "function" ? reportError : function(e) {
 		if (typeof window == "object" && typeof window.ErrorEvent == "function") {
@@ -2841,13 +2841,13 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return !0;
 	}
 	function B(e, t, n, r, i, a) {
-		return go = a, L = t, t.memoizedState = null, t.updateQueue = null, t.lanes = 0, E.H = e === null || e.memoizedState === null ? Ls : Rs, bo = !1, a = n(r, i), bo = !1, yo && (a = Do(t, n, r, i)), Eo(e), a;
+		return go = a, L = t, t.memoizedState = null, t.updateQueue = null, t.lanes = 0, E.H = e === null || e.memoizedState === null ? Is : Ls, bo = !1, a = n(r, i), bo = !1, yo && (a = Do(t, n, r, i)), Eo(e), a;
 	}
 	function Eo(e) {
-		E.H = Is;
+		E.H = Fs;
 		var t = _o !== null && _o.next !== null;
 		if (go = 0, R = _o = L = null, vo = !1, z = 0, So = null, t) throw Error(i(300));
-		e === null || $s || (e = e.dependencies, e !== null && ra(e) && ($s = !0));
+		e === null || Qs || (e = e.dependencies, e !== null && ra(e) && (Qs = !0));
 	}
 	function Do(e, t, n, r) {
 		L = e;
@@ -2858,7 +2858,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				var o = e.updateQueue;
 				o.lastEffect = null, o.events = null, o.stores = null, o.memoCache != null && (o.memoCache.index = 0);
 			}
-			E.H = zs, o = t(n, r);
+			E.H = Rs, o = t(n, r);
 		} while (yo);
 		return o;
 	}
@@ -2922,7 +2922,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function Po(e) {
 		var t = z;
-		return z += 1, So === null && (So = []), e = ja(So, e, t), t = L, (R === null ? t.memoizedState : R.next) === null && (t = t.alternate, E.H = t === null || t.memoizedState === null ? Ls : Rs), e;
+		return z += 1, So === null && (So = []), e = ja(So, e, t), t = L, (R === null ? t.memoizedState : R.next) === null && (t = t.alternate, E.H = t === null || t.memoizedState === null ? Is : Ls), e;
 	}
 	function Fo(e) {
 		if (typeof e == "object" && e) {
@@ -3007,7 +3007,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				}, l === null ? (c = l = p, s = o) : l = l.next = p, L.lanes |= f, Hl |= f;
 				u = u.next;
 			} while (u !== null && u !== t);
-			if (l === null ? s = o : l.next = c, !Or(o, e.memoizedState) && ($s = !0, d && (n = _a, n !== null))) throw n;
+			if (l === null ? s = o : l.next = c, !Or(o, e.memoizedState) && (Qs = !0, d && (n = _a, n !== null))) throw n;
 			e.memoizedState = o, e.baseState = s, e.baseQueue = l, r.lastRenderedState = o;
 		}
 		return a === null && (r.lanes = 0), [e.memoizedState, r.dispatch];
@@ -3023,7 +3023,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			do
 				o = e(o, s.action), s = s.next;
 			while (s !== a);
-			Or(o, t.memoizedState) || ($s = !0), t.memoizedState = o, t.baseQueue === null && (t.baseState = o), n.lastRenderedState = o;
+			Or(o, t.memoizedState) || (Qs = !0), t.memoizedState = o, t.baseQueue === null && (t.baseState = o), n.lastRenderedState = o;
 		}
 		return [o, r];
 	}
@@ -3034,7 +3034,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			n = n();
 		} else n = t();
 		var s = !Or((_o || a).memoizedState, n);
-		if (s && (a.memoizedState = n, $s = !0), a = a.queue, us(Wo.bind(null, r, a, e), [e]), a.getSnapshot !== t || s || R !== null && R.memoizedState.tag & 1) {
+		if (s && (a.memoizedState = n, Qs = !0), a = a.queue, us(Wo.bind(null, r, a, e), [e]), a.getSnapshot !== t || s || R !== null && R.memoizedState.tag & 1) {
 			if (r.flags |= 2048, as(9, { destroy: void 0 }, Uo.bind(null, r, a, n, t), null), Ml === null) throw Error(i(349));
 			o || go & 127 || Ho(r, t, n);
 		}
@@ -3093,7 +3093,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return e.baseState = n, zo(e, _o, typeof r == "function" ? r : Lo);
 	}
 	function H(e, t, n, r, a) {
-		if (Ns(e)) throw Error(i(485));
+		if (Ms(e)) throw Error(i(485));
 		if (e = t.action, e !== null) {
 			var o = {
 				payload: a,
@@ -3196,7 +3196,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			dispatch: null,
 			lastRenderedReducer: U,
 			lastRenderedState: t
-		}, n.queue = r, n = As.bind(null, L, r), r.dispatch = n, r = qo(!1), a = Ms.bind(null, L, !1, r.queue), r = Mo(), i = {
+		}, n.queue = r, n = js.bind(null, L, r), r.dispatch = n, r = qo(!1), a = K.bind(null, L, !1, r.queue), r = Mo(), i = {
 			state: t,
 			dispatch: null,
 			action: e,
@@ -3333,18 +3333,18 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return n === void 0 || go & 1073741824 && !(Pl & 261930) ? e.memoizedState = t : (e.memoizedState = n, e = du(), L.lanes |= e, Hl |= e, n);
 	}
 	function xs(e, t, n, r) {
-		return Or(n, t) ? n : no.current === null ? !(go & 42) || go & 1073741824 && !(Pl & 261930) ? ($s = !0, e.memoizedState = n) : (e = du(), L.lanes |= e, Hl |= e, t) : (e = bs(e, n, r), Or(e, t) || ($s = !0), e);
+		return Or(n, t) ? n : no.current === null ? !(go & 42) || go & 1073741824 && !(Pl & 261930) ? (Qs = !0, e.memoizedState = n) : (e = du(), L.lanes |= e, Hl |= e, t) : (e = bs(e, n, r), Or(e, t) || (Qs = !0), e);
 	}
 	function Ss(e, t, n, r, i) {
 		var a = ue.p;
 		ue.p = a !== 0 && 8 > a ? a : 8;
 		var o = E.T, s = {};
-		E.T = s, Ms(e, !1, t, n);
+		E.T = s, K(e, !1, t, n);
 		try {
 			var c = i(), l = E.S;
-			l !== null && l(s, c), typeof c == "object" && c && typeof c.then == "function" ? js(e, t, ba(c, r), uu(e)) : js(e, t, r, uu(e));
+			l !== null && l(s, c), typeof c == "object" && c && typeof c.then == "function" ? G(e, t, ba(c, r), uu(e)) : G(e, t, r, uu(e));
 		} catch (n) {
-			js(e, t, {
+			G(e, t, {
 				then: function() {},
 				status: "rejected",
 				reason: n
@@ -3354,14 +3354,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function Cs() {}
-	function W(e, t, n, r) {
+	function ws(e, t, n, r) {
 		if (e.tag !== 5) throw Error(i(476));
-		var a = ws(e).queue;
+		var a = Ts(e).queue;
 		Ss(e, a, t, de, n === null ? Cs : function() {
-			return Ts(e), n(r);
+			return Es(e), n(r);
 		});
 	}
-	function ws(e) {
+	function Ts(e) {
 		var t = e.memoizedState;
 		if (t !== null) return t;
 		t = {
@@ -3392,11 +3392,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			next: null
 		}, e.memoizedState = t, e = e.alternate, e !== null && (e.memoizedState = t), t;
 	}
-	function Ts(e) {
-		var t = ws(e);
-		t.next === null && (t = e.alternate.memoizedState), js(e, t.next.queue, {}, uu());
+	function Es(e) {
+		var t = Ts(e);
+		t.next === null && (t = e.alternate.memoizedState), G(e, t.next.queue, {}, uu());
 	}
-	function Es() {
+	function W() {
 		return aa(Qf);
 	}
 	function Ds() {
@@ -3419,7 +3419,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			t = t.return;
 		}
 	}
-	function G(e, t, n) {
+	function As(e, t, n) {
 		var r = uu();
 		n = {
 			lane: r,
@@ -3429,12 +3429,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			hasEagerState: !1,
 			eagerState: null,
 			next: null
-		}, Ns(e) ? Ps(t, n) : (n = si(e, t, n, r), n !== null && (fu(n, e, r), Fs(n, t, r)));
+		}, Ms(e) ? Ns(t, n) : (n = si(e, t, n, r), n !== null && (fu(n, e, r), Ps(n, t, r)));
 	}
-	function As(e, t, n) {
-		js(e, t, n, uu());
+	function js(e, t, n) {
+		G(e, t, n, uu());
 	}
-	function js(e, t, n, r) {
+	function G(e, t, n, r) {
 		var i = {
 			lane: r,
 			revertLane: 0,
@@ -3444,18 +3444,18 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			eagerState: null,
 			next: null
 		};
-		if (Ns(e)) Ps(t, i);
+		if (Ms(e)) Ns(t, i);
 		else {
 			var a = e.alternate;
 			if (e.lanes === 0 && (a === null || a.lanes === 0) && (a = t.lastRenderedReducer, a !== null)) try {
 				var o = t.lastRenderedState, s = a(o, n);
 				if (i.hasEagerState = !0, i.eagerState = s, Or(s, o)) return oi(e, t, i, 0), Ml === null && ai(), !1;
 			} catch {}
-			if (n = si(e, t, i, r), n !== null) return fu(n, e, r), Fs(n, t, r), !0;
+			if (n = si(e, t, i, r), n !== null) return fu(n, e, r), Ps(n, t, r), !0;
 		}
 		return !1;
 	}
-	function Ms(e, t, n, r) {
+	function K(e, t, n, r) {
 		if (r = {
 			lane: 2,
 			revertLane: ld(),
@@ -3464,26 +3464,26 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			hasEagerState: !1,
 			eagerState: null,
 			next: null
-		}, Ns(e)) {
+		}, Ms(e)) {
 			if (t) throw Error(i(479));
 		} else t = si(e, n, r, 2), t !== null && fu(t, e, 2);
 	}
-	function Ns(e) {
+	function Ms(e) {
 		var t = e.alternate;
 		return e === L || t !== null && t === L;
 	}
-	function Ps(e, t) {
+	function Ns(e, t) {
 		yo = vo = !0;
 		var n = e.pending;
 		n === null ? t.next = t : (t.next = n.next, n.next = t), e.pending = t;
 	}
-	function Fs(e, t, n) {
+	function Ps(e, t, n) {
 		if (n & 4194048) {
 			var r = t.lanes;
 			r &= e.pendingLanes, n |= r, t.lanes = n, ct(e, n);
 		}
 	}
-	var Is = {
+	var Fs = {
 		readContext: aa,
 		use: Fo,
 		useCallback: wo,
@@ -3508,8 +3508,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		useMemoCache: wo,
 		useCacheRefresh: wo
 	};
-	Is.useEffectEvent = wo;
-	var Ls = {
+	Fs.useEffectEvent = wo;
+	var Is = {
 		readContext: aa,
 		use: Fo,
 		useCallback: function(e, t) {
@@ -3559,7 +3559,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				dispatch: null,
 				lastRenderedReducer: e,
 				lastRenderedState: i
-			}, r.queue = e, e = e.dispatch = G.bind(null, L, e), [r.memoizedState, e];
+			}, r.queue = e, e = e.dispatch = As.bind(null, L, e), [r.memoizedState, e];
 		},
 		useRef: function(e) {
 			var t = Mo();
@@ -3567,7 +3567,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		},
 		useState: function(e) {
 			e = qo(e);
-			var t = e.queue, n = As.bind(null, L, t);
+			var t = e.queue, n = js.bind(null, L, t);
 			return t.dispatch = n, [e.memoizedState, n];
 		},
 		useDebugValue: _s,
@@ -3602,7 +3602,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			} else n = Co++, t = "_" + t + "r_" + n.toString(32) + "_";
 			return e.memoizedState = t;
 		},
-		useHostTransitionStatus: Es,
+		useHostTransitionStatus: W,
 		useFormState: es,
 		useActionState: es,
 		useOptimistic: function(e) {
@@ -3615,7 +3615,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				lastRenderedReducer: null,
 				lastRenderedState: null
 			};
-			return t.queue = n, t = Ms.bind(null, L, !0, n), n.dispatch = t, [e, t];
+			return t.queue = n, t = K.bind(null, L, !0, n), n.dispatch = t, [e, t];
 		},
 		useMemoCache: Io,
 		useCacheRefresh: function() {
@@ -3628,7 +3628,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				return n.impl.apply(void 0, arguments);
 			};
 		}
-	}, Rs = {
+	}, Ls = {
 		readContext: aa,
 		use: Fo,
 		useCallback: vs,
@@ -3653,7 +3653,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		},
 		useSyncExternalStore: Vo,
 		useId: Ds,
-		useHostTransitionStatus: Es,
+		useHostTransitionStatus: W,
 		useFormState: ts,
 		useActionState: ts,
 		useOptimistic: function(e, t) {
@@ -3662,8 +3662,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		useMemoCache: Io,
 		useCacheRefresh: Os
 	};
-	Rs.useEffectEvent = fs;
-	var zs = {
+	Ls.useEffectEvent = fs;
+	var Rs = {
 		readContext: aa,
 		use: Fo,
 		useCallback: vs,
@@ -3689,7 +3689,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		},
 		useSyncExternalStore: Vo,
 		useId: Ds,
-		useHostTransitionStatus: Es,
+		useHostTransitionStatus: W,
 		useFormState: is,
 		useActionState: is,
 		useOptimistic: function(e, t) {
@@ -3699,11 +3699,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		useMemoCache: Io,
 		useCacheRefresh: Os
 	};
-	zs.useEffectEvent = fs;
-	function Bs(e, t, n, r) {
+	Rs.useEffectEvent = fs;
+	function zs(e, t, n, r) {
 		t = e.memoizedState, n = n(r, t), n = n == null ? t : m({}, t, n), e.memoizedState = n, e.lanes === 0 && (e.updateQueue.baseState = n);
 	}
-	var Vs = {
+	var Bs = {
 		enqueueSetState: function(e, t, n) {
 			e = e._reactInternals;
 			var r = uu(), i = qa(r);
@@ -3720,19 +3720,19 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			r.tag = 2, t != null && (r.callback = t), t = Ja(e, r, n), t !== null && (fu(t, e, n), Ya(t, e, n));
 		}
 	};
-	function Hs(e, t, n, r, i, a, o) {
+	function Vs(e, t, n, r, i, a, o) {
 		return e = e.stateNode, typeof e.shouldComponentUpdate == "function" ? e.shouldComponentUpdate(r, a, o) : t.prototype && t.prototype.isPureReactComponent ? !kr(n, r) || !kr(i, a) : !0;
 	}
-	function Us(e, t, n, r) {
-		e = t.state, typeof t.componentWillReceiveProps == "function" && t.componentWillReceiveProps(n, r), typeof t.UNSAFE_componentWillReceiveProps == "function" && t.UNSAFE_componentWillReceiveProps(n, r), t.state !== e && Vs.enqueueReplaceState(t, t.state, null);
+	function Hs(e, t, n, r) {
+		e = t.state, typeof t.componentWillReceiveProps == "function" && t.componentWillReceiveProps(n, r), typeof t.UNSAFE_componentWillReceiveProps == "function" && t.UNSAFE_componentWillReceiveProps(n, r), t.state !== e && Bs.enqueueReplaceState(t, t.state, null);
 	}
-	function Ws(e, t) {
+	function Us(e, t) {
 		var n = t;
 		if ("ref" in t) for (var r in n = {}, t) r !== "ref" && (n[r] = t[r]);
 		if (e = e.defaultProps) for (var i in n === t && (n = m({}, n)), e) n[i] === void 0 && (n[i] = e[i]);
 		return n;
 	}
-	function K(e) {
+	function Ws(e) {
 		ti(e);
 	}
 	function Gs(e) {
@@ -3741,7 +3741,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	function Ks(e) {
 		ti(e);
 	}
-	function qs(e, t) {
+	function q(e, t) {
 		try {
 			var n = e.onUncaughtError;
 			n(t.value, { componentStack: t.stack });
@@ -3751,7 +3751,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			});
 		}
 	}
-	function Js(e, t, n) {
+	function qs(e, t, n) {
 		try {
 			var r = e.onCaughtError;
 			r(n.value, {
@@ -3764,12 +3764,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			});
 		}
 	}
-	function Ys(e, t, n) {
+	function Js(e, t, n) {
 		return n = qa(n), n.tag = 3, n.payload = { element: null }, n.callback = function() {
-			qs(e, t);
+			q(e, t);
 		}, n;
 	}
-	function q(e) {
+	function Ys(e) {
 		return e = qa(e), e.tag = 3, e;
 	}
 	function Xs(e, t, n, r) {
@@ -3779,12 +3779,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			e.payload = function() {
 				return i(a);
 			}, e.callback = function() {
-				Js(t, n, r);
+				qs(t, n, r);
 			};
 		}
 		var o = n.stateNode;
 		o !== null && typeof o.componentDidCatch == "function" && (e.callback = function() {
-			Js(t, n, r), typeof i != "function" && (eu === null ? eu = new Set([this]) : eu.add(this));
+			qs(t, n, r), typeof i != "function" && (eu === null ? eu = new Set([this]) : eu.add(this));
 			var e = r.stack;
 			this.componentDidCatch(r.value, { componentStack: e === null ? "" : e });
 		});
@@ -3805,52 +3805,52 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			}
 			return Uu(e, r, a), wu(), !1;
 		}
-		if (Ri) return t = so.current, t === null ? (r !== Vi && (t = Error(i(423), { cause: r }), Ji(F(t, n))), e = e.current.alternate, e.flags |= 65536, a &= -a, e.lanes |= a, r = F(r, n), a = Ys(e.stateNode, r, a), Xa(e, a), Vl !== 4 && (Vl = 2)) : (!(t.flags & 65536) && (t.flags |= 256), t.flags |= 65536, t.lanes = a, r !== Vi && (e = Error(i(422), { cause: r }), Ji(F(e, n)))), !1;
+		if (Ri) return t = so.current, t === null ? (r !== Vi && (t = Error(i(423), { cause: r }), Ji(F(t, n))), e = e.current.alternate, e.flags |= 65536, a &= -a, e.lanes |= a, r = F(r, n), a = Js(e.stateNode, r, a), Xa(e, a), Vl !== 4 && (Vl = 2)) : (!(t.flags & 65536) && (t.flags |= 256), t.flags |= 65536, t.lanes = a, r !== Vi && (e = Error(i(422), { cause: r }), Ji(F(e, n)))), !1;
 		var o = Error(i(520), { cause: r });
 		if (o = F(o, n), ql === null ? ql = [o] : ql.push(o), Vl !== 4 && (Vl = 2), t === null) return !0;
 		r = F(r, n), n = t;
 		do {
 			switch (n.tag) {
-				case 3: return n.flags |= 65536, e = a & -a, n.lanes |= e, e = Ys(n.stateNode, r, e), Xa(n, e), !1;
-				case 1: if (t = n.type, o = n.stateNode, !(n.flags & 128) && (typeof t.getDerivedStateFromError == "function" || o !== null && typeof o.componentDidCatch == "function" && (eu === null || !eu.has(o)))) return n.flags |= 65536, a &= -a, n.lanes |= a, a = q(a), Xs(a, e, n, r), Xa(n, a), !1;
+				case 3: return n.flags |= 65536, e = a & -a, n.lanes |= e, e = Js(n.stateNode, r, e), Xa(n, e), !1;
+				case 1: if (t = n.type, o = n.stateNode, !(n.flags & 128) && (typeof t.getDerivedStateFromError == "function" || o !== null && typeof o.componentDidCatch == "function" && (eu === null || !eu.has(o)))) return n.flags |= 65536, a &= -a, n.lanes |= a, a = Ys(a), Xs(a, e, n, r), Xa(n, a), !1;
 			}
 			n = n.return;
 		} while (n !== null);
 		return !1;
 	}
-	var Qs = Error(i(461)), $s = !1;
-	function ec(e, t, n, r) {
+	var J = Error(i(461)), Qs = !1;
+	function $s(e, t, n, r) {
 		t.child = e === null ? Ua(t, null, n, r) : Ha(t, e.child, n, r);
 	}
-	function tc(e, t, n, r, i) {
+	function ec(e, t, n, r, i) {
 		n = n.render;
 		var a = t.ref;
 		if ("ref" in r) {
 			var o = {};
 			for (var s in r) s !== "ref" && (o[s] = r[s]);
 		} else o = r;
-		return ia(t), r = B(e, t, n, o, a, i), s = ko(), e !== null && !$s ? (Ao(e, t, i), wc(e, t, i)) : (Ri && s && Ni(t), t.flags |= 1, ec(e, t, r, i), t.child);
+		return ia(t), r = B(e, t, n, o, a, i), s = ko(), e !== null && !Qs ? (Ao(e, t, i), Cc(e, t, i)) : (Ri && s && Ni(t), t.flags |= 1, $s(e, t, r, i), t.child);
 	}
-	function nc(e, t, n, r, i) {
+	function tc(e, t, n, r, i) {
 		if (e === null) {
 			var a = n.type;
-			return typeof a == "function" && !mi(a) && a.defaultProps === void 0 && n.compare === null ? (t.tag = 15, t.type = a, rc(e, t, a, r, i)) : (e = _i(n.type, null, r, t, t.mode, i), e.ref = t.ref, e.return = t, t.child = e);
+			return typeof a == "function" && !mi(a) && a.defaultProps === void 0 && n.compare === null ? (t.tag = 15, t.type = a, nc(e, t, a, r, i)) : (e = _i(n.type, null, r, t, t.mode, i), e.ref = t.ref, e.return = t, t.child = e);
 		}
-		if (a = e.child, !Tc(e, i)) {
+		if (a = e.child, !wc(e, i)) {
 			var o = a.memoizedProps;
-			if (n = n.compare, n = n === null ? kr : n, n(o, r) && e.ref === t.ref) return wc(e, t, i);
+			if (n = n.compare, n = n === null ? kr : n, n(o, r) && e.ref === t.ref) return Cc(e, t, i);
 		}
 		return t.flags |= 1, e = hi(a, r), e.ref = t.ref, e.return = t, t.child = e;
 	}
-	function rc(e, t, n, r, i) {
+	function nc(e, t, n, r, i) {
 		if (e !== null) {
 			var a = e.memoizedProps;
-			if (kr(a, r) && e.ref === t.ref) if ($s = !1, t.pendingProps = r = a, Tc(e, i)) e.flags & 131072 && ($s = !0);
-			else return t.lanes = e.lanes, wc(e, t, i);
+			if (kr(a, r) && e.ref === t.ref) if (Qs = !1, t.pendingProps = r = a, wc(e, i)) e.flags & 131072 && (Qs = !0);
+			else return t.lanes = e.lanes, Cc(e, t, i);
 		}
-		return dc(e, t, n, r, i);
+		return uc(e, t, n, r, i);
 	}
-	function ic(e, t, n, r) {
+	function rc(e, t, n, r) {
 		var i = r.children, a = e === null ? null : e.memoizedState;
 		if (e === null && t.stateNode === null && (t.stateNode = {
 			_visibility: 1,
@@ -3863,17 +3863,17 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					for (r = t.child = e.child, i = 0; r !== null;) i = i | r.lanes | r.childLanes, r = r.sibling;
 					r = i & ~a;
 				} else r = 0, t.child = null;
-				return oc(e, t, a, n, r);
+				return ac(e, t, a, n, r);
 			}
 			if (n & 536870912) t.memoizedState = {
 				baseLanes: 0,
 				cachePool: null
 			}, e !== null && wa(t, a === null ? null : a.cachePool), a === null ? ao() : io(t, a), fo(t);
-			else return r = t.lanes = 536870912, oc(e, t, a === null ? n : a.baseLanes | n, n, r);
+			else return r = t.lanes = 536870912, ac(e, t, a === null ? n : a.baseLanes | n, n, r);
 		} else a === null ? (e !== null && wa(t, null), ao(), po(t)) : (wa(t, a.cachePool), io(t, a), po(t), t.memoizedState = null);
-		return ec(e, t, i, n), t.child;
+		return $s(e, t, i, n), t.child;
 	}
-	function ac(e, t) {
+	function ic(e, t) {
 		return e !== null && e.tag === 22 || t.stateNode !== null || (t.stateNode = {
 			_visibility: 1,
 			_pendingMarkers: null,
@@ -3881,7 +3881,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			_transitions: null
 		}), t.sibling;
 	}
-	function oc(e, t, n, r, i) {
+	function ac(e, t, n, r, i) {
 		var a = Ca();
 		return a = a === null ? null : {
 			parent: da._currentValue,
@@ -3891,20 +3891,20 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			cachePool: a
 		}, e !== null && wa(t, null), ao(), fo(t), e !== null && na(e, t, r, !0), t.childLanes = i, null;
 	}
-	function sc(e, t) {
+	function oc(e, t) {
 		return t = yc({
 			mode: t.mode,
 			children: t.children
 		}, e.mode), t.ref = e.ref, e.child = t, t.return = e, t;
 	}
-	function cc(e, t, n) {
-		return Ha(t, e.child, null, n), e = sc(t, t.pendingProps), e.flags |= 2, mo(t), t.memoizedState = null, e;
+	function sc(e, t, n) {
+		return Ha(t, e.child, null, n), e = oc(t, t.pendingProps), e.flags |= 2, mo(t), t.memoizedState = null, e;
 	}
-	function lc(e, t, n) {
+	function cc(e, t, n) {
 		var r = t.pendingProps, a = (t.flags & 128) != 0;
 		if (t.flags &= -129, e === null) {
 			if (Ri) {
-				if (r.mode === "hidden") return e = sc(t, r), t.lanes = 536870912, ac(null, e);
+				if (r.mode === "hidden") return e = oc(t, r), t.lanes = 536870912, ic(null, e);
 				if (uo(t), (e = Li) ? (e = rf(e, Bi), e = e !== null && e.data === "&" ? e : null, e !== null && (t.memoizedState = {
 					dehydrated: e,
 					treeContext: Oi === null ? null : {
@@ -3916,18 +3916,18 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				}, n = P(e), n.return = t, t.child = n, Ii = t, Li = null)) : e = null, e === null) throw Hi(t);
 				return t.lanes = 536870912, null;
 			}
-			return sc(t, r);
+			return oc(t, r);
 		}
 		var o = e.memoizedState;
 		if (o !== null) {
 			var s = o.dehydrated;
-			if (uo(t), a) if (t.flags & 256) t.flags &= -257, t = cc(e, t, n);
+			if (uo(t), a) if (t.flags & 256) t.flags &= -257, t = sc(e, t, n);
 			else if (t.memoizedState !== null) t.child = e.child, t.flags |= 128, t = null;
 			else throw Error(i(558));
-			else if ($s || na(e, t, n, !1), a = (n & e.childLanes) !== 0, $s || a) {
-				if (r = Ml, r !== null && (s = lt(r, n), s !== 0 && s !== o.retryLane)) throw o.retryLane = s, ci(e, s), fu(r, e, s), Qs;
-				wu(), t = cc(e, t, n);
-			} else e = o.treeContext, Li = cf(s.nextSibling), Ii = t, Ri = !0, zi = null, Bi = !1, e !== null && Fi(t, e), t = sc(t, r), t.flags |= 4096;
+			else if (Qs || na(e, t, n, !1), a = (n & e.childLanes) !== 0, Qs || a) {
+				if (r = Ml, r !== null && (s = lt(r, n), s !== 0 && s !== o.retryLane)) throw o.retryLane = s, ci(e, s), fu(r, e, s), J;
+				wu(), t = sc(e, t, n);
+			} else e = o.treeContext, Li = cf(s.nextSibling), Ii = t, Ri = !0, zi = null, Bi = !1, e !== null && Fi(t, e), t = oc(t, r), t.flags |= 4096;
 			return t;
 		}
 		return e = hi(e.child, {
@@ -3935,7 +3935,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			children: r.children
 		}), e.ref = t.ref, t.child = e, e.return = t, e;
 	}
-	function uc(e, t) {
+	function lc(e, t) {
 		var n = t.ref;
 		if (n === null) e !== null && e.ref !== null && (t.flags |= 4194816);
 		else {
@@ -3943,52 +3943,52 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			(e === null || e.ref !== n) && (t.flags |= 4194816);
 		}
 	}
-	function dc(e, t, n, r, i) {
-		return ia(t), n = B(e, t, n, r, void 0, i), r = ko(), e !== null && !$s ? (Ao(e, t, i), wc(e, t, i)) : (Ri && r && Ni(t), t.flags |= 1, ec(e, t, n, i), t.child);
+	function uc(e, t, n, r, i) {
+		return ia(t), n = B(e, t, n, r, void 0, i), r = ko(), e !== null && !Qs ? (Ao(e, t, i), Cc(e, t, i)) : (Ri && r && Ni(t), t.flags |= 1, $s(e, t, n, i), t.child);
 	}
-	function fc(e, t, n, r, i, a) {
-		return ia(t), t.updateQueue = null, n = Do(t, r, n, i), Eo(e), r = ko(), e !== null && !$s ? (Ao(e, t, a), wc(e, t, a)) : (Ri && r && Ni(t), t.flags |= 1, ec(e, t, n, a), t.child);
+	function dc(e, t, n, r, i, a) {
+		return ia(t), t.updateQueue = null, n = Do(t, r, n, i), Eo(e), r = ko(), e !== null && !Qs ? (Ao(e, t, a), Cc(e, t, a)) : (Ri && r && Ni(t), t.flags |= 1, $s(e, t, n, a), t.child);
 	}
-	function pc(e, t, n, r, i) {
+	function fc(e, t, n, r, i) {
 		if (ia(t), t.stateNode === null) {
 			var a = di, o = n.contextType;
-			typeof o == "object" && o && (a = aa(o)), a = new n(r, a), t.memoizedState = a.state !== null && a.state !== void 0 ? a.state : null, a.updater = Vs, t.stateNode = a, a._reactInternals = t, a = t.stateNode, a.props = r, a.state = t.memoizedState, a.refs = {}, Ga(t), o = n.contextType, a.context = typeof o == "object" && o ? aa(o) : di, a.state = t.memoizedState, o = n.getDerivedStateFromProps, typeof o == "function" && (Bs(t, n, o, r), a.state = t.memoizedState), typeof n.getDerivedStateFromProps == "function" || typeof a.getSnapshotBeforeUpdate == "function" || typeof a.UNSAFE_componentWillMount != "function" && typeof a.componentWillMount != "function" || (o = a.state, typeof a.componentWillMount == "function" && a.componentWillMount(), typeof a.UNSAFE_componentWillMount == "function" && a.UNSAFE_componentWillMount(), o !== a.state && Vs.enqueueReplaceState(a, a.state, null), $a(t, r, a, i), Qa(), a.state = t.memoizedState), typeof a.componentDidMount == "function" && (t.flags |= 4194308), r = !0;
+			typeof o == "object" && o && (a = aa(o)), a = new n(r, a), t.memoizedState = a.state !== null && a.state !== void 0 ? a.state : null, a.updater = Bs, t.stateNode = a, a._reactInternals = t, a = t.stateNode, a.props = r, a.state = t.memoizedState, a.refs = {}, Ga(t), o = n.contextType, a.context = typeof o == "object" && o ? aa(o) : di, a.state = t.memoizedState, o = n.getDerivedStateFromProps, typeof o == "function" && (zs(t, n, o, r), a.state = t.memoizedState), typeof n.getDerivedStateFromProps == "function" || typeof a.getSnapshotBeforeUpdate == "function" || typeof a.UNSAFE_componentWillMount != "function" && typeof a.componentWillMount != "function" || (o = a.state, typeof a.componentWillMount == "function" && a.componentWillMount(), typeof a.UNSAFE_componentWillMount == "function" && a.UNSAFE_componentWillMount(), o !== a.state && Bs.enqueueReplaceState(a, a.state, null), $a(t, r, a, i), Qa(), a.state = t.memoizedState), typeof a.componentDidMount == "function" && (t.flags |= 4194308), r = !0;
 		} else if (e === null) {
 			a = t.stateNode;
-			var s = t.memoizedProps, c = Ws(n, s);
+			var s = t.memoizedProps, c = Us(n, s);
 			a.props = c;
 			var l = a.context, u = n.contextType;
 			o = di, typeof u == "object" && u && (o = aa(u));
 			var d = n.getDerivedStateFromProps;
-			u = typeof d == "function" || typeof a.getSnapshotBeforeUpdate == "function", s = t.pendingProps !== s, u || typeof a.UNSAFE_componentWillReceiveProps != "function" && typeof a.componentWillReceiveProps != "function" || (s || l !== o) && Us(t, a, r, o), Wa = !1;
+			u = typeof d == "function" || typeof a.getSnapshotBeforeUpdate == "function", s = t.pendingProps !== s, u || typeof a.UNSAFE_componentWillReceiveProps != "function" && typeof a.componentWillReceiveProps != "function" || (s || l !== o) && Hs(t, a, r, o), Wa = !1;
 			var f = t.memoizedState;
-			a.state = f, $a(t, r, a, i), Qa(), l = t.memoizedState, s || f !== l || Wa ? (typeof d == "function" && (Bs(t, n, d, r), l = t.memoizedState), (c = Wa || Hs(t, n, c, r, f, l, o)) ? (u || typeof a.UNSAFE_componentWillMount != "function" && typeof a.componentWillMount != "function" || (typeof a.componentWillMount == "function" && a.componentWillMount(), typeof a.UNSAFE_componentWillMount == "function" && a.UNSAFE_componentWillMount()), typeof a.componentDidMount == "function" && (t.flags |= 4194308)) : (typeof a.componentDidMount == "function" && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = l), a.props = r, a.state = l, a.context = o, r = c) : (typeof a.componentDidMount == "function" && (t.flags |= 4194308), r = !1);
+			a.state = f, $a(t, r, a, i), Qa(), l = t.memoizedState, s || f !== l || Wa ? (typeof d == "function" && (zs(t, n, d, r), l = t.memoizedState), (c = Wa || Vs(t, n, c, r, f, l, o)) ? (u || typeof a.UNSAFE_componentWillMount != "function" && typeof a.componentWillMount != "function" || (typeof a.componentWillMount == "function" && a.componentWillMount(), typeof a.UNSAFE_componentWillMount == "function" && a.UNSAFE_componentWillMount()), typeof a.componentDidMount == "function" && (t.flags |= 4194308)) : (typeof a.componentDidMount == "function" && (t.flags |= 4194308), t.memoizedProps = r, t.memoizedState = l), a.props = r, a.state = l, a.context = o, r = c) : (typeof a.componentDidMount == "function" && (t.flags |= 4194308), r = !1);
 		} else {
-			a = t.stateNode, Ka(e, t), o = t.memoizedProps, u = Ws(n, o), a.props = u, d = t.pendingProps, f = a.context, l = n.contextType, c = di, typeof l == "object" && l && (c = aa(l)), s = n.getDerivedStateFromProps, (l = typeof s == "function" || typeof a.getSnapshotBeforeUpdate == "function") || typeof a.UNSAFE_componentWillReceiveProps != "function" && typeof a.componentWillReceiveProps != "function" || (o !== d || f !== c) && Us(t, a, r, c), Wa = !1, f = t.memoizedState, a.state = f, $a(t, r, a, i), Qa();
+			a = t.stateNode, Ka(e, t), o = t.memoizedProps, u = Us(n, o), a.props = u, d = t.pendingProps, f = a.context, l = n.contextType, c = di, typeof l == "object" && l && (c = aa(l)), s = n.getDerivedStateFromProps, (l = typeof s == "function" || typeof a.getSnapshotBeforeUpdate == "function") || typeof a.UNSAFE_componentWillReceiveProps != "function" && typeof a.componentWillReceiveProps != "function" || (o !== d || f !== c) && Hs(t, a, r, c), Wa = !1, f = t.memoizedState, a.state = f, $a(t, r, a, i), Qa();
 			var p = t.memoizedState;
-			o !== d || f !== p || Wa || e !== null && e.dependencies !== null && ra(e.dependencies) ? (typeof s == "function" && (Bs(t, n, s, r), p = t.memoizedState), (u = Wa || Hs(t, n, u, r, f, p, c) || e !== null && e.dependencies !== null && ra(e.dependencies)) ? (l || typeof a.UNSAFE_componentWillUpdate != "function" && typeof a.componentWillUpdate != "function" || (typeof a.componentWillUpdate == "function" && a.componentWillUpdate(r, p, c), typeof a.UNSAFE_componentWillUpdate == "function" && a.UNSAFE_componentWillUpdate(r, p, c)), typeof a.componentDidUpdate == "function" && (t.flags |= 4), typeof a.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof a.componentDidUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 4), typeof a.getSnapshotBeforeUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = p), a.props = r, a.state = p, a.context = c, r = u) : (typeof a.componentDidUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 4), typeof a.getSnapshotBeforeUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 1024), r = !1);
+			o !== d || f !== p || Wa || e !== null && e.dependencies !== null && ra(e.dependencies) ? (typeof s == "function" && (zs(t, n, s, r), p = t.memoizedState), (u = Wa || Vs(t, n, u, r, f, p, c) || e !== null && e.dependencies !== null && ra(e.dependencies)) ? (l || typeof a.UNSAFE_componentWillUpdate != "function" && typeof a.componentWillUpdate != "function" || (typeof a.componentWillUpdate == "function" && a.componentWillUpdate(r, p, c), typeof a.UNSAFE_componentWillUpdate == "function" && a.UNSAFE_componentWillUpdate(r, p, c)), typeof a.componentDidUpdate == "function" && (t.flags |= 4), typeof a.getSnapshotBeforeUpdate == "function" && (t.flags |= 1024)) : (typeof a.componentDidUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 4), typeof a.getSnapshotBeforeUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 1024), t.memoizedProps = r, t.memoizedState = p), a.props = r, a.state = p, a.context = c, r = u) : (typeof a.componentDidUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 4), typeof a.getSnapshotBeforeUpdate != "function" || o === e.memoizedProps && f === e.memoizedState || (t.flags |= 1024), r = !1);
 		}
-		return a = r, uc(e, t), r = (t.flags & 128) != 0, a || r ? (a = t.stateNode, n = r && typeof n.getDerivedStateFromError != "function" ? null : a.render(), t.flags |= 1, e !== null && r ? (t.child = Ha(t, e.child, null, i), t.child = Ha(t, null, n, i)) : ec(e, t, n, i), t.memoizedState = a.state, e = t.child) : e = wc(e, t, i), e;
+		return a = r, lc(e, t), r = (t.flags & 128) != 0, a || r ? (a = t.stateNode, n = r && typeof n.getDerivedStateFromError != "function" ? null : a.render(), t.flags |= 1, e !== null && r ? (t.child = Ha(t, e.child, null, i), t.child = Ha(t, null, n, i)) : $s(e, t, n, i), t.memoizedState = a.state, e = t.child) : e = Cc(e, t, i), e;
 	}
-	function mc(e, t, n, r) {
-		return Ki(), t.flags |= 256, ec(e, t, n, r), t.child;
+	function pc(e, t, n, r) {
+		return Ki(), t.flags |= 256, $s(e, t, n, r), t.child;
 	}
-	var hc = {
+	var mc = {
 		dehydrated: null,
 		treeContext: null,
 		retryLane: 0,
 		hydrationErrors: null
 	};
-	function gc(e) {
+	function hc(e) {
 		return {
 			baseLanes: e,
 			cachePool: Ta()
 		};
 	}
-	function _c(e, t, n) {
+	function gc(e, t, n) {
 		return e = e === null ? 0 : e.childLanes & ~n, t && (e |= Gl), e;
 	}
-	function J(e, t, n) {
+	function _c(e, t, n) {
 		var r = t.pendingProps, a = !1, o = (t.flags & 128) != 0, s;
 		if ((s = o) || (s = e !== null && e.memoizedState === null ? !1 : (I.current & 2) != 0), s && (a = !0, t.flags &= -129), s = (t.flags & 32) != 0, t.flags &= -33, e === null) {
 			if (Ri) {
@@ -4007,37 +4007,37 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			return r = r.fallback, a ? (po(t), a = t.mode, c = yc({
 				mode: "hidden",
 				children: c
-			}, a), r = vi(r, a, n, null), c.return = t, r.return = t, c.sibling = r, t.child = c, r = t.child, r.memoizedState = gc(n), r.childLanes = _c(e, s, n), t.memoizedState = hc, ac(null, r)) : (lo(t), vc(t, c));
+			}, a), r = vi(r, a, n, null), c.return = t, r.return = t, c.sibling = r, t.child = c, r = t.child, r.memoizedState = hc(n), r.childLanes = gc(e, s, n), t.memoizedState = mc, ic(null, r)) : (lo(t), vc(t, c));
 		}
 		var l = e.memoizedState;
 		if (l !== null && (c = l.dehydrated, c !== null)) {
-			if (o) t.flags & 256 ? (lo(t), t.flags &= -257, t = bc(e, t, n)) : t.memoizedState === null ? (po(t), c = r.fallback, a = t.mode, r = yc({
+			if (o) t.flags & 256 ? (lo(t), t.flags &= -257, t = Y(e, t, n)) : t.memoizedState === null ? (po(t), c = r.fallback, a = t.mode, r = yc({
 				mode: "visible",
 				children: r.children
-			}, a), c = vi(c, a, n, null), c.flags |= 2, r.return = t, c.return = t, r.sibling = c, t.child = r, Ha(t, e.child, null, n), r = t.child, r.memoizedState = gc(n), r.childLanes = _c(e, s, n), t.memoizedState = hc, t = ac(null, r)) : (po(t), t.child = e.child, t.flags |= 128, t = null);
+			}, a), c = vi(c, a, n, null), c.flags |= 2, r.return = t, c.return = t, r.sibling = c, t.child = r, Ha(t, e.child, null, n), r = t.child, r.memoizedState = hc(n), r.childLanes = gc(e, s, n), t.memoizedState = mc, t = ic(null, r)) : (po(t), t.child = e.child, t.flags |= 128, t = null);
 			else if (lo(t), of(c)) {
 				if (s = c.nextSibling && c.nextSibling.dataset, s) var u = s.dgst;
 				s = u, r = Error(i(419)), r.stack = "", r.digest = s, Ji({
 					value: r,
 					source: null,
 					stack: null
-				}), t = bc(e, t, n);
-			} else if ($s || na(e, t, n, !1), s = (n & e.childLanes) !== 0, $s || s) {
-				if (s = Ml, s !== null && (r = lt(s, n), r !== 0 && r !== l.retryLane)) throw l.retryLane = r, ci(e, r), fu(s, e, r), Qs;
-				af(c) || wu(), t = bc(e, t, n);
+				}), t = Y(e, t, n);
+			} else if (Qs || na(e, t, n, !1), s = (n & e.childLanes) !== 0, Qs || s) {
+				if (s = Ml, s !== null && (r = lt(s, n), r !== 0 && r !== l.retryLane)) throw l.retryLane = r, ci(e, r), fu(s, e, r), J;
+				af(c) || wu(), t = Y(e, t, n);
 			} else af(c) ? (t.flags |= 192, t.child = e.child, t = null) : (e = l.treeContext, Li = cf(c.nextSibling), Ii = t, Ri = !0, zi = null, Bi = !1, e !== null && Fi(t, e), t = vc(t, r.children), t.flags |= 4096);
 			return t;
 		}
 		return a ? (po(t), c = r.fallback, a = t.mode, l = e.child, u = l.sibling, r = hi(l, {
 			mode: "hidden",
 			children: r.children
-		}), r.subtreeFlags = l.subtreeFlags & 65011712, u === null ? (c = vi(c, a, n, null), c.flags |= 2) : c = hi(u, c), c.return = t, r.return = t, r.sibling = c, t.child = r, ac(null, r), r = t.child, c = e.child.memoizedState, c === null ? c = gc(n) : (a = c.cachePool, a === null ? a = Ta() : (l = da._currentValue, a = a.parent === l ? a : {
+		}), r.subtreeFlags = l.subtreeFlags & 65011712, u === null ? (c = vi(c, a, n, null), c.flags |= 2) : c = hi(u, c), c.return = t, r.return = t, r.sibling = c, t.child = r, ic(null, r), r = t.child, c = e.child.memoizedState, c === null ? c = hc(n) : (a = c.cachePool, a === null ? a = Ta() : (l = da._currentValue, a = a.parent === l ? a : {
 			parent: l,
 			pool: l
 		}), c = {
 			baseLanes: c.baseLanes | n,
 			cachePool: a
-		}), r.memoizedState = c, r.childLanes = _c(e, s, n), t.memoizedState = hc, ac(e.child, r)) : (lo(t), n = e.child, e = n.sibling, n = hi(n, {
+		}), r.memoizedState = c, r.childLanes = gc(e, s, n), t.memoizedState = mc, ic(e.child, r)) : (lo(t), n = e.child, e = n.sibling, n = hi(n, {
 			mode: "visible",
 			children: r.children
 		}), n.return = t, n.sibling = null, e !== null && (s = t.deletions, s === null ? (t.deletions = [e], t.flags |= 16) : s.push(e)), t.child = n, t.memoizedState = null, n);
@@ -4051,15 +4051,15 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	function yc(e, t) {
 		return e = pi(22, e, null, t), e.lanes = 0, e;
 	}
-	function bc(e, t, n) {
+	function Y(e, t, n) {
 		return Ha(t, e.child, null, n), e = vc(t, t.pendingProps.children), e.flags |= 2, t.memoizedState = null, e;
 	}
-	function xc(e, t, n) {
+	function bc(e, t, n) {
 		e.lanes |= t;
 		var r = e.alternate;
 		r !== null && (r.lanes |= t), ea(e.return, t, n);
 	}
-	function Sc(e, t, n, r, i, a) {
+	function xc(e, t, n, r, i, a) {
 		var o = e.memoizedState;
 		o === null ? e.memoizedState = {
 			isBackwards: t,
@@ -4071,13 +4071,13 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			treeForkCount: a
 		} : (o.isBackwards = t, o.rendering = null, o.renderingStartTime = 0, o.last = r, o.tail = n, o.tailMode = i, o.treeForkCount = a);
 	}
-	function Cc(e, t, n) {
+	function Sc(e, t, n) {
 		var r = t.pendingProps, i = r.revealOrder, a = r.tail;
 		r = r.children;
 		var o = I.current, s = (o & 2) != 0;
-		if (s ? (o = o & 1 | 2, t.flags |= 128) : o &= 1, O(I, o), ec(e, t, r, n), r = Ri ? Ti : 0, !s && e !== null && e.flags & 128) a: for (e = t.child; e !== null;) {
-			if (e.tag === 13) e.memoizedState !== null && xc(e, n, t);
-			else if (e.tag === 19) xc(e, n, t);
+		if (s ? (o = o & 1 | 2, t.flags |= 128) : o &= 1, O(I, o), $s(e, t, r, n), r = Ri ? Ti : 0, !s && e !== null && e.flags & 128) a: for (e = t.child; e !== null;) {
+			if (e.tag === 13) e.memoizedState !== null && bc(e, n, t);
+			else if (e.tag === 19) bc(e, n, t);
 			else if (e.child !== null) {
 				e.child.return = e, e = e.child;
 				continue;
@@ -4092,7 +4092,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		switch (i) {
 			case "forwards":
 				for (n = t.child, i = null; n !== null;) e = n.alternate, e !== null && ho(e) === null && (i = n), n = n.sibling;
-				n = i, n === null ? (i = t.child, t.child = null) : (i = n.sibling, n.sibling = null), Sc(t, !1, i, n, a, r);
+				n = i, n === null ? (i = t.child, t.child = null) : (i = n.sibling, n.sibling = null), xc(t, !1, i, n, a, r);
 				break;
 			case "backwards":
 			case "unstable_legacy-backwards":
@@ -4103,16 +4103,16 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					}
 					e = i.sibling, i.sibling = n, n = i, i = e;
 				}
-				Sc(t, !0, n, null, a, r);
+				xc(t, !0, n, null, a, r);
 				break;
 			case "together":
-				Sc(t, !1, null, null, void 0, r);
+				xc(t, !1, null, null, void 0, r);
 				break;
 			default: t.memoizedState = null;
 		}
 		return t.child;
 	}
-	function wc(e, t, n) {
+	function Cc(e, t, n) {
 		if (e !== null && (t.dependencies = e.dependencies), Hl |= t.lanes, (n & t.childLanes) === 0) if (e !== null) {
 			if (na(e, t, n, !1), (n & t.childLanes) === 0) return null;
 		} else return null;
@@ -4123,10 +4123,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 		return t.child;
 	}
-	function Tc(e, t) {
+	function wc(e, t) {
 		return (e.lanes & t) === 0 ? (e = e.dependencies, !!(e !== null && ra(e))) : !0;
 	}
-	function Ec(e, t, n) {
+	function Tc(e, t, n) {
 		switch (t.tag) {
 			case 3:
 				ye(t, t.stateNode.containerInfo), Qi(t, da, e.memoizedState.cache), Ki();
@@ -4146,42 +4146,42 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				break;
 			case 13:
 				var r = t.memoizedState;
-				if (r !== null) return r.dehydrated === null ? (n & t.child.childLanes) === 0 ? (lo(t), e = wc(e, t, n), e === null ? null : e.sibling) : J(e, t, n) : (lo(t), t.flags |= 128, null);
+				if (r !== null) return r.dehydrated === null ? (n & t.child.childLanes) === 0 ? (lo(t), e = Cc(e, t, n), e === null ? null : e.sibling) : _c(e, t, n) : (lo(t), t.flags |= 128, null);
 				lo(t);
 				break;
 			case 19:
 				var i = (e.flags & 128) != 0;
 				if (r = (n & t.childLanes) !== 0, r ||= (na(e, t, n, !1), (n & t.childLanes) !== 0), i) {
-					if (r) return Cc(e, t, n);
+					if (r) return Sc(e, t, n);
 					t.flags |= 128;
 				}
 				if (i = t.memoizedState, i !== null && (i.rendering = null, i.tail = null, i.lastEffect = null), O(I, I.current), r) break;
 				return null;
-			case 22: return t.lanes = 0, ic(e, t, n, t.pendingProps);
+			case 22: return t.lanes = 0, rc(e, t, n, t.pendingProps);
 			case 24: Qi(t, da, e.memoizedState.cache);
 		}
-		return wc(e, t, n);
+		return Cc(e, t, n);
 	}
-	function Dc(e, t, n) {
-		if (e !== null) if (e.memoizedProps !== t.pendingProps) $s = !0;
+	function Ec(e, t, n) {
+		if (e !== null) if (e.memoizedProps !== t.pendingProps) Qs = !0;
 		else {
-			if (!Tc(e, n) && !(t.flags & 128)) return $s = !1, Ec(e, t, n);
-			$s = !!(e.flags & 131072);
+			if (!wc(e, n) && !(t.flags & 128)) return Qs = !1, Tc(e, t, n);
+			Qs = !!(e.flags & 131072);
 		}
-		else $s = !1, Ri && t.flags & 1048576 && Mi(t, Ti, t.index);
+		else Qs = !1, Ri && t.flags & 1048576 && Mi(t, Ti, t.index);
 		switch (t.lanes = 0, t.tag) {
 			case 16:
 				a: {
 					var r = t.pendingProps;
-					if (e = Ma(t.elementType), t.type = e, typeof e == "function") mi(e) ? (r = Ws(e, r), t.tag = 1, t = pc(null, t, e, r, n)) : (t.tag = 0, t = dc(null, t, e, r, n));
+					if (e = Ma(t.elementType), t.type = e, typeof e == "function") mi(e) ? (r = Us(e, r), t.tag = 1, t = fc(null, t, e, r, n)) : (t.tag = 0, t = uc(null, t, e, r, n));
 					else {
 						if (e != null) {
 							var a = e.$$typeof;
 							if (a === w) {
-								t.tag = 11, t = tc(null, t, e, r, n);
+								t.tag = 11, t = ec(null, t, e, r, n);
 								break a;
 							} else if (a === ne) {
-								t.tag = 14, t = nc(null, t, e, r, n);
+								t.tag = 14, t = tc(null, t, e, r, n);
 								break a;
 							}
 						}
@@ -4189,8 +4189,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					}
 				}
 				return t;
-			case 0: return dc(e, t, t.type, t.pendingProps, n);
-			case 1: return r = t.type, a = Ws(r, t.pendingProps), pc(e, t, r, a, n);
+			case 0: return uc(e, t, t.type, t.pendingProps, n);
+			case 1: return r = t.type, a = Us(r, t.pendingProps), fc(e, t, r, a, n);
 			case 3:
 				a: {
 					if (ye(t, t.stateNode.containerInfo), e === null) throw Error(i(387));
@@ -4203,10 +4203,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 						isDehydrated: !1,
 						cache: s.cache
 					}, t.updateQueue.baseState = o, t.memoizedState = o, t.flags & 256) {
-						t = mc(e, t, r, n);
+						t = pc(e, t, r, n);
 						break a;
 					} else if (r !== a) {
-						a = F(Error(i(424)), t), Ji(a), t = mc(e, t, r, n);
+						a = F(Error(i(424)), t), Ji(a), t = pc(e, t, r, n);
 						break a;
 					} else {
 						switch (e = t.stateNode.containerInfo, e.nodeType) {
@@ -4219,61 +4219,61 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					}
 					else {
 						if (Ki(), r === a) {
-							t = wc(e, t, n);
+							t = Cc(e, t, n);
 							break a;
 						}
-						ec(e, t, r, n);
+						$s(e, t, r, n);
 					}
 					t = t.child;
 				}
 				return t;
-			case 26: return uc(e, t), e === null ? (n = kf(t.type, null, t.pendingProps, null)) ? t.memoizedState = n : Ri || (n = t.type, e = t.pendingProps, r = Bd(_e.current).createElement(n), r[ht] = t, r[gt] = e, Pd(r, n, e), Ot(r), t.stateNode = r) : t.memoizedState = kf(t.type, e.memoizedProps, t.pendingProps, e.memoizedState), null;
-			case 27: return xe(t), e === null && Ri && (r = t.stateNode = ff(t.type, t.pendingProps, _e.current), Ii = t, Bi = !0, a = Li, Zd(t.type) ? (lf = a, Li = cf(r.firstChild)) : Li = a), ec(e, t, t.pendingProps.children, n), uc(e, t), e === null && (t.flags |= 4194304), t.child;
-			case 5: return e === null && Ri && ((a = r = Li) && (r = tf(r, t.type, t.pendingProps, Bi), r === null ? a = !1 : (t.stateNode = r, Ii = t, Li = cf(r.firstChild), Bi = !1, a = !0)), a || Hi(t)), xe(t), a = t.type, o = t.pendingProps, s = e === null ? null : e.memoizedProps, r = o.children, Ud(a, o) ? r = null : s !== null && Ud(a, s) && (t.flags |= 32), t.memoizedState !== null && (a = B(e, t, Oo, null, null, n), Qf._currentValue = a), uc(e, t), ec(e, t, r, n), t.child;
+			case 26: return lc(e, t), e === null ? (n = kf(t.type, null, t.pendingProps, null)) ? t.memoizedState = n : Ri || (n = t.type, e = t.pendingProps, r = Bd(_e.current).createElement(n), r[ht] = t, r[gt] = e, Pd(r, n, e), Dt(r), t.stateNode = r) : t.memoizedState = kf(t.type, e.memoizedProps, t.pendingProps, e.memoizedState), null;
+			case 27: return xe(t), e === null && Ri && (r = t.stateNode = ff(t.type, t.pendingProps, _e.current), Ii = t, Bi = !0, a = Li, Zd(t.type) ? (lf = a, Li = cf(r.firstChild)) : Li = a), $s(e, t, t.pendingProps.children, n), lc(e, t), e === null && (t.flags |= 4194304), t.child;
+			case 5: return e === null && Ri && ((a = r = Li) && (r = tf(r, t.type, t.pendingProps, Bi), r === null ? a = !1 : (t.stateNode = r, Ii = t, Li = cf(r.firstChild), Bi = !1, a = !0)), a || Hi(t)), xe(t), a = t.type, o = t.pendingProps, s = e === null ? null : e.memoizedProps, r = o.children, Ud(a, o) ? r = null : s !== null && Ud(a, s) && (t.flags |= 32), t.memoizedState !== null && (a = B(e, t, Oo, null, null, n), Qf._currentValue = a), lc(e, t), $s(e, t, r, n), t.child;
 			case 6: return e === null && Ri && ((e = n = Li) && (n = nf(n, t.pendingProps, Bi), n === null ? e = !1 : (t.stateNode = n, Ii = t, Li = null, e = !0)), e || Hi(t)), null;
-			case 13: return J(e, t, n);
-			case 4: return ye(t, t.stateNode.containerInfo), r = t.pendingProps, e === null ? t.child = Ha(t, null, r, n) : ec(e, t, r, n), t.child;
-			case 11: return tc(e, t, t.type, t.pendingProps, n);
-			case 7: return ec(e, t, t.pendingProps, n), t.child;
-			case 8: return ec(e, t, t.pendingProps.children, n), t.child;
-			case 12: return ec(e, t, t.pendingProps.children, n), t.child;
-			case 10: return r = t.pendingProps, Qi(t, t.type, r.value), ec(e, t, r.children, n), t.child;
-			case 9: return a = t.type._context, r = t.pendingProps.children, ia(t), a = aa(a), r = r(a), t.flags |= 1, ec(e, t, r, n), t.child;
-			case 14: return nc(e, t, t.type, t.pendingProps, n);
-			case 15: return rc(e, t, t.type, t.pendingProps, n);
-			case 19: return Cc(e, t, n);
-			case 31: return lc(e, t, n);
-			case 22: return ic(e, t, n, t.pendingProps);
+			case 13: return _c(e, t, n);
+			case 4: return ye(t, t.stateNode.containerInfo), r = t.pendingProps, e === null ? t.child = Ha(t, null, r, n) : $s(e, t, r, n), t.child;
+			case 11: return ec(e, t, t.type, t.pendingProps, n);
+			case 7: return $s(e, t, t.pendingProps, n), t.child;
+			case 8: return $s(e, t, t.pendingProps.children, n), t.child;
+			case 12: return $s(e, t, t.pendingProps.children, n), t.child;
+			case 10: return r = t.pendingProps, Qi(t, t.type, r.value), $s(e, t, r.children, n), t.child;
+			case 9: return a = t.type._context, r = t.pendingProps.children, ia(t), a = aa(a), r = r(a), t.flags |= 1, $s(e, t, r, n), t.child;
+			case 14: return tc(e, t, t.type, t.pendingProps, n);
+			case 15: return nc(e, t, t.type, t.pendingProps, n);
+			case 19: return Sc(e, t, n);
+			case 31: return cc(e, t, n);
+			case 22: return rc(e, t, n, t.pendingProps);
 			case 24: return ia(t), r = aa(da), e === null ? (a = Ca(), a === null && (a = Ml, o = fa(), a.pooledCache = o, o.refCount++, o !== null && (a.pooledCacheLanes |= n), a = o), t.memoizedState = {
 				parent: r,
 				cache: a
 			}, Ga(t), Qi(t, da, a)) : ((e.lanes & n) !== 0 && (Ka(e, t), $a(t, null, null, n), Qa()), a = e.memoizedState, o = t.memoizedState, a.parent === r ? (r = o.cache, Qi(t, da, r), r !== a.cache && ta(t, [da], n, !0)) : (a = {
 				parent: r,
 				cache: r
-			}, t.memoizedState = a, t.lanes === 0 && (t.memoizedState = t.updateQueue.baseState = a), Qi(t, da, r))), ec(e, t, t.pendingProps.children, n), t.child;
+			}, t.memoizedState = a, t.lanes === 0 && (t.memoizedState = t.updateQueue.baseState = a), Qi(t, da, r))), $s(e, t, t.pendingProps.children, n), t.child;
 			case 29: throw t.pendingProps;
 		}
 		throw Error(i(156, t.tag));
 	}
-	function Oc(e) {
+	function Dc(e) {
 		e.flags |= 4;
 	}
-	function kc(e, t, n, r, i) {
+	function Oc(e, t, n, r, i) {
 		if ((t = (e.mode & 32) != 0) && (t = !1), t) {
 			if (e.flags |= 16777216, (i & 335544128) === i) if (e.stateNode.complete) e.flags |= 8192;
 			else if (xu()) e.flags |= 8192;
 			else throw Na = ka, Da;
 		} else e.flags &= -16777217;
 	}
-	function Ac(e, t) {
+	function kc(e, t) {
 		if (t.type !== "stylesheet" || t.state.loading & 4) e.flags &= -16777217;
 		else if (e.flags |= 16777216, !Wf(t)) if (xu()) e.flags |= 8192;
 		else throw Na = ka, Da;
 	}
-	function jc(e, t) {
+	function Ac(e, t) {
 		t !== null && (e.flags |= 4), e.flags & 16384 && (t = e.tag === 22 ? 536870912 : rt(), e.lanes |= t, Kl |= t);
 	}
-	function Mc(e, t) {
+	function jc(e, t) {
 		if (!Ri) switch (e.tailMode) {
 			case "hidden":
 				t = e.tail;
@@ -4286,13 +4286,13 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				r === null ? t || e.tail === null ? e.tail = null : e.tail.sibling = null : r.sibling = null;
 		}
 	}
-	function Nc(e) {
+	function Mc(e) {
 		var t = e.alternate !== null && e.alternate.child === e.child, n = 0, r = 0;
 		if (t) for (var i = e.child; i !== null;) n |= i.lanes | i.childLanes, r |= i.subtreeFlags & 65011712, r |= i.flags & 65011712, i.return = e, i = i.sibling;
 		else for (i = e.child; i !== null;) n |= i.lanes | i.childLanes, r |= i.subtreeFlags, r |= i.flags, i.return = e, i = i.sibling;
 		return e.subtreeFlags |= r, e.childLanes = n, t;
 	}
-	function Pc(e, t, n) {
+	function Nc(e, t, n) {
 		var r = t.pendingProps;
 		switch (Pi(t), t.tag) {
 			case 16:
@@ -4303,28 +4303,28 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 8:
 			case 12:
 			case 9:
-			case 14: return Nc(t), null;
-			case 1: return Nc(t), null;
-			case 3: return n = t.stateNode, r = null, e !== null && (r = e.memoizedState.cache), t.memoizedState.cache !== r && (t.flags |= 2048), $i(da), be(), n.pendingContext && (n.context = n.pendingContext, n.pendingContext = null), (e === null || e.child === null) && (Gi(t) ? Oc(t) : e === null || e.memoizedState.isDehydrated && !(t.flags & 256) || (t.flags |= 1024, qi())), Nc(t), null;
+			case 14: return Mc(t), null;
+			case 1: return Mc(t), null;
+			case 3: return n = t.stateNode, r = null, e !== null && (r = e.memoizedState.cache), t.memoizedState.cache !== r && (t.flags |= 2048), $i(da), be(), n.pendingContext && (n.context = n.pendingContext, n.pendingContext = null), (e === null || e.child === null) && (Gi(t) ? Dc(t) : e === null || e.memoizedState.isDehydrated && !(t.flags & 256) || (t.flags |= 1024, qi())), Mc(t), null;
 			case 26:
 				var a = t.type, o = t.memoizedState;
-				return e === null ? (Oc(t), o === null ? (Nc(t), kc(t, a, null, r, n)) : (Nc(t), Ac(t, o))) : o ? o === e.memoizedState ? (Nc(t), t.flags &= -16777217) : (Oc(t), Nc(t), Ac(t, o)) : (e = e.memoizedProps, e !== r && Oc(t), Nc(t), kc(t, a, e, r, n)), null;
+				return e === null ? (Dc(t), o === null ? (Mc(t), Oc(t, a, null, r, n)) : (Mc(t), kc(t, o))) : o ? o === e.memoizedState ? (Mc(t), t.flags &= -16777217) : (Dc(t), Mc(t), kc(t, o)) : (e = e.memoizedProps, e !== r && Dc(t), Mc(t), Oc(t, a, e, r, n)), null;
 			case 27:
-				if (Se(t), n = _e.current, a = t.type, e !== null && t.stateNode != null) e.memoizedProps !== r && Oc(t);
+				if (Se(t), n = _e.current, a = t.type, e !== null && t.stateNode != null) e.memoizedProps !== r && Dc(t);
 				else {
 					if (!r) {
 						if (t.stateNode === null) throw Error(i(166));
-						return Nc(t), null;
+						return Mc(t), null;
 					}
-					e = he.current, Gi(t) ? Ui(t, e) : (e = ff(a, r, n), t.stateNode = e, Oc(t));
+					e = he.current, Gi(t) ? Ui(t, e) : (e = ff(a, r, n), t.stateNode = e, Dc(t));
 				}
-				return Nc(t), null;
+				return Mc(t), null;
 			case 5:
-				if (Se(t), a = t.type, e !== null && t.stateNode != null) e.memoizedProps !== r && Oc(t);
+				if (Se(t), a = t.type, e !== null && t.stateNode != null) e.memoizedProps !== r && Dc(t);
 				else {
 					if (!r) {
 						if (t.stateNode === null) throw Error(i(166));
-						return Nc(t), null;
+						return Mc(t), null;
 					}
 					if (o = he.current, Gi(t)) Ui(t, o);
 					else {
@@ -4379,12 +4379,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 								break a;
 							default: r = !1;
 						}
-						r && Oc(t);
+						r && Dc(t);
 					}
 				}
-				return Nc(t), kc(t, t.type, e === null ? null : e.memoizedProps, t.pendingProps, n), null;
+				return Mc(t), Oc(t, t.type, e === null ? null : e.memoizedProps, t.pendingProps, n), null;
 			case 6:
-				if (e && t.stateNode != null) e.memoizedProps !== r && Oc(t);
+				if (e && t.stateNode != null) e.memoizedProps !== r && Dc(t);
 				else {
 					if (typeof r != "string" && t.stateNode === null) throw Error(i(166));
 					if (e = _e.current, Gi(t)) {
@@ -4395,7 +4395,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 						e[ht] = t, e = !!(e.nodeValue === n || r !== null && !0 === r.suppressHydrationWarning || jd(e.nodeValue, n)), e || Hi(t, !0);
 					} else e = Bd(e).createTextNode(r), e[ht] = t, t.stateNode = e;
 				}
-				return Nc(t), null;
+				return Mc(t), null;
 			case 31:
 				if (n = t.memoizedState, e === null || e.memoizedState !== null) {
 					if (r = Gi(t), n !== null) {
@@ -4404,12 +4404,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 							if (e = t.memoizedState, e = e === null ? null : e.dehydrated, !e) throw Error(i(557));
 							e[ht] = t;
 						} else Ki(), !(t.flags & 128) && (t.memoizedState = null), t.flags |= 4;
-						Nc(t), e = !1;
+						Mc(t), e = !1;
 					} else n = qi(), e !== null && e.memoizedState !== null && (e.memoizedState.hydrationErrors = n), e = !0;
 					if (!e) return t.flags & 256 ? (mo(t), t) : (mo(t), null);
 					if (t.flags & 128) throw Error(i(558));
 				}
-				return Nc(t), null;
+				return Mc(t), null;
 			case 13:
 				if (r = t.memoizedState, e === null || e.memoizedState !== null && e.memoizedState.dehydrated !== null) {
 					if (a = Gi(t), r !== null && r.dehydrated !== null) {
@@ -4418,42 +4418,42 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 							if (a = t.memoizedState, a = a === null ? null : a.dehydrated, !a) throw Error(i(317));
 							a[ht] = t;
 						} else Ki(), !(t.flags & 128) && (t.memoizedState = null), t.flags |= 4;
-						Nc(t), a = !1;
+						Mc(t), a = !1;
 					} else a = qi(), e !== null && e.memoizedState !== null && (e.memoizedState.hydrationErrors = a), a = !0;
 					if (!a) return t.flags & 256 ? (mo(t), t) : (mo(t), null);
 				}
-				return mo(t), t.flags & 128 ? (t.lanes = n, t) : (n = r !== null, e = e !== null && e.memoizedState !== null, n && (r = t.child, a = null, r.alternate !== null && r.alternate.memoizedState !== null && r.alternate.memoizedState.cachePool !== null && (a = r.alternate.memoizedState.cachePool.pool), o = null, r.memoizedState !== null && r.memoizedState.cachePool !== null && (o = r.memoizedState.cachePool.pool), o !== a && (r.flags |= 2048)), n !== e && n && (t.child.flags |= 8192), jc(t, t.updateQueue), Nc(t), null);
-			case 4: return be(), e === null && xd(t.stateNode.containerInfo), Nc(t), null;
-			case 10: return $i(t.type), Nc(t), null;
+				return mo(t), t.flags & 128 ? (t.lanes = n, t) : (n = r !== null, e = e !== null && e.memoizedState !== null, n && (r = t.child, a = null, r.alternate !== null && r.alternate.memoizedState !== null && r.alternate.memoizedState.cachePool !== null && (a = r.alternate.memoizedState.cachePool.pool), o = null, r.memoizedState !== null && r.memoizedState.cachePool !== null && (o = r.memoizedState.cachePool.pool), o !== a && (r.flags |= 2048)), n !== e && n && (t.child.flags |= 8192), Ac(t, t.updateQueue), Mc(t), null);
+			case 4: return be(), e === null && xd(t.stateNode.containerInfo), Mc(t), null;
+			case 10: return $i(t.type), Mc(t), null;
 			case 19:
-				if (D(I), r = t.memoizedState, r === null) return Nc(t), null;
-				if (a = (t.flags & 128) != 0, o = r.rendering, o === null) if (a) Mc(r, !1);
+				if (D(I), r = t.memoizedState, r === null) return Mc(t), null;
+				if (a = (t.flags & 128) != 0, o = r.rendering, o === null) if (a) jc(r, !1);
 				else {
 					if (Vl !== 0 || e !== null && e.flags & 128) for (e = t.child; e !== null;) {
 						if (o = ho(e), o !== null) {
-							for (t.flags |= 128, Mc(r, !1), e = o.updateQueue, t.updateQueue = e, jc(t, e), t.subtreeFlags = 0, e = n, n = t.child; n !== null;) gi(n, e), n = n.sibling;
+							for (t.flags |= 128, jc(r, !1), e = o.updateQueue, t.updateQueue = e, Ac(t, e), t.subtreeFlags = 0, e = n, n = t.child; n !== null;) gi(n, e), n = n.sibling;
 							return O(I, I.current & 1 | 2), Ri && ji(t, r.treeForkCount), t.child;
 						}
 						e = e.sibling;
 					}
-					r.tail !== null && Fe() > Ql && (t.flags |= 128, a = !0, Mc(r, !1), t.lanes = 4194304);
+					r.tail !== null && Fe() > Ql && (t.flags |= 128, a = !0, jc(r, !1), t.lanes = 4194304);
 				}
 				else {
 					if (!a) if (e = ho(o), e !== null) {
-						if (t.flags |= 128, a = !0, e = e.updateQueue, t.updateQueue = e, jc(t, e), Mc(r, !0), r.tail === null && r.tailMode === "hidden" && !o.alternate && !Ri) return Nc(t), null;
-					} else 2 * Fe() - r.renderingStartTime > Ql && n !== 536870912 && (t.flags |= 128, a = !0, Mc(r, !1), t.lanes = 4194304);
+						if (t.flags |= 128, a = !0, e = e.updateQueue, t.updateQueue = e, Ac(t, e), jc(r, !0), r.tail === null && r.tailMode === "hidden" && !o.alternate && !Ri) return Mc(t), null;
+					} else 2 * Fe() - r.renderingStartTime > Ql && n !== 536870912 && (t.flags |= 128, a = !0, jc(r, !1), t.lanes = 4194304);
 					r.isBackwards ? (o.sibling = t.child, t.child = o) : (e = r.last, e === null ? t.child = o : e.sibling = o, r.last = o);
 				}
-				return r.tail === null ? (Nc(t), null) : (e = r.tail, r.rendering = e, r.tail = e.sibling, r.renderingStartTime = Fe(), e.sibling = null, n = I.current, O(I, a ? n & 1 | 2 : n & 1), Ri && ji(t, r.treeForkCount), e);
+				return r.tail === null ? (Mc(t), null) : (e = r.tail, r.rendering = e, r.tail = e.sibling, r.renderingStartTime = Fe(), e.sibling = null, n = I.current, O(I, a ? n & 1 | 2 : n & 1), Ri && ji(t, r.treeForkCount), e);
 			case 22:
-			case 23: return mo(t), oo(), r = t.memoizedState !== null, e === null ? r && (t.flags |= 8192) : e.memoizedState !== null !== r && (t.flags |= 8192), r ? n & 536870912 && !(t.flags & 128) && (Nc(t), t.subtreeFlags & 6 && (t.flags |= 8192)) : Nc(t), n = t.updateQueue, n !== null && jc(t, n.retryQueue), n = null, e !== null && e.memoizedState !== null && e.memoizedState.cachePool !== null && (n = e.memoizedState.cachePool.pool), r = null, t.memoizedState !== null && t.memoizedState.cachePool !== null && (r = t.memoizedState.cachePool.pool), r !== n && (t.flags |= 2048), e !== null && D(Sa), null;
-			case 24: return n = null, e !== null && (n = e.memoizedState.cache), t.memoizedState.cache !== n && (t.flags |= 2048), $i(da), Nc(t), null;
+			case 23: return mo(t), oo(), r = t.memoizedState !== null, e === null ? r && (t.flags |= 8192) : e.memoizedState !== null !== r && (t.flags |= 8192), r ? n & 536870912 && !(t.flags & 128) && (Mc(t), t.subtreeFlags & 6 && (t.flags |= 8192)) : Mc(t), n = t.updateQueue, n !== null && Ac(t, n.retryQueue), n = null, e !== null && e.memoizedState !== null && e.memoizedState.cachePool !== null && (n = e.memoizedState.cachePool.pool), r = null, t.memoizedState !== null && t.memoizedState.cachePool !== null && (r = t.memoizedState.cachePool.pool), r !== n && (t.flags |= 2048), e !== null && D(Sa), null;
+			case 24: return n = null, e !== null && (n = e.memoizedState.cache), t.memoizedState.cache !== n && (t.flags |= 2048), $i(da), Mc(t), null;
 			case 25: return null;
 			case 30: return null;
 		}
 		throw Error(i(156, t.tag));
 	}
-	function Y(e, t) {
+	function Pc(e, t) {
 		switch (Pi(t), t.tag) {
 			case 1: return e = t.flags, e & 65536 ? (t.flags = e & -65537 | 128, t) : null;
 			case 3: return $i(da), be(), e = t.flags, e & 65536 && !(e & 128) ? (t.flags = e & -65537 | 128, t) : null;
@@ -4533,7 +4533,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			Hu(t, t.return, e);
 		}
 	}
-	function Lc(e, t, n) {
+	function X(e, t, n) {
 		try {
 			var r = t.updateQueue, i = r === null ? null : r.lastEffect;
 			if (i !== null) {
@@ -4559,7 +4559,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			Hu(t, t.return, e);
 		}
 	}
-	function X(e) {
+	function Lc(e) {
 		var t = e.updateQueue;
 		if (t !== null) {
 			var n = e.stateNode;
@@ -4571,7 +4571,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function Rc(e, t, n) {
-		n.props = Ws(e.type, e.memoizedProps), n.state = e.memoizedState;
+		n.props = Us(e.type, e.memoizedProps), n.state = e.memoizedState;
 		try {
 			n.componentWillUnmount();
 		} catch (n) {
@@ -4599,7 +4599,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			Hu(e, t, n);
 		}
 	}
-	function Bc(e, t) {
+	function Z(e, t) {
 		var n = e.ref, r = e.refCleanup;
 		if (n !== null) if (typeof r == "function") try {
 			r();
@@ -4615,7 +4615,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 		else n.current = null;
 	}
-	function Z(e) {
+	function Bc(e) {
 		var t = e.type, n = e.memoizedProps, r = e.stateNode;
 		try {
 			a: switch (t) {
@@ -4730,7 +4730,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					if (e & 1024 && o !== null) {
 						e = void 0, n = t, a = o.memoizedProps, o = o.memoizedState, r = n.stateNode;
 						try {
-							var h = Ws(n.type, a);
+							var h = Us(n.type, a);
 							e = r.getSnapshotBeforeUpdate(h, o), r.__reactInternalSnapshotBeforeUpdate = e;
 						} catch (e) {
 							Hu(n, n.return, e);
@@ -4780,7 +4780,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					Hu(n, n.return, e);
 				}
 				else {
-					var i = Ws(n.type, t.memoizedProps);
+					var i = Us(n.type, t.memoizedProps);
 					t = t.memoizedState;
 					try {
 						e.componentDidUpdate(i, t, e.__reactInternalSnapshotBeforeUpdate);
@@ -4788,7 +4788,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 						Hu(n, n.return, e);
 					}
 				}
-				r & 64 && X(n), r & 512 && zc(n, n.return);
+				r & 64 && Lc(n), r & 512 && zc(n, n.return);
 				break;
 			case 3:
 				if (ml(e, n), r & 64 && (e = n.updateQueue, e !== null)) {
@@ -4809,7 +4809,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 27: t === null && r & 4 && Kc(n);
 			case 26:
 			case 5:
-				ml(e, n), t === null && r & 4 && Z(n), r & 512 && zc(n, n.return);
+				ml(e, n), t === null && r & 4 && Bc(n), r & 512 && zc(n, n.return);
 				break;
 			case 12:
 				ml(e, n);
@@ -4824,7 +4824,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				if (r = n.memoizedState !== null || qc, !r) {
 					t = t !== null && t.memoizedState !== null || Jc, i = qc;
 					var a = Jc;
-					qc = r, (Jc = t) && !a ? Q(e, n, (n.subtreeFlags & 8772) != 0) : ml(e, n), qc = i, Jc = a;
+					qc = r, (Jc = t) && !a ? gl(e, n, (n.subtreeFlags & 8772) != 0) : ml(e, n), qc = i, Jc = a;
 				}
 				break;
 			case 30: break;
@@ -4833,7 +4833,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function el(e) {
 		var t = e.alternate;
-		t !== null && (e.alternate = null, el(t)), e.child = null, e.deletions = null, e.sibling = null, e.tag === 5 && (t = e.stateNode, t !== null && Ct(t)), e.stateNode = null, e.return = null, e.dependencies = null, e.memoizedProps = null, e.memoizedState = null, e.pendingProps = null, e.stateNode = null, e.updateQueue = null;
+		t !== null && (e.alternate = null, el(t)), e.child = null, e.deletions = null, e.sibling = null, e.tag === 5 && (t = e.stateNode, t !== null && St(t)), e.stateNode = null, e.return = null, e.dependencies = null, e.memoizedProps = null, e.memoizedState = null, e.pendingProps = null, e.stateNode = null, e.updateQueue = null;
 	}
 	var tl = null, nl = !1;
 	function rl(e, t, n) {
@@ -4845,14 +4845,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		} catch {}
 		switch (n.tag) {
 			case 26:
-				Jc || Bc(n, t), rl(e, t, n), n.memoizedState ? n.memoizedState.count-- : n.stateNode && (n = n.stateNode, n.parentNode.removeChild(n));
+				Jc || Z(n, t), rl(e, t, n), n.memoizedState ? n.memoizedState.count-- : n.stateNode && (n = n.stateNode, n.parentNode.removeChild(n));
 				break;
 			case 27:
-				Jc || Bc(n, t);
+				Jc || Z(n, t);
 				var r = tl, i = nl;
 				Zd(n.type) && (tl = n.stateNode, nl = !1), rl(e, t, n), pf(n.stateNode), tl = r, nl = i;
 				break;
-			case 5: Jc || Bc(n, t);
+			case 5: Jc || Z(n, t);
 			case 6:
 				if (r = tl, i = nl, tl = null, rl(e, t, n), tl = r, nl = i, tl !== null) if (nl) try {
 					(tl.nodeType === 9 ? tl.body : tl.nodeName === "HTML" ? tl.ownerDocument.body : tl).removeChild(n.stateNode);
@@ -4875,10 +4875,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 11:
 			case 14:
 			case 15:
-				Lc(2, n, t), Jc || Lc(4, n, t), rl(e, t, n);
+				X(2, n, t), Jc || X(4, n, t), rl(e, t, n);
 				break;
 			case 1:
-				Jc || (Bc(n, t), r = n.stateNode, typeof r.componentWillUnmount == "function" && Rc(n, t, r)), rl(e, t, n);
+				Jc || (Z(n, t), r = n.stateNode, typeof r.componentWillUnmount == "function" && Rc(n, t, r)), rl(e, t, n);
 				break;
 			case 21:
 				rl(e, t, n);
@@ -4962,21 +4962,21 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 11:
 			case 14:
 			case 15:
-				ll(t, e), fl(e), r & 4 && (Lc(3, e, e.return), Ic(3, e), Lc(5, e, e.return));
+				ll(t, e), fl(e), r & 4 && (X(3, e, e.return), Ic(3, e), X(5, e, e.return));
 				break;
 			case 1:
-				ll(t, e), fl(e), r & 512 && (Jc || n === null || Bc(n, n.return)), r & 64 && qc && (e = e.updateQueue, e !== null && (r = e.callbacks, r !== null && (n = e.shared.hiddenCallbacks, e.shared.hiddenCallbacks = n === null ? r : n.concat(r))));
+				ll(t, e), fl(e), r & 512 && (Jc || n === null || Z(n, n.return)), r & 64 && qc && (e = e.updateQueue, e !== null && (r = e.callbacks, r !== null && (n = e.shared.hiddenCallbacks, e.shared.hiddenCallbacks = n === null ? r : n.concat(r))));
 				break;
 			case 26:
 				var a = ul;
-				if (ll(t, e), fl(e), r & 512 && (Jc || n === null || Bc(n, n.return)), r & 4) {
+				if (ll(t, e), fl(e), r & 512 && (Jc || n === null || Z(n, n.return)), r & 4) {
 					var o = n === null ? null : n.memoizedState;
 					if (r = e.memoizedState, n === null) if (r === null) if (e.stateNode === null) {
 						a: {
 							r = e.type, n = e.memoizedProps, a = a.ownerDocument || a;
 							b: switch (r) {
 								case "title":
-									o = a.getElementsByTagName("title")[0], (!o || o[St] || o[ht] || o.namespaceURI === "http://www.w3.org/2000/svg" || o.hasAttribute("itemprop")) && (o = a.createElement(r), a.head.insertBefore(o, a.querySelector("head > title"))), Pd(o, r, n), o[ht] = e, Ot(o), r = o;
+									o = a.getElementsByTagName("title")[0], (!o || o[xt] || o[ht] || o.namespaceURI === "http://www.w3.org/2000/svg" || o.hasAttribute("itemprop")) && (o = a.createElement(r), a.head.insertBefore(o, a.querySelector("head > title"))), Pd(o, r, n), o[ht] = e, Dt(o), r = o;
 									break a;
 								case "link":
 									var s = Vf("link", "href", a).get(r + (n.href || ""));
@@ -4999,7 +4999,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 									break;
 								default: throw Error(i(468, r));
 							}
-							o[ht] = e, Ot(o), r = o;
+							o[ht] = e, Dt(o), r = o;
 						}
 						e.stateNode = r;
 					} else Hf(a, e.type, e.stateNode);
@@ -5008,10 +5008,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				}
 				break;
 			case 27:
-				ll(t, e), fl(e), r & 512 && (Jc || n === null || Bc(n, n.return)), n !== null && r & 4 && Vc(e, e.memoizedProps, n.memoizedProps);
+				ll(t, e), fl(e), r & 512 && (Jc || n === null || Z(n, n.return)), n !== null && r & 4 && Vc(e, e.memoizedProps, n.memoizedProps);
 				break;
 			case 5:
-				if (ll(t, e), fl(e), r & 512 && (Jc || n === null || Bc(n, n.return)), e.flags & 32) {
+				if (ll(t, e), fl(e), r & 512 && (Jc || n === null || Z(n, n.return)), e.flags & 32) {
 					a = e.stateNode;
 					try {
 						$t(a, "");
@@ -5162,17 +5162,17 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				case 11:
 				case 14:
 				case 15:
-					Lc(4, t, t.return), hl(t);
+					X(4, t, t.return), hl(t);
 					break;
 				case 1:
-					Bc(t, t.return);
+					Z(t, t.return);
 					var n = t.stateNode;
 					typeof n.componentWillUnmount == "function" && Rc(t, t.return, n), hl(t);
 					break;
 				case 27: pf(t.stateNode);
 				case 26:
 				case 5:
-					Bc(t, t.return), hl(t);
+					Z(t, t.return), hl(t);
 					break;
 				case 22:
 					t.memoizedState === null && hl(t);
@@ -5185,17 +5185,17 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			e = e.sibling;
 		}
 	}
-	function Q(e, t, n) {
+	function gl(e, t, n) {
 		for (n &&= (t.subtreeFlags & 8772) != 0, t = t.child; t !== null;) {
 			var r = t.alternate, i = e, a = t, o = a.flags;
 			switch (a.tag) {
 				case 0:
 				case 11:
 				case 15:
-					Q(i, a, n), Ic(4, a);
+					gl(i, a, n), Ic(4, a);
 					break;
 				case 1:
-					if (Q(i, a, n), r = a, i = r.stateNode, typeof i.componentDidMount == "function") try {
+					if (gl(i, a, n), r = a, i = r.stateNode, typeof i.componentDidMount == "function") try {
 						i.componentDidMount();
 					} catch (e) {
 						Hu(r, r.return, e);
@@ -5209,39 +5209,39 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 							Hu(r, r.return, e);
 						}
 					}
-					n && o & 64 && X(a), zc(a, a.return);
+					n && o & 64 && Lc(a), zc(a, a.return);
 					break;
 				case 27: Kc(a);
 				case 26:
 				case 5:
-					Q(i, a, n), n && r === null && o & 4 && Z(a), zc(a, a.return);
+					gl(i, a, n), n && r === null && o & 4 && Bc(a), zc(a, a.return);
 					break;
 				case 12:
-					Q(i, a, n);
+					gl(i, a, n);
 					break;
 				case 31:
-					Q(i, a, n), n && o & 4 && al(i, a);
+					gl(i, a, n), n && o & 4 && al(i, a);
 					break;
 				case 13:
-					Q(i, a, n), n && o & 4 && ol(i, a);
+					gl(i, a, n), n && o & 4 && ol(i, a);
 					break;
 				case 22:
-					a.memoizedState === null && Q(i, a, n), zc(a, a.return);
+					a.memoizedState === null && gl(i, a, n), zc(a, a.return);
 					break;
 				case 30: break;
-				default: Q(i, a, n);
+				default: gl(i, a, n);
 			}
 			t = t.sibling;
 		}
 	}
-	function gl(e, t) {
+	function _l(e, t) {
 		var n = null;
 		e !== null && e.memoizedState !== null && e.memoizedState.cachePool !== null && (n = e.memoizedState.cachePool.pool), e = null, t.memoizedState !== null && t.memoizedState.cachePool !== null && (e = t.memoizedState.cachePool.pool), e !== n && (e != null && e.refCount++, n != null && pa(n));
 	}
-	function _l(e, t) {
+	function vl(e, t) {
 		e = null, t.alternate !== null && (e = t.alternate.memoizedState.cache), t = t.memoizedState.cache, t !== e && (t.refCount++, e != null && pa(e));
 	}
-	function vl(e, t, n, r) {
+	function Q(e, t, n, r) {
 		if (t.subtreeFlags & 10256) for (t = t.child; t !== null;) yl(e, t, n, r), t = t.sibling;
 	}
 	function yl(e, t, n, r) {
@@ -5250,39 +5250,39 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 0:
 			case 11:
 			case 15:
-				vl(e, t, n, r), i & 2048 && Ic(9, t);
+				Q(e, t, n, r), i & 2048 && Ic(9, t);
 				break;
 			case 1:
-				vl(e, t, n, r);
+				Q(e, t, n, r);
 				break;
 			case 3:
-				vl(e, t, n, r), i & 2048 && (e = null, t.alternate !== null && (e = t.alternate.memoizedState.cache), t = t.memoizedState.cache, t !== e && (t.refCount++, e != null && pa(e)));
+				Q(e, t, n, r), i & 2048 && (e = null, t.alternate !== null && (e = t.alternate.memoizedState.cache), t = t.memoizedState.cache, t !== e && (t.refCount++, e != null && pa(e)));
 				break;
 			case 12:
 				if (i & 2048) {
-					vl(e, t, n, r), e = t.stateNode;
+					Q(e, t, n, r), e = t.stateNode;
 					try {
 						var a = t.memoizedProps, o = a.id, s = a.onPostCommit;
 						typeof s == "function" && s(o, t.alternate === null ? "mount" : "update", e.passiveEffectDuration, -0);
 					} catch (e) {
 						Hu(t, t.return, e);
 					}
-				} else vl(e, t, n, r);
+				} else Q(e, t, n, r);
 				break;
 			case 31:
-				vl(e, t, n, r);
+				Q(e, t, n, r);
 				break;
 			case 13:
-				vl(e, t, n, r);
+				Q(e, t, n, r);
 				break;
 			case 23: break;
 			case 22:
-				a = t.stateNode, o = t.alternate, t.memoizedState === null ? a._visibility & 2 ? vl(e, t, n, r) : (a._visibility |= 2, bl(e, t, n, r, (t.subtreeFlags & 10256) != 0 || !1)) : a._visibility & 2 ? vl(e, t, n, r) : xl(e, t), i & 2048 && gl(o, t);
+				a = t.stateNode, o = t.alternate, t.memoizedState === null ? a._visibility & 2 ? Q(e, t, n, r) : (a._visibility |= 2, bl(e, t, n, r, (t.subtreeFlags & 10256) != 0 || !1)) : a._visibility & 2 ? Q(e, t, n, r) : xl(e, t), i & 2048 && _l(o, t);
 				break;
 			case 24:
-				vl(e, t, n, r), i & 2048 && _l(t.alternate, t);
+				Q(e, t, n, r), i & 2048 && vl(t.alternate, t);
 				break;
-			default: vl(e, t, n, r);
+			default: Q(e, t, n, r);
 		}
 	}
 	function bl(e, t, n, r, i) {
@@ -5297,10 +5297,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				case 23: break;
 				case 22:
 					var u = o.stateNode;
-					o.memoizedState === null ? (u._visibility |= 2, bl(a, o, s, c, i)) : u._visibility & 2 ? bl(a, o, s, c, i) : xl(a, o), i && l & 2048 && gl(o.alternate, o);
+					o.memoizedState === null ? (u._visibility |= 2, bl(a, o, s, c, i)) : u._visibility & 2 ? bl(a, o, s, c, i) : xl(a, o), i && l & 2048 && _l(o.alternate, o);
 					break;
 				case 24:
-					bl(a, o, s, c, i), i && l & 2048 && _l(o.alternate, o);
+					bl(a, o, s, c, i), i && l & 2048 && vl(o.alternate, o);
 					break;
 				default: bl(a, o, s, c, i);
 			}
@@ -5312,40 +5312,40 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			var n = e, r = t, i = r.flags;
 			switch (r.tag) {
 				case 22:
-					xl(n, r), i & 2048 && gl(r.alternate, r);
+					xl(n, r), i & 2048 && _l(r.alternate, r);
 					break;
 				case 24:
-					xl(n, r), i & 2048 && _l(r.alternate, r);
+					xl(n, r), i & 2048 && vl(r.alternate, r);
 					break;
 				default: xl(n, r);
 			}
 			t = t.sibling;
 		}
 	}
-	var $ = 8192;
-	function Sl(e, t, n) {
-		if (e.subtreeFlags & $) for (e = e.child; e !== null;) Cl(e, t, n), e = e.sibling;
-	}
+	var Sl = 8192;
 	function Cl(e, t, n) {
+		if (e.subtreeFlags & Sl) for (e = e.child; e !== null;) wl(e, t, n), e = e.sibling;
+	}
+	function wl(e, t, n) {
 		switch (e.tag) {
 			case 26:
-				Sl(e, t, n), e.flags & $ && e.memoizedState !== null && Gf(n, ul, e.memoizedState, e.memoizedProps);
+				Cl(e, t, n), e.flags & Sl && e.memoizedState !== null && Gf(n, ul, e.memoizedState, e.memoizedProps);
 				break;
 			case 5:
-				Sl(e, t, n);
+				Cl(e, t, n);
 				break;
 			case 3:
 			case 4:
 				var r = ul;
-				ul = gf(e.stateNode.containerInfo), Sl(e, t, n), ul = r;
+				ul = gf(e.stateNode.containerInfo), Cl(e, t, n), ul = r;
 				break;
 			case 22:
-				e.memoizedState === null && (r = e.alternate, r !== null && r.memoizedState !== null ? (r = $, $ = 16777216, Sl(e, t, n), $ = r) : Sl(e, t, n));
+				e.memoizedState === null && (r = e.alternate, r !== null && r.memoizedState !== null ? (r = Sl, Sl = 16777216, Cl(e, t, n), Sl = r) : Cl(e, t, n));
 				break;
-			default: Sl(e, t, n);
+			default: Cl(e, t, n);
 		}
 	}
-	function wl(e) {
+	function $(e) {
 		var t = e.alternate;
 		if (t !== null && (e = t.child, e !== null)) {
 			t.child = null;
@@ -5361,7 +5361,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				var r = t[n];
 				Zc = r, Ol(r, e);
 			}
-			wl(e);
+			$(e);
 		}
 		if (e.subtreeFlags & 10256) for (e = e.child; e !== null;) El(e), e = e.sibling;
 	}
@@ -5370,7 +5370,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case 0:
 			case 11:
 			case 15:
-				Tl(e), e.flags & 2048 && Lc(9, e, e.return);
+				Tl(e), e.flags & 2048 && X(9, e, e.return);
 				break;
 			case 3:
 				Tl(e);
@@ -5392,14 +5392,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				var r = t[n];
 				Zc = r, Ol(r, e);
 			}
-			wl(e);
+			$(e);
 		}
 		for (e = e.child; e !== null;) {
 			switch (t = e, t.tag) {
 				case 0:
 				case 11:
 				case 15:
-					Lc(8, t, t.return), Dl(t);
+					X(8, t, t.return), Dl(t);
 					break;
 				case 22:
 					n = t.stateNode, n._visibility & 2 && (n._visibility &= -3, Dl(t));
@@ -5416,7 +5416,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				case 0:
 				case 11:
 				case 15:
-					Lc(8, n, t);
+					X(8, n, t);
 					break;
 				case 23:
 				case 22:
@@ -5540,7 +5540,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				waitingForImages: !0,
 				waitingForViewTransition: !1,
 				unsuspend: cn
-			}, Cl(t, a, d);
+			}, wl(t, a, d);
 			var m = (a & 62914560) === a ? Xl - Fe() : (a & 4194048) === a ? Zl - Fe() : 0;
 			if (m = qf(d, m), m !== null) {
 				iu = a, e.cancelPendingCommit = m(Pu.bind(null, e, t, a, n, r, i, o, s, c, u, d, null, f, p)), gu(e, a, o, !l);
@@ -5603,7 +5603,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return Bl = t, ai(), n;
 	}
 	function bu(e, t) {
-		L = null, E.H = Is, t === Ea || t === Oa ? (t = Pa(), Fl = 3) : t === Da ? (t = Pa(), Fl = 4) : Fl = t === Qs ? 8 : typeof t == "object" && t && typeof t.then == "function" ? 6 : 1, Il = t, Nl === null && (Vl = 1, qs(e, F(t, e.current)));
+		L = null, E.H = Fs, t === Ea || t === Oa ? (t = Pa(), Fl = 3) : t === Da ? (t = Pa(), Fl = 4) : Fl = t === J ? 8 : typeof t == "object" && t && typeof t.then == "function" ? 6 : 1, Il = t, Nl === null && (Vl = 1, q(e, F(t, e.current)));
 	}
 	function xu() {
 		var e = so.current;
@@ -5611,7 +5611,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function Su() {
 		var e = E.H;
-		return E.H = Is, e === null ? Is : e;
+		return E.H = Fs, e === null ? Fs : e;
 	}
 	function Cu() {
 		var e = E.A;
@@ -5733,7 +5733,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		for (; Nl !== null && !Ne();) ku(Nl);
 	}
 	function ku(e) {
-		var t = Dc(e.alternate, e, Bl);
+		var t = Ec(e.alternate, e, Bl);
 		e.memoizedProps = e.pendingProps, t === null ? Mu(e) : Nl = t;
 	}
 	function Au(e) {
@@ -5741,13 +5741,13 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		switch (t.tag) {
 			case 15:
 			case 0:
-				t = fc(n, t, t.pendingProps, t.type, void 0, Pl);
+				t = dc(n, t, t.pendingProps, t.type, void 0, Pl);
 				break;
 			case 11:
-				t = fc(n, t, t.pendingProps, t.type.render, t.ref, Pl);
+				t = dc(n, t, t.pendingProps, t.type.render, t.ref, Pl);
 				break;
 			case 5: jo(t);
-			default: Fc(n, t), t = Nl = gi(t, Bl), t = Dc(n, t, Bl);
+			default: Fc(n, t), t = Nl = gi(t, Bl), t = Ec(n, t, Bl);
 		}
 		e.memoizedProps = e.pendingProps, t === null ? Mu(e) : Nl = t;
 	}
@@ -5756,12 +5756,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		var i = t.return;
 		try {
 			if (Zs(e, i, t, n, Pl)) {
-				Vl = 1, qs(e, F(n, e.current)), Nl = null;
+				Vl = 1, q(e, F(n, e.current)), Nl = null;
 				return;
 			}
 		} catch (t) {
 			if (i !== null) throw Nl = i, t;
-			Vl = 1, qs(e, F(n, e.current)), Nl = null;
+			Vl = 1, q(e, F(n, e.current)), Nl = null;
 			return;
 		}
 		t.flags & 32768 ? (Ri || r === 1 ? e = !0 : Rl || Pl & 536870912 ? e = !1 : (Ll = e = !0, (r === 2 || r === 9 || r === 3 || r === 6) && (r = so.current, r !== null && r.tag === 13 && (r.flags |= 16384))), Nu(t, e)) : Mu(t);
@@ -5774,7 +5774,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				return;
 			}
 			e = t.return;
-			var n = Pc(t.alternate, t, Bl);
+			var n = Nc(t.alternate, t, Bl);
 			if (n !== null) {
 				Nl = n;
 				return;
@@ -5789,7 +5789,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function Nu(e, t) {
 		do {
-			var n = Y(e.alternate, e);
+			var n = Pc(e.alternate, e);
 			if (n !== null) {
 				n.flags &= 32767, Nl = n;
 				return;
@@ -5938,7 +5938,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function Vu(e, t, n) {
-		t = F(n, t), t = Ys(e.stateNode, t, 2), e = Ja(e, t, 2), e !== null && (at(e, 2), td(e));
+		t = F(n, t), t = Js(e.stateNode, t, 2), e = Ja(e, t, 2), e !== null && (at(e, 2), td(e));
 	}
 	function Hu(e, t, n) {
 		if (e.tag === 3) Vu(e, e, n);
@@ -5949,7 +5949,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			} else if (t.tag === 1) {
 				var r = t.stateNode;
 				if (typeof t.type.getDerivedStateFromError == "function" || typeof r.componentDidCatch == "function" && (eu === null || !eu.has(r))) {
-					e = F(n, e), n = q(2), r = Ja(t, n, 2), r !== null && (Xs(n, r, t, e), at(r, 2), td(r));
+					e = F(n, e), n = Ys(2), r = Ja(t, n, 2), r !== null && (Xs(n, r, t, e), at(r, 2), td(r));
 					break;
 				}
 			}
@@ -6102,14 +6102,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 						if (r.defaultPrevented) {
 							if (ed !== 0) {
 								var e = o ? dd(i, o) : new FormData(i);
-								W(n, {
+								ws(n, {
 									pending: !0,
 									data: e,
 									method: i.method,
 									action: a
 								}, null, e);
 							}
-						} else typeof a == "function" && (s.preventDefault(), e = o ? dd(i, o) : new FormData(i), W(n, {
+						} else typeof a == "function" && (s.preventDefault(), e = o ? dd(i, o) : new FormData(i), ws(n, {
 							pending: !0,
 							data: e,
 							method: i.method,
@@ -6125,12 +6125,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		var md = $r[pd];
 		ei(md.toLowerCase(), "on" + (md[0].toUpperCase() + md.slice(1)));
 	}
-	ei(Gr, "onAnimationEnd"), ei(Kr, "onAnimationIteration"), ei(qr, "onAnimationStart"), ei("dblclick", "onDoubleClick"), ei("focusin", "onFocus"), ei("focusout", "onBlur"), ei(Jr, "onTransitionRun"), ei(Yr, "onTransitionStart"), ei(Xr, "onTransitionCancel"), ei(Zr, "onTransitionEnd"), Mt("onMouseEnter", ["mouseout", "mouseover"]), Mt("onMouseLeave", ["mouseout", "mouseover"]), Mt("onPointerEnter", ["pointerout", "pointerover"]), Mt("onPointerLeave", ["pointerout", "pointerover"]), jt("onChange", "change click focusin focusout input keydown keyup selectionchange".split(" ")), jt("onSelect", "focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")), jt("onBeforeInput", [
+	ei(Gr, "onAnimationEnd"), ei(Kr, "onAnimationIteration"), ei(qr, "onAnimationStart"), ei("dblclick", "onDoubleClick"), ei("focusin", "onFocus"), ei("focusout", "onBlur"), ei(Jr, "onTransitionRun"), ei(Yr, "onTransitionStart"), ei(Xr, "onTransitionCancel"), ei(Zr, "onTransitionEnd"), jt("onMouseEnter", ["mouseout", "mouseover"]), jt("onMouseLeave", ["mouseout", "mouseover"]), jt("onPointerEnter", ["pointerout", "pointerover"]), jt("onPointerLeave", ["pointerout", "pointerover"]), At("onChange", "change click focusin focusout input keydown keyup selectionchange".split(" ")), At("onSelect", "focusout contextmenu dragend focusin keydown keyup mousedown mouseup selectionchange".split(" ")), At("onBeforeInput", [
 		"compositionend",
 		"keypress",
 		"textInput",
 		"paste"
-	]), jt("onCompositionEnd", "compositionend focusout keydown keypress keyup mousedown".split(" ")), jt("onCompositionStart", "compositionstart focusout keydown keypress keyup mousedown".split(" ")), jt("onCompositionUpdate", "compositionupdate focusout keydown keypress keyup mousedown".split(" "));
+	]), At("onCompositionEnd", "compositionend focusout keydown keypress keyup mousedown".split(" ")), At("onCompositionStart", "compositionstart focusout keydown keypress keyup mousedown".split(" ")), At("onCompositionUpdate", "compositionupdate focusout keydown keypress keyup mousedown".split(" "));
 	var hd = "abort canplay canplaythrough durationchange emptied encrypted ended error loadeddata loadedmetadata loadstart pause play playing progress ratechange resize seeked seeking stalled suspend timeupdate volumechange waiting".split(" "), gd = new Set("beforetoggle cancel close invalid load scroll scrollend toggle".split(" ").concat(hd));
 	function _d(e, t) {
 		t = (t & 4) != 0;
@@ -6164,8 +6164,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function vd(e, t) {
-		var n = t[vt];
-		n === void 0 && (n = t[vt] = /* @__PURE__ */ new Set());
+		var n = t[A];
+		n === void 0 && (n = t[A] = /* @__PURE__ */ new Set());
 		var r = e + "__bubble";
 		n.has(r) || (Sd(t, e, 2, !1), n.add(r));
 	}
@@ -6176,7 +6176,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	var bd = "_reactListening" + Math.random().toString(36).slice(2);
 	function xd(e) {
 		if (!e[bd]) {
-			e[bd] = !0, kt.forEach(function(t) {
+			e[bd] = !0, Ot.forEach(function(t) {
 				t !== "selectionchange" && (gd.has(t) || yd(t, !1, e), yd(t, !0, e));
 			});
 			var t = e.nodeType === 9 ? e : e.ownerDocument;
@@ -6212,7 +6212,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					s = s.return;
 				}
 				for (; c !== null;) {
-					if (s = wt(c), s === null) return;
+					if (s = Ct(c), s === null) return;
 					if (l = s.tag, l === 5 || l === 6 || l === 26 || l === 27) {
 						r = a = s;
 						continue a;
@@ -6319,9 +6319,9 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			}
 			if (!(t & 7)) {
 				a: {
-					if (c = e === "mouseover" || e === "pointerover", l = e === "mouseout" || e === "pointerout", c && n !== ln && (u = n.relatedTarget || n.fromElement) && (wt(u) || u[_t])) break a;
-					if ((l || c) && (c = i.window === i ? i : (c = i.ownerDocument) ? c.defaultView || c.parentWindow : window, l ? (u = n.relatedTarget || n.toElement, l = r, u = u ? wt(u) : null, u !== null && (f = o(u), d = u.tag, u !== f || d !== 5 && d !== 27 && d !== 6) && (u = null)) : (l = null, u = r), l !== u)) {
-						if (d = In, g = "onMouseLeave", p = "onMouseEnter", m = "mouse", (e === "pointerout" || e === "pointerover") && (d = qn, g = "onPointerLeave", p = "onPointerEnter", m = "pointer"), f = l == null ? c : Et(l), h = u == null ? c : Et(u), c = new d(g, m + "leave", l, n, i), c.target = f, c.relatedTarget = h, g = null, wt(i) === r && (d = new d(p, m + "enter", u, n, i), d.target = h, d.relatedTarget = f, g = d), f = g, l && u) b: {
+					if (c = e === "mouseover" || e === "pointerover", l = e === "mouseout" || e === "pointerout", c && n !== ln && (u = n.relatedTarget || n.fromElement) && (Ct(u) || u[_t])) break a;
+					if ((l || c) && (c = i.window === i ? i : (c = i.ownerDocument) ? c.defaultView || c.parentWindow : window, l ? (u = n.relatedTarget || n.toElement, l = r, u = u ? Ct(u) : null, u !== null && (f = o(u), d = u.tag, u !== f || d !== 5 && d !== 27 && d !== 6) && (u = null)) : (l = null, u = r), l !== u)) {
+						if (d = In, g = "onMouseLeave", p = "onMouseEnter", m = "mouse", (e === "pointerout" || e === "pointerover") && (d = qn, g = "onPointerLeave", p = "onPointerEnter", m = "pointer"), f = l == null ? c : Tt(l), h = u == null ? c : Tt(u), c = new d(g, m + "leave", l, n, i), c.target = f, c.relatedTarget = h, g = null, Ct(i) === r && (d = new d(p, m + "enter", u, n, i), d.target = h, d.relatedTarget = f, g = d), f = g, l && u) b: {
 							for (d = Ed, p = l, m = u, h = 0, g = p; g; g = d(g)) h++;
 							g = 0;
 							for (var _ = m; _; _ = d(_)) g++;
@@ -6341,7 +6341,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					}
 				}
 				a: {
-					if (c = r ? Et(r) : window, l = c.nodeName && c.nodeName.toLowerCase(), l === "select" || l === "input" && c.type === "file") var v = _r;
+					if (c = r ? Tt(r) : window, l = c.nodeName && c.nodeName.toLowerCase(), l === "select" || l === "input" && c.type === "file") var v = _r;
 					else if (dr(c)) if (vr) v = Er;
 					else {
 						v = wr;
@@ -6354,7 +6354,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					}
 					y && y(e, c, r), e === "focusout" && r && c.type === "number" && r.memoizedProps.value != null && Yt(c, "number", c.value);
 				}
-				switch (y = r ? Et(r) : window, e) {
+				switch (y = r ? Tt(r) : window, e) {
 					case "focusin":
 						(dr(y) || y.contentEditable === "true") && (Fr = y, Ir = r, Lr = null);
 						break;
@@ -6446,23 +6446,23 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				typeof r == "string" ? t === "body" || t === "textarea" && r === "" || $t(e, r) : (typeof r == "number" || typeof r == "bigint") && t !== "body" && $t(e, "" + r);
 				break;
 			case "className":
-				Rt(e, "class", r);
+				Lt(e, "class", r);
 				break;
 			case "tabIndex":
-				Rt(e, "tabindex", r);
+				Lt(e, "tabindex", r);
 				break;
 			case "dir":
 			case "role":
 			case "viewBox":
 			case "width":
 			case "height":
-				Rt(e, n, r);
+				Lt(e, n, r);
 				break;
 			case "style":
 				nn(e, r, o);
 				break;
 			case "data": if (t !== "object") {
-				Rt(e, "data", r);
+				Lt(e, "data", r);
 				break;
 			}
 			case "src":
@@ -6577,41 +6577,41 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				r == null || typeof r == "function" || typeof r == "symbol" || isNaN(r) ? e.removeAttribute(n) : e.setAttribute(n, r);
 				break;
 			case "popover":
-				vd("beforetoggle", e), vd("toggle", e), Lt(e, "popover", r);
+				vd("beforetoggle", e), vd("toggle", e), It(e, "popover", r);
 				break;
 			case "xlinkActuate":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:actuate", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:actuate", r);
 				break;
 			case "xlinkArcrole":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:arcrole", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:arcrole", r);
 				break;
 			case "xlinkRole":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:role", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:role", r);
 				break;
 			case "xlinkShow":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:show", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:show", r);
 				break;
 			case "xlinkTitle":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:title", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:title", r);
 				break;
 			case "xlinkType":
-				zt(e, "http://www.w3.org/1999/xlink", "xlink:type", r);
+				Rt(e, "http://www.w3.org/1999/xlink", "xlink:type", r);
 				break;
 			case "xmlBase":
-				zt(e, "http://www.w3.org/XML/1998/namespace", "xml:base", r);
+				Rt(e, "http://www.w3.org/XML/1998/namespace", "xml:base", r);
 				break;
 			case "xmlLang":
-				zt(e, "http://www.w3.org/XML/1998/namespace", "xml:lang", r);
+				Rt(e, "http://www.w3.org/XML/1998/namespace", "xml:lang", r);
 				break;
 			case "xmlSpace":
-				zt(e, "http://www.w3.org/XML/1998/namespace", "xml:space", r);
+				Rt(e, "http://www.w3.org/XML/1998/namespace", "xml:space", r);
 				break;
 			case "is":
-				Lt(e, "is", r);
+				It(e, "is", r);
 				break;
 			case "innerText":
 			case "textContent": break;
-			default: (!(2 < n.length) || n[0] !== "o" && n[0] !== "O" || n[1] !== "n" && n[1] !== "N") && (n = an.get(n) || n, Lt(e, n, r));
+			default: (!(2 < n.length) || n[0] !== "o" && n[0] !== "O" || n[1] !== "n" && n[1] !== "N") && (n = an.get(n) || n, It(e, n, r));
 		}
 	}
 	function Nd(e, t, n, r, a, o) {
@@ -6646,12 +6646,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case "ref": break;
 			case "innerText":
 			case "textContent": break;
-			default: if (!At.hasOwnProperty(n)) a: {
+			default: if (!kt.hasOwnProperty(n)) a: {
 				if (n[0] === "o" && n[1] === "n" && (a = n.endsWith("Capture"), t = n.slice(2, a ? n.length - 7 : void 0), o = e[gt] || null, o = o == null ? null : o[n], typeof o == "function" && e.removeEventListener(t, o, a), typeof r == "function")) {
 					typeof o != "function" && o !== null && (n in e ? e[n] = null : e.hasAttribute(n) && e.removeAttribute(n)), e.addEventListener(t, r, a);
 					break a;
 				}
-				n in e ? e[n] = r : !0 === r ? e.setAttribute(n, "") : Lt(e, n, r);
+				n in e ? e[n] = r : !0 === r ? e.setAttribute(n, "") : It(e, n, r);
 			}
 		}
 	}
@@ -7021,7 +7021,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				n = e.ownerDocument.head, pf(n);
 				for (var a = n.firstChild; a;) {
 					var o = a.nextSibling, s = a.nodeName;
-					a[St] || s === "SCRIPT" || s === "STYLE" || s === "LINK" && a.rel.toLowerCase() === "stylesheet" || n.removeChild(a), a = o;
+					a[xt] || s === "SCRIPT" || s === "STYLE" || s === "LINK" && a.rel.toLowerCase() === "stylesheet" || n.removeChild(a), a = o;
 				}
 			} else n === "body" && pf(e.ownerDocument.body);
 			n = i;
@@ -7048,7 +7048,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				case "HTML":
 				case "HEAD":
 				case "BODY":
-					ef(n), Ct(n);
+					ef(n), St(n);
 					continue;
 				case "SCRIPT":
 				case "STYLE": continue;
@@ -7066,7 +7066,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				var a = i.name == null ? null : "" + i.name;
 				if (i.type === "hidden" && e.getAttribute("name") === a) return e;
 			} else return e;
-			else if (!e[St]) switch (t) {
+			else if (!e[xt]) switch (t) {
 				case "meta":
 					if (!e.hasAttribute("itemprop")) break;
 					return e;
@@ -7167,7 +7167,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	function pf(e) {
 		for (var t = e.attributes; t.length;) e.removeAttributeNode(t[0]);
-		Ct(e);
+		St(e);
 	}
 	var mf = /* @__PURE__ */ new Map(), hf = /* @__PURE__ */ new Set();
 	function gf(e) {
@@ -7190,19 +7190,19 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return e || t;
 	}
 	function yf(e) {
-		var t = Tt(e);
-		t !== null && t.tag === 5 && t.type === "form" ? Ts(t) : _f.r(e);
+		var t = wt(e);
+		t !== null && t.tag === 5 && t.type === "form" ? Es(t) : _f.r(e);
 	}
 	var bf = typeof document > "u" ? null : document;
 	function xf(e, t, n) {
 		var r = bf;
 		if (r && typeof t == "string" && t) {
-			var i = A(t);
+			var i = Kt(t);
 			i = "link[rel=\"" + e + "\"][href=\"" + i + "\"]", typeof n == "string" && (i += "[crossorigin=\"" + n + "\"]"), hf.has(i) || (hf.add(i), e = {
 				rel: e,
 				crossOrigin: n,
 				href: t
-			}, r.querySelector(i) === null && (t = r.createElement("link"), Pd(t, "link", e), Ot(t), r.head.appendChild(t)));
+			}, r.querySelector(i) === null && (t = r.createElement("link"), Pd(t, "link", e), Dt(t), r.head.appendChild(t)));
 		}
 	}
 	function Sf(e) {
@@ -7215,8 +7215,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		_f.L(e, t, n);
 		var r = bf;
 		if (r && e && t) {
-			var i = "link[rel=\"preload\"][as=\"" + A(t) + "\"]";
-			t === "image" && n && n.imageSrcSet ? (i += "[imagesrcset=\"" + A(n.imageSrcSet) + "\"]", typeof n.imageSizes == "string" && (i += "[imagesizes=\"" + A(n.imageSizes) + "\"]")) : i += "[href=\"" + A(e) + "\"]";
+			var i = "link[rel=\"preload\"][as=\"" + Kt(t) + "\"]";
+			t === "image" && n && n.imageSrcSet ? (i += "[imagesrcset=\"" + Kt(n.imageSrcSet) + "\"]", typeof n.imageSizes == "string" && (i += "[imagesizes=\"" + Kt(n.imageSizes) + "\"]")) : i += "[href=\"" + Kt(e) + "\"]";
 			var a = i;
 			switch (t) {
 				case "style":
@@ -7228,14 +7228,14 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				rel: "preload",
 				href: t === "image" && n && n.imageSrcSet ? void 0 : e,
 				as: t
-			}, n), mf.set(a, e), r.querySelector(i) !== null || t === "style" && r.querySelector(jf(a)) || t === "script" && r.querySelector(Ff(a)) || (t = r.createElement("link"), Pd(t, "link", e), Ot(t), r.head.appendChild(t)));
+			}, n), mf.set(a, e), r.querySelector(i) !== null || t === "style" && r.querySelector(jf(a)) || t === "script" && r.querySelector(Ff(a)) || (t = r.createElement("link"), Pd(t, "link", e), Dt(t), r.head.appendChild(t)));
 		}
 	}
 	function Tf(e, t) {
 		_f.m(e, t);
 		var n = bf;
 		if (n && e) {
-			var r = t && typeof t.as == "string" ? t.as : "script", i = "link[rel=\"modulepreload\"][as=\"" + A(r) + "\"][href=\"" + A(e) + "\"]", a = i;
+			var r = t && typeof t.as == "string" ? t.as : "script", i = "link[rel=\"modulepreload\"][as=\"" + Kt(r) + "\"][href=\"" + Kt(e) + "\"]", a = i;
 			switch (r) {
 				case "audioworklet":
 				case "paintworklet":
@@ -7256,7 +7256,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					case "worker":
 					case "script": if (n.querySelector(Ff(a))) return;
 				}
-				r = n.createElement("link"), Pd(r, "link", e), Ot(r), n.head.appendChild(r);
+				r = n.createElement("link"), Pd(r, "link", e), Dt(r), n.head.appendChild(r);
 			}
 		}
 	}
@@ -7264,7 +7264,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		_f.S(e, t, n);
 		var r = bf;
 		if (r && e) {
-			var i = Dt(r).hoistableStyles, a = Af(e);
+			var i = Et(r).hoistableStyles, a = Af(e);
 			t ||= "default";
 			var o = i.get(a);
 			if (!o) {
@@ -7280,7 +7280,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 						"data-precedence": t
 					}, n), (n = mf.get(a)) && Rf(e, n);
 					var c = o = r.createElement("link");
-					Ot(c), Pd(c, "link", e), c._p = new Promise(function(e, t) {
+					Dt(c), Pd(c, "link", e), c._p = new Promise(function(e, t) {
 						c.onload = e, c.onerror = t;
 					}), c.addEventListener("load", function() {
 						s.loading |= 1;
@@ -7301,11 +7301,11 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		_f.X(e, t);
 		var n = bf;
 		if (n && e) {
-			var r = Dt(n).hoistableScripts, i = Pf(e), a = r.get(i);
+			var r = Et(n).hoistableScripts, i = Pf(e), a = r.get(i);
 			a || (a = n.querySelector(Ff(i)), a || (e = m({
 				src: e,
 				async: !0
-			}, t), (t = mf.get(i)) && zf(e, t), a = n.createElement("script"), Ot(a), Pd(a, "link", e), n.head.appendChild(a)), a = {
+			}, t), (t = mf.get(i)) && zf(e, t), a = n.createElement("script"), Dt(a), Pd(a, "link", e), n.head.appendChild(a)), a = {
 				type: "script",
 				instance: a,
 				count: 1,
@@ -7317,12 +7317,12 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		_f.M(e, t);
 		var n = bf;
 		if (n && e) {
-			var r = Dt(n).hoistableScripts, i = Pf(e), a = r.get(i);
+			var r = Et(n).hoistableScripts, i = Pf(e), a = r.get(i);
 			a || (a = n.querySelector(Ff(i)), a || (e = m({
 				src: e,
 				async: !0,
 				type: "module"
-			}, t), (t = mf.get(i)) && zf(e, t), a = n.createElement("script"), Ot(a), Pd(a, "link", e), n.head.appendChild(a)), a = {
+			}, t), (t = mf.get(i)) && zf(e, t), a = n.createElement("script"), Dt(a), Pd(a, "link", e), n.head.appendChild(a)), a = {
 				type: "script",
 				instance: a,
 				count: 1,
@@ -7336,7 +7336,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		switch (e) {
 			case "meta":
 			case "title": return null;
-			case "style": return typeof n.precedence == "string" && typeof n.href == "string" ? (t = Af(n.href), n = Dt(a).hoistableStyles, r = n.get(t), r || (r = {
+			case "style": return typeof n.precedence == "string" && typeof n.href == "string" ? (t = Af(n.href), n = Et(a).hoistableStyles, r = n.get(t), r || (r = {
 				type: "style",
 				instance: null,
 				count: 0,
@@ -7350,7 +7350,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			case "link":
 				if (n.rel === "stylesheet" && typeof n.href == "string" && typeof n.precedence == "string") {
 					e = Af(n.href);
-					var o = Dt(a).hoistableStyles, s = o.get(e);
+					var o = Et(a).hoistableStyles, s = o.get(e);
 					if (s || (a = a.ownerDocument || a, s = {
 						type: "stylesheet",
 						instance: null,
@@ -7373,7 +7373,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				}
 				if (t && r !== null) throw Error(i(529, ""));
 				return null;
-			case "script": return t = n.async, n = n.src, typeof n == "string" && t && typeof t != "function" && typeof t != "symbol" ? (t = Pf(n), n = Dt(a).hoistableScripts, r = n.get(t), r || (r = {
+			case "script": return t = n.async, n = n.src, typeof n == "string" && t && typeof t != "function" && typeof t != "symbol" ? (t = Pf(n), n = Et(a).hoistableScripts, r = n.get(t), r || (r = {
 				type: "script",
 				instance: null,
 				count: 0,
@@ -7388,7 +7388,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		}
 	}
 	function Af(e) {
-		return "href=\"" + A(e) + "\"";
+		return "href=\"" + Kt(e) + "\"";
 	}
 	function jf(e) {
 		return "link[rel=\"stylesheet\"][" + e + "]";
@@ -7404,10 +7404,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			return r.loading |= 1;
 		}), t.addEventListener("error", function() {
 			return r.loading |= 2;
-		}), Pd(t, "link", n), Ot(t), e.head.appendChild(t));
+		}), Pd(t, "link", n), Dt(t), e.head.appendChild(t));
 	}
 	function Pf(e) {
-		return "[src=\"" + A(e) + "\"]";
+		return "[src=\"" + Kt(e) + "\"]";
 	}
 	function Ff(e) {
 		return "script[async]" + e;
@@ -7415,25 +7415,25 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	function If(e, t, n) {
 		if (t.count++, t.instance === null) switch (t.type) {
 			case "style":
-				var r = e.querySelector("style[data-href~=\"" + A(n.href) + "\"]");
-				if (r) return t.instance = r, Ot(r), r;
+				var r = e.querySelector("style[data-href~=\"" + Kt(n.href) + "\"]");
+				if (r) return t.instance = r, Dt(r), r;
 				var a = m({}, n, {
 					"data-href": n.href,
 					"data-precedence": n.precedence,
 					href: null,
 					precedence: null
 				});
-				return r = (e.ownerDocument || e).createElement("style"), Ot(r), Pd(r, "style", a), Lf(r, n.precedence, e), t.instance = r;
+				return r = (e.ownerDocument || e).createElement("style"), Dt(r), Pd(r, "style", a), Lf(r, n.precedence, e), t.instance = r;
 			case "stylesheet":
 				a = Af(n.href);
 				var o = e.querySelector(jf(a));
-				if (o) return t.state.loading |= 4, t.instance = o, Ot(o), o;
-				r = Mf(n), (a = mf.get(a)) && Rf(r, a), o = (e.ownerDocument || e).createElement("link"), Ot(o);
+				if (o) return t.state.loading |= 4, t.instance = o, Dt(o), o;
+				r = Mf(n), (a = mf.get(a)) && Rf(r, a), o = (e.ownerDocument || e).createElement("link"), Dt(o);
 				var s = o;
 				return s._p = new Promise(function(e, t) {
 					s.onload = e, s.onerror = t;
 				}), Pd(o, "link", r), t.state.loading |= 4, Lf(o, n.precedence, e), t.instance = o;
-			case "script": return o = Pf(n.src), (a = e.querySelector(Ff(o))) ? (t.instance = a, Ot(a), a) : (r = n, (a = mf.get(o)) && (r = m({}, n), zf(r, a)), e = e.ownerDocument || e, a = e.createElement("script"), Ot(a), Pd(a, "link", r), e.head.appendChild(a), t.instance = a);
+			case "script": return o = Pf(n.src), (a = e.querySelector(Ff(o))) ? (t.instance = a, Dt(a), a) : (r = n, (a = mf.get(o)) && (r = m({}, n), zf(r, a)), e = e.ownerDocument || e, a = e.createElement("script"), Dt(a), Pd(a, "link", r), e.head.appendChild(a), t.instance = a);
 			case "void": return null;
 			default: throw Error(i(443, t.type));
 		}
@@ -7463,7 +7463,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		if (r.has(e)) return r;
 		for (r.set(e, null), n = n.getElementsByTagName(e), i = 0; i < n.length; i++) {
 			var a = n[i];
-			if (!(a[St] || a[ht] || e === "link" && a.getAttribute("rel") === "stylesheet") && a.namespaceURI !== "http://www.w3.org/2000/svg") {
+			if (!(a[xt] || a[ht] || e === "link" && a.getAttribute("rel") === "stylesheet") && a.namespaceURI !== "http://www.w3.org/2000/svg") {
 				var o = a.getAttribute(t) || "";
 				o = e + o;
 				var s = r.get(o);
@@ -7501,10 +7501,10 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			if (n.instance === null) {
 				var i = Af(r.href), a = t.querySelector(jf(i));
 				if (a) {
-					t = a._p, typeof t == "object" && t && typeof t.then == "function" && (e.count++, e = Jf.bind(e), t.then(e, e)), n.state.loading |= 4, n.instance = a, Ot(a);
+					t = a._p, typeof t == "object" && t && typeof t.then == "function" && (e.count++, e = Jf.bind(e), t.then(e, e)), n.state.loading |= 4, n.instance = a, Dt(a);
 					return;
 				}
-				a = t.ownerDocument || t, r = Mf(r), (i = mf.get(i)) && Rf(r, i), a = a.createElement("link"), Ot(a);
+				a = t.ownerDocument || t, r = Mf(r), (i = mf.get(i)) && Rf(r, i), a = a.createElement("link"), Dt(a);
 				var o = a;
 				o._p = new Promise(function(e, t) {
 					o.onload = e, o.onerror = t;
@@ -7637,7 +7637,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			else if (Tp(i, e, t, n, r)) r.stopPropagation();
 			else if (Cp(e, r), t & 4 && -1 < Sp.indexOf(e)) {
 				for (; i !== null;) {
-					var a = Tt(i);
+					var a = wt(i);
 					if (a !== null) switch (a.tag) {
 						case 3:
 							if (a = a.stateNode, a.current.memoizedState.isDehydrated) {
@@ -7667,7 +7667,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	var fp = null;
 	function pp(e) {
-		if (fp = null, e = wt(e), e !== null) {
+		if (fp = null, e = Ct(e), e !== null) {
 			var t = o(e);
 			if (t === null) e = null;
 			else {
@@ -7800,7 +7800,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 			eventSystemFlags: r,
 			nativeEvent: a,
 			targetContainers: [i]
-		}, t !== null && (t = Tt(t), t !== null && ap(t)), e) : (e.eventSystemFlags |= r, t = e.targetContainers, i !== null && t.indexOf(i) === -1 && t.push(i), e);
+		}, t !== null && (t = wt(t), t !== null && ap(t)), e) : (e.eventSystemFlags |= r, t = e.targetContainers, i !== null && t.indexOf(i) === -1 && t.push(i), e);
 	}
 	function Tp(e, t, n, r, i) {
 		switch (t) {
@@ -7815,7 +7815,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 		return !1;
 	}
 	function Ep(e) {
-		var t = wt(e.target);
+		var t = Ct(e.target);
 		if (t !== null) {
 			var n = o(t);
 			if (n !== null) {
@@ -7849,7 +7849,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 				n = e.nativeEvent;
 				var r = new n.constructor(n.type, n);
 				ln = r, n.target.dispatchEvent(r), ln = null;
-			} else return t = Tt(n), t !== null && ap(t), e.blockedOn = n, !1;
+			} else return t = wt(n), t !== null && ap(t), e.blockedOn = n, !1;
 			t.shift();
 		}
 		return !0;
@@ -7873,8 +7873,8 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 					if (pp(r || n) === null) continue;
 					break;
 				}
-				var a = Tt(n);
-				a !== null && (e.splice(t, 3), t -= 3, W(a, {
+				var a = wt(n);
+				a !== null && (e.splice(t, 3), t -= 3, ws(a, {
 					pending: !0,
 					data: i,
 					method: n.method,
@@ -7991,7 +7991,7 @@ var e = Object.create, t = Object.defineProperty, n = Object.getOwnPropertyDescr
 	}
 	e.createRoot = function(e, t) {
 		if (!a(e)) throw Error(i(299));
-		var n = !1, r = "", o = K, s = Gs, c = Ks;
+		var n = !1, r = "", o = Ws, s = Gs, c = Ks;
 		return t != null && (!0 === t.unstable_strictMode && (n = !0), t.identifierPrefix !== void 0 && (r = t.identifierPrefix), t.onUncaughtError !== void 0 && (o = t.onUncaughtError), t.onCaughtError !== void 0 && (s = t.onCaughtError), t.onRecoverableError !== void 0 && (c = t.onRecoverableError)), t = ep(e, 1, !1, null, null, n, r, null, o, s, c, Pp), e[_t] = t.current, xd(e), new Fp(t);
 	};
 })), _ = /* @__PURE__ */ s(((e, t) => {
@@ -9246,7 +9246,7 @@ var k, We, Ge, Ke, qe, Je = o((() => {
 //#endregion
 //#region src/Icons.jsx
 function at({ isLocked: e, onClick: t, className: n = "", size: r = 14 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		onClick: t,
 		viewBox: "0 0 24 24",
 		width: r,
@@ -9257,17 +9257,17 @@ function at({ isLocked: e, onClick: t, className: n = "", size: r = 14 }) {
 			display: "inline-block",
 			flexShrink: 0
 		},
-		children: e ? /* @__PURE__ */ (0, vt.jsx)("path", {
+		children: e ? /* @__PURE__ */ (0, A.jsx)("path", {
 			fill: "currentColor",
 			d: "M12 17c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm6-9h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM8.9 6c0-1.71 1.39-3.1 3.1-3.1s3.1 1.39 3.1 3.1v2H8.9V6z"
-		}) : /* @__PURE__ */ (0, vt.jsx)("path", {
+		}) : /* @__PURE__ */ (0, A.jsx)("path", {
 			fill: "currentColor",
 			d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6h2c0-1.66 1.34-3 3-3s3 1.34 3 3v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm0 12H6V10h12v10zm-6-3c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2z"
 		})
 	});
 }
 function ot({ onClick: e, className: t = "", size: n = 16 }) {
-	return /* @__PURE__ */ (0, vt.jsxs)("svg", {
+	return /* @__PURE__ */ (0, A.jsxs)("svg", {
 		onClick: e,
 		viewBox: "0 0 24 24",
 		width: n,
@@ -9283,15 +9283,15 @@ function ot({ onClick: e, className: t = "", size: n = 16 }) {
 			display: "inline-block",
 			flexShrink: 0
 		},
-		children: [/* @__PURE__ */ (0, vt.jsx)("circle", {
+		children: [/* @__PURE__ */ (0, A.jsx)("circle", {
 			cx: "12",
 			cy: "12",
 			r: "3"
-		}), /* @__PURE__ */ (0, vt.jsx)("path", { d: "M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" })]
+		}), /* @__PURE__ */ (0, A.jsx)("path", { d: "M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z" })]
 	});
 }
 function st({ checked: e, onClick: t, className: n = "", size: r = 16 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		onClick: t,
 		viewBox: "0 0 24 24",
 		width: r,
@@ -9303,74 +9303,74 @@ function st({ checked: e, onClick: t, className: n = "", size: r = 16 }) {
 			flexShrink: 0,
 			transition: "color 0.15s, opacity 0.15s"
 		},
-		children: e ? /* @__PURE__ */ (0, vt.jsx)("path", {
+		children: e ? /* @__PURE__ */ (0, A.jsx)("path", {
 			fill: "currentColor",
 			d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"
-		}) : /* @__PURE__ */ (0, vt.jsx)("path", {
+		}) : /* @__PURE__ */ (0, A.jsx)("path", {
 			fill: "currentColor",
 			d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8z"
 		})
 	});
 }
 function ct({ className: e = "", size: t = 18 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		fill: "currentColor",
 		className: e,
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 3c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3zm0 14.2c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08 1.99 0 5.97 1.09 6 3.08-1.29 1.94-3.5 3.22-6 3.22z" })
 	});
 }
 function lt({ className: e = "", size: t = 18 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		fill: "currentColor",
 		className: e,
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" })
 	});
 }
 function ut({ className: e = "", size: t = 18 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		fill: "currentColor",
 		className: e,
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-8-2h4v2h-4V4zm8 15H4V8h16v11z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M20 6h-4V4c0-1.11-.89-2-2-2h-4c-1.11 0-2 .89-2 2v2H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-8-2h4v2h-4V4zm8 15H4V8h16v11z" })
 	});
 }
 function dt({ className: e = "", size: t = 18 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		fill: "currentColor",
 		className: e,
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" })
 	});
 }
 function ft({ className: e = "", size: t = 18, direction: n = "left" }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		className: e,
 		fill: "currentColor",
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: n === "right" ? "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" : "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: n === "right" ? "M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z" : "M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z" })
 	});
 }
 function pt({ className: e = "", size: t = 18 }) {
-	return /* @__PURE__ */ (0, vt.jsxs)("svg", {
+	return /* @__PURE__ */ (0, A.jsxs)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		className: e,
 		fill: "currentColor",
 		children: [
-			/* @__PURE__ */ (0, vt.jsx)("rect", {
+			/* @__PURE__ */ (0, A.jsx)("rect", {
 				x: "2",
 				y: "5",
 				width: "20",
@@ -9380,27 +9380,27 @@ function pt({ className: e = "", size: t = 18 }) {
 				stroke: "currentColor",
 				strokeWidth: "1.5"
 			}),
-			/* @__PURE__ */ (0, vt.jsx)("circle", {
+			/* @__PURE__ */ (0, A.jsx)("circle", {
 				cx: "7",
 				cy: "10",
 				r: "2.2"
 			}),
-			/* @__PURE__ */ (0, vt.jsx)("path", { d: "M4 15.5c0-1.8 1.3-3 3-3s3 1.2 3 3v0.5H4v-0.5z" }),
-			/* @__PURE__ */ (0, vt.jsx)("rect", {
+			/* @__PURE__ */ (0, A.jsx)("path", { d: "M4 15.5c0-1.8 1.3-3 3-3s3 1.2 3 3v0.5H4v-0.5z" }),
+			/* @__PURE__ */ (0, A.jsx)("rect", {
 				x: "12",
 				y: "8.5",
 				width: "7",
 				height: "1.5",
 				rx: "0.75"
 			}),
-			/* @__PURE__ */ (0, vt.jsx)("rect", {
+			/* @__PURE__ */ (0, A.jsx)("rect", {
 				x: "12",
 				y: "11.5",
 				width: "6",
 				height: "1.5",
 				rx: "0.75"
 			}),
-			/* @__PURE__ */ (0, vt.jsx)("rect", {
+			/* @__PURE__ */ (0, A.jsx)("rect", {
 				x: "12",
 				y: "14.5",
 				width: "7",
@@ -9411,37 +9411,37 @@ function pt({ className: e = "", size: t = 18 }) {
 	});
 }
 function mt({ className: e = "", size: t = 15 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		className: e,
 		fill: "currentColor",
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04c.39-.39.39-1.02 0-1.41l-2.34-2.34c-.39-.39-1.02-.39-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z" })
 	});
 }
 function ht({ className: e = "", size: t = 13 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		className: e,
 		fill: "currentColor",
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M10 9h4V6h3l-5-5-5 5h3v3zm-1 1H6V7l-5 5 5 5v-3h3v-4zm14 2l-5-5v3h-3v4h3v3l5-5zm-9 3h-4v3H7l5 5 5-5h-3v-3z" })
 	});
 }
 function gt({ className: e = "", size: t = 13 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
 		className: e,
 		fill: "currentColor",
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M17.65 6.35C16.2 4.9 14.21 4 12 4c-4.42 0-7.99 3.58-7.99 8s3.57 8 7.99 8c3.73 0 6.84-2.55 7.73-6h-2.08c-.82 2.33-3.04 4-5.65 4-3.31 0-6-2.69-6-6s2.69-6 6-6c1.66 0 3.14.69 4.22 1.78L13 11h7V4l-2.35 2.35z" })
 	});
 }
 function _t({ className: e = "", size: t = 14 }) {
-	return /* @__PURE__ */ (0, vt.jsx)("svg", {
+	return /* @__PURE__ */ (0, A.jsx)("svg", {
 		viewBox: "0 0 24 24",
 		width: t,
 		height: t,
@@ -9451,17 +9451,17 @@ function _t({ className: e = "", size: t = 14 }) {
 			display: "inline-block",
 			flexShrink: 0
 		},
-		children: /* @__PURE__ */ (0, vt.jsx)("path", { d: "M8 5v14l11-7z" })
+		children: /* @__PURE__ */ (0, A.jsx)("path", { d: "M8 5v14l11-7z" })
 	});
 }
-var vt, yt = o((() => {
-	d(), vt = Ve();
+var A, vt = o((() => {
+	d(), A = Ve();
 }));
 //#endregion
 //#region src/tracker/TrackerPanelToggle.jsx
-function bt() {
-	let { settings: e, updateSettings: t } = Ue(), [n, r] = (0, xt.useState)(!1), [i, a] = (0, xt.useState)(!1), o = (0, xt.useRef)(null), s = e.togglePosition, c = e.isPanelOpen || !1;
-	if ((0, xt.useEffect)(() => {
+function yt() {
+	let { settings: e, updateSettings: t } = Ue(), [n, r] = (0, bt.useState)(!1), [i, a] = (0, bt.useState)(!1), o = (0, bt.useRef)(null), s = e.togglePosition, c = e.isPanelOpen || !1;
+	if ((0, bt.useEffect)(() => {
 		function e(e) {
 			o.current && !o.current.contains(e.target) && a(!1);
 		}
@@ -9502,67 +9502,67 @@ function bt() {
 		left: `${s.x}px`,
 		top: `${s.y}px`
 	} : {};
-	return /* @__PURE__ */ (0, St.jsxs)("div", {
+	return /* @__PURE__ */ (0, xt.jsxs)("div", {
 		className: `${rt.toggleWrapper} ${n ? rt.dragModeActive : ""} ${s ? rt.userPositioned : ""}`,
 		style: m,
 		onMouseDown: d,
 		onTouchStart: f,
 		onContextMenu: u,
-		children: [/* @__PURE__ */ (0, St.jsx)("button", {
+		children: [/* @__PURE__ */ (0, xt.jsx)("button", {
 			className: rt.toggleButton,
 			onClick: l,
 			title: n ? "Drag to re-position" : "Open Tracker / Right-click for options",
-			children: /* @__PURE__ */ (0, St.jsx)(pt, {
+			children: /* @__PURE__ */ (0, xt.jsx)(pt, {
 				className: rt.icon,
 				size: 20
 			})
-		}), i && /* @__PURE__ */ (0, St.jsxs)("div", {
+		}), i && /* @__PURE__ */ (0, xt.jsxs)("div", {
 			className: rt.contextMenu,
 			ref: o,
-			children: [/* @__PURE__ */ (0, St.jsx)("button", {
+			children: [/* @__PURE__ */ (0, xt.jsx)("button", {
 				className: n ? rt.activeMenuBtn : "",
 				onClick: () => {
 					r(!n), a(!1);
 				},
-				children: n ? /* @__PURE__ */ (0, St.jsxs)(St.Fragment, { children: [/* @__PURE__ */ (0, St.jsx)(at, {
+				children: n ? /* @__PURE__ */ (0, xt.jsxs)(xt.Fragment, { children: [/* @__PURE__ */ (0, xt.jsx)(at, {
 					isLocked: !0,
 					className: rt.menuIcon,
 					size: 13
-				}), "Lock Position"] }) : /* @__PURE__ */ (0, St.jsxs)(St.Fragment, { children: [/* @__PURE__ */ (0, St.jsx)(ht, { className: rt.menuIcon }), "Enable Drag"] })
-			}), /* @__PURE__ */ (0, St.jsxs)("button", {
+				}), "Lock Position"] }) : /* @__PURE__ */ (0, xt.jsxs)(xt.Fragment, { children: [/* @__PURE__ */ (0, xt.jsx)(ht, { className: rt.menuIcon }), "Enable Drag"] })
+			}), /* @__PURE__ */ (0, xt.jsxs)("button", {
 				onClick: p,
-				children: [/* @__PURE__ */ (0, St.jsx)(gt, { className: rt.menuIcon }), "Reset Position"]
+				children: [/* @__PURE__ */ (0, xt.jsx)(gt, { className: rt.menuIcon }), "Reset Position"]
 			})]
 		})]
 	});
 }
-var xt, St, Ct = o((() => {
-	xt = /* @__PURE__ */ l(d()), Je(), it(), yt(), St = Ve();
-})), wt, Tt, Et, Dt, Ot, kt, At, jt, Mt, Nt, Pt, Ft, It, Lt, Rt, zt, Bt, Vt, Ht, Ut, Wt, Gt, Kt, A, qt = o((() => {
-	wt = "_panelContainer_13ra3_1", Tt = "_left_13ra3_33", Et = "_slideIn_13ra3_1", Dt = "_right_13ra3_49", Ot = "_slideInRight_13ra3_1", kt = "_panelInner_13ra3_85", At = "_collapseButton_13ra3_99", jt = "_collapseIcon_13ra3_169", Mt = "_panelHeader_13ra3_191", Nt = "_headerLeftArea_13ra3_211", Pt = "_headerRightArea_13ra3_221", Ft = "_headerButtonRow_13ra3_235", It = "_brand_13ra3_247", Lt = "_headerIcon_13ra3_259", Rt = "_headerTitle_13ra3_271", zt = "_headerBtn_13ra3_281", Bt = "_headerBtnIcon_13ra3_307", Vt = "_scrollContainer_13ra3_319", Ht = "_contentWrapper_13ra3_377", Ut = "_panelBody_13ra3_405", Wt = "_statusDot_13ra3_459", Gt = "_statusDotConnected_13ra3_477", Kt = "_statusDotDisconnected_13ra3_487", A = {
-		panelContainer: wt,
-		left: Tt,
-		slideIn: Et,
-		right: Dt,
-		slideInRight: Ot,
-		panelInner: kt,
-		collapseButton: At,
-		collapseIcon: jt,
-		panelHeader: Mt,
-		headerLeftArea: Nt,
-		headerRightArea: Pt,
-		headerButtonRow: Ft,
-		brand: It,
-		headerIcon: Lt,
-		headerTitle: Rt,
-		headerBtn: zt,
-		headerBtnIcon: Bt,
-		scrollContainer: Vt,
-		contentWrapper: Ht,
-		panelBody: Ut,
-		statusDot: Wt,
-		statusDotConnected: Gt,
-		statusDotDisconnected: Kt
+var bt, xt, St = o((() => {
+	bt = /* @__PURE__ */ l(d()), Je(), it(), vt(), xt = Ve();
+})), Ct, wt, Tt, Et, Dt, Ot, kt, At, jt, Mt, Nt, Pt, Ft, It, Lt, Rt, zt, Bt, Vt, Ht, Ut, Wt, Gt, Kt, qt = o((() => {
+	Ct = "_panelContainer_13ra3_1", wt = "_left_13ra3_33", Tt = "_slideIn_13ra3_1", Et = "_right_13ra3_49", Dt = "_slideInRight_13ra3_1", Ot = "_panelInner_13ra3_85", kt = "_collapseButton_13ra3_99", At = "_collapseIcon_13ra3_169", jt = "_panelHeader_13ra3_191", Mt = "_headerLeftArea_13ra3_211", Nt = "_headerRightArea_13ra3_221", Pt = "_headerButtonRow_13ra3_235", Ft = "_brand_13ra3_247", It = "_headerIcon_13ra3_259", Lt = "_headerTitle_13ra3_271", Rt = "_headerBtn_13ra3_281", zt = "_headerBtnIcon_13ra3_307", Bt = "_scrollContainer_13ra3_319", Vt = "_contentWrapper_13ra3_377", Ht = "_panelBody_13ra3_405", Ut = "_statusDot_13ra3_459", Wt = "_statusDotConnected_13ra3_477", Gt = "_statusDotDisconnected_13ra3_487", Kt = {
+		panelContainer: Ct,
+		left: wt,
+		slideIn: Tt,
+		right: Et,
+		slideInRight: Dt,
+		panelInner: Ot,
+		collapseButton: kt,
+		collapseIcon: At,
+		panelHeader: jt,
+		headerLeftArea: Mt,
+		headerRightArea: Nt,
+		headerButtonRow: Pt,
+		brand: Ft,
+		headerIcon: It,
+		headerTitle: Lt,
+		headerBtn: Rt,
+		headerBtnIcon: zt,
+		scrollContainer: Bt,
+		contentWrapper: Vt,
+		panelBody: Ht,
+		statusDot: Ut,
+		statusDotConnected: Wt,
+		statusDotDisconnected: Gt
 	};
 })), Jt, Yt, Xt, Zt, Qt, $t, en, tn, nn, rn, an, on, sn, cn, ln, un, dn, fn, pn, mn, hn, gn, _n, vn, yn, bn, xn, Sn, Cn, wn, Tn, En, Dn, On, kn, An, jn, Mn, Nn, Pn, Fn, In, Ln, Rn, zn, j, Bn = o((() => {
 	Jt = "_container_1uttj_1", Yt = "_topActionBar_1uttj_19", Xt = "_charBlock_1uttj_31", Zt = "_blockHeader_1uttj_53", Qt = "_headerLeft_1uttj_67", $t = "_charName_1uttj_83", en = "_headerSwitches_1uttj_103", tn = "_settingsGearBtn_1uttj_115", nn = "_dashboardContainer_1uttj_151", rn = "_uniformControlGrid_1uttj_169", an = "_avatarContainer_1uttj_183", on = "_readOnlyAvatar_1uttj_247", sn = "_avatarImg_1uttj_273", cn = "_avatarFallback_1uttj_285", ln = "_statusComponentContainer_1uttj_305", un = "_tabActive_1uttj_313", dn = "_gaugeGrid_1uttj_325", fn = "_gaugeCard_1uttj_337", pn = "_gaugeLabelRow_1uttj_357", mn = "_gaugeName_1uttj_369", hn = "_gaugeLabelContainer_1uttj_385", gn = "_lockIcon_1uttj_401", _n = "_lockIconActive_1uttj_417", vn = "_smallNumberInput_1uttj_425", yn = "_gaugeMaxText_1uttj_465", bn = "_gaugeValues_1uttj_475", xn = "_gaugeMax_1uttj_465", Sn = "_gaugeTrack_1uttj_497", Cn = "_gaugeFill_1uttj_513", wn = "_integerRowGrid_1uttj_525", Tn = "_integerBlockCard_1uttj_537", En = "_integerFieldLeft_1uttj_563", Dn = "_integerFieldName_1uttj_603", On = "_integerFieldControlGroup_1uttj_625", kn = "_integerRowBtn_1uttj_641", An = "_textStack_1uttj_669", jn = "_textBlockCard_1uttj_681", Mn = "_textBlockLabel_1uttj_703", Nn = "_textBlockInputWrapper_1uttj_731", Pn = "_textBlockInput_1uttj_731", Fn = "_dangerText_1uttj_789", In = "_dangerTrack_1uttj_791", Ln = "_dangerFlash_1uttj_793", Rn = "_flashDanger_1uttj_1", zn = "_cropperCanvasWrapper_1uttj_807", j = {
@@ -10037,7 +10037,7 @@ function kr({ char: e, characters: t = [], activeTabs: n, onOpenEditor: r }) {
 	});
 }
 var N, Ar = o((() => {
-	d(), br(), yt(), Je(), Or(), N = Ve();
+	d(), br(), vt(), Je(), Or(), N = Ve();
 })), jr, Mr, Nr, Pr, Fr, Ir, Lr, Rr, zr, Br, Vr, Hr, Ur, Wr, Gr, Kr, qr, Jr, Yr, Xr, Zr, Qr, $r, ei, ti, ni, ri, ii, ai, oi, si, ci, li, ui, di, fi, pi, mi, hi, gi, _i, vi, yi, P, bi = o((() => {
 	jr = "_tabContentStack_ofn4r_1", Mr = "_inlineTabContent_ofn4r_15", Nr = "_slideDownIn_ofn4r_1", Pr = "_inlineHeaderLabelRow_ofn4r_43", Fr = "_inlineSheetTitle_ofn4r_57", Ir = "_flexCenterGap_ofn4r_69", Lr = "_lockIcon_ofn4r_81", Rr = "_lockIconActive_ofn4r_97", zr = "_sidebarInventoryGrid_ofn4r_107", Br = "_sidebarSection_ofn4r_119", Vr = "_sidebarSectionHeader_ofn4r_131", Hr = "_sidebarSectionTitleRow_ofn4r_145", Ur = "_sidebarSectionTitle_ofn4r_145", Wr = "_sideBySideRow_ofn4r_173", Gr = "_sidebarEquipSlot_ofn4r_185", Kr = "_sidebarStorageSlot_ofn4r_185", qr = "_slotSmallLabel_ofn4r_209", Jr = "_itemInfoStack_ofn4r_221", Yr = "_itemSidebarText_ofn4r_231", Xr = "_containerBadge_ofn4r_247", Zr = "_itemSidebarDescText_ofn4r_275", Qr = "_itemSidebarDescTextIndented_ofn4r_287", $r = "_sidebarStorageHeaderRow_ofn4r_299", ei = "_sidebarStorageList_ofn4r_313", ti = "_storageItemBlock_ofn4r_325", ni = "_itemMainLine_ofn4r_337", ri = "_itemBullet_ofn4r_351", ii = "_qtyBadge_ofn4r_363", ai = "_currencyBadge_ofn4r_381", oi = "_assetBadge_ofn4r_405", si = "_emptyTextIndicator_ofn4r_427", ci = "_questContainer_ofn4r_439", li = "_questContentBlock_ofn4r_453", ui = "_questCompleted_ofn4r_475", di = "_textStrike_ofn4r_483", fi = "_questHeaderRow_ofn4r_491", pi = "_questTitleInputText_ofn4r_505", mi = "_sideQuestHeader_ofn4r_523", hi = "_questsListContainer_ofn4r_535", gi = "_questSideHeaderRow_ofn4r_547", _i = "_questSideIndex_ofn4r_561", vi = "_emptyPlaceholder_ofn4r_573", yi = "_textBlockInput_ofn4r_587", P = {
 		tabContentStack: jr,
@@ -10402,7 +10402,7 @@ function xi({ char: e, activeTabs: t, onOpenEditor: n }) {
 	});
 }
 var F, Si = o((() => {
-	d(), bi(), yt(), Je(), Or(), F = Ve();
+	d(), bi(), vt(), Je(), Or(), F = Ve();
 })), Ci, wi, Ti, Ei, Di, Oi, ki, Ai, ji, Mi, Ni, Pi, Fi, Ii, Li, Ri, zi, Bi, Vi = o((() => {
 	Ci = "_presetBar_1gqp4_1", wi = "_presetInputContainer_1gqp4_12", Ti = "_fieldLabel_1gqp4_20", Ei = "_presetNameInput_1gqp4_26", Di = "_nameInput_1gqp4_27", Oi = "_notice_1gqp4_43", ki = "_noticeError_1gqp4_58", Ai = "_refreshButton_1gqp4_62", ji = "_presetDropdown_1gqp4_78", Mi = "_presetDropdownItem_1gqp4_88", Ni = "_presetDropdownItemLoadArea_1gqp4_101", Pi = "_presetItemName_1gqp4_121", Fi = "_presetDropdownEmpty_1gqp4_128", Ii = "_listHint_1gqp4_135", Li = "_charItem_1gqp4_142", Ri = "_actions_1gqp4_157", zi = "_charIdBadge_1gqp4_164", Bi = {
 		presetBar: Ci,
@@ -13560,7 +13560,7 @@ function Mo({ charId: e, initialTab: t = "status", onClose: n, characters: r, on
 	});
 }
 var No, V, Po = o((() => {
-	No = /* @__PURE__ */ l(d()), Je(), ho(), Ne(), Le(), yt(), le(), Or(), vo(), So(), Eo(), jo(), V = Ve();
+	No = /* @__PURE__ */ l(d()), Je(), ho(), Ne(), Le(), vt(), le(), Or(), vo(), So(), Eo(), jo(), V = Ve();
 }));
 //#endregion
 //#region src/core/PresetStorage.js
@@ -14113,7 +14113,7 @@ function qo({ onClose: e }) {
 	});
 }
 var Jo, H, Yo, Xo = o((() => {
-	Jo = /* @__PURE__ */ l(d()), Je(), Vi(), le(), yt(), na(), Po(), Ko(), H = Ve(), Yo = (e) => JSON.parse(JSON.stringify(e));
+	Jo = /* @__PURE__ */ l(d()), Je(), Vi(), le(), vt(), na(), Po(), Ko(), H = Ve(), Yo = (e) => JSON.parse(JSON.stringify(e));
 }));
 //#endregion
 //#region src/tracker/StatusSection.jsx
@@ -14656,7 +14656,7 @@ function Qo({ onOpenEditor: e }) {
 	});
 }
 var $o, U, es, ts = o((() => {
-	$o = /* @__PURE__ */ l(d()), Je(), Bn(), Ar(), Si(), Xo(), le(), yt(), Or(), U = Ve(), es = () => /* @__PURE__ */ (0, U.jsxs)("svg", {
+	$o = /* @__PURE__ */ l(d()), Je(), Bn(), Ar(), Si(), Xo(), le(), vt(), Or(), U = Ve(), es = () => /* @__PURE__ */ (0, U.jsxs)("svg", {
 		viewBox: "0 0 24 24",
 		width: "14",
 		height: "14",
@@ -14672,8 +14672,8 @@ var $o, U, es, ts = o((() => {
 			r: "4"
 		})]
 	});
-})), ns, rs, is, as, os, ss, cs, ls, us, ds, fs, ps, ms, hs, gs, _s, vs, ys, bs, xs, Ss, Cs, W, ws = o((() => {
-	ns = "_section_90892_3", rs = "_sectionStack_90892_17", is = "_label_90892_29", as = "_textarea_90892_41", os = "_promptCard_90892_77", ss = "_promptCardHeader_90892_91", cs = "_accordionHeader_90892_105", ls = "_buttonGroup_90892_121", us = "_textareaStack_90892_131", ds = "_slotNotice_90892_145", fs = "_defGroup_90892_161", ps = "_defGroupTitle_90892_181", ms = "_defInput_90892_197", hs = "_switchesContainer_90892_233", gs = "_switchCardRow_90892_247", _s = "_switchTitle_90892_267", vs = "_relationsConfigCard_90892_277", ys = "_inlineFormRow_90892_297", bs = "_formSubLabel_90892_309", xs = "_worldStateGroupCard_90892_323", Ss = "_groupCardHeader_90892_343", Cs = "_worldStateSubRow_90892_357", W = {
+})), ns, rs, is, as, os, ss, cs, ls, us, ds, fs, ps, ms, hs, gs, _s, vs, ys, bs, xs, Ss, Cs, ws, Ts, Es, W, Ds = o((() => {
+	ns = "_section_11qmb_3", rs = "_sectionStack_11qmb_17", is = "_label_11qmb_29", as = "_textarea_11qmb_41", os = "_promptCard_11qmb_77", ss = "_promptCardHeader_11qmb_91", cs = "_accordionHeader_11qmb_105", ls = "_buttonGroup_11qmb_121", us = "_textareaStack_11qmb_131", ds = "_slotNotice_11qmb_145", fs = "_defGroup_11qmb_161", ps = "_defGroupTitle_11qmb_181", ms = "_defInput_11qmb_197", hs = "_switchesContainer_11qmb_233", gs = "_switchCardRow_11qmb_247", _s = "_switchTitle_11qmb_267", vs = "_relationsConfigCard_11qmb_277", ys = "_inlineFormRow_11qmb_297", bs = "_formSubLabel_11qmb_309", xs = "_worldStateGroupCard_11qmb_323", Ss = "_groupCardHeader_11qmb_343", Cs = "_worldStateSubRow_11qmb_357", ws = "_definitionGuideRow_11qmb_369", Ts = "_suggestButton_11qmb_401", Es = "_suggestionFeedback_11qmb_423", W = {
 		section: ns,
 		sectionStack: rs,
 		label: is,
@@ -14695,12 +14695,15 @@ var $o, U, es, ts = o((() => {
 		formSubLabel: bs,
 		worldStateGroupCard: xs,
 		groupCardHeader: Ss,
-		worldStateSubRow: Cs
+		worldStateSubRow: Cs,
+		definitionGuideRow: ws,
+		suggestButton: Ts,
+		suggestionFeedback: Es
 	};
 }));
 //#endregion
 //#region src/core/ActivePrompt.js
-function Ts(e = []) {
+function Os(e = []) {
 	let t = (t, n = !0) => {
 		let r = e.find((e) => e.id === t);
 		return r ? r.enabled : n;
@@ -14718,8 +14721,8 @@ function Ts(e = []) {
 		world_events: t("world_events", !0)
 	};
 }
-function Es(e, t = null) {
-	let n = e.guidePrompts || [], r = e.characters || [], i = Ts(n), a = t === null ? r.some((e) => e.isActive !== !1 && e.activeInjection !== !1 && e.activePlayer === !0) : t, o = {};
+function ks(e, t = null) {
+	let n = e.guidePrompts || [], r = e.characters || [], i = Os(n), a = t === null ? r.some((e) => e.isActive !== !1 && e.activeInjection !== !1 && e.activePlayer === !0) : t, o = {};
 	t !== null && (o.activePlayer = t), i.status && (o.status = {
 		Status_Name_1: "new_value (type: consumable, min: 0, max: 100. e.g. HP - reduce on damage, increase on rest)",
 		Status_Name_2: "new_value (type: stacking, min: 0, max: 100. e.g. Fatigue - increase on strenuous actions)",
@@ -14789,13 +14792,94 @@ function Es(e, t = null) {
 		desc: "Details"
 	}]), Object.keys(c).length > 0 && (s.World = c), `\n<!--RPG_TRACKER\n\`\`\`json\n${JSON.stringify(s, null, 2)}\n\`\`\`\n-->\n`;
 }
-var Ds = o((() => {}));
+var As = o((() => {}));
 //#endregion
 //#region src/editor/PromptEditor.jsx
-function Os({ onClose: e }) {
-	let { trackerData: t, updateTrackerData: n } = Ue(), [r, i] = (0, ks.useState)("system"), [a, o] = (0, ks.useState)(""), [s, c] = (0, ks.useState)(""), [l, u] = (0, ks.useState)(""), [d, f] = (0, ks.useState)(""), [p, m] = (0, ks.useState)(""), [h, g] = (0, ks.useState)(""), [_, v] = (0, ks.useState)(""), [y, b] = (0, ks.useState)(""), [x, te] = (0, ks.useState)(""), [ne, T] = (0, ks.useState)(""), [ce, le] = (0, ks.useState)(!1), [E, ue] = (0, ks.useState)(!1), [de, fe] = (0, ks.useState)(!1), [pe, me] = (0, ks.useState)(!1), [D, O] = (0, ks.useState)(!1), [he, ge] = (0, ks.useState)(!1), [_e, ve] = (0, ks.useState)(!1), [ye, be] = (0, ks.useState)(!1), [xe, Se] = (0, ks.useState)(!1), [Ce, we] = (0, ks.useState)(!1), [Te, Ee] = (0, ks.useState)(!1), [De, Oe] = (0, ks.useState)(!0), [ke, Ae] = (0, ks.useState)(!1), [je, Me] = (0, ks.useState)(!1), [Ne, Pe] = (0, ks.useState)(!1), [Fe, Ie] = (0, ks.useState)(!1), [Le, Re] = (0, ks.useState)(!1), [ze, Be] = (0, ks.useState)([]), [Ve, He] = (0, ks.useState)({}), [k, We] = (0, ks.useState)({}), [Ge, Ke] = (0, ks.useState)({}), [qe, Je] = (0, ks.useState)({}), Ye = t.characters && t.characters.length > 0 ? t.characters : C(), Xe = (() => {
+function js({ onClose: e }) {
+	let { trackerData: t, updateTrackerData: n } = Ue(), [r, i] = (0, G.useState)("system"), [a, o] = (0, G.useState)(""), [s, c] = (0, G.useState)(""), [l, u] = (0, G.useState)(""), [d, f] = (0, G.useState)(""), [p, m] = (0, G.useState)(""), [h, g] = (0, G.useState)(""), [_, v] = (0, G.useState)(""), [y, b] = (0, G.useState)(""), [x, te] = (0, G.useState)(""), [ne, T] = (0, G.useState)(""), [ce, le] = (0, G.useState)(!1), [E, ue] = (0, G.useState)(!1), [de, fe] = (0, G.useState)(!1), [pe, me] = (0, G.useState)(!1), [D, O] = (0, G.useState)(!1), [he, ge] = (0, G.useState)(!1), [_e, ve] = (0, G.useState)(!1), [ye, be] = (0, G.useState)(!1), [xe, Se] = (0, G.useState)(!1), [Ce, we] = (0, G.useState)(!1), [Te, Ee] = (0, G.useState)(!1), [De, Oe] = (0, G.useState)(!0), [ke, Ae] = (0, G.useState)(!1), [je, Me] = (0, G.useState)(!1), [Ne, Pe] = (0, G.useState)(!1), [Fe, Ie] = (0, G.useState)(!1), [Le, Re] = (0, G.useState)(!1), [ze, Be] = (0, G.useState)([]), [Ve, He] = (0, G.useState)({}), [k, We] = (0, G.useState)({}), [Ge, Ke] = (0, G.useState)(null), [qe, Je] = (0, G.useState)(""), Ye = (0, G.useRef)(Ve), Xe = (0, G.useRef)({}), Ze = (0, G.useRef)(0), Qe = (0, G.useRef)(null), $e = (0, G.useRef)(!0), et = (0, G.useRef)(t), tt = (0, G.useRef)(null);
+	et.current = t, (0, G.useEffect)(() => ($e.current = !0, () => {
+		$e.current = !1, Ze.current += 1;
+	}), []);
+	let nt = (e) => {
+		Ze.current += 1, Ye.current = e, He(e), Je("");
+	}, rt = (e, t) => {
+		Xe.current[e] = (Xe.current[e] || 0) + 1;
+		let n = {
+			...Ye.current,
+			[e]: t
+		};
+		Ye.current = n, He(n);
+	}, it = (e, r = t.globalDefinitions) => {
+		Ze.current += 1, tt.current = {
+			characters: e,
+			definitions: r,
+			chatKey: window.RPGBridge?.getCurrentChatKey?.() ?? null
+		}, n({
+			...t,
+			characters: e,
+			globalDefinitions: r
+		});
+	}, at = () => {
+		Ze.current += 1, e();
+	}, ot = async (e, t) => {
+		if (Qe.current) return;
+		let n = window.RPGBridge?.suggestFieldDefinition;
+		if (typeof n != "function") {
+			Je("The AI suggestion service is not ready. Refresh the page and try again.");
+			return;
+		}
+		let r = `${e}_${t.id}`, i = {
+			key: r,
+			epoch: Ze.current,
+			edit: Xe.current[r] || 0,
+			tracker: et.current
+		}, a = () => $e.current && Qe.current === i && Ze.current === i.epoch && et.current === i.tracker && (Xe.current[r] || 0) === i.edit;
+		Qe.current = i, Ke(r), Je(`Suggesting a short guide for ${t.name || t.id}…`);
+		try {
+			let i = await n({
+				category: e,
+				id: t.id,
+				name: t.name || t.id,
+				type: e === "profile" ? "text" : e === "relation" ? k.relationsFieldType || "integer" : t.type,
+				min: t.min,
+				max: t.max,
+				definition: Ye.current[r] || ""
+			});
+			if (!a()) {
+				$e.current && Je("Suggestion discarded because the field or draft changed. Your edits were kept.");
+				return;
+			}
+			if (typeof i != "string" || !i.trim()) throw Error("The AI returned an empty suggestion. Please try again.");
+			rt(r, i), Je(`Suggested guide for ${t.name || t.id}. Edit it as needed, then Save Changes.`);
+		} catch (e) {
+			a() ? Je(e?.message || "Could not suggest a guide. Your draft was kept; please try again.") : $e.current && Je("Suggestion discarded because the field or draft changed. Your edits were kept.");
+		} finally {
+			Qe.current === i && (Qe.current = null, $e.current && Ke(null));
+		}
+	}, st = (e, t) => {
+		let n = `${e}_${t.id}`, r = Ge === n;
+		return /* @__PURE__ */ (0, K.jsxs)("div", {
+			className: W.definitionGuideRow,
+			"data-field-key": n,
+			children: [/* @__PURE__ */ (0, K.jsx)(Sr, {
+				className: W.defInput,
+				value: Ve[n] || "",
+				onChange: (e) => rt(n, e),
+				placeholder: `AI Guide for ${t.name || t.id}...`
+			}), /* @__PURE__ */ (0, K.jsx)("button", {
+				type: "button",
+				className: `rpg-btn-sm ${W.suggestButton}`,
+				"aria-label": `Suggest guide for ${t.name || t.id}`,
+				"aria-busy": r,
+				disabled: !!Ge,
+				title: "Suggest a clear guide in 1–2 sentences using one AI request. You can edit the result before saving.",
+				onClick: () => ot(e, t),
+				children: r ? "Suggesting…" : "Suggest"
+			})]
+		});
+	}, [ct, lt] = (0, G.useState)({}), [ut, dt] = (0, G.useState)({}), ft = t.characters && t.characters.length > 0 ? t.characters : C(), pt = (() => {
 		let e = /* @__PURE__ */ new Map(), t = /* @__PURE__ */ new Map(), n = /* @__PURE__ */ new Map();
-		Ye.forEach((r) => {
+		ft.forEach((r) => {
 			(r.statusSchema || []).forEach((t) => {
 				let n = t.id || t.name;
 				n && !e.has(n) && e.set(n, {
@@ -14848,12 +14932,14 @@ function Os({ onClose: e }) {
 			relations: Array.from(n.values()).sort(a)
 		};
 	})();
-	(0, ks.useEffect)(() => {
+	(0, G.useEffect)(() => {
 		o(t.systemPromptHeader_merged ?? re), c(t.systemPromptFooter_merged ?? ie), u(t.systemPrompt_readonly ?? se), f(t.systemPromptHeader_separated ?? ae), m(t.systemPromptFooter_separated ?? oe), g(t.addCharPrompt ?? w), v(t.addPlayerCharPrompt ?? ee), b(t.cyoaPrompt ?? "CYOA Mode: Act as an interactive adventure where you present choices to the player at the end of each response."), te(t.weatherPrompt ?? "Dynamic Weather: Include weather changes and environmental descriptions."), T(t.worldEventsPrompt ?? "World Events: Generate random world events that affect the current situation.");
 		let e = t.guidePrompts ? [...t.guidePrompts] : JSON.parse(JSON.stringify(S));
 		S.forEach((t) => {
 			e.find((e) => e.id === t.id) || e.push(t);
-		}), Be(e), He(t.globalDefinitions || {}), We(t.worldSchema || {
+		}), Be(e);
+		let n = tt.current, r = n && n.characters === t.characters && n.definitions === t.globalDefinitions && n.chatKey === (window.RPGBridge?.getCurrentChatKey?.() ?? null);
+		tt.current = null, r || nt(t.globalDefinitions || {}), We(t.worldSchema || {
 			dateSelect: "1",
 			dateCustom: "yyyy-mm-dd",
 			timeSelect: "1",
@@ -14865,7 +14951,7 @@ function Os({ onClose: e }) {
 			relationsFieldType: "integer"
 		});
 	}, [t]);
-	let Ze = [
+	let mt = [
 		{
 			v: "1",
 			l: "Year/Month/Day",
@@ -14891,7 +14977,7 @@ function Os({ onClose: e }) {
 			l: "Custom",
 			ex: ""
 		}
-	], Qe = [
+	], ht = [
 		{
 			v: "1",
 			l: "24:00 Format",
@@ -14912,7 +14998,7 @@ function Os({ onClose: e }) {
 			l: "Custom",
 			ex: ""
 		}
-	], $e = [
+	], gt = [
 		{
 			v: "1",
 			l: "Text",
@@ -14933,7 +15019,7 @@ function Os({ onClose: e }) {
 			l: "Custom",
 			ex: ""
 		}
-	], et = (e, t, n) => {
+	], _t = (e, t, n) => {
 		let r = { [e]: t };
 		if (n) {
 			let i = n.find((e) => e.v === t);
@@ -14943,86 +15029,75 @@ function Os({ onClose: e }) {
 			...e,
 			...r
 		}));
-	}, tt = (e, t) => {
-		Je((n) => ({
+	}, A = (e, t) => {
+		dt((n) => ({
 			...n,
 			[e]: t
 		}));
-	}, nt = (e, r, i) => {
-		let a = i.trim();
-		if (!a || a === r) return;
-		let o = a.replace(/[^\p{L}\p{N}_]/gu, "_").replace(/_+/g, "_").replace(/^_+|_+$/g, "");
-		if (!o) return;
-		let s = Ye.map((t) => {
-			let n = JSON.parse(JSON.stringify(t));
-			if (e === "status") Array.isArray(n.statusSchema) && (n.statusSchema = n.statusSchema.map((e) => e.id === r || e.name === r ? {
+	}, vt = (e, n, r) => {
+		let i = r.trim();
+		if (!i || i === n) return;
+		let a = i.replace(/[^\p{L}\p{N}_]/gu, "_").replace(/_+/g, "_").replace(/^_+|_+$/g, "");
+		if (!a) return;
+		let o = ft.map((t) => {
+			let r = JSON.parse(JSON.stringify(t));
+			if (e === "status") Array.isArray(r.statusSchema) && (r.statusSchema = r.statusSchema.map((e) => e.id === n || e.name === n ? {
 				...e,
-				id: o,
-				name: a
-			} : e)), n.status && n.status[r] !== void 0 && (n.status[o] = n.status[r], delete n.status[r]);
+				id: a,
+				name: i
+			} : e)), r.status && r.status[n] !== void 0 && (r.status[a] = r.status[n], delete r.status[n]);
 			else if (e === "profile") {
-				if (n.profile && n.profile[r] !== void 0) {
+				if (r.profile && r.profile[n] !== void 0) {
 					let e = {}, t = {}, i = {};
-					Object.keys(n.profile).forEach((a) => {
-						let s = a === r ? o : a;
-						e[s] = n.profile[a], n.profileLocks && (t[s] = n.profileLocks[a]), n.profileInjects && (i[s] = n.profileInjects[a]);
-					}), n.profile = e, n.profileLocks = t, n.profileInjects = i;
+					Object.keys(r.profile).forEach((o) => {
+						let s = o === n ? a : o;
+						e[s] = r.profile[o], r.profileLocks && (t[s] = r.profileLocks[o]), r.profileInjects && (i[s] = r.profileInjects[o]);
+					}), r.profile = e, r.profileLocks = t, r.profileInjects = i;
 				}
-			} else e === "relation" && n.relations && Object.values(n.relations).forEach((e) => {
-				e.values && e.values[r] !== void 0 && (e.values[o] = e.values[r], delete e.values[r]), e.targetValues && e.targetValues[r] !== void 0 && (e.targetValues[o] = e.targetValues[r], delete e.targetValues[r]);
+			} else e === "relation" && r.relations && Object.values(r.relations).forEach((e) => {
+				e.values && e.values[n] !== void 0 && (e.values[a] = e.values[n], delete e.values[n]), e.targetValues && e.targetValues[n] !== void 0 && (e.targetValues[a] = e.targetValues[n], delete e.targetValues[n]);
 			});
-			return n;
-		}), c = `${e}_${r}`, l = `${e}_${o}`, u = { ...Ve };
-		u[c] !== void 0 && (u[l] = u[c], delete u[c]), He(u), n({
-			...t,
-			characters: s,
-			globalDefinitions: u
-		}), Ke((e) => {
+			return r;
+		}), s = `${e}_${n}`, c = `${e}_${a}`, l = (e) => {
 			let t = { ...e };
-			return t[c] !== void 0 && (t[l] = t[c], delete t[c]), t;
-		}), Je((e) => {
+			return s !== c && t[s] !== void 0 && (t[c] = t[s], delete t[s]), t;
+		}, u = l(Ye.current), d = l(t.globalDefinitions);
+		nt(u), it(o, d), lt((e) => {
 			let t = { ...e };
-			return t[c] !== void 0 && (t[l] = t[c], delete t[c]), t;
+			return t[s] !== void 0 && (t[c] = t[s], delete t[s]), t;
+		}), dt((e) => {
+			let t = { ...e };
+			return t[s] !== void 0 && (t[c] = t[s], delete t[s]), t;
 		});
-	}, rt = (e, r, i) => {
-		if (qe[`status_${e}`] !== !0) return;
-		let a = Ye.map((t) => {
-			let n = JSON.parse(JSON.stringify(t));
-			return Array.isArray(n.statusSchema) && (n.statusSchema = n.statusSchema.map((t) => t.id === e || t.name === e ? {
-				...t,
-				[r]: i
-			} : t)), n;
-		});
-		n({
-			...t,
-			characters: a
-		});
-	}, it = (e, r, i) => {
-		if (qe[`relation_${e}`] !== !0) return;
-		let a = Ye.map((t) => {
-			let n = JSON.parse(JSON.stringify(t));
-			return n.relations && Object.values(n.relations).forEach((t) => {
-				if (t.values && t.values[e]) {
-					let n = t.values[e], a = typeof n == "object" && n ? n : { value: n || 0 };
-					t.values[e] = {
+	}, yt = (e, t, n) => {
+		ut[`status_${e}`] === !0 && it(ft.map((r) => {
+			let i = JSON.parse(JSON.stringify(r));
+			return Array.isArray(i.statusSchema) && (i.statusSchema = i.statusSchema.map((r) => r.id === e || r.name === e ? {
+				...r,
+				[t]: n
+			} : r)), i;
+		}));
+	}, bt = (e, t, n) => {
+		ut[`relation_${e}`] === !0 && it(ft.map((r) => {
+			let i = JSON.parse(JSON.stringify(r));
+			return i.relations && Object.values(i.relations).forEach((r) => {
+				if (r.values && r.values[e]) {
+					let i = r.values[e], a = typeof i == "object" && i ? i : { value: i || 0 };
+					r.values[e] = {
 						...a,
-						[r]: i
+						[t]: n
 					};
 				}
-				if (t.targetValues && t.targetValues[e]) {
-					let n = t.targetValues[e], a = typeof n == "object" && n ? n : { value: n || 0 };
-					t.targetValues[e] = {
+				if (r.targetValues && r.targetValues[e]) {
+					let i = r.targetValues[e], a = typeof i == "object" && i ? i : { value: i || 0 };
+					r.targetValues[e] = {
 						...a,
-						[r]: i
+						[t]: n
 					};
 				}
-			}), n;
-		});
-		n({
-			...t,
-			characters: a
-		});
-	}, at = () => {
+			}), i;
+		}));
+	}, xt = () => {
 		n({
 			...t,
 			systemPromptHeader_merged: a,
@@ -15038,8 +15113,8 @@ function Os({ onClose: e }) {
 			cyoaPrompt: y,
 			weatherPrompt: x,
 			worldEventsPrompt: ne
-		}), alert("Prompt configurations and field definitions saved successfully."), e();
-	}, ot = () => {
+		}), alert("Prompt configurations and field definitions saved successfully."), at();
+	}, St = () => {
 		let e = new Blob([JSON.stringify({
 			systemPromptHeader_merged: a,
 			systemPromptFooter_merged: s,
@@ -15056,69 +15131,69 @@ function Os({ onClose: e }) {
 			worldEventsPrompt: ne
 		}, null, 2)], { type: "application/json" }), t = URL.createObjectURL(e), n = document.createElement("a");
 		n.href = t, n.download = "rpg-tracker-prompt-settings.json", document.body.appendChild(n), n.click(), document.body.removeChild(n), URL.revokeObjectURL(t);
-	}, st = () => {
+	}, Ct = () => {
 		document.getElementById("prompt-import-file")?.click();
-	}, ct = (e) => {
+	}, wt = (e) => {
 		let t = e.target.files?.[0];
 		if (!t) return;
 		let n = new FileReader();
 		n.onload = (t) => {
 			try {
 				let e = JSON.parse(t.target.result);
-				e && typeof e == "object" ? (e.systemPromptHeader_merged !== void 0 && o(e.systemPromptHeader_merged), e.systemPromptFooter_merged !== void 0 && c(e.systemPromptFooter_merged), e.systemPrompt_readonly !== void 0 && u(e.systemPrompt_readonly), e.systemPromptHeader_separated !== void 0 && f(e.systemPromptHeader_separated), e.systemPromptFooter_separated !== void 0 && m(e.systemPromptFooter_separated), Array.isArray(e.guidePrompts) && Be(e.guidePrompts), e.globalDefinitions && typeof e.globalDefinitions == "object" && He(e.globalDefinitions), e.worldSchema && typeof e.worldSchema == "object" && We(e.worldSchema), e.addCharPrompt !== void 0 && g(e.addCharPrompt), e.addPlayerCharPrompt !== void 0 && v(e.addPlayerCharPrompt), e.cyoaPrompt !== void 0 && b(e.cyoaPrompt), e.weatherPrompt !== void 0 && te(e.weatherPrompt), e.worldEventsPrompt !== void 0 && T(e.worldEventsPrompt), alert("Prompt configurations imported successfully. Click 'Save Changes' to apply.")) : alert("Invalid file format. Please import a valid RPG Tracker prompt settings JSON file.");
+				e && typeof e == "object" ? (Ze.current += 1, e.systemPromptHeader_merged !== void 0 && o(e.systemPromptHeader_merged), e.systemPromptFooter_merged !== void 0 && c(e.systemPromptFooter_merged), e.systemPrompt_readonly !== void 0 && u(e.systemPrompt_readonly), e.systemPromptHeader_separated !== void 0 && f(e.systemPromptHeader_separated), e.systemPromptFooter_separated !== void 0 && m(e.systemPromptFooter_separated), Array.isArray(e.guidePrompts) && Be(e.guidePrompts), e.globalDefinitions && typeof e.globalDefinitions == "object" && nt(e.globalDefinitions), e.worldSchema && typeof e.worldSchema == "object" && We(e.worldSchema), e.addCharPrompt !== void 0 && g(e.addCharPrompt), e.addPlayerCharPrompt !== void 0 && v(e.addPlayerCharPrompt), e.cyoaPrompt !== void 0 && b(e.cyoaPrompt), e.weatherPrompt !== void 0 && te(e.weatherPrompt), e.worldEventsPrompt !== void 0 && T(e.worldEventsPrompt), alert("Prompt configurations imported successfully. Click 'Save Changes' to apply.")) : alert("Invalid file format. Please import a valid RPG Tracker prompt settings JSON file.");
 			} catch (e) {
 				console.error("Failed to import settings:", e), alert("Failed to parse settings file. Make sure it is a valid JSON.");
 			}
 			e.target.value = "";
 		}, n.readAsText(t);
-	}, lt = (e, t) => {
+	}, Tt = (e, t) => {
 		Be((n) => n.map((n) => n.id === e ? {
 			...n,
 			enabled: t
 		} : n));
-	}, ut = () => {
-		window.confirm("Clear all field guidelines? (Field styles and values are preserved)") && He({});
-	}, dt = (e) => {
-		Ke((t) => ({
+	}, Et = () => {
+		window.confirm("Clear all field guidelines? (Field styles and values are preserved)") && nt({});
+	}, Dt = (e) => {
+		lt((t) => ({
 			...t,
 			[e]: !t[e]
 		}));
-	}, ft = Es({
+	}, Ot = ks({
 		guidePrompts: ze,
-		characters: Ye,
+		characters: ft,
 		worldSchema: k
 	});
-	return /* @__PURE__ */ (0, G.jsx)("div", {
+	return /* @__PURE__ */ (0, K.jsx)("div", {
 		className: "rpg-modal-overlay",
-		children: /* @__PURE__ */ (0, G.jsxs)("div", {
+		children: /* @__PURE__ */ (0, K.jsxs)("div", {
 			className: "rpg-modal-container",
 			onClick: (e) => e.stopPropagation(),
 			children: [
-				/* @__PURE__ */ (0, G.jsxs)("header", {
+				/* @__PURE__ */ (0, K.jsxs)("header", {
 					className: "rpg-modal-header",
-					children: [/* @__PURE__ */ (0, G.jsx)("h4", { children: "Prompt Editor" }), /* @__PURE__ */ (0, G.jsx)("button", {
+					children: [/* @__PURE__ */ (0, K.jsx)("h4", { children: "Prompt Editor" }), /* @__PURE__ */ (0, K.jsx)("button", {
 						type: "button",
 						className: "rpg-modal-close-btn",
-						onClick: e,
+						onClick: at,
 						children: "×"
 					})]
 				}),
-				/* @__PURE__ */ (0, G.jsxs)("div", {
+				/* @__PURE__ */ (0, K.jsxs)("div", {
 					className: "rpg-tab-nav",
 					children: [
-						/* @__PURE__ */ (0, G.jsx)("button", {
+						/* @__PURE__ */ (0, K.jsx)("button", {
 							type: "button",
 							className: `rpg-tab-btn ${r === "system" ? "active" : ""}`,
 							onClick: () => i("system"),
 							children: "System Prompt"
 						}),
-						/* @__PURE__ */ (0, G.jsx)("button", {
+						/* @__PURE__ */ (0, K.jsx)("button", {
 							type: "button",
 							className: `rpg-tab-btn ${r === "addons" ? "active" : ""}`,
 							onClick: () => i("addons"),
 							children: "Add-ons"
 						}),
-						/* @__PURE__ */ (0, G.jsx)("button", {
+						/* @__PURE__ */ (0, K.jsx)("button", {
 							type: "button",
 							className: `rpg-tab-btn ${r === "definitions" ? "active" : ""}`,
 							onClick: () => i("definitions"),
@@ -15126,40 +15201,40 @@ function Os({ onClose: e }) {
 						})
 					]
 				}),
-				/* @__PURE__ */ (0, G.jsxs)("div", {
+				/* @__PURE__ */ (0, K.jsxs)("div", {
 					className: "rpg-modal-body",
 					children: [
-						r === "system" && /* @__PURE__ */ (0, G.jsxs)("div", {
+						r === "system" && /* @__PURE__ */ (0, K.jsxs)("div", {
 							className: W.sectionStack,
 							children: [
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Se(!xe),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: xe }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "System Prompt (Merged Mode)" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: xe }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "System Prompt (Merged Mode)" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => {
 													o(re), c(ie);
 												},
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${ce ? "rpg-btn-primary" : ""}`,
 												onClick: () => le(!ce),
 												children: ce ? "Done" : "Edit"
 											})]
 										})]
-									}), xe && /* @__PURE__ */ (0, G.jsxs)("div", {
+									}), xe && /* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.textareaStack,
 										children: [
-											/* @__PURE__ */ (0, G.jsx)("textarea", {
+											/* @__PURE__ */ (0, K.jsx)("textarea", {
 												className: W.textarea,
 												style: {
 													minHeight: "140px",
@@ -15169,11 +15244,11 @@ function Os({ onClose: e }) {
 												onChange: (e) => o(e.target.value),
 												readOnly: !ce
 											}),
-											/* @__PURE__ */ (0, G.jsx)("div", {
+											/* @__PURE__ */ (0, K.jsx)("div", {
 												className: W.slotNotice,
 												children: "[Hybrid State & Schema JSON will be injected here]"
 											}),
-											/* @__PURE__ */ (0, G.jsx)("textarea", {
+											/* @__PURE__ */ (0, K.jsx)("textarea", {
 												className: W.textarea,
 												style: {
 													minHeight: "140px",
@@ -15186,31 +15261,31 @@ function Os({ onClose: e }) {
 										]
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => we(!Ce),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: Ce }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "System Prompt (Separated Mode)" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: Ce }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "System Prompt (Separated Mode)" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => u(se),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${E ? "rpg-btn-primary" : ""}`,
 												onClick: () => ue(!E),
 												children: E ? "Done" : "Edit"
 											})]
 										})]
-									}), Ce && /* @__PURE__ */ (0, G.jsxs)("div", {
+									}), Ce && /* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.textareaStack,
-										children: [/* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: [/* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "160px",
@@ -15219,40 +15294,40 @@ function Os({ onClose: e }) {
 											value: l,
 											onChange: (e) => u(e.target.value),
 											readOnly: !E
-										}), /* @__PURE__ */ (0, G.jsx)("div", {
+										}), /* @__PURE__ */ (0, K.jsx)("div", {
 											className: W.slotNotice,
 											children: "[Live RPG Status (Values only) will be appended here]"
 										})]
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Ee(!Te),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: Te }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "System Prompt (Manual Update Mode)" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: Te }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "System Prompt (Manual Update Mode)" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => {
 													f(ae), m(oe);
 												},
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${de ? "rpg-btn-primary" : ""}`,
 												onClick: () => fe(!de),
 												children: de ? "Done" : "Edit"
 											})]
 										})]
-									}), Te && /* @__PURE__ */ (0, G.jsxs)("div", {
+									}), Te && /* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.textareaStack,
 										children: [
-											/* @__PURE__ */ (0, G.jsx)("textarea", {
+											/* @__PURE__ */ (0, K.jsx)("textarea", {
 												className: W.textarea,
 												style: {
 													minHeight: "140px",
@@ -15262,11 +15337,11 @@ function Os({ onClose: e }) {
 												onChange: (e) => f(e.target.value),
 												readOnly: !de
 											}),
-											/* @__PURE__ */ (0, G.jsx)("div", {
+											/* @__PURE__ */ (0, K.jsx)("div", {
 												className: W.slotNotice,
 												children: "[Hybrid State & Schema JSON will be injected here]"
 											}),
-											/* @__PURE__ */ (0, G.jsx)("textarea", {
+											/* @__PURE__ */ (0, K.jsx)("textarea", {
 												className: W.textarea,
 												style: {
 													minHeight: "140px",
@@ -15279,20 +15354,20 @@ function Os({ onClose: e }) {
 										]
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
 									children: [
-										/* @__PURE__ */ (0, G.jsx)("div", {
+										/* @__PURE__ */ (0, K.jsx)("div", {
 											className: W.promptCardHeader,
-											children: /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: /* @__PURE__ */ (0, K.jsxs)("div", {
 												className: W.accordionHeader,
 												onClick: () => Oe(!De),
-												children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: De }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "Schema Prompt Preview" })]
+												children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: De }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "Schema Prompt Preview" })]
 											})
 										}),
-										De && /* @__PURE__ */ (0, G.jsx)("div", {
+										De && /* @__PURE__ */ (0, K.jsx)("div", {
 											className: W.textareaStack,
-											children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+											children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 												className: W.textarea,
 												style: {
 													minHeight: "180px",
@@ -15300,67 +15375,67 @@ function Os({ onClose: e }) {
 													fontFamily: "monospace",
 													fontSize: "11px"
 												},
-												value: ft.trim(),
+												value: Ot.trim(),
 												readOnly: !0
 											})
 										}),
-										/* @__PURE__ */ (0, G.jsxs)("div", {
+										/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.switchesContainer,
 											children: [
 												["status", "profile"].map((e) => {
 													let t = ze.find((t) => t.id === e);
-													return t ? /* @__PURE__ */ (0, G.jsxs)("div", {
+													return t ? /* @__PURE__ */ (0, K.jsxs)("div", {
 														className: W.switchCardRow,
-														children: [/* @__PURE__ */ (0, G.jsxs)("span", {
+														children: [/* @__PURE__ */ (0, K.jsxs)("span", {
 															className: W.switchTitle,
 															children: ["Update ", e.charAt(0).toUpperCase() + e.slice(1)]
-														}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+														}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 															checked: t.enabled,
-															onChange: (t) => lt(e, t)
+															onChange: (t) => Tt(e, t)
 														})]
 													}, e) : null;
 												}),
 												(() => {
 													let e = ze.find((e) => e.id === "relations");
-													return e ? /* @__PURE__ */ (0, G.jsxs)("div", {
+													return e ? /* @__PURE__ */ (0, K.jsxs)("div", {
 														className: W.relationsConfigCard,
-														children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+														children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 															className: W.switchCardRow,
 															style: {
 																padding: 0,
 																background: "transparent",
 																border: "none"
 															},
-															children: [/* @__PURE__ */ (0, G.jsx)("span", {
+															children: [/* @__PURE__ */ (0, K.jsx)("span", {
 																className: W.switchTitle,
 																children: "Update Relations"
-															}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+															}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 																checked: e.enabled,
-																onChange: (e) => lt("relations", e)
+																onChange: (e) => Tt("relations", e)
 															})]
-														}), /* @__PURE__ */ (0, G.jsxs)("div", {
+														}), /* @__PURE__ */ (0, K.jsxs)("div", {
 															className: W.inlineFormRow,
-															children: [/* @__PURE__ */ (0, G.jsx)("span", {
+															children: [/* @__PURE__ */ (0, K.jsx)("span", {
 																className: W.formSubLabel,
 																children: "Field type"
-															}), /* @__PURE__ */ (0, G.jsxs)("select", {
+															}), /* @__PURE__ */ (0, K.jsxs)("select", {
 																className: "rpg-select-custom",
 																style: {
 																	flex: 1,
 																	height: "28px"
 																},
 																value: k.relationsFieldType || "integer",
-																onChange: (e) => et("relationsFieldType", e.target.value),
+																onChange: (e) => _t("relationsFieldType", e.target.value),
 																children: [
-																	/* @__PURE__ */ (0, G.jsx)("option", {
+																	/* @__PURE__ */ (0, K.jsx)("option", {
 																		value: "none",
 																		children: "none"
 																	}),
-																	/* @__PURE__ */ (0, G.jsx)("option", {
+																	/* @__PURE__ */ (0, K.jsx)("option", {
 																		value: "integer",
 																		children: "integer"
 																	}),
-																	/* @__PURE__ */ (0, G.jsx)("option", {
+																	/* @__PURE__ */ (0, K.jsx)("option", {
 																		value: "stacking",
 																		children: "stacking"
 																	})
@@ -15371,21 +15446,21 @@ function Os({ onClose: e }) {
 												})(),
 												["inventory", "quests"].map((e) => {
 													let t = ze.find((t) => t.id === e);
-													return t ? /* @__PURE__ */ (0, G.jsxs)("div", {
+													return t ? /* @__PURE__ */ (0, K.jsxs)("div", {
 														className: W.switchCardRow,
-														children: [/* @__PURE__ */ (0, G.jsxs)("span", {
+														children: [/* @__PURE__ */ (0, K.jsxs)("span", {
 															className: W.switchTitle,
 															children: ["Update ", e.charAt(0).toUpperCase() + e.slice(1)]
-														}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+														}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 															checked: t.enabled,
-															onChange: (t) => lt(e, t)
+															onChange: (t) => Tt(e, t)
 														})]
 													}, e) : null;
 												}),
-												/* @__PURE__ */ (0, G.jsxs)("div", {
+												/* @__PURE__ */ (0, K.jsxs)("div", {
 													className: W.worldStateGroupCard,
 													children: [
-														/* @__PURE__ */ (0, G.jsx)("div", {
+														/* @__PURE__ */ (0, K.jsx)("div", {
 															className: W.groupCardHeader,
 															children: "World State"
 														}),
@@ -15395,55 +15470,55 @@ function Os({ onClose: e }) {
 																name: "Update Date",
 																selectKey: "dateSelect",
 																customKey: "dateCustom",
-																opts: Ze
+																opts: mt
 															},
 															{
 																id: "world_time",
 																name: "Update Time",
 																selectKey: "timeSelect",
 																customKey: "timeCustom",
-																opts: Qe
+																opts: ht
 															},
 															{
 																id: "world_weather",
 																name: "Update Weather",
 																selectKey: "weatherSelect",
 																customKey: "weatherCustom",
-																opts: $e
+																opts: gt
 															}
 														].map((e) => {
 															let t = ze.find((t) => t.id === e.id);
-															return t ? /* @__PURE__ */ (0, G.jsxs)("div", {
+															return t ? /* @__PURE__ */ (0, K.jsxs)("div", {
 																className: W.worldStateSubRow,
-																children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+																children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 																	className: W.switchCardRow,
 																	style: {
 																		padding: 0,
 																		background: "transparent",
 																		border: "none"
 																	},
-																	children: [/* @__PURE__ */ (0, G.jsx)("span", {
+																	children: [/* @__PURE__ */ (0, K.jsx)("span", {
 																		className: W.switchTitle,
 																		children: e.name
-																	}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+																	}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 																		checked: t.enabled,
-																		onChange: (t) => lt(e.id, t)
+																		onChange: (t) => Tt(e.id, t)
 																	})]
-																}), /* @__PURE__ */ (0, G.jsxs)("div", {
+																}), /* @__PURE__ */ (0, K.jsxs)("div", {
 																	className: W.inlineFormRow,
-																	children: [/* @__PURE__ */ (0, G.jsx)("select", {
+																	children: [/* @__PURE__ */ (0, K.jsx)("select", {
 																		className: "rpg-select-custom",
 																		style: {
 																			flex: 1,
 																			height: "28px"
 																		},
 																		value: k[e.selectKey] || "1",
-																		onChange: (t) => et(e.selectKey, t.target.value, e.opts),
-																		children: e.opts.map((e) => /* @__PURE__ */ (0, G.jsx)("option", {
+																		onChange: (t) => _t(e.selectKey, t.target.value, e.opts),
+																		children: e.opts.map((e) => /* @__PURE__ */ (0, K.jsx)("option", {
 																			value: e.v,
 																			children: e.l
 																		}, e.v))
-																	}), /* @__PURE__ */ (0, G.jsx)("input", {
+																	}), /* @__PURE__ */ (0, K.jsx)("input", {
 																		type: "text",
 																		className: W.defInput,
 																		style: {
@@ -15451,7 +15526,7 @@ function Os({ onClose: e }) {
 																			height: "28px"
 																		},
 																		value: k[e.customKey] || "",
-																		onChange: (t) => et(e.customKey, t.target.value),
+																		onChange: (t) => _t(e.customKey, t.target.value),
 																		readOnly: k[e.selectKey] !== "custom",
 																		placeholder: "Format Example"
 																	})]
@@ -15460,37 +15535,37 @@ function Os({ onClose: e }) {
 														}),
 														(() => {
 															let e = ze.find((e) => e.id === "world_location");
-															return e ? /* @__PURE__ */ (0, G.jsxs)("div", {
+															return e ? /* @__PURE__ */ (0, K.jsxs)("div", {
 																className: W.switchCardRow,
 																style: {
 																	padding: "4px 0",
 																	background: "transparent",
 																	border: "none"
 																},
-																children: [/* @__PURE__ */ (0, G.jsx)("span", {
+																children: [/* @__PURE__ */ (0, K.jsx)("span", {
 																	className: W.switchTitle,
 																	children: "Update Location"
-																}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+																}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 																	checked: e.enabled,
-																	onChange: (e) => lt("world_location", e)
+																	onChange: (e) => Tt("world_location", e)
 																})]
 															}) : null;
 														})(),
 														(() => {
 															let e = ze.find((e) => e.id === "world_events");
-															return e ? /* @__PURE__ */ (0, G.jsxs)("div", {
+															return e ? /* @__PURE__ */ (0, K.jsxs)("div", {
 																className: W.switchCardRow,
 																style: {
 																	padding: "4px 0",
 																	background: "transparent",
 																	border: "none"
 																},
-																children: [/* @__PURE__ */ (0, G.jsx)("span", {
+																children: [/* @__PURE__ */ (0, K.jsx)("span", {
 																	className: W.switchTitle,
 																	children: "Update Events"
-																}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+																}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 																	checked: e.enabled,
-																	onChange: (e) => lt("world_events", e)
+																	onChange: (e) => Tt("world_events", e)
 																})]
 															}) : null;
 														})()
@@ -15502,34 +15577,34 @@ function Os({ onClose: e }) {
 								})
 							]
 						}),
-						r === "addons" && /* @__PURE__ */ (0, G.jsxs)("div", {
+						r === "addons" && /* @__PURE__ */ (0, K.jsxs)("div", {
 							className: W.sectionStack,
 							children: [
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Ae(!ke),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: ke }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "NPC Generation Base Prompt" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: ke }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "NPC Generation Base Prompt" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => g(w),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${pe ? "rpg-btn-primary" : ""}`,
 												onClick: () => me(!pe),
 												children: pe ? "Done" : "Edit"
 											})]
 										})]
-									}), ke && /* @__PURE__ */ (0, G.jsx)("div", {
+									}), ke && /* @__PURE__ */ (0, K.jsx)("div", {
 										className: W.textareaStack,
-										children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "100px",
@@ -15541,31 +15616,31 @@ function Os({ onClose: e }) {
 										})
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Me(!je),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: je }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "Player Generation Base Prompt" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: je }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "Player Generation Base Prompt" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => v(ee),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${D ? "rpg-btn-primary" : ""}`,
 												onClick: () => O(!D),
 												children: D ? "Done" : "Edit"
 											})]
 										})]
-									}), je && /* @__PURE__ */ (0, G.jsx)("div", {
+									}), je && /* @__PURE__ */ (0, K.jsx)("div", {
 										className: W.textareaStack,
-										children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "100px",
@@ -15577,31 +15652,31 @@ function Os({ onClose: e }) {
 										})
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Re(!Le),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: Le }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "World Events Instruction" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: Le }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "World Events Instruction" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => T("World Events: Generate random world events that affect the current situation."),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${ye ? "rpg-btn-primary" : ""}`,
 												onClick: () => be(!ye),
 												children: ye ? "Done" : "Edit"
 											})]
 										})]
-									}), Le && /* @__PURE__ */ (0, G.jsx)("div", {
+									}), Le && /* @__PURE__ */ (0, K.jsx)("div", {
 										className: W.textareaStack,
-										children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "80px",
@@ -15613,31 +15688,31 @@ function Os({ onClose: e }) {
 										})
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Ie(!Fe),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: Fe }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "Dynamic Weather Instruction" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: Fe }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "Dynamic Weather Instruction" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => te("Dynamic Weather: Include weather changes and environmental descriptions."),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${_e ? "rpg-btn-primary" : ""}`,
 												onClick: () => ve(!_e),
 												children: _e ? "Done" : "Edit"
 											})]
 										})]
-									}), Fe && /* @__PURE__ */ (0, G.jsx)("div", {
+									}), Fe && /* @__PURE__ */ (0, K.jsx)("div", {
 										className: W.textareaStack,
-										children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "80px",
@@ -15649,31 +15724,31 @@ function Os({ onClose: e }) {
 										})
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.promptCard,
-									children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+									children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 										className: W.promptCardHeader,
-										children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+										children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.accordionHeader,
 											onClick: () => Pe(!Ne),
-											children: [/* @__PURE__ */ (0, G.jsx)(Tr, { isExpanded: Ne }), /* @__PURE__ */ (0, G.jsx)("strong", { children: "CYOA Mode Instruction" })]
-										}), /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsx)(Tr, { isExpanded: Ne }), /* @__PURE__ */ (0, K.jsx)("strong", { children: "CYOA Mode Instruction" })]
+										}), /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: W.buttonGroup,
-											children: [/* @__PURE__ */ (0, G.jsx)("button", {
+											children: [/* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: "rpg-btn",
 												onClick: () => b("CYOA Mode: Act as an interactive adventure where you present choices to the player at the end of each response."),
 												children: "Reset"
-											}), /* @__PURE__ */ (0, G.jsx)("button", {
+											}), /* @__PURE__ */ (0, K.jsx)("button", {
 												type: "button",
 												className: `rpg-btn ${he ? "rpg-btn-primary" : ""}`,
 												onClick: () => ge(!he),
 												children: he ? "Done" : "Edit"
 											})]
 										})]
-									}), Ne && /* @__PURE__ */ (0, G.jsx)("div", {
+									}), Ne && /* @__PURE__ */ (0, K.jsx)("div", {
 										className: W.textareaStack,
-										children: /* @__PURE__ */ (0, G.jsx)("textarea", {
+										children: /* @__PURE__ */ (0, K.jsx)("textarea", {
 											className: W.textarea,
 											style: {
 												minHeight: "80px",
@@ -15687,7 +15762,7 @@ function Os({ onClose: e }) {
 								})
 							]
 						}),
-						r === "definitions" && /* @__PURE__ */ (0, G.jsxs)("div", {
+						r === "definitions" && /* @__PURE__ */ (0, K.jsxs)("div", {
 							className: W.section,
 							style: {
 								display: "flex",
@@ -15695,29 +15770,29 @@ function Os({ onClose: e }) {
 								gap: "14px"
 							},
 							children: [
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									style: {
 										display: "flex",
 										justifyContent: "space-between",
 										alignItems: "center",
 										marginTop: "4px"
 									},
-									children: [/* @__PURE__ */ (0, G.jsx)("label", {
+									children: [/* @__PURE__ */ (0, K.jsx)("label", {
 										className: W.label,
 										style: {
 											margin: 0,
 											fontSize: "13.5px"
 										},
 										children: "Field Definitions & Global Guidelines"
-									}), /* @__PURE__ */ (0, G.jsx)("button", {
+									}), /* @__PURE__ */ (0, K.jsx)("button", {
 										type: "button",
 										className: "rpg-btn-sm",
-										onClick: ut,
+										onClick: Et,
 										title: "Clear all AI guidelines",
 										children: "Clear Guidelines"
 									})]
 								}),
-								/* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsxs)("div", {
 									style: {
 										fontSize: "11px",
 										opacity: .7,
@@ -15725,18 +15800,25 @@ function Os({ onClose: e }) {
 										color: "var(--rpg-text)",
 										lineHeight: "1.4"
 									},
-									children: [/* @__PURE__ */ (0, G.jsx)("div", { children: "Set guidelines for the AI." }), /* @__PURE__ */ (0, G.jsx)("div", { children: "※ Turn on 'Global' switch only when you want to overwrite styles and types to all characters." })]
+									children: [/* @__PURE__ */ (0, K.jsx)("div", { children: "Suggest a short guide, edit it, then Save Changes. Each suggestion uses one AI request." }), /* @__PURE__ */ (0, K.jsx)("div", { children: "※ Turn on 'Global' switch only when you want to overwrite styles and types to all characters." })]
 								}),
-								Xe.status.length > 0 && /* @__PURE__ */ (0, G.jsxs)("div", {
+								/* @__PURE__ */ (0, K.jsx)("div", {
+									className: W.suggestionFeedback,
+									role: "status",
+									"aria-live": "polite",
+									"aria-atomic": "true",
+									children: qe
+								}),
+								pt.status.length > 0 && /* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.defGroup,
-									children: [/* @__PURE__ */ (0, G.jsx)("h5", {
+									children: [/* @__PURE__ */ (0, K.jsx)("h5", {
 										className: W.defGroupTitle,
 										children: "Status Fields"
-									}), Xe.status.map((e) => {
-										let t = `status_${e.id}`, n = !!Ge[t], r = qe[t] || !1;
-										return /* @__PURE__ */ (0, G.jsxs)("div", {
+									}), pt.status.map((e) => {
+										let t = `status_${e.id}`, n = !!ct[t], r = ut[t] || !1;
+										return /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: `${I.schemaItem} ${n ? I.itemExpanded : ""}`,
-											children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 												style: {
 													display: "flex",
 													flexDirection: "column",
@@ -15744,24 +15826,24 @@ function Os({ onClose: e }) {
 													padding: "8px 10px",
 													background: "rgba(0, 0, 0, 0.15)"
 												},
-												children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+												children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
 														justifyContent: "space-between",
 														width: "100%"
 													},
-													children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+													children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 														style: {
 															display: "flex",
 															alignItems: "center",
 															gap: "8px",
 															flex: 1
 														},
-														children: [/* @__PURE__ */ (0, G.jsx)(Tr, {
+														children: [/* @__PURE__ */ (0, K.jsx)(Tr, {
 															isExpanded: n,
-															onClick: () => dt(t)
-														}), /* @__PURE__ */ (0, G.jsx)("input", {
+															onClick: () => Dt(t)
+														}), /* @__PURE__ */ (0, K.jsx)("input", {
 															type: "text",
 															className: I.nameInput,
 															style: {
@@ -15771,15 +15853,15 @@ function Os({ onClose: e }) {
 															},
 															defaultValue: e.name || e.id,
 															placeholder: "Field Name",
-															onBlur: (t) => nt("status", e.id, t.target.value)
+															onBlur: (t) => vt("status", e.id, t.target.value)
 														})]
-													}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+													}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 														label: "Global",
 														checked: r,
-														onChange: (e) => tt(t, e),
+														onChange: (e) => A(t, e),
 														title: "When enabled, edits to style/type below will overwrite all characters"
 													})]
-												}), /* @__PURE__ */ (0, G.jsx)("div", {
+												}), /* @__PURE__ */ (0, K.jsx)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
@@ -15787,42 +15869,33 @@ function Os({ onClose: e }) {
 														paddingLeft: "22px",
 														boxSizing: "border-box"
 													},
-													children: /* @__PURE__ */ (0, G.jsx)(Sr, {
-														className: W.defInput,
-														value: Ve[t] || "",
-														onChange: (e) => He({
-															...Ve,
-															[t]: e
-														}),
-														placeholder: `AI Guide for ${e.name || e.id}...`,
-														style: { width: "100%" }
-													})
+													children: st("status", e)
 												})]
-											}), n && /* @__PURE__ */ (0, G.jsx)("div", {
+											}), n && /* @__PURE__ */ (0, K.jsx)("div", {
 												className: I.itemFields,
 												style: { opacity: r ? 1 : .65 },
-												children: /* @__PURE__ */ (0, G.jsx)(go, {
+												children: /* @__PURE__ */ (0, K.jsx)(go, {
 													type: e.type,
 													min: e.min,
 													max: e.max,
 													color: e.color,
 													disabled: !r,
-													onChange: (t, n) => rt(e.id, t, n)
+													onChange: (t, n) => yt(e.id, t, n)
 												})
 											})]
 										}, t);
 									})]
 								}),
-								Xe.profiles.length > 0 && /* @__PURE__ */ (0, G.jsxs)("div", {
+								pt.profiles.length > 0 && /* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.defGroup,
-									children: [/* @__PURE__ */ (0, G.jsx)("h5", {
+									children: [/* @__PURE__ */ (0, K.jsx)("h5", {
 										className: W.defGroupTitle,
 										children: "Profile Fields"
-									}), Xe.profiles.map((e) => {
+									}), pt.profiles.map((e) => {
 										let t = `profile_${e.id}`;
-										return /* @__PURE__ */ (0, G.jsx)("div", {
+										return /* @__PURE__ */ (0, K.jsx)("div", {
 											className: I.schemaItem,
-											children: /* @__PURE__ */ (0, G.jsxs)("div", {
+											children: /* @__PURE__ */ (0, K.jsxs)("div", {
 												style: {
 													display: "flex",
 													flexDirection: "column",
@@ -15830,13 +15903,13 @@ function Os({ onClose: e }) {
 													padding: "8px 10px",
 													background: "rgba(0, 0, 0, 0.15)"
 												},
-												children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+												children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
 														width: "100%"
 													},
-													children: [/* @__PURE__ */ (0, G.jsx)("span", {
+													children: [/* @__PURE__ */ (0, K.jsx)("span", {
 														style: {
 															width: "18px",
 															textAlign: "center",
@@ -15844,7 +15917,7 @@ function Os({ onClose: e }) {
 															fontSize: "10px"
 														},
 														children: "•"
-													}), /* @__PURE__ */ (0, G.jsx)("input", {
+													}), /* @__PURE__ */ (0, K.jsx)("input", {
 														type: "text",
 														className: I.nameInput,
 														style: {
@@ -15854,9 +15927,9 @@ function Os({ onClose: e }) {
 														},
 														defaultValue: e.name || e.id,
 														placeholder: "Field Name",
-														onBlur: (t) => nt("profile", e.id, t.target.value)
+														onBlur: (t) => vt("profile", e.id, t.target.value)
 													})]
-												}), /* @__PURE__ */ (0, G.jsx)("div", {
+												}), /* @__PURE__ */ (0, K.jsx)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
@@ -15864,31 +15937,22 @@ function Os({ onClose: e }) {
 														paddingLeft: "18px",
 														boxSizing: "border-box"
 													},
-													children: /* @__PURE__ */ (0, G.jsx)(Sr, {
-														className: W.defInput,
-														value: Ve[t] || "",
-														onChange: (e) => He({
-															...Ve,
-															[t]: e
-														}),
-														placeholder: `AI Guide for ${e.name || e.id}...`,
-														style: { width: "100%" }
-													})
+													children: st("profile", e)
 												})]
 											})
 										}, t);
 									})]
 								}),
-								Xe.relations.length > 0 && /* @__PURE__ */ (0, G.jsxs)("div", {
+								pt.relations.length > 0 && /* @__PURE__ */ (0, K.jsxs)("div", {
 									className: W.defGroup,
-									children: [/* @__PURE__ */ (0, G.jsx)("h5", {
+									children: [/* @__PURE__ */ (0, K.jsx)("h5", {
 										className: W.defGroupTitle,
 										children: "Relationship Metrics"
-									}), Xe.relations.map((e) => {
-										let t = `relation_${e.id}`, n = !!Ge[t], r = qe[t] || !1;
-										return /* @__PURE__ */ (0, G.jsxs)("div", {
+									}), pt.relations.map((e) => {
+										let t = `relation_${e.id}`, n = !!ct[t], r = ut[t] || !1;
+										return /* @__PURE__ */ (0, K.jsxs)("div", {
 											className: `${I.schemaItem} ${n ? I.itemExpanded : ""}`,
-											children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+											children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 												style: {
 													display: "flex",
 													flexDirection: "column",
@@ -15896,24 +15960,24 @@ function Os({ onClose: e }) {
 													padding: "8px 10px",
 													background: "rgba(0, 0, 0, 0.15)"
 												},
-												children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+												children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
 														justifyContent: "space-between",
 														width: "100%"
 													},
-													children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+													children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 														style: {
 															display: "flex",
 															alignItems: "center",
 															gap: "8px",
 															flex: 1
 														},
-														children: [/* @__PURE__ */ (0, G.jsx)(Tr, {
+														children: [/* @__PURE__ */ (0, K.jsx)(Tr, {
 															isExpanded: n,
-															onClick: () => dt(t)
-														}), /* @__PURE__ */ (0, G.jsx)("input", {
+															onClick: () => Dt(t)
+														}), /* @__PURE__ */ (0, K.jsx)("input", {
 															type: "text",
 															className: I.nameInput,
 															style: {
@@ -15923,15 +15987,15 @@ function Os({ onClose: e }) {
 															},
 															defaultValue: e.name || e.id,
 															placeholder: "Metric Name",
-															onBlur: (t) => nt("relation", e.id, t.target.value)
+															onBlur: (t) => vt("relation", e.id, t.target.value)
 														})]
-													}), /* @__PURE__ */ (0, G.jsx)(Cr, {
+													}), /* @__PURE__ */ (0, K.jsx)(Cr, {
 														label: "Global",
 														checked: r,
-														onChange: (e) => tt(t, e),
+														onChange: (e) => A(t, e),
 														title: "When enabled, metric colors/ranges will overwrite all characters"
 													})]
-												}), /* @__PURE__ */ (0, G.jsx)("div", {
+												}), /* @__PURE__ */ (0, K.jsx)("div", {
 													style: {
 														display: "flex",
 														alignItems: "center",
@@ -15939,30 +16003,21 @@ function Os({ onClose: e }) {
 														paddingLeft: "22px",
 														boxSizing: "border-box"
 													},
-													children: /* @__PURE__ */ (0, G.jsx)(Sr, {
-														className: W.defInput,
-														value: Ve[t] || "",
-														onChange: (e) => He({
-															...Ve,
-															[t]: e
-														}),
-														placeholder: `AI Guide for ${e.name || e.id}...`,
-														style: { width: "100%" }
-													})
+													children: st("relation", e)
 												})]
-											}), n && /* @__PURE__ */ (0, G.jsx)("div", {
+											}), n && /* @__PURE__ */ (0, K.jsx)("div", {
 												className: I.itemFields,
 												style: {
 													opacity: r ? 1 : .65,
 													padding: "8px 10px"
 												},
-												children: /* @__PURE__ */ (0, G.jsx)(yo, {
+												children: /* @__PURE__ */ (0, K.jsx)(yo, {
 													colorNegative: e.colorNegative,
 													colorPositive: e.colorPositive,
 													min: e.min,
 													max: e.max,
 													disabled: !r,
-													onChange: (t, n) => it(e.id, t, n)
+													onChange: (t, n) => bt(e.id, t, n)
 												})
 											})]
 										}, t);
@@ -15972,42 +16027,42 @@ function Os({ onClose: e }) {
 						})
 					]
 				}),
-				/* @__PURE__ */ (0, G.jsxs)("footer", {
+				/* @__PURE__ */ (0, K.jsxs)("footer", {
 					className: "rpg-modal-footer",
-					children: [/* @__PURE__ */ (0, G.jsxs)("div", {
+					children: [/* @__PURE__ */ (0, K.jsxs)("div", {
 						className: "rpg-modal-footer-left",
 						children: [
-							/* @__PURE__ */ (0, G.jsx)("button", {
+							/* @__PURE__ */ (0, K.jsx)("button", {
 								type: "button",
 								className: "rpg-modal-btn",
-								onClick: ot,
+								onClick: St,
 								children: "Export"
 							}),
-							/* @__PURE__ */ (0, G.jsx)("button", {
+							/* @__PURE__ */ (0, K.jsx)("button", {
 								type: "button",
 								className: "rpg-modal-btn",
-								onClick: st,
+								onClick: Ct,
 								children: "Import"
 							}),
-							/* @__PURE__ */ (0, G.jsx)("input", {
+							/* @__PURE__ */ (0, K.jsx)("input", {
 								type: "file",
 								id: "prompt-import-file",
 								accept: ".json",
 								style: { display: "none" },
-								onChange: ct
+								onChange: wt
 							})
 						]
-					}), /* @__PURE__ */ (0, G.jsxs)("div", {
+					}), /* @__PURE__ */ (0, K.jsxs)("div", {
 						className: "rpg-modal-footer-right",
-						children: [/* @__PURE__ */ (0, G.jsx)("button", {
+						children: [/* @__PURE__ */ (0, K.jsx)("button", {
 							type: "button",
 							className: "rpg-modal-btn",
-							onClick: e,
+							onClick: at,
 							children: "Cancel"
-						}), /* @__PURE__ */ (0, G.jsx)("button", {
+						}), /* @__PURE__ */ (0, K.jsx)("button", {
 							type: "button",
 							className: "rpg-modal-btn save",
-							onClick: at,
+							onClick: xt,
 							children: "Save Changes"
 						})]
 					})]
@@ -16016,42 +16071,42 @@ function Os({ onClose: e }) {
 		})
 	});
 }
-var ks, G, As = o((() => {
-	ks = /* @__PURE__ */ l(d()), Je(), ws(), ho(), le(), Ds(), Or(), vo(), So(), G = Ve();
-})), js, Ms, Ns, Ps, Fs, Is, Ls, Rs, zs, Bs, Vs, Hs, Us, Ws, K, Gs = o((() => {
-	js = "_section_12evk_1", Ms = "_label_12evk_15", Ns = "_sectionHeaderRow_12evk_27", Ps = "_settingsDesc_12evk_39", Fs = "_settingsSelect_12evk_55", Is = "_colorPaletteGrid_12evk_87", Ls = "_colorRow_12evk_109", Rs = "_colorLabel_12evk_123", zs = "_colorPicker_12evk_139", Bs = "_colorTextInput_12evk_161", Vs = "_snapshotControlsRow_12evk_197", Hs = "_snapshotLabel_12evk_211", Us = "_snapshotButtonGroup_12evk_223", Ws = "_snapshotNumberInput_12evk_235", K = {
-		section: js,
-		label: Ms,
-		sectionHeaderRow: Ns,
-		settingsDesc: Ps,
-		settingsSelect: Fs,
-		colorPaletteGrid: Is,
-		colorRow: Ls,
-		colorLabel: Rs,
-		colorPicker: zs,
-		colorTextInput: Bs,
-		snapshotControlsRow: Vs,
-		snapshotLabel: Hs,
-		snapshotButtonGroup: Us,
-		snapshotNumberInput: Ws
+var G, K, Ms = o((() => {
+	G = /* @__PURE__ */ l(d()), Je(), Ds(), ho(), le(), As(), Or(), vo(), So(), K = Ve();
+})), Ns, Ps, Fs, Is, Ls, Rs, zs, Bs, Vs, Hs, Us, Ws, Gs, Ks, q, qs = o((() => {
+	Ns = "_section_12evk_1", Ps = "_label_12evk_15", Fs = "_sectionHeaderRow_12evk_27", Is = "_settingsDesc_12evk_39", Ls = "_settingsSelect_12evk_55", Rs = "_colorPaletteGrid_12evk_87", zs = "_colorRow_12evk_109", Bs = "_colorLabel_12evk_123", Vs = "_colorPicker_12evk_139", Hs = "_colorTextInput_12evk_161", Us = "_snapshotControlsRow_12evk_197", Ws = "_snapshotLabel_12evk_211", Gs = "_snapshotButtonGroup_12evk_223", Ks = "_snapshotNumberInput_12evk_235", q = {
+		section: Ns,
+		label: Ps,
+		sectionHeaderRow: Fs,
+		settingsDesc: Is,
+		settingsSelect: Ls,
+		colorPaletteGrid: Rs,
+		colorRow: zs,
+		colorLabel: Bs,
+		colorPicker: Vs,
+		colorTextInput: Hs,
+		snapshotControlsRow: Us,
+		snapshotLabel: Ws,
+		snapshotButtonGroup: Gs,
+		snapshotNumberInput: Ks
 	};
 }));
 //#endregion
 //#region src/editor/SettingsEditor.jsx
-function Ks(e) {
+function Js(e) {
 	let t = e.match(/\d+/g);
 	if (!t || t.length < 3) return null;
 	let n = Math.min(255, parseInt(t[0], 10)), r = Math.min(255, parseInt(t[1], 10)), i = Math.min(255, parseInt(t[2], 10));
 	return "#" + ((1 << 24) + (n << 16) + (r << 8) + i).toString(16).slice(1);
 }
-function qs() {
+function Ys() {
 	let e = getComputedStyle(document.body), t = (t, n) => {
 		for (let n of t) {
 			let t = e.getPropertyValue(n).trim();
 			if (t) {
 				if (t.startsWith("#")) return t.length === 4 ? `#${t[1]}${t[1]}${t[2]}${t[2]}${t[3]}${t[3]}` : t.substring(0, 7);
 				if (t.startsWith("rgb")) {
-					let e = Ks(t);
+					let e = Js(t);
 					if (e) return e;
 				}
 			}
@@ -16066,70 +16121,70 @@ function qs() {
 		border: t(["--SmartThemeBorderColor", "--border-color"], "#4a7ba7")
 	};
 }
-function Js({ onClose: e }) {
-	let { settings: t, updateSettings: n } = Ue(), [r, i] = (0, Ys.useState)("merged"), [a, o] = (0, Ys.useState)("left"), [s, c] = (0, Ys.useState)("default"), [l, u] = (0, Ys.useState)(!0), [d, f] = (0, Ys.useState)(!1), [p, m] = (0, Ys.useState)(20), [h, g] = (0, Ys.useState)({
+function Xs({ onClose: e }) {
+	let { settings: t, updateSettings: n } = Ue(), [r, i] = (0, Zs.useState)("merged"), [a, o] = (0, Zs.useState)("left"), [s, c] = (0, Zs.useState)("default"), [l, u] = (0, Zs.useState)(!0), [d, f] = (0, Zs.useState)(!1), [p, m] = (0, Zs.useState)(20), [h, g] = (0, Zs.useState)({
 		bg: "#1a1a2e",
 		accent: "#4a7ba7",
 		text: "#ffffff",
 		highlight: "#4a9eff",
 		border: "#4a7ba7"
 	});
-	(0, Ys.useEffect)(() => {
+	(0, Zs.useEffect)(() => {
 		i(t.updateMode || "merged"), o(t.panelPosition || "left"), c(t.theme || "default"), u(t.showDeltaLog !== !1), f(t.keepAllBackups === !0), m(t.maxBackupCount === void 0 ? 20 : t.maxBackupCount), t.customColors && g((e) => ({
 			...e,
 			...t.customColors
 		}));
 	}, [t]);
 	let _ = (e) => {
-		c(e), e === "custom" && h.bg === "#1a1a2e" && h.accent === "#4a7ba7" && h.text === "#ffffff" && h.highlight === "#4a9eff" && h.border === "#4a7ba7" && g(qs());
+		c(e), e === "custom" && h.bg === "#1a1a2e" && h.accent === "#4a7ba7" && h.text === "#ffffff" && h.highlight === "#4a9eff" && h.border === "#4a7ba7" && g(Ys());
 	}, v = (e, t) => {
 		g((n) => ({
 			...n,
 			[e]: t
 		}));
 	};
-	return /* @__PURE__ */ (0, q.jsx)("div", {
+	return /* @__PURE__ */ (0, J.jsx)("div", {
 		className: "rpg-modal-overlay",
-		children: /* @__PURE__ */ (0, q.jsxs)("div", {
+		children: /* @__PURE__ */ (0, J.jsxs)("div", {
 			className: "rpg-modal-container",
 			onClick: (e) => e.stopPropagation(),
 			children: [
-				/* @__PURE__ */ (0, q.jsxs)("header", {
+				/* @__PURE__ */ (0, J.jsxs)("header", {
 					className: "rpg-modal-header",
-					children: [/* @__PURE__ */ (0, q.jsx)("h4", { children: "Settings" }), /* @__PURE__ */ (0, q.jsx)("button", {
+					children: [/* @__PURE__ */ (0, J.jsx)("h4", { children: "Settings" }), /* @__PURE__ */ (0, J.jsx)("button", {
 						className: "rpg-modal-close-btn",
 						onClick: e,
 						children: "×"
 					})]
 				}),
-				/* @__PURE__ */ (0, q.jsxs)("div", {
+				/* @__PURE__ */ (0, J.jsxs)("div", {
 					className: "rpg-modal-body",
 					children: [
-						/* @__PURE__ */ (0, q.jsxs)("div", {
-							className: K.section,
+						/* @__PURE__ */ (0, J.jsxs)("div", {
+							className: q.section,
 							children: [
-								/* @__PURE__ */ (0, q.jsx)("label", {
-									className: K.label,
+								/* @__PURE__ */ (0, J.jsx)("label", {
+									className: q.label,
 									children: "Update Mode"
 								}),
-								/* @__PURE__ */ (0, q.jsx)("p", {
-									className: K.settingsDesc,
+								/* @__PURE__ */ (0, J.jsx)("p", {
+									className: q.settingsDesc,
 									children: "Choose how the tracker syncs data with the AI."
 								}),
-								/* @__PURE__ */ (0, q.jsxs)("select", {
+								/* @__PURE__ */ (0, J.jsxs)("select", {
 									value: r,
 									onChange: (e) => i(e.target.value),
-									className: `${K.settingsSelect} rpg-select-custom`,
+									className: `${q.settingsSelect} rpg-select-custom`,
 									children: [
-										/* @__PURE__ */ (0, q.jsx)("option", {
+										/* @__PURE__ */ (0, J.jsx)("option", {
 											value: "merged",
 											children: "Merged (Inject status & Auto-update every turn)"
 										}),
-										/* @__PURE__ */ (0, q.jsx)("option", {
+										/* @__PURE__ */ (0, J.jsx)("option", {
 											value: "separated",
 											children: "Separated (Inject status for context, Manual update)"
 										}),
-										/* @__PURE__ */ (0, q.jsx)("option", {
+										/* @__PURE__ */ (0, J.jsx)("option", {
 											value: "isolated",
 											children: "Isolated (No injection, Manual update only)"
 										})
@@ -16137,159 +16192,159 @@ function Js({ onClose: e }) {
 								})
 							]
 						}),
-						/* @__PURE__ */ (0, q.jsxs)("div", {
-							className: K.section,
+						/* @__PURE__ */ (0, J.jsxs)("div", {
+							className: q.section,
 							children: [
-								/* @__PURE__ */ (0, q.jsx)("label", {
-									className: K.label,
+								/* @__PURE__ */ (0, J.jsx)("label", {
+									className: q.label,
 									children: "Panel Position"
 								}),
-								/* @__PURE__ */ (0, q.jsx)("p", {
-									className: K.settingsDesc,
+								/* @__PURE__ */ (0, J.jsx)("p", {
+									className: q.settingsDesc,
 									children: "Choose which side of the screen the sidebar panel will dock."
 								}),
-								/* @__PURE__ */ (0, q.jsxs)("select", {
+								/* @__PURE__ */ (0, J.jsxs)("select", {
 									value: a,
 									onChange: (e) => o(e.target.value),
-									className: `${K.settingsSelect} rpg-select-custom`,
-									children: [/* @__PURE__ */ (0, q.jsx)("option", {
+									className: `${q.settingsSelect} rpg-select-custom`,
+									children: [/* @__PURE__ */ (0, J.jsx)("option", {
 										value: "left",
 										children: "Left Side"
-									}), /* @__PURE__ */ (0, q.jsx)("option", {
+									}), /* @__PURE__ */ (0, J.jsx)("option", {
 										value: "right",
 										children: "Right Side"
 									})]
 								})
 							]
 						}),
-						/* @__PURE__ */ (0, q.jsxs)("div", {
-							className: K.section,
+						/* @__PURE__ */ (0, J.jsxs)("div", {
+							className: q.section,
 							children: [
-								/* @__PURE__ */ (0, q.jsx)("label", {
-									className: K.label,
+								/* @__PURE__ */ (0, J.jsx)("label", {
+									className: q.label,
 									children: "Visual Theme"
 								}),
-								/* @__PURE__ */ (0, q.jsx)("p", {
-									className: K.settingsDesc,
+								/* @__PURE__ */ (0, J.jsx)("p", {
+									className: q.settingsDesc,
 									children: "Choose the interface color palette."
 								}),
-								/* @__PURE__ */ (0, q.jsxs)("select", {
+								/* @__PURE__ */ (0, J.jsxs)("select", {
 									value: s,
 									onChange: (e) => _(e.target.value),
-									className: `${K.settingsSelect} rpg-select-custom`,
-									children: [/* @__PURE__ */ (0, q.jsx)("option", {
+									className: `${q.settingsSelect} rpg-select-custom`,
+									children: [/* @__PURE__ */ (0, J.jsx)("option", {
 										value: "default",
 										children: "Default (Follow SillyTavern UI)"
-									}), /* @__PURE__ */ (0, q.jsx)("option", {
+									}), /* @__PURE__ */ (0, J.jsx)("option", {
 										value: "custom",
 										children: "Custom Color Palette"
 									})]
 								}),
-								s === "custom" && /* @__PURE__ */ (0, q.jsxs)("div", {
-									className: K.colorPaletteGrid,
+								s === "custom" && /* @__PURE__ */ (0, J.jsxs)("div", {
+									className: q.colorPaletteGrid,
 									children: [
-										/* @__PURE__ */ (0, q.jsxs)("div", {
-											className: K.colorRow,
+										/* @__PURE__ */ (0, J.jsxs)("div", {
+											className: q.colorRow,
 											children: [
-												/* @__PURE__ */ (0, q.jsx)("span", {
-													className: K.colorLabel,
+												/* @__PURE__ */ (0, J.jsx)("span", {
+													className: q.colorLabel,
 													children: "Background"
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "color",
 													value: h.bg,
 													onChange: (e) => v("bg", e.target.value),
-													className: K.colorPicker
+													className: q.colorPicker
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "text",
 													value: h.bg,
 													onChange: (e) => v("bg", e.target.value),
-													className: K.colorTextInput
+													className: q.colorTextInput
 												})
 											]
 										}),
-										/* @__PURE__ */ (0, q.jsxs)("div", {
-											className: K.colorRow,
+										/* @__PURE__ */ (0, J.jsxs)("div", {
+											className: q.colorRow,
 											children: [
-												/* @__PURE__ */ (0, q.jsx)("span", {
-													className: K.colorLabel,
+												/* @__PURE__ */ (0, J.jsx)("span", {
+													className: q.colorLabel,
 													children: "Text Color"
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "color",
 													value: h.text,
 													onChange: (e) => v("text", e.target.value),
-													className: K.colorPicker
+													className: q.colorPicker
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "text",
 													value: h.text,
 													onChange: (e) => v("text", e.target.value),
-													className: K.colorTextInput
+													className: q.colorTextInput
 												})
 											]
 										}),
-										/* @__PURE__ */ (0, q.jsxs)("div", {
-											className: K.colorRow,
+										/* @__PURE__ */ (0, J.jsxs)("div", {
+											className: q.colorRow,
 											children: [
-												/* @__PURE__ */ (0, q.jsx)("span", {
-													className: K.colorLabel,
+												/* @__PURE__ */ (0, J.jsx)("span", {
+													className: q.colorLabel,
 													children: "Border Line"
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "color",
 													value: h.border,
 													onChange: (e) => v("border", e.target.value),
-													className: K.colorPicker
+													className: q.colorPicker
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "text",
 													value: h.border,
 													onChange: (e) => v("border", e.target.value),
-													className: K.colorTextInput
+													className: q.colorTextInput
 												})
 											]
 										}),
-										/* @__PURE__ */ (0, q.jsxs)("div", {
-											className: K.colorRow,
+										/* @__PURE__ */ (0, J.jsxs)("div", {
+											className: q.colorRow,
 											children: [
-												/* @__PURE__ */ (0, q.jsx)("span", {
-													className: K.colorLabel,
+												/* @__PURE__ */ (0, J.jsx)("span", {
+													className: q.colorLabel,
 													children: "Accent Area"
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "color",
 													value: h.accent,
 													onChange: (e) => v("accent", e.target.value),
-													className: K.colorPicker
+													className: q.colorPicker
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "text",
 													value: h.accent,
 													onChange: (e) => v("accent", e.target.value),
-													className: K.colorTextInput
+													className: q.colorTextInput
 												})
 											]
 										}),
-										/* @__PURE__ */ (0, q.jsxs)("div", {
-											className: K.colorRow,
+										/* @__PURE__ */ (0, J.jsxs)("div", {
+											className: q.colorRow,
 											children: [
-												/* @__PURE__ */ (0, q.jsx)("span", {
-													className: K.colorLabel,
+												/* @__PURE__ */ (0, J.jsx)("span", {
+													className: q.colorLabel,
 													children: "Highlight Text"
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "color",
 													value: h.highlight,
 													onChange: (e) => v("highlight", e.target.value),
-													className: K.colorPicker
+													className: q.colorPicker
 												}),
-												/* @__PURE__ */ (0, q.jsx)("input", {
+												/* @__PURE__ */ (0, J.jsx)("input", {
 													type: "text",
 													value: h.highlight,
 													onChange: (e) => v("highlight", e.target.value),
-													className: K.colorTextInput
+													className: q.colorTextInput
 												})
 											]
 										})
@@ -16297,37 +16352,37 @@ function Js({ onClose: e }) {
 								})
 							]
 						}),
-						/* @__PURE__ */ (0, q.jsxs)("div", {
-							className: K.section,
-							children: [/* @__PURE__ */ (0, q.jsxs)("div", {
-								className: K.sectionHeaderRow,
-								children: [/* @__PURE__ */ (0, q.jsx)("label", {
-									className: K.label,
+						/* @__PURE__ */ (0, J.jsxs)("div", {
+							className: q.section,
+							children: [/* @__PURE__ */ (0, J.jsxs)("div", {
+								className: q.sectionHeaderRow,
+								children: [/* @__PURE__ */ (0, J.jsx)("label", {
+									className: q.label,
 									children: "Show Status Change Log"
-								}), /* @__PURE__ */ (0, q.jsx)(Cr, {
+								}), /* @__PURE__ */ (0, J.jsx)(Cr, {
 									checked: l,
 									onChange: u
 								})]
-							}), /* @__PURE__ */ (0, q.jsx)("p", {
-								className: K.settingsDesc,
+							}), /* @__PURE__ */ (0, J.jsx)("p", {
+								className: q.settingsDesc,
 								children: "Show collapsing delta change log at the bottom of AI messages."
 							})]
 						}),
-						/* @__PURE__ */ (0, q.jsxs)("div", {
-							className: K.section,
+						/* @__PURE__ */ (0, J.jsxs)("div", {
+							className: q.section,
 							children: [
-								/* @__PURE__ */ (0, q.jsx)("label", {
-									className: K.label,
+								/* @__PURE__ */ (0, J.jsx)("label", {
+									className: q.label,
 									children: "History Snapshots"
 								}),
-								/* @__PURE__ */ (0, q.jsxs)("div", {
-									className: K.snapshotControlsRow,
-									children: [/* @__PURE__ */ (0, q.jsx)("span", {
-										className: K.snapshotLabel,
+								/* @__PURE__ */ (0, J.jsxs)("div", {
+									className: q.snapshotControlsRow,
+									children: [/* @__PURE__ */ (0, J.jsx)("span", {
+										className: q.snapshotLabel,
 										children: "Max Recent Snapshots to Keep"
-									}), /* @__PURE__ */ (0, q.jsxs)("div", {
-										className: K.snapshotButtonGroup,
-										children: [/* @__PURE__ */ (0, q.jsx)("input", {
+									}), /* @__PURE__ */ (0, J.jsxs)("div", {
+										className: q.snapshotButtonGroup,
+										children: [/* @__PURE__ */ (0, J.jsx)("input", {
 											type: "number",
 											min: "0",
 											max: "100",
@@ -16335,8 +16390,8 @@ function Js({ onClose: e }) {
 											value: d ? "" : p,
 											placeholder: d ? "∞" : "",
 											onChange: (e) => m(e.target.value),
-											className: K.snapshotNumberInput
-										}), /* @__PURE__ */ (0, q.jsxs)("button", {
+											className: q.snapshotNumberInput
+										}), /* @__PURE__ */ (0, J.jsxs)("button", {
 											type: "button",
 											onClick: () => f(!d),
 											className: `rpg-btn ${d ? "rpg-btn-primary" : ""}`,
@@ -16344,24 +16399,24 @@ function Js({ onClose: e }) {
 										})]
 									})]
 								}),
-								/* @__PURE__ */ (0, q.jsx)("p", {
-									className: K.settingsDesc,
+								/* @__PURE__ */ (0, J.jsx)("p", {
+									className: q.settingsDesc,
 									children: "Set how many historical state snapshots to keep in chat metadata. Enabling Unlimited stores status snapshots across all turns for complete historical integrity."
 								})
 							]
 						})
 					]
 				}),
-				/* @__PURE__ */ (0, q.jsxs)("footer", {
+				/* @__PURE__ */ (0, J.jsxs)("footer", {
 					className: "rpg-modal-footer",
-					children: [/* @__PURE__ */ (0, q.jsx)("div", { className: "rpg-modal-footer-left" }), /* @__PURE__ */ (0, q.jsxs)("div", {
+					children: [/* @__PURE__ */ (0, J.jsx)("div", { className: "rpg-modal-footer-left" }), /* @__PURE__ */ (0, J.jsxs)("div", {
 						className: "rpg-modal-footer-right",
-						children: [/* @__PURE__ */ (0, q.jsx)("button", {
+						children: [/* @__PURE__ */ (0, J.jsx)("button", {
 							type: "button",
 							className: "rpg-modal-btn",
 							onClick: e,
 							children: "Cancel"
-						}), /* @__PURE__ */ (0, q.jsx)("button", {
+						}), /* @__PURE__ */ (0, J.jsx)("button", {
 							type: "button",
 							className: "rpg-modal-btn save",
 							onClick: () => {
@@ -16384,33 +16439,33 @@ function Js({ onClose: e }) {
 		})
 	});
 }
-var Ys, q, Xs = o((() => {
-	Ys = /* @__PURE__ */ l(d()), Je(), Gs(), Or(), q = Ve();
-})), Zs, Qs, $s, ec, tc, nc, rc, ic, ac, oc, sc, cc, lc, uc, dc, fc, pc, mc, hc, gc = o((() => {
-	Zs = "_container_10few_1", Qs = "_sectionHeader_10few_17", $s = "_sectionTitle_10few_31", ec = "_eventsSection_10few_43", tc = "_eventsSectionTitle_10few_51", nc = "_stateGrid_10few_63", rc = "_rowField_10few_77", ic = "_twoCol_10few_89", ac = "_fieldLabel_10few_101", oc = "_lockBtn_10few_119", sc = "_stateTextarea_10few_161", cc = "_eventsList_10few_221", lc = "_eventBlock_10few_233", uc = "_eventHeaderRow_10few_255", dc = "_eventNumber_10few_269", fc = "_eventTitleInput_10few_281", pc = "_eventDescTextarea_10few_317", mc = "_emptyPlaceholder_10few_361", hc = {
-		container: Zs,
-		sectionHeader: Qs,
-		sectionTitle: $s,
-		eventsSection: ec,
-		eventsSectionTitle: tc,
-		stateGrid: nc,
-		rowField: rc,
-		twoCol: ic,
-		fieldLabel: ac,
-		lockBtn: oc,
-		stateTextarea: sc,
-		eventsList: cc,
-		eventBlock: lc,
-		eventHeaderRow: uc,
-		eventNumber: dc,
-		eventTitleInput: fc,
-		eventDescTextarea: pc,
-		emptyPlaceholder: mc
+var Zs, J, Qs = o((() => {
+	Zs = /* @__PURE__ */ l(d()), Je(), qs(), Or(), J = Ve();
+})), $s, ec, tc, nc, rc, ic, ac, oc, sc, cc, lc, uc, dc, fc, pc, mc, hc, gc, _c, vc = o((() => {
+	$s = "_container_10few_1", ec = "_sectionHeader_10few_17", tc = "_sectionTitle_10few_31", nc = "_eventsSection_10few_43", rc = "_eventsSectionTitle_10few_51", ic = "_stateGrid_10few_63", ac = "_rowField_10few_77", oc = "_twoCol_10few_89", sc = "_fieldLabel_10few_101", cc = "_lockBtn_10few_119", lc = "_stateTextarea_10few_161", uc = "_eventsList_10few_221", dc = "_eventBlock_10few_233", fc = "_eventHeaderRow_10few_255", pc = "_eventNumber_10few_269", mc = "_eventTitleInput_10few_281", hc = "_eventDescTextarea_10few_317", gc = "_emptyPlaceholder_10few_361", _c = {
+		container: $s,
+		sectionHeader: ec,
+		sectionTitle: tc,
+		eventsSection: nc,
+		eventsSectionTitle: rc,
+		stateGrid: ic,
+		rowField: ac,
+		twoCol: oc,
+		fieldLabel: sc,
+		lockBtn: cc,
+		stateTextarea: lc,
+		eventsList: uc,
+		eventBlock: dc,
+		eventHeaderRow: fc,
+		eventNumber: pc,
+		eventTitleInput: mc,
+		eventDescTextarea: hc,
+		emptyPlaceholder: gc
 	};
 }));
 //#endregion
 //#region src/tracker/WorldSection.jsx
-function _c() {
+function yc() {
 	let { trackerData: e, updateTrackerData: t, patchWorldField: n } = Ue(), r = e.worldState || {
 		date: "",
 		time: "",
@@ -16462,137 +16517,137 @@ function _c() {
 	}, p = (e) => {
 		l({ events: a.filter((t, n) => n !== e) });
 	};
-	return /* @__PURE__ */ (0, J.jsxs)("div", {
-		className: hc.container,
-		children: [/* @__PURE__ */ (0, J.jsxs)("div", { children: [/* @__PURE__ */ (0, J.jsx)("div", {
-			className: hc.sectionHeader,
-			children: /* @__PURE__ */ (0, J.jsx)("span", {
-				className: hc.sectionTitle,
+	return /* @__PURE__ */ (0, Y.jsxs)("div", {
+		className: _c.container,
+		children: [/* @__PURE__ */ (0, Y.jsxs)("div", { children: [/* @__PURE__ */ (0, Y.jsx)("div", {
+			className: _c.sectionHeader,
+			children: /* @__PURE__ */ (0, Y.jsx)("span", {
+				className: _c.sectionTitle,
 				children: "World State"
 			})
-		}), /* @__PURE__ */ (0, J.jsxs)("div", {
-			className: hc.stateGrid,
+		}), /* @__PURE__ */ (0, Y.jsxs)("div", {
+			className: _c.stateGrid,
 			children: [
-				s("world_date") && /* @__PURE__ */ (0, J.jsxs)("div", {
-					className: hc.rowField,
+				s("world_date") && /* @__PURE__ */ (0, Y.jsxs)("div", {
+					className: _c.rowField,
 					children: [
-						/* @__PURE__ */ (0, J.jsx)("button", {
+						/* @__PURE__ */ (0, Y.jsx)("button", {
 							type: "button",
-							className: hc.lockBtn,
+							className: _c.lockBtn,
 							onClick: () => u("date"),
 							title: i.date ? "Unlock Date" : "Lock Date",
-							children: /* @__PURE__ */ (0, J.jsx)("i", { className: `fa-solid ${i.date ? "fa-lock" : "fa-lock-open"}` })
+							children: /* @__PURE__ */ (0, Y.jsx)("i", { className: `fa-solid ${i.date ? "fa-lock" : "fa-lock-open"}` })
 						}),
-						/* @__PURE__ */ (0, J.jsx)("span", {
-							className: hc.fieldLabel,
+						/* @__PURE__ */ (0, Y.jsx)("span", {
+							className: _c.fieldLabel,
 							children: "Date"
 						}),
-						/* @__PURE__ */ (0, J.jsx)(Sr, {
+						/* @__PURE__ */ (0, Y.jsx)(Sr, {
 							value: c(r.date),
 							onChange: (e) => n(["date"], e),
-							className: hc.stateTextarea,
+							className: _c.stateTextarea,
 							disabled: i.date,
 							placeholder: ""
 						})
 					]
 				}),
-				s("world_time") && /* @__PURE__ */ (0, J.jsxs)("div", {
-					className: hc.rowField,
+				s("world_time") && /* @__PURE__ */ (0, Y.jsxs)("div", {
+					className: _c.rowField,
 					children: [
-						/* @__PURE__ */ (0, J.jsx)("button", {
+						/* @__PURE__ */ (0, Y.jsx)("button", {
 							type: "button",
-							className: hc.lockBtn,
+							className: _c.lockBtn,
 							onClick: () => u("time"),
 							title: i.time ? "Unlock Time" : "Lock Time",
-							children: /* @__PURE__ */ (0, J.jsx)("i", { className: `fa-solid ${i.time ? "fa-lock" : "fa-lock-open"}` })
+							children: /* @__PURE__ */ (0, Y.jsx)("i", { className: `fa-solid ${i.time ? "fa-lock" : "fa-lock-open"}` })
 						}),
-						/* @__PURE__ */ (0, J.jsx)("span", {
-							className: hc.fieldLabel,
+						/* @__PURE__ */ (0, Y.jsx)("span", {
+							className: _c.fieldLabel,
 							children: "Time"
 						}),
-						/* @__PURE__ */ (0, J.jsx)(Sr, {
+						/* @__PURE__ */ (0, Y.jsx)(Sr, {
 							value: c(r.time),
 							onChange: (e) => n(["time"], e),
-							className: hc.stateTextarea,
+							className: _c.stateTextarea,
 							disabled: i.time,
 							placeholder: ""
 						})
 					]
 				}),
-				s("world_weather") && /* @__PURE__ */ (0, J.jsxs)("div", {
-					className: hc.rowField,
+				s("world_weather") && /* @__PURE__ */ (0, Y.jsxs)("div", {
+					className: _c.rowField,
 					children: [
-						/* @__PURE__ */ (0, J.jsx)("button", {
+						/* @__PURE__ */ (0, Y.jsx)("button", {
 							type: "button",
-							className: hc.lockBtn,
+							className: _c.lockBtn,
 							onClick: () => u("weather"),
 							title: i.weather ? "Unlock Weather" : "Lock Weather",
-							children: /* @__PURE__ */ (0, J.jsx)("i", { className: `fa-solid ${i.weather ? "fa-lock" : "fa-lock-open"}` })
+							children: /* @__PURE__ */ (0, Y.jsx)("i", { className: `fa-solid ${i.weather ? "fa-lock" : "fa-lock-open"}` })
 						}),
-						/* @__PURE__ */ (0, J.jsx)("span", {
-							className: hc.fieldLabel,
+						/* @__PURE__ */ (0, Y.jsx)("span", {
+							className: _c.fieldLabel,
 							children: "Weather"
 						}),
-						/* @__PURE__ */ (0, J.jsx)(Sr, {
+						/* @__PURE__ */ (0, Y.jsx)(Sr, {
 							value: c(r.weather),
 							onChange: (e) => n(["weather"], e),
-							className: hc.stateTextarea,
+							className: _c.stateTextarea,
 							disabled: i.weather,
 							placeholder: ""
 						})
 					]
 				}),
-				s("world_location") && /* @__PURE__ */ (0, J.jsxs)("div", {
-					className: hc.rowField,
+				s("world_location") && /* @__PURE__ */ (0, Y.jsxs)("div", {
+					className: _c.rowField,
 					children: [
-						/* @__PURE__ */ (0, J.jsx)("button", {
+						/* @__PURE__ */ (0, Y.jsx)("button", {
 							type: "button",
-							className: hc.lockBtn,
+							className: _c.lockBtn,
 							onClick: () => u("location"),
 							title: i.location ? "Unlock Location" : "Lock Location",
-							children: /* @__PURE__ */ (0, J.jsx)("i", { className: `fa-solid ${i.location ? "fa-lock" : "fa-lock-open"}` })
+							children: /* @__PURE__ */ (0, Y.jsx)("i", { className: `fa-solid ${i.location ? "fa-lock" : "fa-lock-open"}` })
 						}),
-						/* @__PURE__ */ (0, J.jsx)("span", {
-							className: hc.fieldLabel,
+						/* @__PURE__ */ (0, Y.jsx)("span", {
+							className: _c.fieldLabel,
 							children: "Location"
 						}),
-						/* @__PURE__ */ (0, J.jsx)(Sr, {
+						/* @__PURE__ */ (0, Y.jsx)(Sr, {
 							value: c(r.location),
 							onChange: (e) => n(["location"], e),
-							className: hc.stateTextarea,
+							className: _c.stateTextarea,
 							disabled: i.location,
 							placeholder: ""
 						})
 					]
 				})
 			]
-		})] }), s("world_events") && /* @__PURE__ */ (0, J.jsxs)("div", {
-			className: hc.eventsSection,
-			children: [/* @__PURE__ */ (0, J.jsxs)("div", {
-				className: hc.sectionHeader,
-				children: [/* @__PURE__ */ (0, J.jsx)("span", {
-					className: hc.eventsSectionTitle,
+		})] }), s("world_events") && /* @__PURE__ */ (0, Y.jsxs)("div", {
+			className: _c.eventsSection,
+			children: [/* @__PURE__ */ (0, Y.jsxs)("div", {
+				className: _c.sectionHeader,
+				children: [/* @__PURE__ */ (0, Y.jsx)("span", {
+					className: _c.eventsSectionTitle,
 					children: "World Events"
-				}), /* @__PURE__ */ (0, J.jsx)("button", {
+				}), /* @__PURE__ */ (0, Y.jsx)("button", {
 					type: "button",
 					className: "rpg-btn-sm",
 					onClick: d,
 					children: "+ Add Event"
 				})]
-			}), /* @__PURE__ */ (0, J.jsx)("div", {
-				className: hc.eventsList,
-				children: a.length === 0 ? /* @__PURE__ */ (0, J.jsx)("p", {
-					className: hc.emptyPlaceholder,
+			}), /* @__PURE__ */ (0, Y.jsx)("div", {
+				className: _c.eventsList,
+				children: a.length === 0 ? /* @__PURE__ */ (0, Y.jsx)("p", {
+					className: _c.emptyPlaceholder,
 					children: "No recorded events."
-				}) : a.map((e, t) => /* @__PURE__ */ (0, J.jsxs)("div", {
-					className: hc.eventBlock,
+				}) : a.map((e, t) => /* @__PURE__ */ (0, Y.jsxs)("div", {
+					className: _c.eventBlock,
 					children: [
-						/* @__PURE__ */ (0, J.jsxs)("div", {
-							className: hc.eventHeaderRow,
-							children: [/* @__PURE__ */ (0, J.jsxs)("span", {
-								className: hc.eventNumber,
+						/* @__PURE__ */ (0, Y.jsxs)("div", {
+							className: _c.eventHeaderRow,
+							children: [/* @__PURE__ */ (0, Y.jsxs)("span", {
+								className: _c.eventNumber,
 								children: ["Event ", t + 1]
-							}), /* @__PURE__ */ (0, J.jsx)("button", {
+							}), /* @__PURE__ */ (0, Y.jsx)("button", {
 								type: "button",
 								className: "rpg-btn-del-text",
 								onClick: () => p(t),
@@ -16600,15 +16655,15 @@ function _c() {
 								children: "×"
 							})]
 						}),
-						/* @__PURE__ */ (0, J.jsx)("input", {
+						/* @__PURE__ */ (0, Y.jsx)("input", {
 							type: "text",
-							className: hc.eventTitleInput,
+							className: _c.eventTitleInput,
 							value: e.name || "",
 							onChange: (e) => f(t, "name", e.target.value),
 							placeholder: "Event Title..."
 						}),
-						/* @__PURE__ */ (0, J.jsx)(Sr, {
-							className: hc.eventDescTextarea,
+						/* @__PURE__ */ (0, Y.jsx)(Sr, {
+							className: _c.eventDescTextarea,
 							value: e.desc || "",
 							onChange: (e) => f(t, "desc", e),
 							placeholder: "Describe event..."
@@ -16619,44 +16674,44 @@ function _c() {
 		})]
 	});
 }
-var J, vc = o((() => {
-	d(), Je(), gc(), Or(), J = Ve();
-})), yc, bc, xc, Sc, Cc, wc, Tc, Ec, Dc, Oc, kc, Ac, jc, Mc, Nc, Pc, Y, Fc = o((() => {
-	yc = "_container_c5ldp_1", bc = "_sectionBlock_c5ldp_17", xc = "_sectionHeader_c5ldp_37", Sc = "_sectionTitle_c5ldp_53", Cc = "_refreshBtn_c5ldp_65", wc = "_rowItem_c5ldp_99", Tc = "_labelGroup_c5ldp_113", Ec = "_itemLabel_c5ldp_127", Dc = "_itemSubText_c5ldp_139", Oc = "_numberInput_c5ldp_151", kc = "_inputGroup_c5ldp_185", Ac = "_fieldLabel_c5ldp_197", jc = "_textInput_c5ldp_211", Mc = "_selectInput_c5ldp_243", Nc = "_buttonGroup_c5ldp_261", Pc = "_toggleRow_c5ldp_273", Y = {
-		container: yc,
-		sectionBlock: bc,
-		sectionHeader: xc,
-		sectionTitle: Sc,
-		refreshBtn: Cc,
-		rowItem: wc,
-		labelGroup: Tc,
-		itemLabel: Ec,
-		itemSubText: Dc,
-		numberInput: Oc,
-		inputGroup: kc,
-		fieldLabel: Ac,
-		textInput: jc,
-		selectInput: Mc,
-		buttonGroup: Nc,
-		toggleRow: Pc
+var Y, bc = o((() => {
+	d(), Je(), vc(), Or(), Y = Ve();
+})), xc, Sc, Cc, wc, Tc, Ec, Dc, Oc, kc, Ac, jc, Mc, Nc, Pc, Fc, Ic, X, Lc = o((() => {
+	xc = "_container_c5ldp_1", Sc = "_sectionBlock_c5ldp_17", Cc = "_sectionHeader_c5ldp_37", wc = "_sectionTitle_c5ldp_53", Tc = "_refreshBtn_c5ldp_65", Ec = "_rowItem_c5ldp_99", Dc = "_labelGroup_c5ldp_113", Oc = "_itemLabel_c5ldp_127", kc = "_itemSubText_c5ldp_139", Ac = "_numberInput_c5ldp_151", jc = "_inputGroup_c5ldp_185", Mc = "_fieldLabel_c5ldp_197", Nc = "_textInput_c5ldp_211", Pc = "_selectInput_c5ldp_243", Fc = "_buttonGroup_c5ldp_261", Ic = "_toggleRow_c5ldp_273", X = {
+		container: xc,
+		sectionBlock: Sc,
+		sectionHeader: Cc,
+		sectionTitle: wc,
+		refreshBtn: Tc,
+		rowItem: Ec,
+		labelGroup: Dc,
+		itemLabel: Oc,
+		itemSubText: kc,
+		numberInput: Ac,
+		inputGroup: jc,
+		fieldLabel: Mc,
+		textInput: Nc,
+		selectInput: Pc,
+		buttonGroup: Fc,
+		toggleRow: Ic
 	};
 }));
 //#endregion
 //#region src/tracker/FuncSection.jsx
-function Ic() {
-	let { trackerData: e, updateTrackerData: t, settings: n, updateSettings: r, isChatConnected: i } = Ue(), [a, o] = (0, Lc.useState)(""), [s, c] = (0, Lc.useState)(() => String(n.contextMessageLimit ?? 4)), [l, u] = (0, Lc.useState)({
+function Rc() {
+	let { trackerData: e, updateTrackerData: t, settings: n, updateSettings: r, isChatConnected: i } = Ue(), [a, o] = (0, zc.useState)(""), [s, c] = (0, zc.useState)(() => String(n.contextMessageLimit ?? 4)), [l, u] = (0, zc.useState)({
 		api: "",
 		currentModel: "",
 		models: []
-	}), [d, f] = (0, Lc.useState)(!1), p = () => {
+	}), [d, f] = (0, zc.useState)(!1), p = () => {
 		if (window.RPGBridge && typeof window.RPGBridge.getAvailableModels == "function") {
 			let e = window.RPGBridge.getAvailableModels();
 			u(e), n.customModel && e.models.length > 0 && !e.models.some((e) => e.value === n.customModel) && f(!0);
 		}
 	};
-	(0, Lc.useEffect)(() => {
+	(0, zc.useEffect)(() => {
 		p();
-	}, []), (0, Lc.useEffect)(() => {
+	}, []), (0, zc.useEffect)(() => {
 		c(String(n.contextMessageLimit ?? 4));
 	}, [n.contextMessageLimit]);
 	let m = e.addons || {
@@ -16704,74 +16759,74 @@ function Ic() {
 			}
 		}
 	};
-	return /* @__PURE__ */ (0, X.jsxs)("div", {
-		className: Y.container,
+	return /* @__PURE__ */ (0, Z.jsxs)("div", {
+		className: X.container,
 		children: [
-			/* @__PURE__ */ (0, X.jsxs)("div", {
-				className: Y.sectionBlock,
+			/* @__PURE__ */ (0, Z.jsxs)("div", {
+				className: X.sectionBlock,
 				children: [
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.sectionHeader,
-						children: [/* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.sectionTitle,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.sectionHeader,
+						children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.sectionTitle,
 							children: "Tracker API Model"
-						}), /* @__PURE__ */ (0, X.jsx)("button", {
+						}), /* @__PURE__ */ (0, Z.jsx)("button", {
 							type: "button",
-							className: Y.refreshBtn,
+							className: X.refreshBtn,
 							onClick: p,
 							title: "Scan connected API models",
 							children: "↻"
 						})]
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.toggleRow,
-						children: [/* @__PURE__ */ (0, X.jsxs)("div", {
-							className: Y.labelGroup,
-							children: [/* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemLabel,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.toggleRow,
+						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
+							className: X.labelGroup,
+							children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemLabel,
 								children: "Use Separate Model"
-							}), /* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemSubText,
+							}), /* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemSubText,
 								children: "Use a fast/lite model for status extraction & background updates."
 							})]
-						}), /* @__PURE__ */ (0, X.jsx)(Cr, {
+						}), /* @__PURE__ */ (0, Z.jsx)(Cr, {
 							checked: n.useCustomModel || !1,
 							onChange: (e) => r({ useCustomModel: e })
 						})]
 					}),
-					n.useCustomModel && /* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.inputGroup,
+					n.useCustomModel && /* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.inputGroup,
 						style: { marginTop: "6px" },
-						children: [/* @__PURE__ */ (0, X.jsxs)("div", {
+						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
 							style: {
 								display: "flex",
 								justifyContent: "space-between",
 								alignItems: "center",
 								marginBottom: "4px"
 							},
-							children: [/* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.fieldLabel,
+							children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.fieldLabel,
 								children: d ? "Custom Model ID" : "Select Model"
-							}), /* @__PURE__ */ (0, X.jsx)("button", {
+							}), /* @__PURE__ */ (0, Z.jsx)("button", {
 								type: "button",
 								className: "rpg-btn-sm",
 								onClick: () => f(!d),
 								children: d ? "Select from List" : "Custom Model"
 							})]
-						}), d ? /* @__PURE__ */ (0, X.jsx)("input", {
+						}), d ? /* @__PURE__ */ (0, Z.jsx)("input", {
 							type: "text",
-							className: Y.textInput,
+							className: X.textInput,
 							value: n.customModel || "",
 							onChange: (e) => r({ customModel: e.target.value }),
 							placeholder: "e.g. gemini-1.5-flash, gpt-4o-mini"
-						}) : /* @__PURE__ */ (0, X.jsxs)("select", {
-							className: `${Y.selectInput} rpg-select-custom`,
+						}) : /* @__PURE__ */ (0, Z.jsxs)("select", {
+							className: `${X.selectInput} rpg-select-custom`,
 							value: n.customModel || "",
 							onChange: (e) => r({ customModel: e.target.value }),
-							children: [/* @__PURE__ */ (0, X.jsx)("option", {
+							children: [/* @__PURE__ */ (0, Z.jsx)("option", {
 								value: "",
 								children: "Current Model"
-							}), l.models.map((e) => /* @__PURE__ */ (0, X.jsx)("option", {
+							}), l.models.map((e) => /* @__PURE__ */ (0, Z.jsx)("option", {
 								value: e.value,
 								children: e.label
 							}, e.value))]
@@ -16779,122 +16834,122 @@ function Ic() {
 					})
 				]
 			}),
-			/* @__PURE__ */ (0, X.jsxs)("div", {
-				className: Y.sectionBlock,
-				children: [/* @__PURE__ */ (0, X.jsx)("div", {
-					className: Y.sectionHeader,
-					children: /* @__PURE__ */ (0, X.jsx)("span", {
-						className: Y.sectionTitle,
+			/* @__PURE__ */ (0, Z.jsxs)("div", {
+				className: X.sectionBlock,
+				children: [/* @__PURE__ */ (0, Z.jsx)("div", {
+					className: X.sectionHeader,
+					children: /* @__PURE__ */ (0, Z.jsx)("span", {
+						className: X.sectionTitle,
 						children: "Context Limit Setting"
 					})
-				}), /* @__PURE__ */ (0, X.jsxs)("div", {
-					className: Y.rowItem,
-					children: [/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.labelGroup,
-						children: [/* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.itemLabel,
+				}), /* @__PURE__ */ (0, Z.jsxs)("div", {
+					className: X.rowItem,
+					children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.labelGroup,
+						children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.itemLabel,
 							children: "Max Recent Messages"
-						}), /* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.itemSubText,
+						}), /* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.itemSubText,
 							children: "Number of recent chat history turns sent to AI during manual status updates or queries."
 						})]
-					}), /* @__PURE__ */ (0, X.jsx)("input", {
+					}), /* @__PURE__ */ (0, Z.jsx)("input", {
 						type: "number",
 						min: "1",
 						max: "100",
-						className: Y.numberInput,
+						className: X.numberInput,
 						value: s,
 						onChange: h,
 						onBlur: g
 					})]
 				})]
 			}),
-			/* @__PURE__ */ (0, X.jsxs)("div", {
-				className: Y.sectionBlock,
+			/* @__PURE__ */ (0, Z.jsxs)("div", {
+				className: X.sectionBlock,
 				children: [
-					/* @__PURE__ */ (0, X.jsx)("div", {
-						className: Y.sectionHeader,
-						children: /* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.sectionTitle,
+					/* @__PURE__ */ (0, Z.jsx)("div", {
+						className: X.sectionHeader,
+						children: /* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.sectionTitle,
 							children: "Active Add-ons"
 						})
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.toggleRow,
-						children: [/* @__PURE__ */ (0, X.jsxs)("div", {
-							className: Y.labelGroup,
-							children: [/* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemLabel,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.toggleRow,
+						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
+							className: X.labelGroup,
+							children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemLabel,
 								children: "World Events"
-							}), /* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemSubText,
+							}), /* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemSubText,
 								children: "Inject guidelines for generating dynamic global events."
 							})]
-						}), /* @__PURE__ */ (0, X.jsx)(Cr, {
+						}), /* @__PURE__ */ (0, Z.jsx)(Cr, {
 							checked: m.worldEvents || !1,
 							onChange: (e) => _("worldEvents", e)
 						})]
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.toggleRow,
-						children: [/* @__PURE__ */ (0, X.jsxs)("div", {
-							className: Y.labelGroup,
-							children: [/* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemLabel,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.toggleRow,
+						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
+							className: X.labelGroup,
+							children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemLabel,
 								children: "Dynamic Weather"
-							}), /* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemSubText,
+							}), /* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemSubText,
 								children: "Inject guidelines for weather changes and atmosphere descriptions."
 							})]
-						}), /* @__PURE__ */ (0, X.jsx)(Cr, {
+						}), /* @__PURE__ */ (0, Z.jsx)(Cr, {
 							checked: m.weather || !1,
 							onChange: (e) => _("weather", e)
 						})]
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.toggleRow,
-						children: [/* @__PURE__ */ (0, X.jsxs)("div", {
-							className: Y.labelGroup,
-							children: [/* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemLabel,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.toggleRow,
+						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
+							className: X.labelGroup,
+							children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemLabel,
 								children: "CYOA Mode"
-							}), /* @__PURE__ */ (0, X.jsx)("span", {
-								className: Y.itemSubText,
+							}), /* @__PURE__ */ (0, Z.jsx)("span", {
+								className: X.itemSubText,
 								children: "Instruct AI to present interactive choices at response end."
 							})]
-						}), /* @__PURE__ */ (0, X.jsx)(Cr, {
+						}), /* @__PURE__ */ (0, Z.jsx)(Cr, {
 							checked: m.cyoa || !1,
 							onChange: (e) => _("cyoa", e)
 						})]
 					})
 				]
 			}),
-			/* @__PURE__ */ (0, X.jsxs)("div", {
-				className: Y.sectionBlock,
+			/* @__PURE__ */ (0, Z.jsxs)("div", {
+				className: X.sectionBlock,
 				children: [
-					/* @__PURE__ */ (0, X.jsx)("div", {
-						className: Y.sectionHeader,
-						children: /* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.sectionTitle,
+					/* @__PURE__ */ (0, Z.jsx)("div", {
+						className: X.sectionHeader,
+						children: /* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.sectionTitle,
 							children: "Character Generator"
 						})
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.inputGroup,
-						children: [/* @__PURE__ */ (0, X.jsx)("span", {
-							className: Y.fieldLabel,
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.inputGroup,
+						children: [/* @__PURE__ */ (0, Z.jsx)("span", {
+							className: X.fieldLabel,
 							children: "Target Name (Optional)"
-						}), /* @__PURE__ */ (0, X.jsx)("input", {
+						}), /* @__PURE__ */ (0, Z.jsx)("input", {
 							type: "text",
-							className: Y.textInput,
+							className: X.textInput,
 							value: a,
 							onChange: (e) => o(e.target.value),
 							placeholder: "Leave blank to auto-detect from chat"
 						})]
 					}),
-					/* @__PURE__ */ (0, X.jsxs)("div", {
-						className: Y.buttonGroup,
-						children: [/* @__PURE__ */ (0, X.jsx)("button", {
+					/* @__PURE__ */ (0, Z.jsxs)("div", {
+						className: X.buttonGroup,
+						children: [/* @__PURE__ */ (0, Z.jsx)("button", {
 							type: "button",
 							className: "rpg-btn",
 							style: {
@@ -16903,7 +16958,7 @@ function Ic() {
 							},
 							onClick: () => v("npc"),
 							children: "Generate NPC"
-						}), /* @__PURE__ */ (0, X.jsx)("button", {
+						}), /* @__PURE__ */ (0, Z.jsx)("button", {
 							type: "button",
 							className: "rpg-btn",
 							style: {
@@ -16919,68 +16974,68 @@ function Ic() {
 		]
 	});
 }
-var Lc, X, Rc = o((() => {
-	Lc = /* @__PURE__ */ l(d()), Je(), Fc(), le(), Or(), X = Ve();
+var zc, Z, Bc = o((() => {
+	zc = /* @__PURE__ */ l(d()), Je(), Lc(), le(), Or(), Z = Ve();
 }));
 //#endregion
 //#region src/tracker/TrackerPanel.jsx
-function zc() {
-	let { settings: e, updateSettings: t, isChatConnected: n, revertToOriginalTurnState: r, uiState: i, updateUiState: a } = Ue(), o = i.activeTab || "status", s = (e) => a({ activeTab: e }), [c, l] = (0, Bc.useState)(null), [u, d] = (0, Bc.useState)("status"), [f, p] = (0, Bc.useState)(!1), [m, h] = (0, Bc.useState)(!1), g = e.isPanelOpen || !1, _ = e.panelPosition === "right" ? "right" : "left";
-	return g ? /* @__PURE__ */ (0, Z.jsxs)("div", {
-		className: `${A.panelContainer} ${A[_]}`,
+function Vc() {
+	let { settings: e, updateSettings: t, isChatConnected: n, revertToOriginalTurnState: r, uiState: i, updateUiState: a } = Ue(), o = i.activeTab || "status", s = (e) => a({ activeTab: e }), [c, l] = (0, Hc.useState)(null), [u, d] = (0, Hc.useState)("status"), [f, p] = (0, Hc.useState)(!1), [m, h] = (0, Hc.useState)(!1), g = e.isPanelOpen || !1, _ = e.panelPosition === "right" ? "right" : "left";
+	return g ? /* @__PURE__ */ (0, Uc.jsxs)("div", {
+		className: `${Kt.panelContainer} ${Kt[_]}`,
 		children: [
-			/* @__PURE__ */ (0, Z.jsx)("button", {
+			/* @__PURE__ */ (0, Uc.jsx)("button", {
 				type: "button",
-				className: `${A.collapseButton} ${A[_]}`,
+				className: `${Kt.collapseButton} ${Kt[_]}`,
 				onClick: () => {
 					t({ isPanelOpen: !1 });
 				},
 				title: "Collapse Panel",
-				children: /* @__PURE__ */ (0, Z.jsx)(ft, {
-					className: A.collapseIcon,
+				children: /* @__PURE__ */ (0, Uc.jsx)(ft, {
+					className: Kt.collapseIcon,
 					direction: _
 				})
 			}),
-			/* @__PURE__ */ (0, Z.jsxs)("div", {
-				className: A.panelInner,
-				children: [/* @__PURE__ */ (0, Z.jsxs)("header", {
-					className: A.panelHeader,
-					children: [/* @__PURE__ */ (0, Z.jsx)("div", {
-						className: A.headerLeftArea,
-						children: /* @__PURE__ */ (0, Z.jsxs)("div", {
-							className: A.brand,
+			/* @__PURE__ */ (0, Uc.jsxs)("div", {
+				className: Kt.panelInner,
+				children: [/* @__PURE__ */ (0, Uc.jsxs)("header", {
+					className: Kt.panelHeader,
+					children: [/* @__PURE__ */ (0, Uc.jsx)("div", {
+						className: Kt.headerLeftArea,
+						children: /* @__PURE__ */ (0, Uc.jsxs)("div", {
+							className: Kt.brand,
 							children: [
-								/* @__PURE__ */ (0, Z.jsx)(pt, { className: A.headerIcon }),
-								/* @__PURE__ */ (0, Z.jsx)("span", {
-									className: A.headerTitle,
+								/* @__PURE__ */ (0, Uc.jsx)(pt, { className: Kt.headerIcon }),
+								/* @__PURE__ */ (0, Uc.jsx)("span", {
+									className: Kt.headerTitle,
 									children: "RPG Tracker"
 								}),
-								/* @__PURE__ */ (0, Z.jsx)("div", {
-									className: `${A.statusDot} ${n ? A.statusDotConnected : A.statusDotDisconnected}`,
+								/* @__PURE__ */ (0, Uc.jsx)("div", {
+									className: `${Kt.statusDot} ${n ? Kt.statusDotConnected : Kt.statusDotDisconnected}`,
 									title: n ? "Connected to Chat" : "Disconnected"
 								})
 							]
 						})
-					}), /* @__PURE__ */ (0, Z.jsxs)("div", {
-						className: A.headerRightArea,
-						children: [/* @__PURE__ */ (0, Z.jsxs)("div", {
-							className: A.headerButtonRow,
-							children: [/* @__PURE__ */ (0, Z.jsxs)("button", {
+					}), /* @__PURE__ */ (0, Uc.jsxs)("div", {
+						className: Kt.headerRightArea,
+						children: [/* @__PURE__ */ (0, Uc.jsxs)("div", {
+							className: Kt.headerButtonRow,
+							children: [/* @__PURE__ */ (0, Uc.jsxs)("button", {
 								type: "button",
-								className: `rpg-btn ${A.headerBtn}`,
+								className: `rpg-btn ${Kt.headerBtn}`,
 								onClick: () => p(!0),
-								children: [/* @__PURE__ */ (0, Z.jsx)(mt, { className: A.headerBtnIcon }), /* @__PURE__ */ (0, Z.jsx)("span", { children: "Prompt" })]
-							}), /* @__PURE__ */ (0, Z.jsxs)("button", {
+								children: [/* @__PURE__ */ (0, Uc.jsx)(mt, { className: Kt.headerBtnIcon }), /* @__PURE__ */ (0, Uc.jsx)("span", { children: "Prompt" })]
+							}), /* @__PURE__ */ (0, Uc.jsxs)("button", {
 								type: "button",
-								className: `rpg-btn ${A.headerBtn}`,
+								className: `rpg-btn ${Kt.headerBtn}`,
 								onClick: () => h(!0),
-								children: [/* @__PURE__ */ (0, Z.jsx)(ot, { className: A.headerBtnIcon }), /* @__PURE__ */ (0, Z.jsx)("span", { children: "Settings" })]
+								children: [/* @__PURE__ */ (0, Uc.jsx)(ot, { className: Kt.headerBtnIcon }), /* @__PURE__ */ (0, Uc.jsx)("span", { children: "Settings" })]
 							})]
-						}), /* @__PURE__ */ (0, Z.jsxs)("div", {
-							className: A.headerButtonRow,
-							children: [(e.updateMode === "isolated" || e.updateMode === "separated") && /* @__PURE__ */ (0, Z.jsxs)("button", {
+						}), /* @__PURE__ */ (0, Uc.jsxs)("div", {
+							className: Kt.headerButtonRow,
+							children: [(e.updateMode === "isolated" || e.updateMode === "separated") && /* @__PURE__ */ (0, Uc.jsxs)("button", {
 								type: "button",
-								className: `rpg-btn ${A.headerBtn}`,
+								className: `rpg-btn ${Kt.headerBtn}`,
 								onClick: async () => {
 									if (!n) {
 										alert("Not connected to a chat room. Please connect to a chat room to use this feature.");
@@ -16992,27 +17047,27 @@ function zc() {
 										console.error("[RPG Tracker] Manual update failed", e);
 									}
 								},
-								children: [/* @__PURE__ */ (0, Z.jsx)(_t, { className: A.headerBtnIcon }), /* @__PURE__ */ (0, Z.jsx)("span", { children: "Update" })]
-							}), /* @__PURE__ */ (0, Z.jsxs)("button", {
+								children: [/* @__PURE__ */ (0, Uc.jsx)(_t, { className: Kt.headerBtnIcon }), /* @__PURE__ */ (0, Uc.jsx)("span", { children: "Update" })]
+							}), /* @__PURE__ */ (0, Uc.jsxs)("button", {
 								type: "button",
-								className: `rpg-btn ${A.headerBtn}`,
+								className: `rpg-btn ${Kt.headerBtn}`,
 								title: "Revert to Original Turn State",
 								onClick: r,
-								children: [/* @__PURE__ */ (0, Z.jsx)(gt, { className: A.headerBtnIcon }), /* @__PURE__ */ (0, Z.jsx)("span", { children: "TurnBack" })]
+								children: [/* @__PURE__ */ (0, Uc.jsx)(gt, { className: Kt.headerBtnIcon }), /* @__PURE__ */ (0, Uc.jsx)("span", { children: "TurnBack" })]
 							})]
 						})]
 					})]
-				}), /* @__PURE__ */ (0, Z.jsx)("div", {
-					className: A.scrollContainer,
-					children: /* @__PURE__ */ (0, Z.jsxs)("div", {
-						className: A.contentWrapper,
-						children: [/* @__PURE__ */ (0, Z.jsx)("nav", {
+				}), /* @__PURE__ */ (0, Uc.jsx)("div", {
+					className: Kt.scrollContainer,
+					children: /* @__PURE__ */ (0, Uc.jsxs)("div", {
+						className: Kt.contentWrapper,
+						children: [/* @__PURE__ */ (0, Uc.jsx)("nav", {
 							className: "rpg-tab-nav",
 							children: [
 								"status",
 								"world",
 								"function"
-							].map((e) => /* @__PURE__ */ (0, Z.jsxs)("button", {
+							].map((e) => /* @__PURE__ */ (0, Uc.jsxs)("button", {
 								type: "button",
 								className: `rpg-tab-btn ${o === e ? "active" : ""}`,
 								onClick: () => s(e),
@@ -17022,33 +17077,33 @@ function zc() {
 									e === "function" && "Function"
 								]
 							}, e))
-						}), /* @__PURE__ */ (0, Z.jsxs)("main", {
-							className: A.panelBody,
+						}), /* @__PURE__ */ (0, Uc.jsxs)("main", {
+							className: Kt.panelBody,
 							children: [
-								o === "status" && /* @__PURE__ */ (0, Z.jsx)(Qo, { onOpenEditor: (e, t = "status") => {
+								o === "status" && /* @__PURE__ */ (0, Uc.jsx)(Qo, { onOpenEditor: (e, t = "status") => {
 									l(e), d(t);
 								} }),
-								o === "world" && /* @__PURE__ */ (0, Z.jsx)(_c, {}),
-								o === "function" && /* @__PURE__ */ (0, Z.jsx)(Ic, {})
+								o === "world" && /* @__PURE__ */ (0, Uc.jsx)(yc, {}),
+								o === "function" && /* @__PURE__ */ (0, Uc.jsx)(Rc, {})
 							]
 						})]
 					})
 				})]
 			}),
-			c && /* @__PURE__ */ (0, Z.jsx)(Mo, {
+			c && /* @__PURE__ */ (0, Uc.jsx)(Mo, {
 				charId: c,
 				initialTab: u,
 				onClose: () => l(null)
 			}),
-			f && /* @__PURE__ */ (0, Z.jsx)(Os, { onClose: () => p(!1) }),
-			m && /* @__PURE__ */ (0, Z.jsx)(Js, { onClose: () => h(!1) })
+			f && /* @__PURE__ */ (0, Uc.jsx)(js, { onClose: () => p(!1) }),
+			m && /* @__PURE__ */ (0, Uc.jsx)(Xs, { onClose: () => h(!1) })
 		]
 	}) : null;
 }
-var Bc, Z, Vc = o((() => {
-	Bc = /* @__PURE__ */ l(d()), Je(), qt(), yt(), ts(), Po(), As(), Xs(), vc(), Rc(), Z = Ve();
-})), Hc, Uc, Wc, Gc = o((() => {
-	Hc = /* @__PURE__ */ l(d()), Uc = Ve(), Wc = class extends Hc.Component {
+var Hc, Uc, Wc = o((() => {
+	Hc = /* @__PURE__ */ l(d()), Je(), qt(), vt(), ts(), Po(), Ms(), Qs(), bc(), Bc(), Uc = Ve();
+})), Gc, Kc, qc, Jc = o((() => {
+	Gc = /* @__PURE__ */ l(d()), Kc = Ve(), qc = class extends Gc.Component {
 		constructor(e) {
 			super(e), this.state = {
 				hasError: !1,
@@ -17071,7 +17126,7 @@ var Bc, Z, Vc = o((() => {
 			});
 		};
 		render() {
-			return this.state.hasError ? /* @__PURE__ */ (0, Uc.jsxs)("div", {
+			return this.state.hasError ? /* @__PURE__ */ (0, Kc.jsxs)("div", {
 				style: {
 					padding: "16px",
 					margin: "10px",
@@ -17087,7 +17142,7 @@ var Bc, Z, Vc = o((() => {
 					boxShadow: "0 4px 12px rgba(0,0,0,0.3)"
 				},
 				children: [
-					/* @__PURE__ */ (0, Uc.jsx)("h3", {
+					/* @__PURE__ */ (0, Kc.jsx)("h3", {
 						style: {
 							margin: 0,
 							fontSize: "13px",
@@ -17095,7 +17150,7 @@ var Bc, Z, Vc = o((() => {
 						},
 						children: "[Error] RPG Tracker UI Crash"
 					}),
-					/* @__PURE__ */ (0, Uc.jsxs)("p", {
+					/* @__PURE__ */ (0, Kc.jsxs)("p", {
 						style: {
 							margin: 0,
 							fontSize: "11px",
@@ -17104,11 +17159,11 @@ var Bc, Z, Vc = o((() => {
 						},
 						children: [
 							"A rendering error occurred in this component.",
-							/* @__PURE__ */ (0, Uc.jsx)("br", {}),
+							/* @__PURE__ */ (0, Kc.jsx)("br", {}),
 							"Check the console (F12) for details."
 						]
 					}),
-					/* @__PURE__ */ (0, Uc.jsx)("button", {
+					/* @__PURE__ */ (0, Kc.jsx)("button", {
 						onClick: this.handleReset,
 						style: {
 							background: "#e74c3c",
@@ -17128,37 +17183,37 @@ var Bc, Z, Vc = o((() => {
 			}) : this.props.children;
 		}
 	};
-})), Kc, qc, Jc, Yc, Xc, Zc, Qc, $c, el, tl, nl, rl, il, al, ol, sl, cl, ll, ul, dl, fl, pl, ml, hl, Q, gl = o((() => {
-	Kc = "_tabContentFadeIn_u5h5k_3", qc = "_tabFadeIn_u5h5k_1", Jc = "_section_u5h5k_21", Yc = "_sectionTitleRow_u5h5k_35", Xc = "_sectionTitle_u5h5k_35", Zc = "_charRow_u5h5k_61", Qc = "_worldRow_u5h5k_83", $c = "_charNameLabel_u5h5k_97", el = "_charOptionsRow_u5h5k_117", tl = "_worldOptionsContainer_u5h5k_131", nl = "_worldOptionsRow_u5h5k_147", rl = "_activeOps_u5h5k_159", il = "_disabledOps_u5h5k_167", al = "_checkboxItem_u5h5k_177", ol = "_textarea_u5h5k_193", sl = "_jsonEditor_u5h5k_229", cl = "_jsonEditorWritable_u5h5k_261", ll = "_editorGroupBlock_u5h5k_275", ul = "_editorGroupTitle_u5h5k_309", dl = "_visualEditorRow_u5h5k_327", fl = "_visualEditorLabel_u5h5k_341", pl = "_visualEditorSubLabel_u5h5k_367", ml = "_visualEditorInput_u5h5k_383", hl = "_visualEditorTextarea_u5h5k_417", Q = {
-		tabContentFadeIn: Kc,
-		tabFadeIn: qc,
-		section: Jc,
-		sectionTitleRow: Yc,
-		sectionTitle: Xc,
-		charRow: Zc,
-		worldRow: Qc,
-		charNameLabel: $c,
-		charOptionsRow: el,
-		worldOptionsContainer: tl,
-		worldOptionsRow: nl,
-		activeOps: rl,
-		disabledOps: il,
-		checkboxItem: al,
-		textarea: ol,
-		jsonEditor: sl,
-		jsonEditorWritable: cl,
-		editorGroupBlock: ll,
-		editorGroupTitle: ul,
-		visualEditorRow: dl,
-		visualEditorLabel: fl,
-		visualEditorSubLabel: pl,
-		visualEditorInput: ml,
-		visualEditorTextarea: hl
+})), Yc, Xc, Zc, Qc, $c, el, tl, nl, rl, il, al, ol, sl, cl, ll, ul, dl, fl, pl, ml, hl, gl, _l, vl, Q, yl = o((() => {
+	Yc = "_tabContentFadeIn_u5h5k_3", Xc = "_tabFadeIn_u5h5k_1", Zc = "_section_u5h5k_21", Qc = "_sectionTitleRow_u5h5k_35", $c = "_sectionTitle_u5h5k_35", el = "_charRow_u5h5k_61", tl = "_worldRow_u5h5k_83", nl = "_charNameLabel_u5h5k_97", rl = "_charOptionsRow_u5h5k_117", il = "_worldOptionsContainer_u5h5k_131", al = "_worldOptionsRow_u5h5k_147", ol = "_activeOps_u5h5k_159", sl = "_disabledOps_u5h5k_167", cl = "_checkboxItem_u5h5k_177", ll = "_textarea_u5h5k_193", ul = "_jsonEditor_u5h5k_229", dl = "_jsonEditorWritable_u5h5k_261", fl = "_editorGroupBlock_u5h5k_275", pl = "_editorGroupTitle_u5h5k_309", ml = "_visualEditorRow_u5h5k_327", hl = "_visualEditorLabel_u5h5k_341", gl = "_visualEditorSubLabel_u5h5k_367", _l = "_visualEditorInput_u5h5k_383", vl = "_visualEditorTextarea_u5h5k_417", Q = {
+		tabContentFadeIn: Yc,
+		tabFadeIn: Xc,
+		section: Zc,
+		sectionTitleRow: Qc,
+		sectionTitle: $c,
+		charRow: el,
+		worldRow: tl,
+		charNameLabel: nl,
+		charOptionsRow: rl,
+		worldOptionsContainer: il,
+		worldOptionsRow: al,
+		activeOps: ol,
+		disabledOps: sl,
+		checkboxItem: cl,
+		textarea: ll,
+		jsonEditor: ul,
+		jsonEditorWritable: dl,
+		editorGroupBlock: fl,
+		editorGroupTitle: pl,
+		visualEditorRow: ml,
+		visualEditorLabel: hl,
+		visualEditorSubLabel: gl,
+		visualEditorInput: _l,
+		visualEditorTextarea: vl
 	};
 }));
 //#endregion
 //#region src/messagetracker/SnapshotCore.js
-function _l(e, t, n) {
+function bl(e, t, n) {
 	if (!e) return {};
 	let r = {}, i = t.world && typeof t.world == "object";
 	if ((i ? t.world.selected : t.world) && e.worldState) {
@@ -17174,14 +17229,14 @@ function _l(e, t, n) {
 		}
 	}), Object.keys(a).length > 0 && (r.chars = a), n && n.trim() !== "" && (r.note = n.trim()), r;
 }
-function vl(e) {
+function xl(e) {
 	return !e || Object.keys(e).length === 0 ? "" : `\n\n<!-- <rpgmt>${JSON.stringify(e)}</rpgmt> -->`;
 }
-var yl = o((() => {}));
+var Sl = o((() => {}));
 //#endregion
 //#region src/messagetracker/SnapshotModal.jsx
-function bl() {
-	let { trackerData: e, snapshotModalData: t } = Ue(), n = !!t?.historicalData, [r, i] = (0, xl.useState)("select"), [a, o] = (0, xl.useState)({
+function Cl() {
+	let { trackerData: e, snapshotModalData: t } = Ue(), n = !!t?.historicalData, [r, i] = (0, wl.useState)("select"), [a, o] = (0, wl.useState)({
 		world: {
 			selected: !1,
 			date: !0,
@@ -17191,8 +17246,8 @@ function bl() {
 			events: !1
 		},
 		chars: {}
-	}), [s, c] = (0, xl.useState)(null), [l, u] = (0, xl.useState)(""), [d, f] = (0, xl.useState)(!1), [p, m] = (0, xl.useState)("{}"), h = t?.historicalData || e;
-	(0, xl.useEffect)(() => {
+	}), [s, c] = (0, wl.useState)(null), [l, u] = (0, wl.useState)(""), [d, f] = (0, wl.useState)(!1), [p, m] = (0, wl.useState)("{}"), h = t?.historicalData || e;
+	(0, wl.useEffect)(() => {
 		if (t?.isOpen && h && h.characters) {
 			let e = {};
 			h.characters.forEach((t) => {
@@ -17302,12 +17357,12 @@ function bl() {
 				chars: n
 			}), i("editor");
 		}
-	}, v = (0, xl.useMemo)(() => s ? _l(s, a, l) : {}, [
+	}, v = (0, wl.useMemo)(() => s ? bl(s, a, l) : {}, [
 		s,
 		a,
 		l
 	]);
-	if ((0, xl.useEffect)(() => {
+	if ((0, wl.useEffect)(() => {
 		d || m(JSON.stringify(v, null, 2) || "{}");
 	}, [v, d]), !t?.isOpen) return null;
 	let y = () => {
@@ -18137,7 +18192,7 @@ function bl() {
 								let a = /(?:\n\n)?(?:<!--\s*)?(?:(?:<|&lt;)rpgmt(?:>|&gt;)|<div class="rpgmt-data">)[\s\S]*?(?:(?:<|&lt;)\/rpgmt(?:>|&gt;)|<\/div>)(?:\s*-->)?/gi;
 								if (Object.keys(n).length === 0) i.mes = i.mes.replace(a, "").trim();
 								else {
-									let e = vl(n);
+									let e = xl(n);
 									a.test(i.mes) ? i.mes = i.mes.replace(new RegExp(a.source, "i"), e) : i.mes += e;
 								}
 								let o = i.swipe_id || 0;
@@ -18182,19 +18237,19 @@ function bl() {
 		})
 	});
 }
-var xl, $, Sl = o((() => {
-	xl = /* @__PURE__ */ l(d()), Je(), gl(), yl(), $ = Ve();
+var wl, $, Tl = o((() => {
+	wl = /* @__PURE__ */ l(d()), Je(), yl(), Sl(), $ = Ve();
 }));
 //#endregion
 //#region src/App.jsx
-function Cl() {
+function El() {
 	let { isEnabled: e, settings: t } = Ue();
-	if ((0, Tl.useEffect)(() => {
+	if ((0, Ol.useEffect)(() => {
 		let t = document.getElementById("my-rpg-react-root");
 		t && (e ? (t.style.setProperty("display", "block", "important"), t.style.setProperty("background", "transparent", "important"), t.style.setProperty("border", "none", "important"), t.style.setProperty("box-shadow", "none", "important"), t.style.setProperty("padding", "0", "important"), t.style.setProperty("width", "0", "important"), t.style.setProperty("height", "0", "important"), t.style.setProperty("position", "fixed", "important"), t.style.setProperty("top", "0", "important"), t.style.setProperty("left", "0", "important"), t.style.setProperty("pointer-events", "auto", "important")) : t.style.setProperty("display", "none", "important"));
 	}, [e]), !e) return null;
 	let n = t.theme === "custom";
-	return /* @__PURE__ */ (0, El.jsxs)("div", {
+	return /* @__PURE__ */ (0, kl.jsxs)("div", {
 		style: {
 			"--rpg-bg": n && t.customColors?.bg ? t.customColors.bg : "var(--SmartThemeBlurTintColor, var(--bg-color, rgba(26, 26, 46, 0.95)))",
 			"--rpg-accent": n && t.customColors?.accent ? t.customColors.accent : "var(--black30a, rgba(0, 0, 0, 0.3))",
@@ -18206,27 +18261,27 @@ function Cl() {
 			height: "100%"
 		},
 		children: [
-			/* @__PURE__ */ (0, El.jsx)("div", {
+			/* @__PURE__ */ (0, kl.jsx)("div", {
 				style: { pointerEvents: "auto" },
-				children: /* @__PURE__ */ (0, El.jsx)(Wc, { children: /* @__PURE__ */ (0, El.jsx)(bt, {}) })
+				children: /* @__PURE__ */ (0, kl.jsx)(qc, { children: /* @__PURE__ */ (0, kl.jsx)(yt, {}) })
 			}),
-			/* @__PURE__ */ (0, El.jsx)("div", {
+			/* @__PURE__ */ (0, kl.jsx)("div", {
 				style: { pointerEvents: "auto" },
-				children: /* @__PURE__ */ (0, El.jsx)(Wc, { children: /* @__PURE__ */ (0, El.jsx)(zc, {}) })
+				children: /* @__PURE__ */ (0, kl.jsx)(qc, { children: /* @__PURE__ */ (0, kl.jsx)(Vc, {}) })
 			}),
-			/* @__PURE__ */ (0, El.jsx)("div", {
+			/* @__PURE__ */ (0, kl.jsx)("div", {
 				style: { pointerEvents: "auto" },
-				children: /* @__PURE__ */ (0, El.jsx)(Wc, { children: /* @__PURE__ */ (0, El.jsx)(bl, {}) })
+				children: /* @__PURE__ */ (0, kl.jsx)(qc, { children: /* @__PURE__ */ (0, kl.jsx)(Cl, {}) })
 			})
 		]
 	});
 }
-function wl() {
-	return /* @__PURE__ */ (0, El.jsx)(He, { children: /* @__PURE__ */ (0, El.jsx)(Cl, {}) });
+function Dl() {
+	return /* @__PURE__ */ (0, kl.jsx)(He, { children: /* @__PURE__ */ (0, kl.jsx)(El, {}) });
 }
-var Tl, El, Dl = o((() => {
-	Tl = /* @__PURE__ */ l(d()), Je(), Ct(), Vc(), Gc(), Sl(), El = Ve();
-})), Ol = o((() => {})), kl = o((() => {})), Al = /* @__PURE__ */ s(((e, t) => {
+var Ol, kl, Al = o((() => {
+	Ol = /* @__PURE__ */ l(d()), Je(), St(), Wc(), Jc(), Tl(), kl = Ve();
+})), jl = o((() => {})), Ml = o((() => {})), Nl = /* @__PURE__ */ s(((e, t) => {
 	(function(n, r) {
 		typeof e == "object" && t !== void 0 ? r(e) : typeof define == "function" && define.amd ? define(["exports"], r) : r(n.MobileDragDrop = n.MobileDragDrop || {});
 	})(e, function(e) {
@@ -18535,19 +18590,19 @@ var Tl, El, Dl = o((() => {
 			return C.holdToDrag ? s("touchstart", ee, !1) : s("touchstart", w, !1), !0;
 		}, e.supportsPassiveEventListener = i, Object.defineProperty(e, "G", { value: !0 });
 	});
-})), jl = o((() => {})), Ml = /* @__PURE__ */ s((() => {
+})), Pl = o((() => {})), Fl = /* @__PURE__ */ s((() => {
 	var e = /* @__PURE__ */ l(d()), t = /* @__PURE__ */ l(_());
-	Dl(), Ol(), kl();
-	var n = Al();
-	jl();
+	Al(), jl(), Ml();
+	var n = Nl();
+	Pl();
 	var r = Ve();
 	(0, n.polyfill)({ dragImageCenterOnTouch: !0 });
 	var i = document.getElementById("my-rpg-react-root");
 	if (i) try {
-		t.createRoot(i).render(/* @__PURE__ */ (0, r.jsx)(e.StrictMode, { children: /* @__PURE__ */ (0, r.jsx)(wl, {}) }));
+		t.createRoot(i).render(/* @__PURE__ */ (0, r.jsx)(e.StrictMode, { children: /* @__PURE__ */ (0, r.jsx)(Dl, {}) }));
 	} catch (e) {
 		console.error("[RPG Tracker] React rendering error:", e);
 	}
 }));
 //#endregion
-export default Ml();
+export default Fl();
