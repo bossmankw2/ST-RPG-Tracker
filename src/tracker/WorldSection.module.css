@@ -184,3 +184,79 @@
   text-align: center;
   margin: 4px 0 0 0;
 }
+
+.eventTimeDetails {
+  min-width: 0;
+  border: 1px solid var(--rpg-border);
+  border-radius: 4px;
+  background: rgba(0, 0, 0, 0.12);
+}
+
+.eventTimeSummary {
+  cursor: pointer;
+  padding: 7px 8px;
+  font-size: 11px;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.eventTimeSummary:focus-visible {
+  outline: 1px solid var(--rpg-highlight);
+  outline-offset: 2px;
+}
+
+.eventTimeLabel {
+  color: var(--rpg-highlight);
+  margin-right: 6px;
+}
+
+.eventTimeValue {
+  color: var(--rpg-text);
+}
+
+.eventTimeFields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  padding: 3px 8px 0;
+}
+
+.eventTimeField {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  font-size: 11px;
+  color: var(--rpg-text);
+}
+
+.eventTimeInput {
+  width: 100%;
+  min-width: 0;
+  min-height: 30px;
+  box-sizing: border-box;
+  padding: 6px;
+  background: rgba(0, 0, 0, 0.2);
+  border: 1px solid var(--rpg-border);
+  border-radius: 4px;
+  color: var(--rpg-text);
+  font: inherit;
+}
+
+.eventTimeInput:focus {
+  outline: none;
+  border-color: var(--rpg-highlight);
+}
+
+.eventTimeHint {
+  margin: 8px;
+  font-size: 10.5px;
+  line-height: 1.4;
+  opacity: 0.7;
+}
+
+@media (max-width: 360px) {
+  .eventTimeFields {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

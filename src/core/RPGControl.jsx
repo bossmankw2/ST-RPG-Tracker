@@ -23,6 +23,7 @@ const DEFAULT_SETTINGS = {
   showInventory: true,
   showQuests: true,
   presets: [],
+  fieldDefinitionPresets: [],
   characterSyncs: {},
   useCustomModel: false,
   customModel: '',

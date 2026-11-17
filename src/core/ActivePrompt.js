@@ -3,6 +3,7 @@ import {
   DEFAULT_WEATHER_PROMPT,
   DEFAULT_WORLD_EVENTS_PROMPT
 } from './PromptSchema.js';
+import { WORLD_EVENT_TIME_EXAMPLE, WORLD_EVENT_TIME_INSTRUCTION, worldEventPromptRecord } from './WorldEventTime.js';
 
 export function buildStaticDefinitionsPrompt(trackerData) {
   const globalDefs = trackerData.globalDefinitions || {};
@@ -131,7 +132,7 @@ export function getDynamicSchemaExample(trackerData, forcePlayer = null) {
   if (ms.world_time) worldFields["time"] = wSchema.timeCustom || "14:30";
   if (ms.world_weather) worldFields["weather"] = wSchema.weatherCustom || "Clear/Cloudy...";
   if (ms.world_location) worldFields["location"] = wSchema.locationCustom || "Current Location";
-  if (ms.world_events) worldFields["events"] = [{ "name": "Event Name", "desc": "Details" }];
+  if (ms.world_events) worldFields["events"] = [{ "name": "Event Name", "desc": "Details", ...WORLD_EVENT_TIME_EXAMPLE }];
 
   if (Object.keys(worldFields).length > 0) {
     fullSchema["World"] = worldFields;
@@ -172,10 +173,10 @@ export function buildDynamicValuesPrompt(trackerData) {
     if (ms.world_events) {
       const eventsList = Array.isArray(ws.events) ? ws.events : [];
       if (eventsList.length > 0) {
-        worldFields["events"] = eventsList.map(e => typeof e === 'string' ? { name: '', desc: e } : { name: e.name || '', desc: e.desc || '' });
+        worldFields["events"] = eventsList.map(worldEventPromptRecord);
       } else {
         worldFields["events"] = [
-          { name: "<new_value (type: text. Event name)>", desc: "<new_value (type: text. Event description)>" }
+          { name: "<new_value (type: text. Event name)>", desc: "<new_value (type: text. Event description)>", ...WORLD_EVENT_TIME_EXAMPLE }
         ];
       }
     }
@@ -441,7 +442,7 @@ export function buildCleanStatusPrompt(trackerData) {
     if (ms.world_location && ws.location && String(ws.location).trim() !== '') worldFields.location = ws.location;
     if (ms.world_events && Array.isArray(ws.events) && ws.events.length > 0) {
       const validEvents = ws.events
-        .map(e => typeof e === 'string' ? { desc: e } : { name: e.name || '', desc: e.desc || '' })
+        .map(worldEventPromptRecord)
         .filter(e => (e.name && e.name.trim() !== '') || (e.desc && e.desc.trim() !== ''));
       if (validEvents.length > 0) worldFields.events = validEvents;
     }
@@ -628,6 +629,10 @@ export function buildGuidePromptsSection(trackerData) {
   const activeGuides = guidePromptsData
     .filter(g => g.enabled && g.prompt && g.prompt.trim() !== '')
     .map(g => `- ${g.prompt.trim()}`);
+
+  // Add the schema contract at runtime so existing chats keep their custom guides
+  // and still learn the new optional timestamp fields.
+  if (getMasterSwitches(guidePromptsData).world_events) activeGuides.push(`- ${WORLD_EVENT_TIME_INSTRUCTION}`);
 
   return activeGuides.length > 0
     ? `\n### STATUS UPDATE INSTRUCTIONS\n${activeGuides.join('\n')}\n`

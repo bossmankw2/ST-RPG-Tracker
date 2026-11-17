@@ -1,3 +1,5 @@
+import { formatWorldEventTimeHtml } from '../tracker/WorldEventTimeLabel.js';
+
 export const snapshotStyles = `
 <style id="rpg-snapshot-styles">
 .rpg-snapshot-container {
@@ -115,6 +117,10 @@ export const snapshotStyles = `
     display: flex;
     font-size: 0.95em;
 }
+.rpg-snapshot-list li.rpg-snapshot-event {
+    flex-direction: column;
+    gap: 3px;
+}
 .rpg-snapshot-key {
     opacity: 0.7;
     color: var(--rpg-text, inherit);
@@ -176,7 +182,9 @@ export function buildSnapshotHtml(payload) {
             const evList = w.events.map(e => {
                 const nameStr = e.name ? `<strong>${e.name}</strong>: ` : '';
                 const descStr = e.desc || (typeof e === 'string' ? e : '');
-                return `<li><span class="rpg-snapshot-val">${nameStr}${descStr}</span></li>`;
+                const timeStr = formatWorldEventTimeHtml(e);
+                const timeHtml = timeStr ? `<div class="rpg-snapshot-event-time" style="font-size: 0.9em; opacity: 0.8; overflow-wrap: anywhere;">In-story time: ${timeStr}</div>` : '';
+                return `<li class="rpg-snapshot-event"><span class="rpg-snapshot-val">${nameStr}${descStr}</span>${timeHtml}</li>`;
             }).join('');
             
             eventHtml = `

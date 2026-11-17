@@ -1,6 +1,7 @@
 // src/tracker/DeltaLogRenderer.js
 
 import { getMessageScanRecord, mergeScanDelta, getMessageSwipeId, MESSAGE_SCAN_KEY } from '../core/MessageScanState.js';
+import { formatWorldEventTimeHtml } from './WorldEventTimeLabel.js';
 
 export function getDeltaLog(msg) {
     const original = getAutomaticDeltaLog(msg);
@@ -366,8 +367,10 @@ export function buildDeltaLogHtml(delta) {
                         const nameStr = e.name ? `<strong>${e.name}</strong>` : '';
                         const descStr = e.desc || e.description || '';
                         const valStr = [nameStr, descStr].filter(Boolean).join(': ');
-                        if (valStr) {
-                            items.push(`<li><span class="rpg-delta-key">Event ${idx + 1}:</span> <span class="rpg-delta-val">${valStr}</span></li>`);
+                        const timeStr = formatWorldEventTimeHtml(e);
+                        const timeHtml = timeStr ? `<div class="rpg-delta-event-time" style="font-size: 0.9em; opacity: 0.8; overflow-wrap: anywhere;">In-story time: ${timeStr}</div>` : '';
+                        if (valStr || timeStr) {
+                            items.push(`<li><span class="rpg-delta-key">Event ${idx + 1}:</span> <span class="rpg-delta-val">${valStr}</span>${timeHtml}</li>`);
                         }
                     }
                 });

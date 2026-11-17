@@ -2,6 +2,7 @@ import React from 'react';
 import { useRPG } from '../core/RPGControl';
 import styles from './WorldSection.module.css';
 import { AutoGrowingTextArea } from '../utils';
+import { formatWorldEventTime } from './WorldEventTimeLabel.js';
 
 export default function WorldSection() {
   const { trackerData, updateTrackerData, patchWorldField } = useRPG();
@@ -57,7 +58,10 @@ export default function WorldSection() {
 
   const handleEventChange = (index, key, value) => {
     const newEvents = [...events];
-    newEvents[index] = { ...newEvents[index], [key]: value };
+    const current = typeof newEvents[index] === 'string'
+      ? { name: '', desc: newEvents[index] }
+      : (newEvents[index] || {});
+    newEvents[index] = { ...current, [key]: value };
     handleUpdate({ events: newEvents });
   };
 
@@ -176,9 +180,13 @@ export default function WorldSection() {
             {events.length === 0 ? (
               <p className={styles.emptyPlaceholder}>No recorded events.</p>
             ) : (
-              events.map((evtObj, idx) => {
+              events.map((storedEvent, idx) => {
+                const evtObj = typeof storedEvent === 'string'
+                  ? { name: '', desc: storedEvent }
+                  : (storedEvent || {});
+                const eventTime = formatWorldEventTime(evtObj);
                 return (
-                  <div key={evtObj.id || idx} className={styles.eventBlock}>
+                  <div key={evtObj.id || idx} className={styles.eventBlock} data-world-event-index={idx}>
                     <div className={styles.eventHeaderRow}>
                       <span className={styles.eventNumber}>Event {idx + 1}</span>
                       <button
@@ -198,6 +206,36 @@ export default function WorldSection() {
                       onChange={(e) => handleEventChange(idx, 'name', e.target.value)}
                       placeholder="Event Title..."
                     />
+
+                    <details className={styles.eventTimeDetails}>
+                      <summary className={styles.eventTimeSummary}>
+                        <span className={styles.eventTimeLabel}>In-story time</span>
+                        <span className={styles.eventTimeValue} data-world-event-time>
+                          {eventTime || 'Add date / time'}
+                        </span>
+                      </summary>
+                      <div className={styles.eventTimeFields}>
+                        {[
+                          ['startDate', 'Start date', '2025-12-17 or story date'],
+                          ['startTime', 'Start time', '10:02 AM'],
+                          ['endDate', 'End date', '2025-12-17 or story date'],
+                          ['endTime', 'End time', '11:30 AM'],
+                        ].map(([key, label, placeholder]) => (
+                          <label key={key} className={styles.eventTimeField}>
+                            <span>{label}</span>
+                            <input
+                              type="text"
+                              className={styles.eventTimeInput}
+                              aria-label={`Event ${idx + 1} ${label.toLowerCase()}`}
+                              value={typeof evtObj[key] === 'string' ? evtObj[key] : ''}
+                              onChange={e => handleEventChange(idx, key, e.target.value)}
+                              placeholder={placeholder}
+                            />
+                          </label>
+                        ))}
+                      </div>
+                      <p className={styles.eventTimeHint}>Use the story's calendar and time. Leave unknown details blank; an end time is optional.</p>
+                    </details>
 
                     <AutoGrowingTextArea
                       className={styles.eventDescTextarea}

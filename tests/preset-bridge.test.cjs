@@ -28,6 +28,7 @@ function fixture({ initial = [], onRead, onWrite, document } = {}) {
     });
     const calls = [];
     const synced = [];
+    const syncedDefinitions = [];
     let reads = 0;
     let writes = 0;
     let headerCalls = 0;
@@ -38,6 +39,7 @@ function fixture({ initial = [], onRead, onWrite, document } = {}) {
             return { 'Content-Type': 'application/json', 'X-CSRF-Token': 'test-csrf' };
         },
         syncPresets: presets => synced.push(copy(presets)),
+        syncFieldDefinitionPresets: presets => syncedDefinitions.push(copy(presets)),
         fetchImpl: async (url, options) => {
             calls.push({ url, options: copy(options) });
             if (url === '/api/settings/get') {
@@ -57,7 +59,7 @@ function fixture({ initial = [], onRead, onWrite, document } = {}) {
         },
     });
     return {
-        bridge, calls, synced,
+        bridge, calls, synced, syncedDefinitions,
         stored: () => copy(stored),
         reads: () => reads,
         writes: () => writes,
@@ -223,4 +225,102 @@ test('malformed settings documents and invalid libraries are rejected before wri
     }
     const invalidLibrary = fixture({ document: { extension_settings: { [extensionName]: { presets: {} } } } });
     await assert.rejects(invalidLibrary.bridge.readPresetSettings(), /library is invalid/i);
+});
+
+
+test('field definition and character writes share a queue and preserve both libraries', async () => {
+    const started = deferred();
+    const release = deferred();
+    const instance = fixture({
+        onWrite: async ({ number }) => {
+            if (number === 1) {
+                started.resolve();
+                await release.promise;
+            }
+        },
+    });
+    const definitions = [{ id: 'guides', name: 'Guides', definitions: { profile_Age: 'Age in years.' } }];
+    const charactersSave = instance.bridge.persistPresetSettings(library, []);
+    await started.promise;
+    const guideSave = instance.bridge.persistFieldDefinitionPresets(definitions, []);
+    await Promise.resolve();
+    assert.equal(instance.reads(), 1);
+    release.resolve();
+    await Promise.all([charactersSave, guideSave]);
+    assert.deepEqual(instance.stored().extension_settings[extensionName].presets, library);
+    assert.deepEqual(instance.stored().extension_settings[extensionName].fieldDefinitionPresets, definitions);
+    assert.deepEqual(await instance.bridge.readFieldDefinitionPresets(), definitions);
+    assert.deepEqual(instance.syncedDefinitions.at(-1), definitions);
+    const nextCharacters = [...library, { id: 'new', name: 'New', data: [] }];
+    await instance.bridge.persistPresetSettings(nextCharacters, library);
+    assert.deepEqual(instance.stored().extension_settings[extensionName].fieldDefinitionPresets, definitions);
+});
+
+test('field definition conflicts and failed read-back are reported independently of character presets', async () => {
+    const definitions = [{ id: 'guides', name: 'Guides', definitions: { profile_Age: 'Age in years.' } }];
+    const instance = fixture({ document: { extension_settings: { [extensionName]: { presets: library, fieldDefinitionPresets: definitions } } } });
+    await assert.rejects(instance.bridge.persistFieldDefinitionPresets([], []), /another device/i);
+    assert.equal(instance.writes(), 0);
+    assert.deepEqual(instance.stored().extension_settings[extensionName].presets, library);
+    const failed = fixture({ onRead: ({ number }) => number === 2 ? response({}, false) : undefined });
+    await assert.rejects(failed.bridge.persistFieldDefinitionPresets(definitions, []), /could not read/i);
+    assert.equal(failed.writes(), 1);
+});
+
+
+test('reading either account library refreshes the live sibling library before later host autosaves', async () => {
+    const definitions = [{ id: 'guides', name: 'Guides', definitions: { profile_Age: 'Age in years.' } }];
+    const instance = fixture({ document: { extension_settings: { [extensionName]: { presets: library, fieldDefinitionPresets: definitions } } } });
+    await instance.bridge.readFieldDefinitionPresets();
+    assert.deepEqual(instance.synced.at(-1), library);
+    await instance.bridge.readPresetSettings();
+    assert.deepEqual(instance.syncedDefinitions.at(-1), definitions);
+    await instance.bridge.persistFieldDefinitionPresets([], definitions);
+    assert.deepEqual(instance.synced.at(-1), library);
+});
+
+test('a corrupt null definition library is not mistaken for a new empty library', async () => {
+    const instance = fixture({ document: { extension_settings: { [extensionName]: { presets: library, fieldDefinitionPresets: null } } } });
+    await assert.rejects(instance.bridge.readFieldDefinitionPresets(), /library is invalid/i);
+    await assert.rejects(instance.bridge.persistFieldDefinitionPresets([], []), /library is invalid/i);
+    assert.equal(instance.writes(), 0);
+    assert.deepEqual(instance.stored().extension_settings[extensionName].presets, library);
+});
+
+
+test('both live-settings callbacks are optional for standalone account storage consumers', async () => {
+    const bridge = createPresetBridge({
+        extensionName,
+        getRequestHeaders: () => ({}),
+        fetchImpl: async () => response({ settings: { extension_settings: { [extensionName]: { presets: library, fieldDefinitionPresets: [] } } } }),
+    });
+    assert.deepEqual(await bridge.readPresetSettings(), library);
+    assert.deepEqual(await bridge.readFieldDefinitionPresets(), []);
+});
+
+
+test('a failed verification read retains the saved sibling library for later native autosaves', async () => {
+    const definitions = [{ id: 'phone-guides', name: 'Phone guides', definitions: { profile_Age: 'Age in years.' } }];
+    for (const target of ['characters', 'definitions']) {
+        const initial = target === 'characters'
+            ? { presets: [], fieldDefinitionPresets: definitions }
+            : { presets: library, fieldDefinitionPresets: [] };
+        const instance = fixture({
+            document: { extension_settings: { [extensionName]: initial } },
+            onRead: ({ number }) => number === 2 ? response({}, false) : undefined,
+        });
+        const save = target === 'characters'
+            ? instance.bridge.persistPresetSettings(library, [])
+            : instance.bridge.persistFieldDefinitionPresets(definitions, []);
+        await assert.rejects(save, /could not read/i);
+        assert.equal(instance.writes(), 1, 'POST succeeded before read-back failed');
+        // These callbacks feed the live object used by a later native settings
+        // save. Both libraries must match the successful POST, not stale local [].
+        const liveForNativeSave = {
+            presets: instance.synced.at(-1),
+            fieldDefinitionPresets: instance.syncedDefinitions.at(-1),
+        };
+        assert.deepEqual(liveForNativeSave, instance.stored().extension_settings[extensionName]);
+        assert.deepEqual(liveForNativeSave, { presets: library, fieldDefinitionPresets: definitions });
+    }
 });

@@ -115,6 +115,39 @@ limits and existing guide, without chat history or character values. Existing dr
 language is preserved; empty guides default to English. If you edit the field while
 waiting, your edit wins over the late AI result. Errors keep the existing text intact.
 
+## In-story time for World Events
+
+Expand **In-story time** on a World Event to edit its start/end dates and times.
+These are story timestamps, not your device/server clock. Partial dates and
+fictional calendars are supported; leave unknown parts blank. Existing events
+stay undated until information is supplied. AI updates preserve an ongoing event's
+known start and can extend its end when the narrative establishes it. Manual edits
+can correct or clear either endpoint.
+
+Event timestamps are included in tracker prompt context, selected-reply scans,
+manual snapshots and Tracker Changes. Changing the current World State date/time
+does not relabel historical events. Older events are not automatically backfilled.
+
+## Reuse Field Definitions on the server
+
+In **Prompt Editor → Field Definitions**, enter a preset name and click
+**Save to Server** to store the current guideline drafts. This saves only guideline
+text, not character values, field styles or system prompts, and does not apply the
+draft to the current chat.
+
+Select a preset and **Load from Server** to review how many matching guides will
+change, overwrite existing text, or be skipped because the field is absent.
+Loading merges exact matching field keys into the editable draft; unrelated guides
+are kept and no fields are created. Click **Save Changes** to apply to this chat,
+or **Cancel** to discard the loaded draft. Refresh the list for changes made on
+another device; overwriting or deleting an existing preset requires confirmation.
+
+Presets belong to the authenticated SillyTavern account on the server you are using.
+PC and VPS installations use the same mechanism; no extra cloud service or server
+plugin is required. Another device on the same server/account can load them.
+When moving to another server, migrate your SillyTavern account data too: updating
+or cloning this extension repository alone does not transfer saved presets.
+
 ## Editing, ordering, and presets
 
 - Drag the handle beside a character or a Profile/Status field to reorder it. On a keyboard, focus the handle, press Space, move with the arrow keys, and press Space again; Escape cancels the move. Status fields stay within their own group.

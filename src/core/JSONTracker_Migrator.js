@@ -1,6 +1,7 @@
 // src/core/JSONTracker_Migrator.js
 
 import { getDefaultCharacters } from './PromptSchema.js';
+import { getWorldEventTiming } from './WorldEventTime.js';
 
 /**
  * Generate a unique ID combining timestamp and random string
@@ -98,7 +99,8 @@ export function sanitizeTrackerData(trackerData) {
                 return {
                     id: evt.id || `event_${Date.now()}_${idx}_${Math.random().toString(36).substring(2, 5)}`,
                     name: evt.name || '',
-                    desc: evt.desc || evt.description || ''
+                    desc: evt.desc || evt.description || '',
+                    ...getWorldEventTiming(evt)
                 };
             }
             return null;

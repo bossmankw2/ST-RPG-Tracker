@@ -1,3 +1,5 @@
+import { getWorldEventTiming, WORLD_EVENT_TIME_INSTRUCTION } from './WorldEventTime.js';
+
 const blockedKeys = new Set([
     '__proto__', 'prototype', 'constructor', 'id', 'islocked', 'isinject',
     'activeplayer', 'activeinjection', 'statusschema',
@@ -138,7 +140,7 @@ function worldFields(value) {
         if (!Array.isArray(eventsEntry[1])) throw invalid('World events must be a list.');
         result.events = eventsEntry[1].map(event => {
             if (typeof event === 'string' && event.trim()) return event;
-            const record = recordFields(event, { name: 'name', desc: 'desc', description: 'desc' }, 'world event');
+            const record = { ...recordFields(event, { name: 'name', desc: 'desc', description: 'desc' }, 'world event'), ...getWorldEventTiming(event) };
             if (!record.name && !record.desc) throw invalid('World events need a name or description.');
             return record;
         });
@@ -276,6 +278,7 @@ The tracker_reference is current saved state, provided only to resolve identitie
 Update existing characters by their exact reference name or ID. You are explicitly allowed to ADD a new named character described in selected_reply, with ONLY the stats/profile/relations actually supplied there. Do not create unnamed characters, guess aliases, rename characters, change player roles, or output IDs/lock/injection metadata.
 Use absolute resulting values, never arithmetic increments or replayed actions. If the reply only says an action occurred without giving a resulting value, omit the numerical update; scanning must not apply damage, spending or gains twice. Omit unspecified fields, unknown numbers, placeholders and unchanged values. Respect ALL locked fields. Do not delete characters or replace the whole tracker.
 Return one complete JSON object wrapped in <!--RPG_TRACKER ... -->. Use character names as keys, each with supported categories: status, profile, relations, inventory, quests. World may contain date/time/weather/location/events when explicitly supplied. Return {} if no supported updates are present.
+World.events entries use {"name":"...","desc":"..."} plus optional timestamp fields. ${WORLD_EVENT_TIME_INSTRUCTION} In a selected-reply scan, timestamp evidence must come from selected_reply, not tracker_reference.
 status values must be numbers or short text. For a NEW status whose type/limits are explicitly given, use a string such as "25 (type: consumable, min: 0, max: 50)"; do not invent limits. profile contains text descriptions. relations maps a target name to {"description":"...","metrics":{"Trust":10}}. Inventory belongs only to an existing active player; use {"equipment":{"Right Hand":"Sword"},"storage":{"Backpack":[{"name":"Potion","quantity":2}]}} and include a storage container only if its full resulting contents are stated. quests uses {"main":{"name":"...","description":"...","status":"ACTIVE"},"sideQuests":[{"name":"...","status":"COMPLETED"}]}.
 Input JSON:
 ${JSON.stringify({ tracker_reference: reference, selected_reply: source })}`;

@@ -1,5 +1,21 @@
 # Changelog
 
+## 1.4.0 — 2026-11-17
+
+- Add optional in-story start/end dates and times to World Events. Edit them on
+  each event, including partial timestamps and fictional calendars. Existing
+  events stay undated unless timing is supplied; no device/server clock is used.
+- Preserve an ongoing event's known start during AI updates and carry timestamps
+  through tracker migration, prompts/recall, manual scans, snapshots and recaps.
+- Add named **Save to Server** / **Load from Server** presets in Prompt Editor
+  → Field Definitions. Reuse guideline text on the same SillyTavern account across
+  chats and devices, whether the server runs on a PC or VPS.
+- Keep preset saves separate from chat changes. Load only matching field keys into
+  editable drafts, preview overwritten/skipped guides, and apply with Save Changes.
+  Keep character values, field schemas and unrelated guidelines unchanged.
+- Confirm preset overwrites/deletion, refresh the server library, detect stale
+  records, verify writes, and preserve drafts on failures or late load responses.
+
 ## 1.3.1 — 2026-10-26
 
 - Add **Suggest** beside Status, Profile and Relationship guidelines in Prompt Editor

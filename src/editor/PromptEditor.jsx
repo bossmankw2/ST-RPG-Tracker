@@ -20,6 +20,7 @@ import { getDynamicSchemaExample } from '../core/ActivePrompt';
 import { ToggleSwitch, AccordionArrow, AutoGrowingTextArea } from '../utils';
 import { StatusSpecConfig } from './StatusSpecsTab';
 import { RelationMetricConfig } from './RelationsTab';
+import DefinitionPresetControls from './DefinitionPresetControls';
 
 export default function PromptEditor({ onClose }) {
   const { trackerData, updateTrackerData } = useRPG();
@@ -87,6 +88,19 @@ export default function PromptEditor({ onClose }) {
     setLocalDefObj(definitions);
     setSuggestionFeedback('');
   };
+
+  const captureDefinitionDraft = () => ({
+    definitions: definitionsRef.current,
+    epoch: definitionEpochRef.current,
+    tracker: trackerRef.current,
+    chatKey: window.RPGBridge?.getCurrentChatKey?.() ?? null,
+  });
+
+  const isDefinitionDraftCurrent = draft => mountedRef.current
+    && definitionsRef.current === draft.definitions
+    && definitionEpochRef.current === draft.epoch
+    && trackerRef.current === draft.tracker
+    && (window.RPGBridge?.getCurrentChatKey?.() ?? null) === draft.chatKey;
 
   const handleDefinitionChange = (fullKey, value) => {
     definitionEditsRef.current[fullKey] = (definitionEditsRef.current[fullKey] || 0) + 1;
@@ -1032,6 +1046,18 @@ export default function PromptEditor({ onClose }) {
                 <div>Suggest a short guide, edit it, then Save Changes. Each suggestion uses one AI request.</div>
                 <div>※ Turn on 'Global' switch only when you want to overwrite styles and types to all characters.</div>
               </div>
+
+              <DefinitionPresetControls
+                availableKeys={[
+                  ...uniqueFields.status.map(item => `status_${item.id}`),
+                  ...uniqueFields.profiles.map(item => `profile_${item.id}`),
+                  ...uniqueFields.relations.map(item => `relation_${item.id}`),
+                ]}
+                captureDraft={captureDefinitionDraft}
+                isDraftCurrent={isDefinitionDraftCurrent}
+                onApply={replaceDefinitions}
+                suggestionBusy={Boolean(suggestingKey)}
+              />
 
               <div className={styles.suggestionFeedback} role="status" aria-live="polite" aria-atomic="true">{suggestionFeedback}</div>
 

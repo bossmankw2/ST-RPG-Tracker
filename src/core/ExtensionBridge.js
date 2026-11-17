@@ -76,6 +76,12 @@ export function establishBridgeConnection(extensionName) {
                     window.RPGBridge.latestSettings = extension_settings[extensionName];
                     window.RPGBridge.syncSettings({ presets });
                 },
+                syncFieldDefinitionPresets: fieldDefinitionPresets => {
+                    extension_settings[extensionName] ??= {};
+                    extension_settings[extensionName].fieldDefinitionPresets = fieldDefinitionPresets;
+                    window.RPGBridge.latestSettings = extension_settings[extensionName];
+                    window.RPGBridge.syncSettings({ fieldDefinitionPresets });
+                },
             }));
             window.RPGBridge.extensionFolderPath = `scripts/extensions/third-party/${extensionName}`;
 

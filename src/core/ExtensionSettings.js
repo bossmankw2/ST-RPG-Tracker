@@ -13,6 +13,7 @@ export const defaultSettings = {
     keepAllBackups: false,
     maxBackupCount: 20,
     presets: [],
+    fieldDefinitionPresets: [],
     croppedAvatars: {},
     useCustomModel: false,
     customModel: ""

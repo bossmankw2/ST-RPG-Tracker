@@ -37,5 +37,30 @@ Run npm test and npm run build after integration; stage built dist/bundle.js int
 Record final checks here before committing. Push without force using
 `git push origin HEAD:refs/heads/main`; compare local HEAD with remote main.
 
-Validation and publication are pending. Desktop cache previously needed DevTools
-Empty Cache and Hard Reload; do not add unrelated startup/cache changes here.
+## Current validation state
+
+- Checkpoint commit: fabc198.
+- Core, UI and bridge changes implemented. Version/changelog/README updated to 1.4.0.
+- Full automated suite: **148 passed**, zero failures/skips (2026-11-17).
+- Production build: passed, 70 modules, 721.16 kB (gzip 164.37 kB).
+  Built bundle byte-matches the staged native host copy.
+- Independent review fixed immediate sibling-library synchronization after a
+  successful server POST even when read-back fails, with regression coverage.
+  Snapshot timestamps now stack below descriptions on narrow layouts.
+- Native SillyTavern 1.19.0 browser validation: **17 scenarios passed**, zero
+  page errors. Covered timestamp edits and server read-back, scans/recall,
+  partial dates, old undated events, preset reuse across two browser contexts,
+  matching/overwrite previews, Cancel/Save Changes, stale loads/conflicts,
+  network failures, existing Suggest and desktop/mobile controls/snapshots.
+- AI response was controlled; no live model provider call was tested.
+- Browser script: `/workspace/.rpg-tracker-onboarding/world-presets-browser.cjs`.
+  Results/log: `world-presets-results.json`, `world-presets-browser.log`.
+  Screenshots: `world-presets-mobile.png`, `world-time-mobile.png`.
+  QA chats/presets were removed and original account settings/chat restored.
+- Full regression log: `world-presets-unit.log`. Whitespace checks passed.
+
+Implementation and validation are complete. Release commit includes source,
+tests, version metadata, docs and the built bundle. Before repeating publication,
+compare local HEAD with remote main; never force-push. Desktop cache previously
+needed DevTools Empty Cache and Hard Reload; no unrelated startup/cache changes
+are included.

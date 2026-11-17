@@ -1,4 +1,5 @@
 import { getDefaultCharacters } from './PromptSchema.js';
+import { getWorldEventTiming, mergeWorldEventTiming } from './WorldEventTime.js';
 import { sanitizeTrackerData, cleanIdString, generateUniqueId, parseMetadata } from './JSONTracker_Migrator.js';
 
 const IGNORED_CHAR_KEYS = new Set([
@@ -42,17 +43,19 @@ function mergeWorldState(currentWorldState, rawUpdates, worldStateLocks) {
         const parsedNewEvents = updates.events.map(e => {
             let name = '';
             let desc = '';
+            let hasDescription = typeof e === 'string';
             if (typeof e === 'string') {
                 desc = e.trim();
             } else if (e && typeof e === 'object') {
                 const normE = normalizeKeys(e);
                 name = normE.name || '';
                 desc = normE.desc || normE.description || '';
+                hasDescription = normE.desc !== undefined || normE.description !== undefined;
             }
             if (!name && !desc) return null;
             if (isPlaceholderValue(name) || isPlaceholderValue(desc)) return null;
             const id = cleanIdString(name, 'event');
-            return { id, name, desc };
+            return { id, name, ...(hasDescription ? { desc } : {}), ...getWorldEventTiming(e) };
         }).filter(Boolean);
 
         const mergedEvents = [...existingEvents];
@@ -62,9 +65,9 @@ function mergeWorldState(currentWorldState, rawUpdates, worldStateLocks) {
                 (evt.name && evt.name.trim().toLowerCase() === newEvt.name.trim().toLowerCase())
             );
             if (index !== -1) {
-                mergedEvents[index] = { ...mergedEvents[index], ...newEvt };
+                mergedEvents[index] = { ...mergedEvents[index], ...newEvt, ...mergeWorldEventTiming(mergedEvents[index], newEvt) };
             } else {
-                mergedEvents.push(newEvt);
+                mergedEvents.push({ ...newEvt, desc: newEvt.desc || '' });
             }
         });
         worldState.events = mergedEvents;
