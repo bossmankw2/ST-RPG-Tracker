@@ -103,3 +103,13 @@ test('existing quiet generation retains its positional call and prompt cleanup b
     assert(model.prompts.some(args => args[0] === 'tracker_def' && args[1] === ''));
     assert.equal(model.rawCalls.length, 0);
 });
+
+test('batched field suggestions pass the requested response budget to the host raw API', async () => {
+    const model = await loadModel();
+    await model.api.executeFieldDefinitionPrompt('tracker', 'batch', 1280);
+    await model.api.executeFieldDefinitionPrompt('tracker', 'single');
+    assert.equal(model.rawCalls[0].responseLength, 1280);
+    assert.equal(model.rawCalls[1].responseLength, undefined);
+    assert.equal(model.rawCalls[0].trimNames, false);
+    assert.equal(model.prompts.length, 0);
+});

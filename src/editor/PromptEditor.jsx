@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef } from 'react';
 import { useRPG } from '../core/RPGControl';
 import styles from './PromptEditor.module.css';
 import statusStyles from './StatusEditor.module.css';
@@ -21,6 +21,8 @@ import { ToggleSwitch, AccordionArrow, AutoGrowingTextArea } from '../utils';
 import { StatusSpecConfig } from './StatusSpecsTab';
 import { RelationMetricConfig } from './RelationsTab';
 import DefinitionPresetControls from './DefinitionPresetControls';
+
+import { getCurrentTurnKey } from '../core/JSONTracker_Timeline.js';
 
 export default function PromptEditor({ onClose }) {
   const { trackerData, updateTrackerData } = useRPG();
@@ -63,6 +65,7 @@ export default function PromptEditor({ onClose }) {
   const [localDefObj, setLocalDefObj] = useState({});
   const [localWorldSchema, setLocalWorldSchema] = useState({});
 
+  const [suggestionScope, setSuggestionScope] = useState('empty');
   const [suggestingKey, setSuggestingKey] = useState(null);
   const [suggestionFeedback, setSuggestionFeedback] = useState('');
   const definitionsRef = useRef(localDefObj);
@@ -70,9 +73,9 @@ export default function PromptEditor({ onClose }) {
   const definitionEpochRef = useRef(0);
   const suggestionRef = useRef(null);
   const mountedRef = useRef(true);
-  const trackerRef = useRef(trackerData);
+  const definitionSourceRef = useRef(null);
+  const previousDefinitionSourceRef = useRef(null);
   const ownDefinitionUpdateRef = useRef(null);
-  trackerRef.current = trackerData;
 
   useEffect(() => {
     mountedRef.current = true;
@@ -92,15 +95,17 @@ export default function PromptEditor({ onClose }) {
   const captureDefinitionDraft = () => ({
     definitions: definitionsRef.current,
     epoch: definitionEpochRef.current,
-    tracker: trackerRef.current,
-    chatKey: window.RPGBridge?.getCurrentChatKey?.() ?? null,
+    source: definitionSourceRef.current,
+    turn: getCurrentTurnKey(window.RPGBridge),
   });
 
-  const isDefinitionDraftCurrent = draft => mountedRef.current
-    && definitionsRef.current === draft.definitions
+  const isDefinitionSourceCurrent = draft => mountedRef.current
     && definitionEpochRef.current === draft.epoch
-    && trackerRef.current === draft.tracker
-    && (window.RPGBridge?.getCurrentChatKey?.() ?? null) === draft.chatKey;
+    && definitionSourceRef.current === draft.source
+    && getCurrentTurnKey(window.RPGBridge) === draft.turn;
+
+  const isDefinitionDraftCurrent = draft => isDefinitionSourceCurrent(draft)
+    && definitionsRef.current === draft.definitions;
 
   const handleDefinitionChange = (fullKey, value) => {
     definitionEditsRef.current[fullKey] = (definitionEditsRef.current[fullKey] || 0) + 1;
@@ -116,7 +121,7 @@ export default function PromptEditor({ onClose }) {
     ownDefinitionUpdateRef.current = {
       characters: updatedCharacters,
       definitions: savedDefinitions,
-      chatKey: window.RPGBridge?.getCurrentChatKey?.() ?? null,
+      turn: getCurrentTurnKey(window.RPGBridge),
     };
     updateTrackerData({
       ...trackerData,
@@ -130,50 +135,53 @@ export default function PromptEditor({ onClose }) {
     onClose();
   };
 
-  const handleSuggestDefinition = async (category, item) => {
-    if (suggestionRef.current) return;
-    const suggest = window.RPGBridge?.suggestFieldDefinition;
+  const suggestionField = (category, item) => ({
+    category, id: item.id, name: item.name || item.id,
+    type: category === 'profile' ? 'text' : category === 'relation' ? (localWorldSchema.relationsFieldType || 'integer') : item.type,
+    min: item.min, max: item.max,
+    definition: String(definitionsRef.current[`${category}_${item.id}`] ?? ''),
+  });
+
+  const suggestGuidelines = async (fields, bulk = false) => {
+    if (suggestionRef.current || !fields.length) return;
+    const suggest = bulk ? window.RPGBridge?.suggestFieldDefinitions : window.RPGBridge?.suggestFieldDefinition;
     if (typeof suggest !== 'function') {
       setSuggestionFeedback('The AI suggestion service is not ready. Refresh the page and try again.');
       return;
     }
-    const fullKey = `${category}_${item.id}`;
-    const request = {
-      key: fullKey,
-      epoch: definitionEpochRef.current,
-      edit: definitionEditsRef.current[fullKey] || 0,
-      tracker: trackerRef.current,
+    if (bulk && suggestionScope === 'all') {
+      const existingCount = fields.filter(field => field.definition.trim()).length;
+      if (existingCount && !window.confirm(`Generate guides for all ${fields.length} fields and replace ${existingCount} existing guidelines in this draft?`)) return;
+    }
+    const field = fields[0];
+    const key = bulk ? 'all' : `${field.category}_${field.id}`;
+    const draft = captureDefinitionDraft();
+    const priorEdit = definitionEditsRef.current[key] || 0;
+    const isCurrent = () => {
+      if (!mountedRef.current || suggestionRef.current !== draft) return false;
+      if (bulk) return isDefinitionDraftCurrent(draft);
+      return isDefinitionSourceCurrent(draft) && (definitionEditsRef.current[key] || 0) === priorEdit;
     };
-    const isCurrent = () => mountedRef.current && suggestionRef.current === request
-      && definitionEpochRef.current === request.epoch && trackerRef.current === request.tracker
-      && (definitionEditsRef.current[fullKey] || 0) === request.edit;
-    suggestionRef.current = request;
-    setSuggestingKey(fullKey);
-    setSuggestionFeedback(`Suggesting a short guide for ${item.name || item.id}…`);
+    suggestionRef.current = draft;
+    setSuggestingKey(key);
+    setSuggestionFeedback(bulk ? `Suggesting guides for ${fields.length} fields…` : `Suggesting a short guide for ${field.name}…`);
     try {
-      const suggestion = await suggest({
-        category, id: item.id, name: item.name || item.id,
-        type: category === 'profile' ? 'text' : category === 'relation' ? (localWorldSchema.relationsFieldType || 'integer') : item.type,
-        min: item.min, max: item.max,
-        definition: definitionsRef.current[fullKey] || '',
-      });
-      if (!isCurrent()) {
-        if (mountedRef.current) setSuggestionFeedback('Suggestion discarded because the field or draft changed. Your edits were kept.');
-        return;
+      const result = bulk ? await suggest(fields, { isCurrent }) : await suggest(field);
+      if (!isCurrent()) throw new Error('Draft changed');
+      if (bulk) {
+        // The service returns the complete validated set only after every batch succeeds.
+        replaceDefinitions({ ...draft.definitions, ...result });
+        setSuggestionFeedback(`Suggested ${fields.length} field guides. Edit them as needed, then Save Changes.`);
+      } else {
+        handleDefinitionChange(key, result);
+        setSuggestionFeedback(`Suggested guide for ${field.name}. Edit it as needed, then Save Changes.`);
       }
-      if (typeof suggestion !== 'string' || !suggestion.trim()) {
-        throw new Error('The AI returned an empty suggestion. Please try again.');
-      }
-      handleDefinitionChange(fullKey, suggestion);
-      setSuggestionFeedback(`Suggested guide for ${item.name || item.id}. Edit it as needed, then Save Changes.`);
     } catch (error) {
-      if (isCurrent()) {
-        setSuggestionFeedback(error?.message || 'Could not suggest a guide. Your draft was kept; please try again.');
-      } else if (mountedRef.current) {
-        setSuggestionFeedback('Suggestion discarded because the field or draft changed. Your edits were kept.');
-      }
+      if (mountedRef.current) setSuggestionFeedback(isCurrent()
+        ? (error?.message || 'Could not suggest guidelines. Your draft was kept. Please try again.')
+        : 'Suggestion discarded because the field or draft changed. Your edits were kept.');
     } finally {
-      if (suggestionRef.current === request) {
+      if (suggestionRef.current === draft) {
         suggestionRef.current = null;
         if (mountedRef.current) setSuggestingKey(null);
       }
@@ -198,7 +206,7 @@ export default function PromptEditor({ onClose }) {
           aria-busy={working}
           disabled={Boolean(suggestingKey)}
           title="Suggest a clear guide in 1–2 sentences using one AI request. You can edit the result before saving."
-          onClick={() => handleSuggestDefinition(category, item)}
+          onClick={() => suggestGuidelines([suggestionField(category, item)])}
         >
           {working ? 'Suggesting…' : 'Suggest'}
         </button>
@@ -240,27 +248,24 @@ export default function PromptEditor({ onClose }) {
           }
         });
       }
+    });
 
-      if (char.relations) {
-        Object.values(char.relations).forEach(rel => {
-          if (rel.values) {
-            Object.entries(rel.values).forEach(([mName, mVal]) => {
-              if (!relationMap.has(mName)) {
-                const isObj = typeof mVal === 'object' && mVal !== null;
-                relationMap.set(mName, {
-                  id: mName,
-                  name: mName,
-                  min: isObj && mVal.min !== undefined ? mVal.min : -100,
-                  max: isObj && mVal.max !== undefined ? mVal.max : 100,
-                  colorPositive: isObj && mVal.colorPositive ? mVal.colorPositive : '#2ecc71',
-                  colorNegative: isObj && mVal.colorNegative ? mVal.colorNegative : '#e74c3c'
-                });
-              }
+    // Keep the same metadata for existing guides when a reverse metric shares its name.
+    for (const side of ['values', 'targetValues']) {
+      for (const char of characters) {
+        for (const relation of Object.values(char.relations || {})) {
+          for (const [name, metric] of Object.entries(relation?.[side] || {})) {
+            if (relationMap.has(name)) continue;
+            relationMap.set(name, {
+              id: name, name,
+              min: metric?.min ?? -100, max: metric?.max ?? 100,
+              colorPositive: metric?.colorPositive || '#2ecc71',
+              colorNegative: metric?.colorNegative || '#e74c3c'
             });
           }
-        });
+        }
       }
-    });
+    }
 
     const TYPE_PRIORITY = {
       consumable: 0,
@@ -287,7 +292,23 @@ export default function PromptEditor({ onClose }) {
     };
   };
 
-  const uniqueFields = getUniqueFields();
+  const uniqueFields = useMemo(getUniqueFields, [characters]);
+  // Settings refreshes can rehydrate a fresh tracker object for the same turn.
+  // Only a change to the actual saved guides, field schema, or turn resets the draft.
+  const definitionSource = useMemo(() => {
+    const saved = trackerData.globalDefinitions || {};
+    return JSON.stringify([uniqueFields, trackerData.worldSchema?.relationsFieldType || 'integer',
+      Object.keys(saved).sort().map(key => [key, saved[key]])]);
+  }, [uniqueFields, trackerData.globalDefinitions, trackerData.worldSchema?.relationsFieldType]);
+  definitionSourceRef.current = definitionSource;
+  const definitionTurn = getCurrentTurnKey(window.RPGBridge);
+  const suggestionFields = [
+    ...uniqueFields.status.map(item => suggestionField('status', item)),
+    ...uniqueFields.profiles.map(item => suggestionField('profile', item)),
+    ...uniqueFields.relations.map(item => suggestionField('relation', item)),
+  ];
+  const emptyFields = suggestionFields.filter(field => !field.definition.trim());
+  const bulkFields = suggestionScope === 'all' ? suggestionFields : emptyFields;
 
   useEffect(() => {
     setLocalMergedHeader(trackerData.systemPromptHeader_merged ?? DEFAULT_PROMPT_HEADER_MERGED);
@@ -312,12 +333,14 @@ export default function PromptEditor({ onClose }) {
 
     setLocalGuidePrompts(savedGuides);
     const ownUpdate = ownDefinitionUpdateRef.current;
-    const preserveDefinitionDraft = ownUpdate
+    const previous = previousDefinitionSourceRef.current;
+    const sameSource = previous?.source === definitionSource && previous.turn === definitionTurn;
+    const ownFieldEdit = ownUpdate?.turn === definitionTurn
       && ownUpdate.characters === trackerData.characters
-      && ownUpdate.definitions === trackerData.globalDefinitions
-      && ownUpdate.chatKey === (window.RPGBridge?.getCurrentChatKey?.() ?? null);
+      && ownUpdate.definitions === trackerData.globalDefinitions;
+    previousDefinitionSourceRef.current = { source: definitionSource, turn: definitionTurn };
     ownDefinitionUpdateRef.current = null;
-    if (!preserveDefinitionDraft) replaceDefinitions(trackerData.globalDefinitions || {});
+    if (!sameSource && !ownFieldEdit) replaceDefinitions(trackerData.globalDefinitions || {});
     setLocalWorldSchema(trackerData.worldSchema || {
       dateSelect: '1', dateCustom: 'yyyy-mm-dd',
       timeSelect: '1', timeCustom: '14:30',
@@ -325,7 +348,7 @@ export default function PromptEditor({ onClose }) {
       locationSelect: '1', locationCustom: 'Current Location',
       relationsFieldType: 'integer'
     });
-  }, [trackerData]);
+  }, [trackerData, definitionSource, definitionTurn]);
 
   const DATE_OPTS = [
     { v: '1', l: 'Year/Month/Day', ex: 'yyyy-mm-dd' },
@@ -348,6 +371,7 @@ export default function PromptEditor({ onClose }) {
   ];
 
   const handleWorldSchemaChange = (key, value, typeOpts) => {
+    if (key === 'relationsFieldType') definitionEpochRef.current += 1;
     let updates = { [key]: value };
     if (typeOpts) {
       const opt = typeOpts.find(o => o.v === value);
@@ -1043,23 +1067,40 @@ export default function PromptEditor({ onClose }) {
               </div>
 
               <div style={{ fontSize: '11px', opacity: 0.7, margin: 0, color: 'var(--rpg-text)', lineHeight: '1.4' }}>
-                <div>Suggest a short guide, edit it, then Save Changes. Each suggestion uses one AI request.</div>
+                <div>Edit AI suggestions before saving. Large selections use multiple AI requests.</div>
                 <div>※ Turn on 'Global' switch only when you want to overwrite styles and types to all characters.</div>
               </div>
 
+              <div className={styles.bulkSuggestions}>
+                <select
+                  aria-label="Suggest All scope"
+                  value={suggestionScope}
+                  onChange={event => setSuggestionScope(event.target.value)}
+                  disabled={Boolean(suggestingKey)}
+                >
+                  <option value="empty">Empty fields only ({emptyFields.length})</option>
+                  <option value="all">Regenerate all fields ({suggestionFields.length})</option>
+                </select>
+                <button
+                  type="button"
+                  className="rpg-btn-sm"
+                  aria-label="Suggest All"
+                  aria-busy={suggestingKey === 'all'}
+                  disabled={Boolean(suggestingKey) || !bulkFields.length}
+                  onClick={() => suggestGuidelines(bulkFields, true)}
+                >
+                  {suggestingKey === 'all' ? 'Suggesting…' : 'Suggest All'}
+                </button>
+              </div>
+              <div className={styles.suggestionFeedback} role="status" aria-live="polite" aria-atomic="true">{suggestionFeedback}</div>
+
               <DefinitionPresetControls
-                availableKeys={[
-                  ...uniqueFields.status.map(item => `status_${item.id}`),
-                  ...uniqueFields.profiles.map(item => `profile_${item.id}`),
-                  ...uniqueFields.relations.map(item => `relation_${item.id}`),
-                ]}
+                availableKeys={suggestionFields.map(field => `${field.category}_${field.id}`)}
                 captureDraft={captureDefinitionDraft}
                 isDraftCurrent={isDefinitionDraftCurrent}
                 onApply={replaceDefinitions}
                 suggestionBusy={Boolean(suggestingKey)}
               />
-
-              <div className={styles.suggestionFeedback} role="status" aria-live="polite" aria-atomic="true">{suggestionFeedback}</div>
 
               {/* 1. STATUS GROUP */}
               {uniqueFields.status.length > 0 && (

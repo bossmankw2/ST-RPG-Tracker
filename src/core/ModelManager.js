@@ -62,11 +62,11 @@ export async function executeMessageScanPrompt(extensionName, prompt) {
 }
 
 /** Suggest editable field guidance without adding chat history or saving tracker data. */
-export async function executeFieldDefinitionPrompt(extensionName, prompt) {
-    return executeRawTrackerPrompt(extensionName, prompt);
+export async function executeFieldDefinitionPrompt(extensionName, prompt, responseLength) {
+    return executeRawTrackerPrompt(extensionName, prompt, responseLength);
 }
 
-async function executeRawTrackerPrompt(extensionName, prompt) {
+async function executeRawTrackerPrompt(extensionName, prompt, responseLength) {
     const context = getContext();
     if (typeof context?.generateRaw !== 'function') {
         throw new Error('This SillyTavern version does not provide the raw generation API.');
@@ -75,7 +75,7 @@ async function executeRawTrackerPrompt(extensionName, prompt) {
         throw new Error('Another tracker update is already running. Please wait for it to finish.');
     }
     return executeWithModelOverride(extensionName, null,
-        () => context.generateRaw({ prompt, trimNames: false }), false, false);
+        () => context.generateRaw({ prompt, trimNames: false, responseLength }), false, false);
 }
 
 async function executeWithModelOverride(extensionName, customModel, generate, clearExtensionPrompt, restorePrompt) {

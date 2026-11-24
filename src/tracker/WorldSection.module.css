@@ -132,7 +132,15 @@
   gap: 8px;
 }
 
+.eventActions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 4px;
+}
+
 .eventNumber {
+  flex: 1;
   font-size: 11.5px;
   opacity: 0.5;
   font-weight: bold;

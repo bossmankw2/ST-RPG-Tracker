@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.5.0 — 2026-11-24
+
+- Reorder World Events with drag, touch or keyboard, or use **Sort by Time** to order comparable story starts. The chat stores the resulting sequence and includes it in recall. Ties retain their order and ambiguous timestamps stay in place.
+- Preserve event identity on later updates when titles differ only by punctuation. Save editor changes to the selected swipe even if another swipe has identical text.
+- Add **Suggest All** to Prompt Editor → Field Definitions. Fill empty guidelines or confirm regenerating all of them. Include relationship metrics recorded on either side.
+- Generate up to eight guides per AI request. Apply the complete result to the editable draft after all batches succeed. Changing the draft or chat discards stale results. Save Changes applies the draft to the chat and Save to Server stores it as a preset.
+
 ## 1.4.0 — 2026-11-17
 
 - Add optional in-story start/end dates and times to World Events. Edit them on

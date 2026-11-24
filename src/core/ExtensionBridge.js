@@ -11,6 +11,7 @@ import { createChatLockStore, getChatKey } from './ChatLockStore.js';
 import { createPresetBridge } from './PresetBridge.js';
 import { getAppliedDelta } from './AppliedDelta.js';
 import { createMessageScanner } from './MessageScanner.js';
+import { getMessageSwipeId } from './MessageScanState.js';
 import { createMessageScanCommit } from './MessageScanCommit.js';
 import { createMessageScanVerifier } from './MessageScanVerifier.js';
 import { createFieldDefinitionSuggester } from './FieldDefinitionSuggestion.js';
@@ -63,8 +64,7 @@ export function establishBridgeConnection(extensionName) {
                 const context = getContext();
                 const index = (context.chat?.length || 0) - 1;
                 const message = context.chat?.[index];
-                const matched = message?.swipes?.findIndex(text => text === message.mes) ?? -1;
-                const swipeId = matched >= 0 ? matched : (message?.swipe_id || 0);
+                const swipeId = getMessageSwipeId(message);
                 return { chatKey: getChatKey(context), message, index, swipeId };
             };
             Object.assign(window.RPGBridge, createPresetBridge({
@@ -389,7 +389,7 @@ export function establishBridgeConnection(extensionName) {
                 getContext,
                 getBridge: () => window.RPGBridge,
                 isGenerating,
-                generate: prompt => executeFieldDefinitionPrompt(extensionName, prompt),
+                generate: (prompt, responseLength) => executeFieldDefinitionPrompt(extensionName, prompt, responseLength),
             }));
             Object.assign(window.RPGBridge, createMessageScanner({
                 getContext,

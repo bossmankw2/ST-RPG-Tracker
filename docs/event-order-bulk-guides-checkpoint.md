@@ -1,17 +1,39 @@
 # World Event order and bulk field guidelines
 
-Base 278d33a (1.4.0). Target 1.5.0. Approved on 2026-11-24 for commit and push to main.
+Base 278d33a (1.4.0). Release 1.5.0. Implementation and publication to main
+authorized on 2026-11-24. Initial checkpoint ee210c1.
 
-- World Events supports manual drag, touch and keyboard. Both manual reordering
-  and Sort by Time change the stored worldState.events sequence. Equal starts keep
-  their relative order. Leave entries with incomparable timestamps in their slots.
-- Suggest All fills empty Status, Profile and Relationship guidelines by default.
-  Replacing all guides requires confirmation. Results are editable drafts for
-  Save Changes or Save to Server. Guard concurrent edits, failed or stale requests.
-- event_time_sort_core owns the time sort and tests. events_sort_ui owns the panel
-  and shared sortable interactions. bulk_suggest_service and bulk_suggest_editor
-  own AI service/tests and Prompt Editor. interaction_validation owns native QA.
-- Resume by inspecting git status. Run npm test and npm run build, stage the new
-  bundle in the local QA host, verify the controls and persistence there, update
-  this checkpoint and the changelog. Push without force and compare remote main
-  with the local release commit. Release validation and publication are pending.
+- World Events supports drag by handle with mouse, touch or keyboard. Reordering
+  and Sort by Time commit worldState.events to the active chat. Recall and
+  subsequent tracker updates use that sequence. Equal starts keep their relative
+  order and incomparable timestamps keep their slots. Numbered story days sort
+  within their own calendar. Newly discovered events append.
+- Preserve event identity through next updates for similarly punctuated titles
+  and preserve the selected swipe when two replies contain identical text.
+- Suggest All fills empty Status, Profile and Relationship guides by default.
+  Regenerate all requires confirmation before replacing existing text. One AI
+  call can return up to eight field guides. Only a full valid response set is
+  applied to the draft. Both sides of a relationship are discoverable.
+- Generated drafts and pending requests survive a settings refresh for the same
+  field data and turn. Changed fields, typing, chat switches and closing the
+  editor invalidate stale requests. Save Changes and Save to Server work on the
+  edited guidelines.
+
+## Validation
+
+- Full suite: 160 tests passed, zero failures or skips.
+- Production build: 71 modules, 728.49 kB (gzip 166.91 kB). Distributed bundle
+  matches the staged SillyTavern 1.19.0 test installation.
+- Native QA used isolated test chats and controlled AI responses. The main 15
+  scenarios cover mouse/keyboard/touch sorting, server read-back, reload,
+  subsequent scan, recall, batch generation, target-only guidelines, presets,
+  confirmation, editing, stale results, settings refreshes, malformed responses,
+  retry and mobile controls.
+- Five additional browser scenarios covered duplicate swipe text, saved order
+  after reload, an active drag through a routine settings refresh, cancellation
+  after list replacement and editing/dragging duplicate legacy entries. All 20
+  browser scenarios passed with zero page errors. The fixture was restored.
+- Browser scripts, screenshots and results are under
+  `/workspace/.rpg-tracker-onboarding/` (sort-bulk and sort-extra files).
+- Before repeating publication, compare local HEAD with remote main. Use
+  `git push origin HEAD:refs/heads/main` without force.

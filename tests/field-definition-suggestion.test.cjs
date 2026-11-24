@@ -20,15 +20,16 @@ async function setup() {
     const state = {
         context: { chatId: 'chat-a', characterId: 1, groupId: null, chat: [{ mes: 'PRIVATE_CHAT_SENTINEL' }] },
         bridge: { latestSettings: { enabled: true }, currentTrackerData: { privateData: 'PRIVATE_TRACKER_SENTINEL' } },
-        generating: false, calls: [], output: 'Describe visible physical traits and distinguishing features concisely.',
+        generating: false, calls: [], budgets: [], output: 'Describe visible physical traits and distinguishing features concisely.',
     };
     const api = createFieldDefinitionSuggester({
         getContext: () => state.context,
         getBridge: () => state.bridge,
         isGenerating: () => state.generating,
-        generate: async prompt => {
+        generate: async (prompt, responseLength) => {
             state.calls.push(prompt);
-            return typeof state.output === 'function' ? state.output() : state.output;
+            state.budgets.push(responseLength);
+            return typeof state.output === 'function' ? state.output(prompt) : state.output;
         },
     });
     return { api, state };
@@ -140,4 +141,83 @@ test('a result from another chat or a disabled tracker is rejected rather than a
         assert.equal(api.isFieldDefinitionSuggesting(), false);
         assert.deepEqual(state.bridge.currentTrackerData, { privateData: 'PRIVATE_TRACKER_SENTINEL' });
     }
+});
+
+const fields = count => Array.from({ length: count }, (_, i) => ({
+    ...field, id: String(i), name: `Custom ${i}`, definition: i === 0 ? 'Jelaskan ciri fisik.' : '',
+    value: 'PRIVATE_FIELD_SENTINEL',
+}));
+const rowsFor = prompt => inputOf(prompt).map(item => ({ key: item.key, guideline: `Describe ${item.name}.` }));
+
+test('bulk suggestions send bounded metadata-only batches and map reordered replies by exact key', async () => {
+    const { api, state } = await setup();
+    const selection = fields(18);
+    selection[8] = { category: 'status', id: 'HP', type: 'consumable', name: 'Health', min: 0, max: 100 };
+    state.output = prompt => '<think>reasoning</think>\n```json\n' + JSON.stringify(rowsFor(prompt).reverse()) + '\n```';
+    const result = await api.suggestFieldDefinitions(selection);
+    assert.deepEqual(state.calls.map(prompt => inputOf(prompt).length), [8, 8, 2]);
+    assert.deepEqual(state.budgets, [1280, 1280, 512]);
+    assert.deepEqual(inputOf(state.calls[1])[0], { key: 'status_HP', category: 'status', name: 'Health',
+        type: 'consumable', min: 0, max: 100 });
+    assert.equal(inputOf(state.calls[0])[0].current_guideline, selection[0].definition);
+    for (const prompt of state.calls) assert(!prompt.includes('SENTINEL'));
+    for (const f of selection) assert.equal(result[`${f.category}_${f.id}`], `Describe ${f.name}.`);
+});
+
+test('duplicates, missing, unexpected and malformed rows abort bulk results instead of misassigning guides', async () => {
+    const { api, state } = await setup();
+    for (const change of [
+        rows => [rows[0], rows[0]],
+        rows => rows.slice(0, 1),
+        rows => [...rows.slice(1), { key: 'profile_Nonexistent', guideline: 'Keep.' }],
+        rows => rows.map(row => ({ ...row, extra: 'secret' })),
+        rows => rows.map(row => ({ ...row, guideline: { nested: 'invalid' } })),
+        rows => rows.map(row => ({ ...row, guideline: '- list' })),
+        rows => Object.fromEntries(rows.map(row => [row.key, row.guideline])),
+    ]) {
+        state.output = prompt => JSON.stringify(change(rowsFor(prompt)));
+        await assert.rejects(api.suggestFieldDefinitions(fields(2)), /invalid|did not return/);
+        assert.equal(api.isFieldDefinitionSuggesting(), false);
+    }
+    state.calls.length = 0;
+    for (const bad of [[field, field], [field, { category: 'profile', name: 'Missing ID' }]]) {
+        await assert.rejects(api.suggestFieldDefinitions(bad), /duplicate ID|needs an ID/);
+    }
+    assert.deepEqual(await api.suggestFieldDefinitions([]), {});
+    assert.equal(state.calls.length, 0);
+});
+
+test('bulk operation blocks other requests, stops on stale chat/draft, and releases its lock after failure', async () => {
+    for (const mode of ['context', 'tracker', 'editor']) {
+        const { api, state } = await setup();
+        let valid = true;
+        const first = deferred();
+        state.output = () => first.promise;
+        const pending = api.suggestFieldDefinitions(fields(9), { isCurrent: () => valid });
+        assert.equal(api.isFieldDefinitionSuggesting(), true);
+        await assert.rejects(api.suggestFieldDefinition(field), /Wait/);
+        await assert.rejects(api.suggestFieldDefinitions([field]), /Wait/);
+        if (mode === 'context') state.context = { ...state.context, chat: [] };
+        if (mode === 'tracker') state.bridge.latestSettings.enabled = false;
+        if (mode === 'editor') valid = false;
+        first.resolve(JSON.stringify(rowsFor(state.calls[0])));
+        await assert.rejects(pending, /chat changed|draft changed/);
+        assert.equal(state.calls.length, 1);
+        assert.equal(api.isFieldDefinitionSuggesting(), false);
+    }
+});
+
+test('a later batch failure keeps inputs intact and allows a successful retry', async () => {
+    const { api, state } = await setup();
+    const selection = fields(11);
+    const original = structuredClone(selection);
+    state.output = prompt => {
+        if (state.calls.length === 2) throw new Error('Provider offline');
+        return JSON.stringify(rowsFor(prompt));
+    };
+    await assert.rejects(api.suggestFieldDefinitions(selection), /Provider offline/);
+    assert.deepEqual(selection, original);
+    assert.equal(api.isFieldDefinitionSuggesting(), false);
+    const result = await api.suggestFieldDefinitions(selection);
+    assert.equal(Object.keys(result).length, 11);
 });

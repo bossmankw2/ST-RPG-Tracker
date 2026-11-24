@@ -7,6 +7,15 @@ import { getMessageSwipeId } from './MessageScanState.js';
 
 const DEFAULT_MAX_KEEP = 20;
 
+// Editor actions belong to the selected chat, timeline position and swipe.
+export function getCurrentTurnKey(bridge) {
+  const target = bridge?.createSaveTarget?.();
+  return JSON.stringify([
+    target?.chatKey ?? bridge?.getCurrentChatKey?.() ?? null,
+    bridge?.historyRevision ?? 0, target?.index ?? -1, target?.swipeId ?? 0,
+  ]);
+}
+
 /**
  * Remove large Base64 image data from the backup object to prevent chat file size bloat
  */

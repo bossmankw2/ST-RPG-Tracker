@@ -7,7 +7,7 @@ const defaultGetLabel = item => item.name || String(item.id);
 
 export default function SortableList({
   items, onReorder, children, label, disabled = false,
-  getId = defaultGetId, getLabel = defaultGetLabel,
+  getId = defaultGetId, getLabel = defaultGetLabel, sessionKey,
 }) {
   const instructionsId = useId();
   const listRef = useRef(null);
@@ -16,7 +16,7 @@ export default function SortableList({
   const session = useRef(null);
   const animation = useRef(null);
   const latest = useRef(null);
-  latest.current = { items, onReorder, getId, getLabel, disabled };
+  latest.current = { items, onReorder, getId, getLabel, disabled, sessionKey };
   const [drag, setDrag] = useState(null);
   const [announcement, setAnnouncement] = useState('');
 
@@ -35,7 +35,7 @@ export default function SortableList({
     const { items: currentItems, getId: identify, getLabel: name, onReorder: reorder } = latest.current;
     const fromIndex = currentItems.findIndex(item => identify(item) === current.id);
     if (fromIndex < 0 || !current.active) return;
-    if (cancelled) {
+    if (cancelled || latest.current.disabled || current.sessionKey !== latest.current.sessionKey) {
       setAnnouncement(`Reordering ${name(currentItems[fromIndex])} cancelled.`);
     } else {
       const toIndex = Math.min(current.toIndex, currentItems.length - 1);
@@ -138,8 +138,8 @@ export default function SortableList({
 
   // Cancel a pending move if editing elsewhere removes or renames its identity.
   useEffect(() => {
-    if (session.current && (disabled || !items.some(item => getId(item) === session.current.id))) finish(true);
-  }, [items, getId, disabled]);
+    if (session.current && (disabled || session.current.sessionKey !== sessionKey || !items.some(item => getId(item) === session.current.id))) finish(true);
+  }, [items, getId, disabled, sessionKey]);
 
   const beginPointer = (event, item) => {
     if (disabled || items.length < 2 || event.button !== 0 || event.isPrimary === false) return;
@@ -150,7 +150,7 @@ export default function SortableList({
     let scroller = listRef.current?.parentElement;
     while (scroller && !/(auto|scroll)/.test(getComputedStyle(scroller).overflowY)) scroller = scroller.parentElement;
     session.current = {
-      mode: 'pointer', id, name: getLabel(item), active: false,
+      mode: 'pointer', id, sessionKey, name: getLabel(item), active: false,
       pointerId: event.pointerId, startX: event.clientX, startY: event.clientY,
       x: event.clientX, y: event.clientY,
       toIndex: items.findIndex(candidate => getId(candidate) === id), scroller,
@@ -173,7 +173,7 @@ export default function SortableList({
       else {
         if (current) finish(true);
         session.current = {
-          mode: 'keyboard', id, name: getLabel(item), active: true,
+          mode: 'keyboard', id, sessionKey, name: getLabel(item), active: true,
           toIndex: items.findIndex(candidate => getId(candidate) === id),
         };
         publish();

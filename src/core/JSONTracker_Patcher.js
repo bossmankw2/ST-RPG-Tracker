@@ -60,14 +60,20 @@ function mergeWorldState(currentWorldState, rawUpdates, worldStateLocks) {
 
         const mergedEvents = [...existingEvents];
         parsedNewEvents.forEach(newEvt => {
-            const index = mergedEvents.findIndex(evt =>
-                (evt.id && evt.id === newEvt.id) ||
-                (evt.name && evt.name.trim().toLowerCase() === newEvt.name.trim().toLowerCase())
-            );
+            // A sanitized title is not a unique identity. After a reorder, two
+            // similar titles must still update the same events as before.
+            const name = newEvt.name.trim().toLowerCase();
+            const index = name ? mergedEvents.findIndex(evt =>
+                typeof evt?.name === 'string' && evt.name.trim().toLowerCase() === name
+            ) : -1;
             if (index !== -1) {
-                mergedEvents[index] = { ...mergedEvents[index], ...newEvt, ...mergeWorldEventTiming(mergedEvents[index], newEvt) };
+                const existing = mergedEvents[index];
+                mergedEvents[index] = { ...existing, ...newEvt, id: existing.id || newEvt.id, ...mergeWorldEventTiming(existing, newEvt) };
             } else {
-                mergedEvents.push({ ...newEvt, desc: newEvt.desc || '' });
+                let id = newEvt.id;
+                let suffix = 2;
+                while (mergedEvents.some(evt => evt?.id === id)) id = `${newEvt.id}_${suffix++}`;
+                mergedEvents.push({ ...newEvt, id, desc: newEvt.desc || '' });
             }
         });
         worldState.events = mergedEvents;

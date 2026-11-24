@@ -115,6 +115,12 @@ limits and existing guide, without chat history or character values. Existing dr
 language is preserved; empty guides default to English. If you edit the field while
 waiting, your edit wins over the late AI result. Errors keep the existing text intact.
 
+**Suggest All** fills the empty guidelines across all three groups. Choose the
+all-fields option and confirm to regenerate existing guides too. The AI receives
+up to eight fields per request. The editor applies the suggestions together after
+every batch succeeds. Edit the results, then use **Save Changes** for this chat
+or **Save to Server** for a reusable preset.
+
 ## In-story time for World Events
 
 Expand **In-story time** on a World Event to edit its start/end dates and times.
@@ -127,6 +133,15 @@ can correct or clear either endpoint.
 Event timestamps are included in tracker prompt context, selected-reply scans,
 manual snapshots and Tracker Changes. Changing the current World State date/time
 does not relabel historical events. Older events are not automatically backfilled.
+
+Drag an event by the handle beside its number to place it in the story. With a
+keyboard, focus the handle, press Space, use the arrow keys, and press Space to
+place it. **Sort by Time** puts comparable events in ascending order of their
+in-story start. Ties keep their relative order. Unknown or ambiguous dates and
+clocks stay in their slots. Numbered story days (Day 1, Day 2) sort among
+themselves. A date without a time can sort by day when there are
+no timed events on that same date. Both actions save the order to the current
+chat and use it for AI recall. New events append until you move or sort them.
 
 ## Reuse Field Definitions on the server
 
